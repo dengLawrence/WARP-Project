@@ -18,11 +18,11 @@ public class VisualizationImplementation implements Visualization {
   private String inputFileName;
   private String fileNameTemplate;
   private FileManager fm = null;
-  private Warp warp = null;
+  private WarpInterface warp = null;
   private WorkLoad workLoad = null;
 
 
-  public VisualizationImplementation(Warp warp, String outputDirectory, SystemChoices choice) {
+  public VisualizationImplementation(WarpInterface warp, String outputDirectory, SystemChoices choice) {
     this.fm = new FileManager();
     this.warp = warp;
     inputFileName = warp.toWorkload().getInputFileName();

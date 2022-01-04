@@ -56,8 +56,8 @@ public class CommunicationGraph extends VisualizationObject {
             var nodesInFlow = workLoad.getNodesInFlow(flowName);
             var nNodesInFlow = (nodesInFlow.length);
             /* array of communications costs per link */
-            var linkCostArray = workLoad.getLinkCommunicationCosts(flowName); 
-            var totalCost = workLoad.getTotalCommunicationCost(flowName);
+            var linkCostArray = workLoad.getNumTxAttemptsPerLink(flowName); 
+            var totalCost = workLoad.getTotalTxAttemptsInFlow(flowName);
             var minCost = nNodesInFlow - 1 ;
             /*
              * nEdges in the flow is the minimum communication cost, 

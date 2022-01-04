@@ -8,7 +8,7 @@ public class LatencyAnalysis {
 
   private Description latencyReport;
 
-  LatencyAnalysis(Warp warp) {
+  LatencyAnalysis(WarpInterface warp) {
     this.latencyReport = new Description();
   }
 

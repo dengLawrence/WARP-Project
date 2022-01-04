@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 
 /**
  * @author sgoddard
+ * @version 1.2
  *
  */
 public class WorkLoad extends WorkLoadDescription implements ReliabilityParameters {
@@ -35,7 +36,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   private FlowMap flows; // map of all flow nodes in the WARP graph (<name, Flow>)
   // private Integer nFlows = 0;
   private NodeMap nodes; // map of all graph nodes in the WARP graph (<name, Node>)
-  private String name;
+  private String name; // name of the WARP graph defining the workload
   private ArrayList<String> flowNamesInOriginalOrder = new ArrayList<>(); // array to hold names of
                                                                           // flows to preserve their
                                                                           // order
@@ -361,7 +362,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     return flowNode.getPhase();
   }
 
-  public Integer getFlowTxPerLink(String flowName) {
+  public Integer getFlowTxAttemptsPerLink(String flowName) {
     var flowNode = getFlow(flowName);
     return flowNode.numTxPerLink;
   }
@@ -425,6 +426,17 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     }
   }
 
+  public Integer nextReleaseTime(String flowName, Integer currentTime) {
+    var flow = getFlow(flowName);
+    flow.setNextReleaseTime(currentTime);
+    return flow.getReleaseTime(); // next release Time at or after currentTime
+  }
+
+  public Integer nextAbsoluteDeadline(String flowName, Integer currentTime) {
+    var flow = getFlow(flowName);
+    flow.setNextReleaseTime(currentTime);
+    return flow.getReleaseTime() + flow.getDeadline(); // next deadline after currentTime
+  }
 
   private void finalizeFlowWithE2eParameters(String flowName) {
     var flowNode = flows.get(flowName);
@@ -451,7 +463,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
       /* set numTxPerLink based on M, E2E, and flow length */
       flowNode.numTxPerLink = (int) Math.ceil(nTx);
       /* Now compute nTx per link to reach E2E requirement. */
-      ArrayList<Integer> linkTxAndTotalCost = nTxPerLinkAndTotalTxCost(flowNode, e2e, m, true);
+      ArrayList<Integer> linkTxAndTotalCost = numTxAttemptsPerLinkAndTotalTxAttempts(flowNode, e2e, m, true);
       flowNode.linkTxAndTotalCost = linkTxAndTotalCost;
       flows.put(flowName, flowNode); // update flow node in Flows array
     } else { // should never happen...
@@ -463,7 +475,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   private void finalizeFlowWithFixedFaultTolerance(String flowName) {
     var flowNode = flows.get(flowName);
     if (flowNode != null) {
-      /* set numTxPerLink based on M, E2E, and flow length */
+      /* set numTxPerLink based on numFaults */
       flowNode.numTxPerLink = numFaults + 1;
       /* Now compute nTx per link to reach E2E requirement. */
       ArrayList<Integer> linkTxAndTotalCost = getFixedTxPerLinkAndTotalTxCost(flowNode);
@@ -496,7 +508,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     return txArrayList;
   }
 
-  private ArrayList<Integer> nTxPerLinkAndTotalTxCost(Flow flow, Double e2e, Double M,
+  private ArrayList<Integer> numTxAttemptsPerLinkAndTotalTxAttempts(Flow flow, Double e2e, Double M,
       boolean optimizationRequested) {
     var nodesInFlow = flow.nodes;
     var nNodesInFlow = nodesInFlow.size(); // The last entry will contain the worst-case cost of
@@ -653,7 +665,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   }
 
 
-  public String[] getNodesOrderedAlphabetically() {
+  public String[] getNodeNamesOrderedAlphabetically() {
     var nodes = getNodes();
     Set<String> keys = nodes.keySet(); // get the names from the node map
     String[] nodeNames = keys.toArray(new String[keys.size()]);
@@ -745,7 +757,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     return hyperPeriod;
   }
 
-  public Integer getTotalCommunicationCost(String flowName) {
+  public Integer getTotalTxAttemptsInFlow(String flowName) {
     var flow = getFlow(flowName);
     var linkTxAndTotalCost = flow.getLinkTxAndTotalCost();
     var totalCostIndex = linkTxAndTotalCost.size() - 1;
@@ -755,7 +767,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
 
   // return an array of the number of transmission needed for each
   // link (i.e. edge in the flow graph) to meet E2E target
-  public Integer[] getLinkCommunicationCosts(String flowName) {
+  public Integer[] getNumTxAttemptsPerLink(String flowName) {
     var flow = getFlow(flowName);
     var linkTxAndTotalCost = new ArrayList<Integer>(flow.getLinkTxAndTotalCost());
     var lastElement = linkTxAndTotalCost.size() - 1;

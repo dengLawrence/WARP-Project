@@ -7,7 +7,7 @@ package edu.uiowa.cs.warp;
  * @author sgoddard
  *
  */
-public class WarpSystem implements Warp {
+public class WarpSystem implements WarpInterface {
 	
 	// private static final String SOURCE_SUFFIX = ".dsl";
 	

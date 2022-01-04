@@ -172,7 +172,7 @@ public class Program implements SystemAttributes {
     var schedule = new ProgramSchedule(); // create an empty schedule
     var newInstruction = SLEEP_INSTRUCTION; // initialize the new Instruction with a sleep
     var prioritizedFlows = workLoad.getFlowNamesInPriorityOrder();
-    var orderedNodes = workLoad.getNodesOrderedAlphabetically(); // create an array of node names
+    var orderedNodes = workLoad.getNodeNamesOrderedAlphabetically(); // create an array of node names
                                                                  // sorted alphabetically
     var nodeIndex = new NodeIndexMap(); // create a new mapping from node names to index in schedule
                                         // table
@@ -207,16 +207,16 @@ public class Program implements SystemAttributes {
                                  // array otherwise
         e2eFlag = true; // need to meet e2e to hit E2E for flow
         if (realtimeHART) {
-          nTx = workLoad.getFlowTxPerLink(flowName);
+          nTx = workLoad.getFlowTxAttemptsPerLink(flowName);
         } // else we will computer nTx from the linkTx array for the flow as we go
 
       } else {
         nTx = nTransmissions;
       }
       var snk = "";
-      var linkTxCosts = workLoad.getLinkCommunicationCosts(flowName);
+      var linkTxCosts = workLoad.getNumTxAttemptsPerLink(flowName);
       if (verbose) {
-        var totalCost = workLoad.getTotalCommunicationCost(flowName);
+        var totalCost = workLoad.getTotalTxAttemptsInFlow(flowName);
         var minCost = nNodesInFlow - 1; // nEdges in the flow is the minimum communication cost,
                                         // i.e., min nTx to go E2E with no errors
         System.out.printf(

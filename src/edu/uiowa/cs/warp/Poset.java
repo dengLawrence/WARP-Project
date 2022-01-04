@@ -93,7 +93,7 @@ public abstract class Poset {
 	}
 	
 	public String[] getNodesNamesOrderedAlphabetically() {
-		var nodeNames = workload.getNodesOrderedAlphabetically();
+		var nodeNames = workload.getNodeNamesOrderedAlphabetically();
 		return nodeNames;
 	}
 
@@ -125,7 +125,7 @@ public abstract class Poset {
 		var maxFlowLength = workload.maxFlowLength();
 		for (Flow flow: flows) {
 			var flowNodes = flow.getNodes();
-			var numTxArray = workload.getLinkCommunicationCosts(flow.getName());
+			var numTxArray = workload.getNumTxAttemptsPerLink(flow.getName());
 			var flowPhase = flow.getPhase();
 			var flowPriority = flow.getPriority();
 			var period = flow.getPeriod();
