@@ -428,14 +428,16 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
 
   public Integer nextReleaseTime(String flowName, Integer currentTime) {
     var flow = getFlow(flowName);
+    flow.setLastUpdateTime(currentTime);
     flow.setNextReleaseTime(currentTime);
     return flow.getReleaseTime(); // next release Time at or after currentTime
   }
 
   public Integer nextAbsoluteDeadline(String flowName, Integer currentTime) {
     var flow = getFlow(flowName);
+    flow.setLastUpdateTime(currentTime);
     flow.setNextReleaseTime(currentTime);
-    return flow.getReleaseTime() + flow.getDeadline(); // next deadline after currentTime
+    return flow.getReleaseTime() + flow.getDeadline() - 1; // next deadline after currentTime
   }
 
   private void finalizeFlowWithE2eParameters(String flowName) {
@@ -463,7 +465,8 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
       /* set numTxPerLink based on M, E2E, and flow length */
       flowNode.numTxPerLink = (int) Math.ceil(nTx);
       /* Now compute nTx per link to reach E2E requirement. */
-      ArrayList<Integer> linkTxAndTotalCost = numTxAttemptsPerLinkAndTotalTxAttempts(flowNode, e2e, m, true);
+      ArrayList<Integer> linkTxAndTotalCost =
+          numTxAttemptsPerLinkAndTotalTxAttempts(flowNode, e2e, m, true);
       flowNode.linkTxAndTotalCost = linkTxAndTotalCost;
       flows.put(flowName, flowNode); // update flow node in Flows array
     } else { // should never happen...
