@@ -35,7 +35,7 @@ import edu.uiowa.cs.warp.Visualization.WorkLoadChoices;
 
 /**
  * @author sgoddard
- * @version 1.2
+ * @version 1.3
  *
  */
 public class Warp {
@@ -62,6 +62,7 @@ public class Warp {
   private static Boolean gvRequested; // GraphVis file requested flag
   private static Boolean wfRequested; // WARP file requested flag
   private static Boolean raRequested; // Reliability Analysis file requested flag
+  private static Boolean laRequested; // Latency Analysis file requested flag
   private static Boolean simRequested; // Simulation file requested flag
   private static Boolean allRequested; // all out files requested flag
   private static Boolean latencyRequested; // latency report requested flag
@@ -114,7 +115,10 @@ public class Warp {
       WarpInterface warp = SystemFactory.create(workLoad, nChannels, schedulerSelected);
       verifyPerformanceRequirements(warp);
       visualize(warp, SystemChoices.SOURCE);
-      if (latencyRequested) {
+      if (laRequested) {
+        visualize(warp, SystemChoices.LATENCY);
+      }
+      if (latencyRequested || laRequested) {
         visualize(warp, SystemChoices.LATENCY_REPORT);
       }
       if (raRequested) {
@@ -187,6 +191,7 @@ public class Warp {
     BooleanHolder gv = new BooleanHolder();
     BooleanHolder wf = new BooleanHolder();
     BooleanHolder ra = new BooleanHolder();
+    BooleanHolder la = new BooleanHolder();
     BooleanHolder s = new BooleanHolder();
     BooleanHolder all = new BooleanHolder();
     BooleanHolder latency = new BooleanHolder();
@@ -212,10 +217,11 @@ public class Warp {
     parser.addOption(
         "-ra  %v #create a reliability analysis file (tab delimited .csv) for the warp program",
         ra);
+    parser.addOption(
+        "-la  %v #create a latency analysis file (tab delimited .csv) for the warp program", la);
     parser.addOption("-s  %v #create a simulator input file (.txt) for the warp program", s);
     parser.addOption("-a, --all  %v #create all output files (activates -gv, -wf, -ra, -s)", all);
-    parser.addOption("-l, --latency  %v #prints end-to-end latency for each flow instance",
-        latency);
+    parser.addOption("-l, --latency  %v #generates end-to-end latency report file (.txt)", latency);
     parser.addOption("-i, --input %s #<InputFile> of graph flows (workload)", input);
     parser.addOption("-o, --output %s #<OutputDIRECTORY> where output files will be placed",
         output);
@@ -259,6 +265,7 @@ public class Warp {
     gvRequested = gv.value; // GraphVis file requested flag
     wfRequested = wf.value; // WARP file requested flag
     raRequested = ra.value; // Reliability Analysis file requested flag
+    laRequested = la.value; // Latency Analysis file requested flag
     simRequested = s.value; // Simulation file requested flag
     allRequested = all.value; // all out files requested flag
     latencyRequested = latency.value; // latency report requested flag
@@ -308,6 +315,7 @@ public class Warp {
     System.out.println("\tgvRequest flag=" + gvRequested);
     System.out.println("\twfRequest flag=" + wfRequested);
     System.out.println("\traRequest flag=" + raRequested);
+    System.out.println("\tlaRequest flag=" + laRequested);
     System.out.println("\tsimRequest flag=" + simRequested);
     System.out.println("\tallOutFilesRequest flag=" + allRequested);
     System.out.println("\tlatency flag=" + latencyRequested);

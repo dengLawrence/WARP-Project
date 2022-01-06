@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 /**
  * @author sgoddard2
- * @version 1.2
+ * @version 1.3
  */
 public class LatencyAnalysis {
 
@@ -25,14 +25,14 @@ public class LatencyAnalysis {
     this.nodeIndex = program.getNodeMapIndex();
   }
 
-LatencyAnalysis(Program program) {
+  LatencyAnalysis(Program program) {
     this.latencyReport = new Description();
     this.program = program;
     this.workload = program.toWorkLoad();
     this.programTable = program.getSchedule();
     this.nodeIndex = program.getNodeMapIndex();
   }
-  
+
   public Description latencyReport() {
     /*
      * Build a latency report. Flows are output in priority order (based on the priority used to
@@ -121,7 +121,7 @@ LatencyAnalysis(Program program) {
     return latencyReport;
   }
 
-  private Integer numMatchingTx(String flow, String src, String snk, String instr) {
+  public Integer numMatchingTx(String flow, String src, String snk, String instr) {
     var numTx = 0;
 
     if (flow == null || src == null || snk == null || instr == null) {

@@ -7,6 +7,7 @@ import java.io.File;
 
 /**
  * @author sgoddard
+ * @version 1.3
  *
  */
 public class VisualizationImplementation implements Visualization {
@@ -22,7 +23,8 @@ public class VisualizationImplementation implements Visualization {
   private WorkLoad workLoad = null;
 
 
-  public VisualizationImplementation(WarpInterface warp, String outputDirectory, SystemChoices choice) {
+  public VisualizationImplementation(WarpInterface warp, String outputDirectory,
+      SystemChoices choice) {
     this.fm = new FileManager();
     this.warp = warp;
     inputFileName = warp.toWorkload().getInputFileName();
@@ -68,6 +70,11 @@ public class VisualizationImplementation implements Visualization {
       case SIMULATOR_INPUT:
         // TODO Implement Simulator Input Visualization
         createVisualization(new NotImplentedVisualization("SimInputNotImplemented"));
+        break;
+
+      case LATENCY:
+        // TODO Implement Reliability Analysis Visualization
+        createVisualization(new LatencyVisualization(warp));
         break;
 
       case LATENCY_REPORT:
