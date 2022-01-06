@@ -25,6 +25,14 @@ public class LatencyAnalysis {
     this.nodeIndex = program.getNodeMapIndex();
   }
 
+LatencyAnalysis(Program program) {
+    this.latencyReport = new Description();
+    this.program = program;
+    this.workload = program.toWorkLoad();
+    this.programTable = program.getSchedule();
+    this.nodeIndex = program.getNodeMapIndex();
+  }
+  
   public Description latencyReport() {
     /*
      * Build a latency report. Flows are output in priority order (based on the priority used to
