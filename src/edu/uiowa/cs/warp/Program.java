@@ -18,19 +18,6 @@ public class Program implements SystemAttributes {
   private static final String WAIT_FRAGMENT = "wait(";
   private static final String ELSE_PULL_FRAGMENT = "else pull(";
 
-  // NodeMap creates a mapping from graph node name to node object (<name, GraphNode>)
-  private class NodeIndexMap extends HashMap<String, Integer> {
-    /**
-     * 
-     */
-    private static final long serialVersionUID = -6518730224642183876L;
-
-    // default constructor
-    public NodeIndexMap() {
-      super();
-    }
-  }
-
   // Global flags and data structures
   // FileManager wfm; // class to provide basic WARP file management functions
   WorkLoad workLoad; // WarpScheduler build schedules for flows in WARPflows class
@@ -172,15 +159,16 @@ public class Program implements SystemAttributes {
     var schedule = new ProgramSchedule(); // create an empty schedule
     var newInstruction = SLEEP_INSTRUCTION; // initialize the new Instruction with a sleep
     var prioritizedFlows = workLoad.getFlowNamesInPriorityOrder();
-    var orderedNodes = workLoad.getNodeNamesOrderedAlphabetically(); // create an array of node names
-                                                                 // sorted alphabetically
-    var nodeIndex = new NodeIndexMap(); // create a new mapping from node names to index in schedule
-                                        // table
-    var nNodes = orderedNodes.length;
-    for (int index = 0; index < nNodes; index++) { // set up the node to index mapping
-      var name = orderedNodes[index];
-      nodeIndex.put(name, index); // add name, index mapping to NodeIndex map
-    }
+    // var orderedNodes = workLoad.getNodeNamesOrderedAlphabetically(); // create an array of node
+    // names
+    // sorted alphabetically
+    var nodeIndex = getNodeMapIndex(); // get the mapping from node names to index in schedule
+    var nNodes = nodeIndex.size();
+    /*
+     * for (int index = 0; index < nNodes; index++) { // set up the node to index mapping var name =
+     * orderedNodes[index]; nodeIndex.put(name, index); // add name, index mapping to NodeIndex map
+     * }
+     */
     var hyperPeriod = workLoad.getHyperPeriod();
     for (int i = 0; i < hyperPeriod; i++) { // This loop makes sure the schedule is full up to the
                                             // period and the channels entries are all initialized
@@ -1212,6 +1200,21 @@ public class Program implements SystemAttributes {
   @Override
   public Integer getNumFaults() {
     return workLoad.getNumFaults();
+  }
+
+  public HashMap<String, Integer> getNodeMapIndex() {
+    var orderedNodes = workLoad.getNodeNamesOrderedAlphabetically(); // create an array of node
+                                                                     // names
+    // sorted alphabetically
+    var nodeIndexMap = new HashMap<String, Integer>(); // create a new mapping from node names to
+                                                       // index in schedule
+    // table
+    var nNodes = orderedNodes.length;
+    for (int index = 0; index < nNodes; index++) { // set up the node to index mapping
+      var name = orderedNodes[index];
+      nodeIndexMap.put(name, index); // add name, index mapping to NodeIndex map
+    }
+    return nodeIndexMap;
   }
 
 }
