@@ -437,7 +437,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     var flow = getFlow(flowName);
     flow.setLastUpdateTime(currentTime);
     flow.setNextReleaseTime(currentTime);
-    return flow.getReleaseTime() + flow.getDeadline() - 1; // next deadline after currentTime
+    return flow.getReleaseTime() + flow.getDeadline(); // next deadline after currentTime
   }
 
   private void finalizeFlowWithE2eParameters(String flowName) {
