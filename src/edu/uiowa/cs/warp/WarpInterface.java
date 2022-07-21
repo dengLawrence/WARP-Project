@@ -5,7 +5,7 @@ package edu.uiowa.cs.warp;
 
 /**
  * @author sgoddard
- * @version 1.3
+ * @version 1.4
  */
 public interface WarpInterface extends SystemAttributes {
 
@@ -18,6 +18,8 @@ public interface WarpInterface extends SystemAttributes {
   public SimulatorInput toSimulator();
 
   public LatencyAnalysis toLatencyAnalysis();
+
+  public ChannelAnalysis toChannelAnalysis();
 
   public void toSensorNetwork(); // deploys code
 

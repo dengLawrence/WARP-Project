@@ -5,7 +5,7 @@ package edu.uiowa.cs.warp;
 
 /**
  * @author sgoddard
- * @version 1.3
+ * @version 1.4
  */
 public class WarpSystem implements WarpInterface {
 
@@ -15,6 +15,7 @@ public class WarpSystem implements WarpInterface {
   private WorkLoad workLoad;
   private ReliabilityAnalysis ra;
   private LatencyAnalysis la;
+  private ChannelAnalysis ca;
   private Integer numChannels;
   private Boolean verboseMode = false;
   private Boolean latencyRequested = false;
@@ -53,6 +54,13 @@ public class WarpSystem implements WarpInterface {
     // TODO Auto-generated method stub
     la = new LatencyAnalysis(this);
     return la;
+  }
+
+  @Override
+  public ChannelAnalysis toChannelAnalysis() {
+    // TODO Auto-generated method stub
+    ca = new ChannelAnalysis(this);
+    return ca;
   }
 
   @Override

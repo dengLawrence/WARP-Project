@@ -35,7 +35,7 @@ import edu.uiowa.cs.warp.Visualization.WorkLoadChoices;
 
 /**
  * @author sgoddard
- * @version 1.3
+ * @version 1.4
  *
  */
 public class Warp {
@@ -63,6 +63,7 @@ public class Warp {
   private static Boolean wfRequested; // WARP file requested flag
   private static Boolean raRequested; // Reliability Analysis file requested flag
   private static Boolean laRequested; // Latency Analysis file requested flag
+  private static Boolean caRequested; // Channel Analysis file requested flag
   private static Boolean simRequested; // Simulation file requested flag
   private static Boolean allRequested; // all out files requested flag
   private static Boolean latencyRequested; // latency report requested flag
@@ -115,6 +116,9 @@ public class Warp {
       WarpInterface warp = SystemFactory.create(workLoad, nChannels, schedulerSelected);
       verifyPerformanceRequirements(warp);
       visualize(warp, SystemChoices.SOURCE);
+      if (caRequested) {
+        visualize(warp, SystemChoices.CHANNEL);
+      }
       if (laRequested) {
         visualize(warp, SystemChoices.LATENCY);
       }
@@ -149,6 +153,7 @@ public class Warp {
   private static void verifyPerformanceRequirements(WarpInterface warp) {
     verifyDeadlines(warp);
     // verifyReliabilities(warp);
+    verifyNoChannelConflicts(warp);
   }
 
   private static void verifyReliabilities(WarpInterface warp) {
@@ -178,6 +183,18 @@ public class Warp {
     }
   }
 
+  private static void verifyNoChannelConflicts(WarpInterface warp) {
+    if (warp.toChannelAnalysis().isChannelConflict()) {
+      System.err
+          .printf("\n\tERROR: Channel conficts exists. See Channel Visualization for details\n");
+      if (!caRequested) { // only need to create the visualization if not already requested
+        visualize(warp, SystemChoices.CHANNEL);
+      }
+    } else if (verboseMode) {
+      System.out.printf("\n\tNo channel conflicts detected.\n");
+    }
+  }
+
   private static void setWarpParameters(String[] args) { // move command line parsing into this
                                                          // function--need to set up globals?
 
@@ -192,6 +209,7 @@ public class Warp {
     BooleanHolder wf = new BooleanHolder();
     BooleanHolder ra = new BooleanHolder();
     BooleanHolder la = new BooleanHolder();
+    BooleanHolder ca = new BooleanHolder();
     BooleanHolder s = new BooleanHolder();
     BooleanHolder all = new BooleanHolder();
     BooleanHolder latency = new BooleanHolder();
@@ -219,6 +237,8 @@ public class Warp {
         ra);
     parser.addOption(
         "-la  %v #create a latency analysis file (tab delimited .csv) for the warp program", la);
+    parser.addOption(
+        "-ca  %v #create a channel analysis file (tab delimited .csv) for the warp program", ca);
     parser.addOption("-s  %v #create a simulator input file (.txt) for the warp program", s);
     parser.addOption("-a, --all  %v #create all output files (activates -gv, -wf, -ra, -s)", all);
     parser.addOption("-l, --latency  %v #generates end-to-end latency report file (.txt)", latency);
@@ -266,6 +286,7 @@ public class Warp {
     wfRequested = wf.value; // WARP file requested flag
     raRequested = ra.value; // Reliability Analysis file requested flag
     laRequested = la.value; // Latency Analysis file requested flag
+    caRequested = ca.value; // Latency Analysis file requested flag
     simRequested = s.value; // Simulation file requested flag
     allRequested = all.value; // all out files requested flag
     latencyRequested = latency.value; // latency report requested flag
@@ -316,6 +337,7 @@ public class Warp {
     System.out.println("\twfRequest flag=" + wfRequested);
     System.out.println("\traRequest flag=" + raRequested);
     System.out.println("\tlaRequest flag=" + laRequested);
+    System.out.println("\tcaRequest flag=" + caRequested);
     System.out.println("\tsimRequest flag=" + simRequested);
     System.out.println("\tallOutFilesRequest flag=" + allRequested);
     System.out.println("\tlatency flag=" + latencyRequested);

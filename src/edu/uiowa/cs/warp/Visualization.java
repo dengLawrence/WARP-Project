@@ -5,12 +5,12 @@ package edu.uiowa.cs.warp;
 
 /**
  * @author sgoddard
- * @version 1.3
+ * @version 1.4
  */
 public interface Visualization {
 
   public enum SystemChoices {
-    SOURCE, RELIABILITIES, SIMULATOR_INPUT, LATENCY, LATENCY_REPORT, DEADLINE_REPORT
+    SOURCE, RELIABILITIES, SIMULATOR_INPUT, LATENCY, LATENCY_REPORT, DEADLINE_REPORT, CHANNEL
   }
 
   public enum WorkLoadChoices {

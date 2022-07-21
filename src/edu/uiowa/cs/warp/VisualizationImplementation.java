@@ -7,7 +7,7 @@ import java.io.File;
 
 /**
  * @author sgoddard
- * @version 1.3
+ * @version 1.4
  *
  */
 public class VisualizationImplementation implements Visualization {
@@ -73,8 +73,13 @@ public class VisualizationImplementation implements Visualization {
         break;
 
       case LATENCY:
-        // TODO Implement Reliability Analysis Visualization
+        // TODO Implement Latency Analysis Visualization
         createVisualization(new LatencyVisualization(warp));
+        break;
+
+      case CHANNEL:
+        // TODO Implement Channel Analysis Visualization
+        createVisualization(new ChannelVisualization(warp));
         break;
 
       case LATENCY_REPORT:
