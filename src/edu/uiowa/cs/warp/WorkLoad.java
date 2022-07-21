@@ -16,8 +16,12 @@ import java.util.Vector;
 import java.util.stream.Collectors;
 
 /**
+ * Build the nodes and flows for the workload described in the workload description file, whose name
+ * is passed into the Constructor via the parameter inputFileName. Good default values for the
+ * constructors are m = 0.9, e2e = 0.99, and numFaults = 1 when the second constructor is used.
+ * 
  * @author sgoddard
- * @version 1.2
+ * @version 1.4
  *
  */
 public class WorkLoad extends WorkLoadDescription implements ReliabilityParameters {
