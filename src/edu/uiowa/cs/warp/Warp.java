@@ -152,7 +152,7 @@ public class Warp {
 
   private static void verifyPerformanceRequirements(WarpInterface warp) {
     verifyDeadlines(warp);
-    // verifyReliabilities(warp);
+    verifyReliabilities(warp);
     verifyNoChannelConflicts(warp);
   }
 
@@ -186,7 +186,7 @@ public class Warp {
   private static void verifyNoChannelConflicts(WarpInterface warp) {
     if (warp.toChannelAnalysis().isChannelConflict()) {
       System.err
-          .printf("\n\tERROR: Channel conficts exists. See Channel Visualization for details\n");
+          .printf("\n\tERROR: Channel conficts exists. See Channel Visualization for details.\n");
       if (!caRequested) { // only need to create the visualization if not already requested
         visualize(warp, SystemChoices.CHANNEL);
       }

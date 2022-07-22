@@ -1,7 +1,5 @@
 package edu.uiowa.cs.warp;
 
-import java.util.HashMap;
-
 /**
  * @author sgoddard
  * @version 1.4
@@ -10,26 +8,22 @@ import java.util.HashMap;
 public class ChannelAnalysis {
 
   private Program program;
-  private WorkLoad workload;
   private ProgramSchedule programTable;
-  private HashMap<String, Integer> nodeIndex;
+  private Boolean conflictExists;
 
   ChannelAnalysis(WarpInterface warp) {
     this.program = warp.toProgram();
-    this.workload = program.toWorkLoad();
     this.programTable = program.getSchedule();
-    this.nodeIndex = program.getNodeMapIndex();
+    conflictExists = false;
   }
 
   ChannelAnalysis(Program program) {
     this.program = program;
-    this.workload = program.toWorkLoad();
     this.programTable = program.getSchedule();
-    this.nodeIndex = program.getNodeMapIndex();
+    conflictExists = false;
   }
 
   public Boolean isChannelConflict() {
-    // TODO Auto-generated method stub
-    return false;
+    return conflictExists;
   }
 }
