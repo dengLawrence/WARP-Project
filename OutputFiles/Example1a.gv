@@ -1,0 +1,10 @@
+// Course CS2820 Authentication Tag: nP0n3GdYUOs2pKRqyXcmkiR8PXA4cebcbaV/G6WgzOqDBxcBleE1JISR36VQCTZOOh2J0NU3BELij3rrPYAe9x2fV3R0QOVCLPYy7Vjbf3U=
+strict digraph Example1A {
+    A  -> B  -> C; 
+    C  -> B  -> A; 
+labelloc  =  "t" 
+label = <Graph Example1A <br/>
+Flow F0: A -&#62; B -&#62; C<br/>
+Flow F1: C -&#62; B -&#62; A<br/>
+>
+} 

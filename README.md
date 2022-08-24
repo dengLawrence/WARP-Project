@@ -6,3 +6,6 @@ rewritten again in an object-oriented programming style. It was a quick
 hack, and it needs a lot of cleanup and refactoring. A perfect code base to teach
 the value of software developement fundamentals!
 <br>
+
+NOTE: To add run parameters, go to Run->Run Configurations. Then go to the Arguments tab and
+add flags within the Program Arguments box. Apply and Run

@@ -1,0 +1,9 @@
+// Course CS2820 Authentication Tag: C+ZS/p7nEVRNQxvYYP4YeW7rTPHyW+sQEdUaYzMpO7DGTSzXBc/PYCmGr9sdrnWHaU69hDKvufm66IFJIqok0rcxRaX/iUcwBEflYdEHnNA=
+DeadlineMisses Report
+WARNING: This workload is not schedulable: Flow F8:0 latency 145 > deadline 100
+WARNING: This workload is not schedulable: Flow F9:0 latency 291 > deadline 100
+WARNING: This workload is not schedulable: Flow F9:1 latency 197 > deadline 100
+WARNING: This workload is not schedulable: Flow F9:2 latency 103 > deadline 100
+WARNING: This workload is not schedulable: Flow F10:0 latency 309 > deadline 100
+WARNING: This workload is not schedulable: Flow F10:1 latency 215 > deadline 100
+WARNING: This workload is not schedulable: Flow F10:2 latency 121 > deadline 100

@@ -1,0 +1,5 @@
+// Course CS2820 Authentication Tag: nP0n3GdYUOs2pKRqyXcmktCN1fcSy9mPXJdzhvYPl/aDBxcBleE1JISR36VQCTZOOh2J0NU3BELij3rrPYAe97EfD96lgOSEWlrygvdOln4=
+Example1A {
+F0 (0, 10, 10, 0) : A -> B -> C
+F1 (1, 20, 20, 0) : C -> B -> A
+}

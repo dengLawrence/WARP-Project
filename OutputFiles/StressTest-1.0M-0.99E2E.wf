@@ -1,0 +1,34 @@
+// Course CS2820 Authentication Tag: C+ZS/p7nEVRNQxvYYP4Yeat5woPJIAZxpblO39r5a+bGTSzXBc/PYCmGr9sdrnWHMKIpKsj5euGP9bL6SGRS3Hw4JO0KMS4QLd/EjqyGNNE=
+WARP_StressTest{
+// M = 1.0 and End-to-End reliability = 0.99
+// Flow F1 has a minimum communication cost of 2 and a worst-case communication cost of 10
+ F1 (1,20,20,0) : B -5-> C -5-> D
+// Flow F5 has a minimum communication cost of 4 and a worst-case communication cost of 20
+ F5 (5,75,75,0) : A -5-> B -5-> C -5-> D -5-> E
+// Flow F2 has a minimum communication cost of 6 and a worst-case communication cost of 30
+ F2 (2,50,50,0) : C -5-> D -5-> E -5-> F -5-> G -5-> H -5-> I
+// Flow F4 has a minimum communication cost of 7 and a worst-case communication cost of 35
+ F4 (4,75,75,0) : A -5-> B -5-> C -5-> D -5-> E -5-> J -5-> K -5-> L
+// Flow F3 has a minimum communication cost of 5 and a worst-case communication cost of 25
+ F3 (3,50,50,0) : C -5-> D -5-> E -5-> J -5-> K -5-> L
+// Flow F6 has a minimum communication cost of 2 and a worst-case communication cost of 10
+ F6 (6,75,75,0) : B -5-> C -5-> D
+// Flow F7 has a minimum communication cost of 4 and a worst-case communication cost of 20
+ F7 (7,100,100,0) : A -5-> B -5-> C -5-> D -5-> E
+// Flow F8 has a minimum communication cost of 6 and a worst-case communication cost of 30
+ F8 (8,100,100,0) : C -5-> D -5-> E -5-> F -5-> G -5-> H -5-> I
+// Flow F9 has a minimum communication cost of 7 and a worst-case communication cost of 35
+ F9 (9,100,100,0) : A -5-> B -5-> C -5-> D -5-> E -5-> J -5-> K -5-> L
+// Flow F10 has a minimum communication cost of 5 and a worst-case communication cost of 25
+ F10 (10,100,100,0) : C -5-> D -5-> E -5-> J -5-> K -5-> L
+// Flow AF1 has a minimum communication cost of 2 and a worst-case communication cost of 10
+ AF1 (1,20,20,0) : N -5-> O -5-> P
+// Flow AF5 has a minimum communication cost of 4 and a worst-case communication cost of 20
+ AF5 (5,75,75,0) : M -5-> N -5-> O -5-> P -5-> Q
+// Flow AF2 has a minimum communication cost of 6 and a worst-case communication cost of 30
+ AF2 (2,50,50,0) : O -5-> P -5-> Q -5-> R -5-> S -5-> T -5-> U
+// Flow AF4 has a minimum communication cost of 7 and a worst-case communication cost of 35
+ AF4 (4,75,75,0) : M -5-> N -5-> O -5-> P -5-> Q -5-> V -5-> W -5-> Y
+// Flow AF10 has a minimum communication cost of 5 and a worst-case communication cost of 25
+ AF10 (11,100,100,0) : O -5-> P -5-> Q -5-> V -5-> W -5-> Y
+}
