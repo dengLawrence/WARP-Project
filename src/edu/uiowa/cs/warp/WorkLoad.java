@@ -796,4 +796,29 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     }
     return maxLength;
   }
+  
+  private static void parser(Description wkldDesc, String flowName) {
+	  // loops through the workload description to find the flow name
+	  // that matches a specific flow name passed as the second input parameter.
+	  // prints the matching flow line
+	  for (String flowLine : wkldDesc) {
+		  if (flowLine.startsWith(flowName + ' ') || 
+				  flowLine.startsWith(flowName + ':')) {   //accounts for .txt files where a colon follows flow name
+			  System.out.print(flowLine);
+		  }
+	  }
+  }
+  
+  public static void main(String[] args) {
+	  WorkLoad wkld = new WorkLoad(1, 0.9, 0.99, "StressTest.txt");
+	  System.out.println(wkld.name);
+	  wkld.setFlowsInDMorder();
+	  // loops through the sorted ArrayList of flow names calling parser 
+	  // to match each flow name with associated workload description
+	  for (String flowName : wkld.getFlowNamesInPriorityOrder()) {
+		  parser(wkld.visualization(), flowName);
+	  }
+  }
+  
 }
+
