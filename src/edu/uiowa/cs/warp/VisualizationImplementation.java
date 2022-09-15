@@ -6,20 +6,62 @@ package edu.uiowa.cs.warp;
 import java.io.File;
 
 /**
+ * <h1>Implementation of the Visualization Interface</h1>
+ * The VisualizationImplementation class allows the user to request visualizations of various aspects of the given file content in Description object.
+ * Methods to print Workload Descriptions to the console, write to a file, and create string are defined.
+ * Visualizations are created based on system choices of SOURCE, RELIABILITIES, SIMULATOR_INPUT, LATENCY, LATENCY_REPORT, 
+ * DEADLINE_REPORT, and CHANNEL. Workload choices include INPUT_GRAPH, COMUNICATION_GRAPH, GRAPHVIZ. 
+ * <p>
+ * 
  * @author sgoddard
  * @version 1.4
  *
  */
 public class VisualizationImplementation implements Visualization {
-
+  
+  /**
+   * Description object created from visualization() method of VisualizationObject class.
+   */
   private Description visualization;
+  
+  /**
+   * Description object of formatted input file content created from fileVisualization() method of VisualizationObject class.
+   */
   private Description fileContent;
+  
+  /**
+   * Description object created from displayVisualization() method of VisualizationObject class.
+   */
   private Description displayContent;
+  
+  /**
+   * Name of file being written to in toFile() method.
+   */
   private String fileName;
+  
+  /**
+   * Name of file from WorkLoad object.
+   */
   private String inputFileName;
+  
+  /**
+   * Created using full output path and input filename.
+   */
   private String fileNameTemplate;
+  
+  /**
+   * 
+   */
   private FileManager fm = null;
+  
+  /**
+   * 
+   */
   private WarpInterface warp = null;
+  
+  /**
+   * 
+   */
   private WorkLoad workLoad = null;
 
 
