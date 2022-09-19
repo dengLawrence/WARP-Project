@@ -8,8 +8,7 @@ import java.util.HashSet;
  * <h1>Implementation of the Channel class</h1>
  *  The Channel class allows the user to handle the amount of wireless channels that are available for
  *  scheduling using the private sub class ChannelSet and methods that can add or remove channel sets or
- *  channels individually
- *  <p>
+ *  channels individually<p>
  * @author sgoddard
  * @version 1.4
  *
