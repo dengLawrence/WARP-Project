@@ -36,7 +36,7 @@ import edu.uiowa.cs.warp.Visualization.WorkLoadChoices;
 /**
  * <h1>This is the main Java class for the Warp project.</h1>
  * <p>Takes and input file and creates either a WorkLoad or WarpInterface to process the file based
- * on the arguments given on runtime. Outputs a file with visualization</p>
+ * on the arguments given on runtime. Outputs a file with visualization.</p>
  * @author sgoddard
  * @version 1.4
  *

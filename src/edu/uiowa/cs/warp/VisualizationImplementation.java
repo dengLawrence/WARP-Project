@@ -7,11 +7,10 @@ import java.io.File;
 
 /**
  * <h1>Implementation of the Visualization Interface</h1>
- * The VisualizationImplementation class allows the user to request visualizations of various aspects of the given file content in Description object.
+ * <p>The VisualizationImplementation class allows the user to request visualizations of various aspects of the given file content in Description object.
  * Methods to print Workload Descriptions to the console, write to a file, and create string are defined.
  * Visualizations are created based on system choices of SOURCE, RELIABILITIES, SIMULATOR_INPUT, LATENCY, LATENCY_REPORT, 
- * DEADLINE_REPORT, and CHANNEL. Workload choices include INPUT_GRAPH, COMUNICATION_GRAPH, GRAPHVIZ. 
- * <p>
+ * DEADLINE_REPORT, and CHANNEL. Workload choices include INPUT_GRAPH, COMUNICATION_GRAPH, GRAPHVIZ.</p>
  * 
  * @author sgoddard
  * @version 1.4
@@ -50,21 +49,30 @@ public class VisualizationImplementation implements Visualization {
   private String fileNameTemplate;
   
   /**
-   * 
+   * FileManager object used to get base directory and create new directory for file writing.
    */
   private FileManager fm = null;
   
   /**
-   * 
+   * WarpInterface object containing the necessary methods to create the different visualizations.
    */
   private WarpInterface warp = null;
   
   /**
-   * 
+   * Workload object passed into the constructor to have visualization created.
    */
   private WorkLoad workLoad = null;
 
 
+  /**
+   * The first constructor method sets up the inputFileName and fileNameTemplate based on the WarpInterface
+   * object passed in. It then calls createVisualization using the given choice enumeration value passed in.
+   * 
+   * @author sgoddard
+   * @param warp
+   * @param outputDirectory
+   * @param choice
+   */
   public VisualizationImplementation(WarpInterface warp, String outputDirectory,
       SystemChoices choice) {
     this.fm = new FileManager();
@@ -73,7 +81,16 @@ public class VisualizationImplementation implements Visualization {
     this.fileNameTemplate = createFileNameTemplate(outputDirectory);
     createVisualization(choice);
   }
-
+  
+  /**
+   * The second constructor method sets up the inputFileName and fileNameTemplate based on the Workload
+   * object passed in. It then calls createVisualization using the given choice enumeration value passed in.
+   * 
+   * @author sgoddard
+   * @param workLoad
+   * @param outputDirectory
+   * @param choice
+   */
   public VisualizationImplementation(WorkLoad workLoad, String outputDirectory,
       WorkLoadChoices choice) {
     this.fm = new FileManager();
@@ -83,21 +100,46 @@ public class VisualizationImplementation implements Visualization {
     createVisualization(choice);
   }
 
+  /**
+   * toDisplay simply prints the displayContent field.
+   * 
+   * @author sgoddard
+   * @return void
+   */
   @Override
   public void toDisplay() {
     System.out.println(displayContent.toString());
   }
 
+  /**
+   * toFile uses the global variables fileName and fileContent to write to a new file.
+   * 
+   * @author sgoddard
+   * @return void
+   */
   @Override
   public void toFile() {
     fm.writeFile(fileName, fileContent.toString());
   }
 
+  /**
+   * toString returns a String version of the visualization object.
+   * 
+   * @author sgoddard
+   * @return String
+   */
   @Override
   public String toString() {
     return visualization.toString();
   }
 
+  /**
+   * Given the SystemChoices enum value passed in, creates the requested visualization.
+   * 
+   * @author sgoddard
+   * @param choice
+   * @return void
+   */
   private void createVisualization(SystemChoices choice) {
     switch (choice) { // select the requested visualization
       case SOURCE:
@@ -140,6 +182,13 @@ public class VisualizationImplementation implements Visualization {
     }
   }
 
+  /**
+   * Given the WorkLoadChoices enum value passed in, creates the requested visualization.
+   * 
+   * @author sgoddard
+   * @param choice
+   * @return void
+   */
   private void createVisualization(WorkLoadChoices choice) {
     switch (choice) { // select the requested visualization
       case COMUNICATION_GRAPH:
@@ -161,6 +210,15 @@ public class VisualizationImplementation implements Visualization {
     }
   }
 
+  /**
+   * This method is used when a generic VisalizationObject is passed in instead of one of the enum values of the Visualization interface.
+   * It sets up the appropriate visualization, fileContent, displayContent, and fileName fields.
+   * 
+   * @author sgoddard
+   * @param <T>
+   * @param obj
+   * @return void
+   */
   private <T extends VisualizationObject> void createVisualization(T obj) {
     visualization = obj.visualization();
     fileContent = obj.fileVisualization();
@@ -169,6 +227,14 @@ public class VisualizationImplementation implements Visualization {
     fileName = obj.createFile(fileNameTemplate); // in output directory
   }
 
+  /**
+   * Creates the fileNameTemplate using the full output path and input filename.
+   * Returns fileNameTemplate, a string.
+   * 
+   * @author sgoddard
+   * @param outputDirectory
+   * @return String
+   */
   private String createFileNameTemplate(String outputDirectory) {
     String fileNameTemplate;
     var workingDirectory = fm.getBaseDirectory();

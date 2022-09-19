@@ -9,3 +9,16 @@ the value of software developement fundamentals!
 
 NOTE: To add run parameters, go to Run->Run Configurations. Then go to the Arguments tab and
 add flags within the Program Arguments box. Apply and Run
+
+
+o-----------------------------------------------o<br>
+F22-HW2 Partners' Tasks Completed:<br>
+o-----------------------------------------------o<br>
+** Ethan Borchard: **<br>
+- #6 -> Developed JavaDoc comments for the missing summary comment and commented all 
+	attributes and all methods in VisualizationImplementation.java.
+- #7 -> Developed JavaDoc comments for the specified methods in WorkLoad.java.
+- #8 -> Develop JavaDoc comments for the following methods in Program.java.<br>
+
+** Bryce Biwer: **<br>
+- #2 ->
