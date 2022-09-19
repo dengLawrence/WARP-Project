@@ -6,16 +6,38 @@ package edu.uiowa.cs.warp;
 import java.util.ArrayList;
 
 /**
+ * <h1>Implementation of Program Visualization</h1>
+ * <p>The ProgramVisualization class allows a warp Interface to be converted to program and visualized</p>
+ *
  * @author sgoddard
  * @version 1.2
  */
 public class ProgramVisualization extends VisualizationObject {
 
+  /**
+   * Source file extension format
+   */
   private static final String SOURCE_SUFFIX = ".dsl";
+
+  /**
+   * Reference to ProgramSchedule, set in constructor
+   */
   private ProgramSchedule sourceCode;
+
+  /**
+   * Reference to the program, set in constructor
+   */
   private Program program;
+
+  /**
+   * Deadlines met flag, set in constructor
+   */
   private Boolean deadlinesMet;
 
+  /**
+   * Constructor converts WarpInterface to Program for visualization
+   * @param warp WarpInterface to convert to program for visualization
+   */
   ProgramVisualization(WarpInterface warp) {
     super(new FileManager(), warp, SOURCE_SUFFIX);
     this.program = warp.toProgram();
@@ -23,6 +45,10 @@ public class ProgramVisualization extends VisualizationObject {
     this.deadlinesMet = warp.deadlinesMet();
   }
 
+  /**
+   * Creates a Description object for work flow visualization
+   * @return Description containing visualization of the work flow
+   */
   @Override
   public Description visualization() {
     Description content = new Description();
@@ -48,6 +74,10 @@ public class ProgramVisualization extends VisualizationObject {
     return content;
   }
 
+  /**
+   * Creates a Description object for the header of the visualization output
+   * @return Description containing visualization of the header
+   */
   @Override
   public Description createHeader() {
     Description header = new Description();
@@ -72,6 +102,10 @@ public class ProgramVisualization extends VisualizationObject {
     return header;
   }
 
+  /**
+   * Creates a Description object for the footer of the visualization output
+   * @return Description containing visualization of the footer
+   */
   @Override
   public Description createFooter() {
     Description footer = new Description();
