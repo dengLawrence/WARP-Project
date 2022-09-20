@@ -35,7 +35,7 @@ import edu.uiowa.cs.warp.Visualization.WorkLoadChoices;
 
 /**
  * <h1>This is the main Java class for the Warp project.</h1>
- * <p>Takes and input file and creates either a WorkLoad or WarpInterface to process the file based
+ * <p>Takes an input file and creates either a WorkLoad or WarpInterface to process the file based
  * on the arguments given on runtime. Outputs a file with visualization.</p>
  * @author sgoddard
  * @version 1.4
@@ -160,6 +160,8 @@ public class Warp {
 
   /**
    * The main method of Warp.
+   * 
+   * @author sgoddard
    * @param args Arguments passed in at runtime
    */
   public static void main(String[] args) {
@@ -223,8 +225,10 @@ public class Warp {
   }
 
   /**
-   * Outputs a file with a visual representation of the WorkLoad based on the choice parameter<br>
-   * If verbose mode is enabled it will also print the results to the screen
+   * Outputs a file with a visual representation of the WorkLoad based on the choice parameter.<br>
+   * If verbose mode is enabled it will also print the results to the screen.
+   * 
+   * @author sgoddard
    * @param workLoad The WorkLoad to be visualized
    * @param choice Determines how the visualization will be created based off WorkLoadChoices enum
    */
@@ -240,7 +244,9 @@ public class Warp {
   }
 
   /**
-   * Outputs a file with visual representation of the WarpInterface based on the choice parameter
+   * Outputs a file with visual representation of the WarpInterface based on the choice parameter.
+   * 
+   * @author sgoddard
    * @param warp The WarpInterface to be visualized
    * @param choice Determines how the visualization will be created based off SystemChoices enum
    */
@@ -253,7 +259,9 @@ public class Warp {
   }
 
   /**
-   * Verifies the Deadlines, Reliabilities, and Channel Conflicts with their respective method calls
+   * Verifies the Deadlines, Reliabilities, and Channel Conflicts with their respective method calls.
+   * 
+   * @author sgoddard
    * @param warp The WarpInterface to verify
    */
   private static void verifyPerformanceRequirements(WarpInterface warp) {
@@ -265,7 +273,9 @@ public class Warp {
   /**
    * Verifies that the WarpInterface reliabilities are met. If the WarpInterface fails to meet the reliabilities
    * a system error will be printed out.<br>
-   * If verbose mode is enabled and reliabilities are met verification will be printed to the screen
+   * If verbose mode is enabled and reliabilities are met verification will be printed to the screen.
+   * 
+   * @author sgoddard
    * @param warp The WarpInterface to verify
    */
   private static void verifyReliabilities(WarpInterface warp) {
@@ -287,8 +297,10 @@ public class Warp {
   /**
    * Verifies that the WarpInterface meets all deadlines. If the WarpInterface fails to meet the deadlines
    * a system error will be printed out as well as a visualization of the WarpInterface based on the
-   * DEADLINE_REPORT of SystemChoices enum<br>
-   * If verbose is enabled and deadlines are met verification will be printed to the screen
+   * DEADLINE_REPORT of SystemChoices enum.<br>
+   * If verbose is enabled and deadlines are met verification will be printed to the screen.
+   * 
+   * @author sgoddard
    * @param warp The WarpInterface to verify
    */
   private static void verifyDeadlines(WarpInterface warp) {
@@ -304,8 +316,10 @@ public class Warp {
 
   /**
    * Verifies that the WarpInterface has no channel conflicts. If there is a channel conflict a system error
-   * will be printed to the screen along with a visualization of the WarpInterface based on CHANNEL of SystemChoice enum<br>
-   * If verbose mode is enabled and there are no channel conflicts verification will be printed to the screen
+   * will be printed to the screen along with a visualization of the WarpInterface based on CHANNEL of SystemChoice enum.<br>
+   * If verbose mode is enabled and there are no channel conflicts verification will be printed to the screen.
+   * 
+   * @author sgoddard
    * @param warp The WarpInterface to check for channel conflicts
    */
   private static void verifyNoChannelConflicts(WarpInterface warp) {
@@ -321,7 +335,9 @@ public class Warp {
   }
 
   /**
-   * Sets the class variables based on the arguments given at runtime
+   * Sets the class variables based on the arguments given at runtime.
+   * 
+   * @author sgoddard
    * @param args Arguments from the main method
    */
   private static void setWarpParameters(String[] args) { // move command line parsing into this
@@ -455,7 +471,9 @@ public class Warp {
   }
 
   /**
-   * Prints all system configuration parameters to the screen
+   * Prints all system configuration parameters to the screen.
+   * 
+   * @author sgoddard
    */
   private static void printWarpParameters() {
     // Print out each of the system configuration values

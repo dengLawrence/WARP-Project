@@ -4,6 +4,7 @@ package edu.uiowa.cs.warp;
  * <h1>Implementation of the ChannelAnalysis class</h1>
  * Used to analyze either Program or WarpInterface by converting to program.
  * Can be used to detect channel conflicts.
+ * 
  * @author sgoddard
  * @version 1.4
  *
@@ -11,12 +12,12 @@ package edu.uiowa.cs.warp;
 public class ChannelAnalysis {
 
   /**
-   * Reference to the program, set in constructor
+   * Reference to the program, set in constructor.
    */
   private Program program;
 
   /**
-   * Reference to ProgramSchedule withing the Program class, set in constructor
+   * Reference to ProgramSchedule within the Program class, set in constructor.
    */
   private ProgramSchedule programTable;
 
@@ -26,7 +27,9 @@ public class ChannelAnalysis {
   private Boolean conflictExists;
 
   /**
-   * Constructor that takes in a WarpInterface and converts it to a a program then sets the program and it's schedule
+   * Constructor that takes in a WarpInterface and converts it to a a program then sets the program and it's schedule.
+   * 
+   * @author sgoddard
    * @param warp WarpInterface to analyze
    */
   ChannelAnalysis(WarpInterface warp) {
@@ -36,7 +39,9 @@ public class ChannelAnalysis {
   }
 
   /**
-   * Constructor to set the program and it's schedule
+   * Constructor to set the program and it's schedule.
+   * 
+   * @author sgoddard
    * @param program The program to analyze
    */
   ChannelAnalysis(Program program) {
@@ -46,7 +51,9 @@ public class ChannelAnalysis {
   }
 
   /**
-   * Determines whether or not there is a channel conflict
+   * Determines whether or not there is a channel conflict.
+   * 
+   * @author sgoddard
    * @return boolean based on if there is a channel conflict or not
    */
   public Boolean isChannelConflict() {

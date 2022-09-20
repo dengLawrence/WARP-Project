@@ -14,15 +14,15 @@ add flags within the Program Arguments box. Apply and Run
 o-----------------------------------------------o<br>
 F22-HW2 Partners' Tasks Completed:<br>
 o-----------------------------------------------o<br>
-<b>** Ethan Borchard: ** </b><br>
+** Ethan Borchard: ** <br>
 - &#35;6 -> Developed JavaDoc comments for the missing summary comment and commented all 
 	attributes and all methods in VisualizationImplementation.java.
 - &#35;7 -> Developed JavaDoc comments for the specified methods in WorkLoad.java.
 - &#35;8 -> Develop JavaDoc comments for the following methods in Program.java.<br>
 
-<b>** Bryce Biwer:</b> **<br>
-- &#35;2 -> Developed JavaDoc comments for the missing summary and methods in Warp.java<br>
-	As well as converted comment lines for global variables to JavaDoc
-- &#35;3 -> Developed JavaDoc comments for the missing summary and methods in Channels.java
-- &#35;4 -> Developed JavaDoc comments for the missing summary and methods in ChannelAnalysis.java
-- &#35;5 -> Developed JavaDoc comments for the missing summary and methods in ProgramVisualization.java
+** Bryce Biwer: ** <br>
+- &#35;2 -> Developed JavaDoc comments for the missing summary and methods in Warp.java.
+	As well as converted comment lines for global variables to JavaDoc.
+- &#35;3 -> Developed JavaDoc comments for the missing summary and methods in Channels.java.
+- &#35;4 -> Developed JavaDoc comments for the missing summary and methods in ChannelAnalysis.java.
+- &#35;5 -> Developed JavaDoc comments for the missing summary and methods in ProgramVisualization.java.

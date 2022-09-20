@@ -6,7 +6,7 @@ package edu.uiowa.cs.warp;
 import java.io.File;
 
 /**
- * <h1>Implementation of the Visualization Interface</h1>
+ * <h1>Implementation of the Visualization Interface.</h1>
  * <p>The VisualizationImplementation class allows the user to request visualizations of various aspects of the given file content in Description object.
  * Methods to print Workload Descriptions to the console, write to a file, and create string are defined.
  * Visualizations are created based on system choices of SOURCE, RELIABILITIES, SIMULATOR_INPUT, LATENCY, LATENCY_REPORT, 
@@ -69,9 +69,9 @@ public class VisualizationImplementation implements Visualization {
    * object passed in. It then calls createVisualization using the given choice enumeration value passed in.
    * 
    * @author sgoddard
-   * @param warp
-   * @param outputDirectory
-   * @param choice
+   * @param warp The interface to be visualized.
+   * @param outputDirectory The file to be written to.
+   * @param choice The system visualization choice.
    */
   public VisualizationImplementation(WarpInterface warp, String outputDirectory,
       SystemChoices choice) {
@@ -87,9 +87,9 @@ public class VisualizationImplementation implements Visualization {
    * object passed in. It then calls createVisualization using the given choice enumeration value passed in.
    * 
    * @author sgoddard
-   * @param workLoad
-   * @param outputDirectory
-   * @param choice
+   * @param workLoad The work load to be visualized.
+   * @param outputDirectory The file to be written to.
+   * @param choice The work load visualization choice.
    */
   public VisualizationImplementation(WorkLoad workLoad, String outputDirectory,
       WorkLoadChoices choice) {
@@ -104,7 +104,6 @@ public class VisualizationImplementation implements Visualization {
    * toDisplay simply prints the displayContent field.
    * 
    * @author sgoddard
-   * @return void
    */
   @Override
   public void toDisplay() {
@@ -115,7 +114,6 @@ public class VisualizationImplementation implements Visualization {
    * toFile uses the global variables fileName and fileContent to write to a new file.
    * 
    * @author sgoddard
-   * @return void
    */
   @Override
   public void toFile() {
@@ -126,7 +124,7 @@ public class VisualizationImplementation implements Visualization {
    * toString returns a String version of the visualization object.
    * 
    * @author sgoddard
-   * @return String
+   * @return visualization String
    */
   @Override
   public String toString() {
@@ -137,8 +135,7 @@ public class VisualizationImplementation implements Visualization {
    * Given the SystemChoices enum value passed in, creates the requested visualization.
    * 
    * @author sgoddard
-   * @param choice
-   * @return void
+   * @param choice The system visualization choice.
    */
   private void createVisualization(SystemChoices choice) {
     switch (choice) { // select the requested visualization
@@ -186,8 +183,7 @@ public class VisualizationImplementation implements Visualization {
    * Given the WorkLoadChoices enum value passed in, creates the requested visualization.
    * 
    * @author sgoddard
-   * @param choice
-   * @return void
+   * @param choice The work load visualization selected.
    */
   private void createVisualization(WorkLoadChoices choice) {
     switch (choice) { // select the requested visualization
@@ -215,9 +211,8 @@ public class VisualizationImplementation implements Visualization {
    * It sets up the appropriate visualization, fileContent, displayContent, and fileName fields.
    * 
    * @author sgoddard
-   * @param <T>
-   * @param obj
-   * @return void
+   * @param <T> The generic tag extending VisualizationObject.
+   * @param obj The generic object extending VisualizationObject.
    */
   private <T extends VisualizationObject> void createVisualization(T obj) {
     visualization = obj.visualization();
@@ -229,11 +224,10 @@ public class VisualizationImplementation implements Visualization {
 
   /**
    * Creates the fileNameTemplate using the full output path and input filename.
-   * Returns fileNameTemplate, a string.
    * 
    * @author sgoddard
-   * @param outputDirectory
-   * @return String
+   * @param outputDirectory The output used to create a new directory.
+   * @return fileNameTemplate, a String 
    */
   private String createFileNameTemplate(String outputDirectory) {
     String fileNameTemplate;

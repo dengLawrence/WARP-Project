@@ -6,8 +6,8 @@ package edu.uiowa.cs.warp;
 import java.util.ArrayList;
 
 /**
- * <h1>Implementation of Program Visualization</h1>
- * <p>The ProgramVisualization class allows a warp Interface to be converted to program and visualized</p>
+ * <h1>Implementation of Program Visualization.</h1>
+ * <p>The ProgramVisualization class allows a warp Interface to be converted to program and visualized.</p>
  *
  * @author sgoddard
  * @version 1.2
@@ -35,7 +35,9 @@ public class ProgramVisualization extends VisualizationObject {
   private Boolean deadlinesMet;
 
   /**
-   * Constructor converts WarpInterface to Program for visualization
+   * Constructor converts WarpInterface to Program for visualization.
+   * 
+   * @author sgoddard
    * @param warp WarpInterface to convert to program for visualization
    */
   ProgramVisualization(WarpInterface warp) {
@@ -46,7 +48,9 @@ public class ProgramVisualization extends VisualizationObject {
   }
 
   /**
-   * Creates a Description object for work flow visualization
+   * Creates a Description object for work flow visualization.
+   * 
+   * @author sgoddard
    * @return Description containing visualization of the work flow
    */
   @Override
@@ -75,7 +79,9 @@ public class ProgramVisualization extends VisualizationObject {
   }
 
   /**
-   * Creates a Description object for the header of the visualization output
+   * Creates a Description object for the header of the visualization output.
+   * 
+   * @author sgoddard
    * @return Description containing visualization of the header
    */
   @Override
@@ -103,7 +109,9 @@ public class ProgramVisualization extends VisualizationObject {
   }
 
   /**
-   * Creates a Description object for the footer of the visualization output
+   * Creates a Description object for the footer of the visualization output.
+   * 
+   * @author sgoddard
    * @return Description containing visualization of the footer
    */
   @Override

@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
- * <h1>Implementation of the Channel class</h1>
+ * <h1>Implementation of the Channel class.</h1>
  *  The Channel class allows the user to handle the amount of wireless channels that are available for
  *  scheduling using the private sub class ChannelSet and methods that can add or remove channel sets or
- *  channels individually<p>
+ *  channels individually.<p>
  * @author sgoddard
  * @version 1.4
  *
@@ -16,20 +16,26 @@ import java.util.HashSet;
 public class Channels {
 
   /**
-   * Private class that extends a string HashSet to keep track of channels as a set
+   * Private class that extends a string HashSet to keep track of channels as a set.
+   * 
+   * @author sgoddard
    */
   private class ChannelSet extends HashSet<String> {
     private static final long serialVersionUID = 6725256944325470867L;
 
     /**
      * Default Constructor
+     * 
+     * @author sgoddard
      */
     private ChannelSet() {
       super();
     }
 
     /**
-     * Constructor that takes in a channel amount on creation
+     * Constructor that takes in a channel amount on creation.
+     * 
+     * @author sgoddard
      * @param nChannels number of channels to add
      */
     private ChannelSet(Integer nChannels) {
@@ -57,7 +63,9 @@ public class Channels {
   ArrayList<ChannelSet> channelsAvailable;
 
   /**
-   * Constructor that takes in number of channels and verbose flag
+   * Constructor that takes in number of channels and verbose flag.
+   * 
+   * @author sgoddard
    * @param nChannels amount of channels
    * @param verbose if true, prints data to the screen
    */
@@ -68,7 +76,9 @@ public class Channels {
   }
 
   /**
-   * Gets the channel set for selected timeSlot
+   * Gets the channel set for selected timeSlot.
+   * 
+   * @author sgoddard
    * @param timeSlot time slot to retrieve channel set for
    * @return HashSet of channels based on timeslot
    */
@@ -79,7 +89,9 @@ public class Channels {
   }
 
   /**
-   * Adds a new channel set to available channels
+   * Adds a new channel set to available channels.
+   * 
+   * @author sgoddard
    */
   public void addNewChannelSet() {
     var channels = new ChannelSet(nChannels);
@@ -87,7 +99,9 @@ public class Channels {
   }
 
   /**
-   * Checks if the channelSet is empty with the given timeSlot
+   * Checks if the channelSet is empty with the given timeSlot.
+   * 
+   * @author sgoddard
    * @param timeSlot time slot to check channelSet
    * @return boolean value based on if the channelSet at the given timeSlot is empty
    */
@@ -98,7 +112,9 @@ public class Channels {
   }
 
   /**
-   * Removes channel from available channels at the given timeSlot
+   * Removes channel from available channels at the given timeSlot.
+   * 
+   * @author sgoddard
    * @param timeSlot timeSlot to get channelSet
    * @param channel Channel to remove
    * @return boolean value based on the success of the channel removal at the given timeSlot
@@ -111,7 +127,9 @@ public class Channels {
   }
 
   /**
-   * Adds channel at the given timeSlot
+   * Adds channel at the given timeSlot.
+   * 
+   * @author sgoddard
    * @param timeSlot timeSlot to add channel at
    * @param channel the channel to add
    * @return boolean value based on success of channel being added at the given timeSlot
@@ -124,7 +142,9 @@ public class Channels {
   }
 
   /**
-   * Gets the number of channels
+   * Gets the number of channels.
+   * 
+   * @author sgoddard
    * @return Integer representing the number of channels
    */
   public Integer getNumChannels() {
