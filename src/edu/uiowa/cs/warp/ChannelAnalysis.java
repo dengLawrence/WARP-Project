@@ -1,6 +1,9 @@
 package edu.uiowa.cs.warp;
 
 /**
+ * <h1>Implementation of the ChannelAnalysis class</h1>
+ * Used to analyze either Program or WarpInterface by converting to program.
+ * Can be used to detect channel conflicts.
  * @author sgoddard
  * @version 1.4
  *
