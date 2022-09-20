@@ -47,6 +47,16 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   private ArrayList<String> flowNamesInPriorityOrder = new ArrayList<>();
   // private FileManager fm;
 
+  /**
+   * The first constructor calls the parent class to set up file information. m and e2e are then initialized.
+   * Then it creates the listener object, which will read the workLoad description and then build the node and 
+   * flow objects that instantiates the workLoad.
+   * 
+   * @author sgoddard
+   * @param m
+   * @param e2e
+   * @param inputFileName
+   */
   WorkLoad(Double m, Double e2e, String inputFileName) {
     super(inputFileName);
     setDefaultParameters();
@@ -59,6 +69,16 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     WorkLoadListener.buildNodesAndFlows(this);
   }
 
+  /**
+   * The second constructor is identical to the first with the exception of initializing the optional
+   * numFaults input parameter.
+   * 
+   * @author sgoddard
+   * @param numFaults
+   * @param m
+   * @param e2e
+   * @param inputFileName
+   */
   WorkLoad(Integer numFaults, Double m, Double e2e, String inputFileName) {
     super(inputFileName);
     setDefaultParameters();
@@ -147,6 +167,9 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   }
 
   /**
+   * getter method that simply returns an ArrayList<String> of the flow names in priority order
+   * 
+   * @author sgoddard
    * @return the flowNamesInPriorityOrder
    */
   public ArrayList<String> getFlowNamesInPriorityOrder() {
@@ -219,6 +242,10 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   }
 
   /**
+   * This method sets the global variable flowNamesInOriginalOrder, an ArrayList to hold
+   * names of flows to preserve their order.
+   * 
+   * @author sgoddard
    * @param flowNamesInOriginalOrder the flowNamesInOriginalOrder to set
    */
   public void setFlowNamesInOriginalOrder(ArrayList<String> flowNamesInOriginalOrder) {
@@ -226,6 +253,10 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   }
 
   /**
+   * This method sets the global variable flowNamesInPriorityOrder, an ArrayList to hold
+   * names of flows in priority order.
+   * 
+   * @author sgoddard
    * @param flowNamesInPriorityOrder the flowNamesInPriorityOrder to set
    */
   public void setFlowNamesInPriorityOrder(ArrayList<String> flowNamesInPriorityOrder) {
@@ -307,6 +338,15 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   }
 
 
+  /**
+   * Iterates through the given flow to find the input node name. When found,
+   * gets the node's priority and returns it.
+   * 
+   * @author sgoddard
+   * @param flowName
+   * @param nodeName
+   * @return priority (Integer value) of input node
+   */
   public Integer getFlowPriority(String flowName, String nodeName) {
     var priority = 0;
     var flow = getFlow(flowName);
@@ -321,6 +361,13 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     return priority;
   }
 
+  /**
+   * Method to set a given flow name to a new passed in priority value.
+   * 
+   * @author sgoddard
+   * @param flowName
+   * @param priority
+   */
   public void setFlowPriority(String flowName, Integer priority) {
     var flowNode = getFlow(flowName);
     flowNode.setPriority(priority);
@@ -356,6 +403,13 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     return flowNode.getPeriod();
   }
 
+  /**
+   * Method to return the deadline value (Integer) of the flow name passed in.
+   * 
+   * @author sgoddard
+   * @param flowName
+   * @return deadline Integer value of flowName
+   */
   public Integer getFlowDeadline(String flowName) {
     var flowNode = getFlow(flowName);
     return flowNode.getDeadline();
@@ -386,6 +440,14 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     sortedFlows.forEach((node) -> flowNamesInPriorityOrder.add(node.getName()));
   }
 
+  
+  /**
+   * This method creates a list of Flow objects from the FlowMap using the stream interface, sorts by a
+   * secondary key, then sorts by a primary key. Finally, it creates a new flowNamesInPriorityOrder that
+   * contains the flow names in the requested order.
+   * 
+   * @author sgoddard
+   */
   public void setFlowsInDMorder() {
     /* create a list of Flow objects from the FlowMap using the stream interface. */
     List<Flow> unsortedFlows = flows.values().stream().collect(Collectors.toList());
@@ -403,6 +465,13 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     sortedFlows.forEach((node) -> flowNamesInPriorityOrder.add(node.getName()));
   }
 
+  /**
+   * This setter method creates a list of Flow objects from the FlowMap using the stream interface,
+   * sorting by a secondary key and primary key. Then it creates a new flowNamesInPriorityOrder that contains 
+   * the flow names in the requested order.
+   * 
+   * @author sgoddard
+   */
   public void setFlowsInRMorder() {
     // create a list of Flow objects from the FlowMap using the stream interface.
     List<Flow> unsortedFlows = flows.values().stream().collect(Collectors.toList());
@@ -731,6 +800,14 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     return index;
   }
 
+  /**
+   * This method creates a String array of the node names from the input parameter flowName
+   * in the same order as they exist in the flow specification.
+   * 
+   * @author sgoddard
+   * @param flowName
+   * @return Array of String node names
+   */
   public String[] getNodesInFlow(String flowName) {
     // get the flow node for requested Flow and then loop through the
     // nodes in the flow to create an array of the node names in

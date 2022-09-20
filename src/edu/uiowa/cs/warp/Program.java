@@ -63,6 +63,12 @@ public class Program implements SystemAttributes {
     this.deadlineMisses = new Description();
   }
 
+  /**
+   * Method to cast compatible classes' objects to WorkLoad object.
+   * 
+   * @author sgoddard
+   * @return workLoad object
+   */
   public WorkLoad toWorkLoad() {
     return workLoad;
   }
@@ -1142,6 +1148,12 @@ public class Program implements SystemAttributes {
     scheduleBuilt = schedule;
   }
 
+  /**
+   * Method to get the Table of the current schedule.
+   * 
+   * @author sgoddard
+   * @return scheduleBuilt, a ProgramSchedule object
+   */
   public ProgramSchedule getSchedule() {
     return scheduleBuilt;
   }
@@ -1202,13 +1214,20 @@ public class Program implements SystemAttributes {
     return workLoad.getNumFaults();
   }
 
+  /**
+   * This method creates an array of node names sorted alphabetically and a new mapping from node names to index
+   * in the schedule table. Then it adds the name, index mapping to nodeIndexMap, the HashMap to be returned.
+   * 
+   * @author sgoddard
+   * @return HashMap of node to index mapping
+   */
   public HashMap<String, Integer> getNodeMapIndex() {
     var orderedNodes = workLoad.getNodeNamesOrderedAlphabetically(); // create an array of node
                                                                      // names
-    // sorted alphabetically
+    																 // sorted alphabetically
     var nodeIndexMap = new HashMap<String, Integer>(); // create a new mapping from node names to
                                                        // index in schedule
-    // table
+    												   // table
     var nNodes = orderedNodes.length;
     for (int index = 0; index < nNodes; index++) { // set up the node to index mapping
       var name = orderedNodes[index];
