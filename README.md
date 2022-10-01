@@ -11,9 +11,9 @@ NOTE: To add run parameters, go to Run->Run Configurations. Then go to the Argum
 add flags within the Program Arguments box. Apply and Run
 
 
-o-----------------------------------------------o<br>
-F22-HW2 Partners' Tasks Completed:<br>
-o-----------------------------------------------o<br>
+o-------------------------------------------------------------------o<br>
+F22-HW2 (JavaDoc) Partners' Tasks Completed:<br>
+o-------------------------------------------------------------------o<br>
 ** Ethan Borchard: ** <br>
 - &#35;6 -> Developed JavaDoc comments for the missing summary comment and commented all 
 	attributes and all methods in VisualizationImplementation.java.
@@ -26,3 +26,29 @@ o-----------------------------------------------o<br>
 - &#35;3 -> Developed JavaDoc comments for the missing summary and methods in Channels.java.
 - &#35;4 -> Developed JavaDoc comments for the missing summary and methods in ChannelAnalysis.java.
 - &#35;5 -> Developed JavaDoc comments for the missing summary and methods in ProgramVisualization.java.
+
+o-------------------------------------------------------------------o<br>
+F22-HW3 (JUnit Tests) Partners' Tasks Completed:<br>
+o-------------------------------------------------------------------o<br>
+** Ethan Borchard: ** <br>
+Developed and executed JUnit tests for the following methods in WorkLoad.java:
+- setFlowsInDMorder()
+- getFlowNamesInPriorityOrder()
+- getNodeChannel()
+- getNodesInFlow()
+- setFlowNamesInOriginalOrder()
+- setFlowsInPriorityOrder()
+- getMinPeriod()
+- maxFlowLength()
+- getFlowDeadline()
+- getNodeNamesOrderedAlphabetically() <br>
+
+** Bryce Biwer: ** <br>
+Developed and executed JUnit tests for the following methods in Channels.java:
+- getChannelSet()
+- addNewChannelSet()
+- isEmpty()
+- removeChannel()
+- addChannel()
+- getNumChannels()
+
