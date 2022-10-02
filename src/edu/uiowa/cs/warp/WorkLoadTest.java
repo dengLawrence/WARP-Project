@@ -9,6 +9,9 @@ import org.junit.jupiter.api.Test;
 
 class WorkLoadTest {
 
+	/* ------------------------------
+	 * Begin setFlowsInDMorder tests
+	 * ------------------------------ */
 	@Test
 	void testSetFlowsInDMorder() {
 		//instantiation of a new WorkLoad object using StressTest.txt as test file
@@ -41,7 +44,10 @@ class WorkLoadTest {
 		//check if setFlowsInDMorder sorted in the expected order
 		assertEquals(expectedOrder, DMorder, "check if correct order:");
 	}
-	
+
+	/* ------------------------------
+	 * Begin getFlowNamesInPriorityOrder tests
+	 * ------------------------------ */
 	@Test
 	void testGetFlowNamesInPriorityOrder() {
 		//instantiation of a new WorkLoad object using StressTest.txt as test file
@@ -64,6 +70,9 @@ class WorkLoadTest {
 		assertEquals(expectedEmpty, actualEmpty, "Check if getter retrieved the proper Array List:");
 	}
 	
+	/* ------------------------------
+	 * Begin getNodeChannel tests
+	 * ------------------------------ */
 	@Test
 	void testGetNodeChannel() {
 		//instantiation of a new WorkLoad object using StressTest.txt as test file
@@ -89,6 +98,9 @@ class WorkLoadTest {
 	            });
 	}
 	
+	/* ------------------------------
+	 * Begin getNodesInFlow tests
+	 * ------------------------------ */
 	@Test
 	void testGetNodesInFlow() {
 		WorkLoad wkld = new WorkLoad(1, 0.9, 0.99, "StressTest.txt");
@@ -110,6 +122,9 @@ class WorkLoadTest {
 		assertEquals(expectedEmpty, actualWithIncorrectInput, "Check if else case correctly implemented:");
 	}
 	
+	/* ------------------------------
+	 * Begin setFlowNamesInOriginalOrder tests
+	 * ------------------------------ */
 	@Test
 	void testSetFlowNamesInOriginalOrder() {
 		WorkLoad wkld = new WorkLoad(1, 0.9, 0.99, "StressTest.txt");
@@ -131,6 +146,9 @@ class WorkLoadTest {
 		assertEquals(expectedEmpty, actualEmpty, "Check if setter created the proper Array List:");
 	}
 	
+	/* ------------------------------
+	 * Begin setFlowsInPriorityOrder tests
+	 * ------------------------------ */
 	@Test
 	void testSetFlowsInPriorityOrder() {
 		WorkLoad wkld = new WorkLoad(1, 0.9, 0.99, "StressTest.txt");
@@ -163,7 +181,10 @@ class WorkLoadTest {
 		//check if setFlowsInDMorder sorted in the expected order
 		assertEquals(expectedOrder, priorityOrder, "check if correct order:");
 	}
-
+	
+	/* ------------------------------
+	 * Begin getMinPeriod tests
+	 * ------------------------------ */
 	@Test
 	void testGetMinPeriod() {
 		WorkLoad wkld = new WorkLoad(1, 0.9, 0.99, "StressTest.txt");
@@ -176,7 +197,10 @@ class WorkLoadTest {
 		int testPeriodDefault = wkld2.getMinPeriod();
 		assertEquals(100, testPeriodDefault, "minimum period gotten from Example.txt:");
 		}
-
+	
+	/* ------------------------------
+	 * Begin maxFlowLength tests
+	 * ------------------------------ */
 	@Test
 	void testMaxFlowLength() {
 		//Test of fairly average case with StressTest.txt
@@ -195,6 +219,9 @@ class WorkLoadTest {
 		assertEquals(26, actual3, "Max flow length for LongChain.txt");
 		}
 	
+	/* ------------------------------
+	 * Begin getFlowDeadline tests
+	 * ------------------------------ */
 	@Test
 	void testGetFlowDeadline() {
 		WorkLoad wkld = new WorkLoad(1, 0.9, 0.99, "StressTest.txt");
@@ -214,6 +241,9 @@ class WorkLoadTest {
 		assertEquals(100, testDeadlineFlowNameDNE, "check for a flow name that does not exist:");
 		}
 	
+	/* ------------------------------
+	 * Begin getNodeNamesOrderedAlphabetically tests
+	 * ------------------------------ */
 	@Test
 	void testGetNodeNamesOrderedAlphabetically() {
 		//check a fairly average case with StressTest.txt

@@ -33,7 +33,6 @@ class ChannelsTest {
 	/* --------------------------
 	 * Begin addNewChannelSet tests
 	 * -------------------------- */
-
 	@Test
 	void testAddNewChannelSetBySize() {
 		final var channelSize = 0;
