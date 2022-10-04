@@ -83,6 +83,10 @@ public class Channels {
    * @return HashSet of channels based on timeslot
    */
   public HashSet<String> getChannelSet(Integer timeSlot) {
+    if(checkIfTimeslotIsOutOfBounds(timeSlot)){
+      return null;
+    }
+
     /* get the channel set for this timeSlot */
     HashSet<String> channelSet = new HashSet<String>(channelsAvailable.get(timeSlot));
     return channelSet;
@@ -106,6 +110,10 @@ public class Channels {
    * @return boolean value based on if the channelSet at the given timeSlot is empty
    */
   public Boolean isEmpty(int timeSlot) {
+    if(checkIfTimeslotIsOutOfBounds(timeSlot)){
+      return false;
+    }
+
     ChannelSet channelSet = channelsAvailable.get(timeSlot); // get the channel set for this
                                                              // timeSlot
     return channelSet.isEmpty(); // returns true channel set is empty and false if not
@@ -120,8 +128,17 @@ public class Channels {
    * @return boolean value based on the success of the channel removal at the given timeSlot
    */
   public Boolean removeChannel(int timeSlot, String channel) {
-    Boolean result;
+    if(checkIfTimeslotIsOutOfBounds(timeSlot)){
+      return false;
+    }
     ChannelSet channels = channelsAvailable.get(timeSlot);
+
+    if(!checkIfChannelExists(channels, channel)){
+      if(verbose)
+        System.err.printf("Channel removal failed, channel '%s' does not exist\n", channel);
+    }
+
+    boolean result;
     result = channels.remove(channel);
     return result;
   }
@@ -135,8 +152,19 @@ public class Channels {
    * @return boolean value based on success of channel being added at the given timeSlot
    */
   public Boolean addChannel(int timeSlot, String channel) {
-    Boolean result;
+    if(checkIfTimeslotIsOutOfBounds(timeSlot)){
+      return false;
+    }
+
     ChannelSet channels = channelsAvailable.get(timeSlot); // get a pointer to the channel set
+
+    if(checkIfChannelExists(channels, channel)){ // returns false if channel exists
+      if(verbose)
+        System.err.printf("Channel add failed, channel '%s' already exists\n", channel);
+      return false;
+    }
+
+    boolean result;
     result = channels.add(channel); // remove the channel, returning the result
     return result;
   }
@@ -151,4 +179,17 @@ public class Channels {
     return nChannels;
   }
 
+  private boolean checkIfTimeslotIsOutOfBounds(int timeSlot){
+    if(timeSlot < 0 || timeSlot >= channelsAvailable.size()){
+      if (verbose)
+        System.err.printf("Time slot '%d' does not exist\n", timeSlot);
+      return true;
+    }
+
+    return false;
+  }
+
+  private boolean checkIfChannelExists(ChannelSet channels, String channel){
+    return channels.contains(channel);
+  }
 }

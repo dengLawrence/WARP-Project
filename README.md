@@ -52,3 +52,12 @@ Developed and executed JUnit tests for the following methods in Channels.java:
 - addChannel()
 - getNumChannels()
 
+Modified Channels.java
+- Added checkIfTimeslotIsOutOfBounds method to check if a valid timeSlot is given
+- Added checkIfTimeslotIsOutOfBounds to the flowing methods<br>
+	* getChannelSet
+	* isEmpty
+	* removeChannel
+	* addChannel
+	
+
