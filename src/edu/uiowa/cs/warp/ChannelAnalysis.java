@@ -49,6 +49,17 @@ public class ChannelAnalysis {
     this.programTable = program.getSchedule();
     conflictExists = false;
   }
+  
+  /**
+   * Method to be implemented that gets channelAnalysisTable.
+   * 
+   * @author eborchard
+   * @return ProgramSchedule
+   */
+  public ProgramSchedule getChannelAnalysisTable() {
+      // TODO implement this operation
+      throw new UnsupportedOperationException("not implemented");
+   }
 
   /**
    * Determines whether or not there is a channel conflict.

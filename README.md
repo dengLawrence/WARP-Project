@@ -54,10 +54,14 @@ Developed and executed JUnit tests for the following methods in Channels.java:
 
 Modified Channels.java
 - Added checkIfTimeslotIsOutOfBounds method to check if a valid timeSlot is given
-- Added checkIfTimeslotIsOutOfBounds to the flowing methods<br>
-	* getChannelSet
-	* isEmpty
-	* removeChannel
-	* addChannel
+- Added checkIfTimeslotIsOutOfBounds to the following methods:<br>
+	- getChannelSet,    isEmpty,    removeChannel,    addChannel <br>
 	
+o-------------------------------------------------------------------o<br>
+F22-HW4 (UML Diagrams) Updates Made:<br>
+o-------------------------------------------------------------------o<br>
+- Created a UML diagram for Program that only shows its children and public elements.
+- Created a UML diagram for WorkLoad that shows associated classes and parent classes.
+- Created a UML diagram that consists of all of the Channel*.java classes, with the file name Channel.uml.
+- Added a public method called getChannelAnalysisTable to ChannelAnalysis.java.
 
