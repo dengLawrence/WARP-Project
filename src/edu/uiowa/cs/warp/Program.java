@@ -1,9 +1,12 @@
 package edu.uiowa.cs.warp;
 
 import edu.uiowa.cs.utilities.Utilities;
+import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 
 /**
@@ -968,73 +971,67 @@ public class Program implements SystemAttributes {
     return vacantSlot;
   }
 
+  
+  
+  
+  /**
+   * Description
+   * 
+   * @author sgoddard
+   * @param schedule, the ProgramSchedule to get the prior time slot
+   * @param nodeName, a String of the name of the node
+   * @param currentTime, an Integer of the current time
+   * @param srcNodeIndex, an Integer of the source node index value
+   * @param snkNodeIndex, an Integer of the sink node index value
+   * @return UNKNOWN (a string) to indicate no channel found.
+   */
   private String findNextAvailableChannel(ProgramSchedule schedule, String nodeName,
       Integer currentTime, Integer srcNodeIndex, Integer snkNodeIndex) {
 
-    var newChannel = UNKNOWN; // indicates no channel was available. The caller will need to check
-                              // this result
+    String newChannel = UNKNOWN; // indicates no channel was available. The caller will need to check this result
 
     // create an instance of the Warp DSL class for parsing instructions
-    var dsl = new WarpDSL();
+    WarpDSL dsl = new WarpDSL();
     InstructionTimeSlot priorInstructionTimeSlot;
 
-    var channels = channelsAvailable.getChannelSet(currentTime);
-    if (currentTime > 0) { // get the prior schedule time slot to see what channels were used in
-                           // that slot, which have to be avoided here
+    HashSet<String> channels = channelsAvailable.getChannelSet(currentTime);
+    // get the prior schedule time slot to see what channels were used in that slot, which have to be avoided here
+    if (currentTime > 0) {
       Integer priorTime = currentTime - 1;
       priorInstructionTimeSlot = schedule.get(priorTime); // get a copy of the prior time slot
-      var srcPriorInstruction = priorInstructionTimeSlot.get(srcNodeIndex);
-      var snkPriorInstruction = priorInstructionTimeSlot.get(snkNodeIndex);
+      String srcPriorInstruction = priorInstructionTimeSlot.get(srcNodeIndex);
+      String snkPriorInstruction = priorInstructionTimeSlot.get(snkNodeIndex);
 
-      // extract the channels used by the src and snk nodes in the prior time slot and store them in
-      // an array
-      var instructionParametersArrayList = dsl.getInstructionParameters(srcPriorInstruction); // get
-                                                                                              // the
-                                                                                              // parameters
-                                                                                              // from
-                                                                                              // the
-                                                                                              // instruction
-                                                                                              // in
-                                                                                              // the
-                                                                                              // src
-                                                                                              // node's
-                                                                                              // prior
-                                                                                              // time
-                                                                                              // slot
+      // extract the channels used by the src and snk nodes in the prior time slot and store them in an array
+      
+      // get the parameters from the instruction in the src node's prior time slot
+      ArrayList<InstructionParameters> instructionParametersArrayList = dsl.getInstructionParameters(srcPriorInstruction); 
+            
       for (int i = 0; i < instructionParametersArrayList.size(); i++) {
-        var instructionParameters = instructionParametersArrayList.get(i); // get a copy of the
-                                                                           // paramaters
+    	InstructionParameters instructionParameters = instructionParametersArrayList.get(i); // get a copy of the parameters
         channels.remove(instructionParameters.getChannel());
       }
-      instructionParametersArrayList = dsl.getInstructionParameters(snkPriorInstruction); // get the
-                                                                                          // parameters
-                                                                                          // from
-                                                                                          // the
-                                                                                          // instruction
-                                                                                          // in the
-                                                                                          // snk
-                                                                                          // node's
-                                                                                          // prior
-                                                                                          // time
-                                                                                          // slot
+      // get the parameters from the instruction in the snk node's prior time slot
+      instructionParametersArrayList = dsl.getInstructionParameters(snkPriorInstruction); 
+                                                                       
       for (int i = 0; i < instructionParametersArrayList.size(); i++) {
-        var instructionParameters = instructionParametersArrayList.get(i); // get a copy of the
-                                                                           // paramaters
+    	InstructionParameters instructionParameters = instructionParametersArrayList.get(i); // get a copy of the parameters
         channels.remove(instructionParameters.getChannel());
       }
     }
+    
     Integer channel = workLoad.getNodeChannel(nodeName); // get the last used channel for the node
-    channel++; // increment the channel because we don't use the same channel in consecutive time
-               // slots for the same node
-    if (channel >= getNumChannels()) { // valid range is 0..NumChannels-1. Reset when channel hits
-                                       // max
+    channel++; // increment the channel because we don't use the same channel in consecutive time slots for the same node
+    
+    if (channel >= getNumChannels()) { // valid range is 0..NumChannels-1. Reset when channel hits max
       channel = 0;
     }
-    var channelFound = false;
-    while (!channelFound && !channels.isEmpty()) { // loop until a channel is found or we run out of
-                                                   // channels to assign
-      var channelString = String.valueOf(channel);
-      var channelRemoved = channels.remove(channelString);
+    boolean channelFound = false;
+    
+    // loop until a channel is found or we run out of channels to assign
+    while (!channelFound && !channels.isEmpty()) {
+      String channelString = String.valueOf(channel);
+      boolean channelRemoved = channels.remove(channelString);
       if (channelRemoved) {
         // newChannel has the channel
         newChannel = channelString;
@@ -1042,14 +1039,18 @@ public class Program implements SystemAttributes {
       } else {
         // try another channel
         channel += 1;
-        if (channel >= getNumChannels()) { // valid range is 0..NumChannels-1. Reset when channel
-                                           // hits max
+        if (channel >= getNumChannels()) { // valid range is 0..NumChannels-1. Reset when channel hits max
           channel = 0;
         }
       }
     }
     return newChannel; // returns UNKNOWN to indicate no channel found. This should never happen.
   }
+  
+
+  
+  
+  
 
   public void selectPriority() {
     setScheduleSelected(ScheduleChoices.PRIORITY);

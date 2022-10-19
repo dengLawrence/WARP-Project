@@ -27,15 +27,14 @@ public class ChannelAnalysis {
   private Boolean conflictExists;
 
   /**
-   * Constructor that takes in a WarpInterface and converts it to a a program then sets the program and it's schedule.
+   * Constructor that takes in a WarpInterface and converts it to a a program, calls the other 
+   * class constructor with the Program object parameter then sets the program and it's schedule.
    * 
    * @author sgoddard
    * @param warp WarpInterface to analyze
    */
   ChannelAnalysis(WarpInterface warp) {
-    this.program = warp.toProgram();
-    this.programTable = program.getSchedule();
-    conflictExists = false;
+    this(warp.toProgram());
   }
 
   /**
