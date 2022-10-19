@@ -65,13 +65,10 @@ public class Program implements SystemAttributes {
     this.reportLatency = reportLatency;
     this.deadlineMisses = new Description();
   }
-
-  /**
-   * Method to cast compatible classes' objects to WorkLoad object.
-   * 
-   * @author sgoddard
-   * @return workLoad object
-   */
+/**
+ * Returns the WorkLoad attribute of the Program object.
+ * @return workLoad.
+ */
   public WorkLoad toWorkLoad() {
     return workLoad;
   }
@@ -971,86 +968,128 @@ public class Program implements SystemAttributes {
     return vacantSlot;
   }
 
-  
-  
-  
-  /**
-   * Description
-   * 
-   * @author sgoddard
-   * @param schedule, the ProgramSchedule to get the prior time slot
-   * @param nodeName, a String of the name of the node
-   * @param currentTime, an Integer of the current time
-   * @param srcNodeIndex, an Integer of the source node index value
-   * @param snkNodeIndex, an Integer of the sink node index value
-   * @return UNKNOWN (a string) to indicate no channel found.
-   */
-  private String findNextAvailableChannel(ProgramSchedule schedule, String nodeName,
+  private String archive_findNextAvailableChannel(ProgramSchedule schedule, String nodeName,
       Integer currentTime, Integer srcNodeIndex, Integer snkNodeIndex) {
 
-    String newChannel = UNKNOWN; // indicates no channel was available. The caller will need to check this result
+	// indicates no channel was available. The caller will need to check this result
+    String newChannel = UNKNOWN;
 
     // create an instance of the Warp DSL class for parsing instructions
     WarpDSL dsl = new WarpDSL();
     InstructionTimeSlot priorInstructionTimeSlot;
 
     HashSet<String> channels = channelsAvailable.getChannelSet(currentTime);
-    // get the prior schedule time slot to see what channels were used in that slot, which have to be avoided here
+    
     if (currentTime > 0) {
-      Integer priorTime = currentTime - 1;
-      priorInstructionTimeSlot = schedule.get(priorTime); // get a copy of the prior time slot
-      String srcPriorInstruction = priorInstructionTimeSlot.get(srcNodeIndex);
-      String snkPriorInstruction = priorInstructionTimeSlot.get(snkNodeIndex);
+    	//get the prior schedule time slot to see what channels were used in
+    	//that slot, which have to be avoided here
+    	Integer priorTime = currentTime - 1;
+    	priorInstructionTimeSlot = schedule.get(priorTime); // get a copy of the prior time slot
+    	
+    	String srcPriorInstruction = priorInstructionTimeSlot.get(srcNodeIndex);
+    	String snkPriorInstruction = priorInstructionTimeSlot.get(snkNodeIndex);
+    	
 
-      // extract the channels used by the src and snk nodes in the prior time slot and store them in an array
-      
-      // get the parameters from the instruction in the src node's prior time slot
-      ArrayList<InstructionParameters> instructionParametersArrayList = dsl.getInstructionParameters(srcPriorInstruction); 
-            
-      for (int i = 0; i < instructionParametersArrayList.size(); i++) {
-    	InstructionParameters instructionParameters = instructionParametersArrayList.get(i); // get a copy of the parameters
-        channels.remove(instructionParameters.getChannel());
-      }
-      // get the parameters from the instruction in the snk node's prior time slot
-      instructionParametersArrayList = dsl.getInstructionParameters(snkPriorInstruction); 
-                                                                       
-      for (int i = 0; i < instructionParametersArrayList.size(); i++) {
-    	InstructionParameters instructionParameters = instructionParametersArrayList.get(i); // get a copy of the parameters
-        channels.remove(instructionParameters.getChannel());
-      }
+    	// extract the channels used by the src and snk nodes in the prior time slot and store them in
+    	// an array
+    	
+    		//get the parameters from the instruction in the src node's prior time slot
+    	ArrayList<InstructionParameters> instructionParametersArrayList = dsl.getInstructionParameters(srcPriorInstruction); 
+    	
+    	for (int i = 0; i < instructionParametersArrayList.size(); i++) {
+    		//get a copy of the parameters
+    		InstructionParameters instructionParameters = instructionParametersArrayList.get(i);
+    		channels.remove(instructionParameters.getChannel());
+    	}
+    	
+    		//get the parameters from the instruction in the snk node's prior time slot
+    	instructionParametersArrayList = dsl.getInstructionParameters(snkPriorInstruction);
+    		for (int i = 0; i < instructionParametersArrayList.size(); i++) {
+    			//get a copy of the parameters
+    			InstructionParameters instructionParameters = instructionParametersArrayList.get(i);
+    			channels.remove(instructionParameters.getChannel());
+    		}
     }
+    // get the last used channel for the node
+    Integer channel = workLoad.getNodeChannel(nodeName);
     
-    Integer channel = workLoad.getNodeChannel(nodeName); // get the last used channel for the node
-    channel++; // increment the channel because we don't use the same channel in consecutive time slots for the same node
+    // increment the channel because we don't use the same channel in consecutive time slots for the same node
+    channel++; 
     
-    if (channel >= getNumChannels()) { // valid range is 0..NumChannels-1. Reset when channel hits max
+    // valid range is 0..NumChannels-1. Reset when channel hits max
+    if (channel >= getNumChannels()) {
       channel = 0;
     }
-    boolean channelFound = false;
     
-    // loop until a channel is found or we run out of channels to assign
-    while (!channelFound && !channels.isEmpty()) {
+    
+    boolean channelFound = false;
+    while (!channelFound && !channels.isEmpty()) { // loop until a channel is found or we run out of
+                                                   // channels to assign
       String channelString = String.valueOf(channel);
       boolean channelRemoved = channels.remove(channelString);
+      
+      // newChannel has the channel
       if (channelRemoved) {
-        // newChannel has the channel
-        newChannel = channelString;
-        channelFound = true;
-      } else {
-        // try another channel
-        channel += 1;
-        if (channel >= getNumChannels()) { // valid range is 0..NumChannels-1. Reset when channel hits max
-          channel = 0;
-        }
-      }
+    	  newChannel = channelString;
+    	  channelFound = true;
+      } 
+      // try another channel
+      else {
+    	  channel += 1;
+    	  
+    	  // valid range is 0..NumChannels-1. Reset when channel hits max
+    	  if (channel >= getNumChannels()) {
+        	channel = 0;
+        	}
+      	}
     }
     return newChannel; // returns UNKNOWN to indicate no channel found. This should never happen.
   }
   
-
-  
-  
-  
+  private String findNextAvailableChannel(ProgramSchedule schedule, String nodeName,
+		  Integer currentTime, Integer srcNodeIndex, Integer snkNodeIndex)
+  {
+	  HashSet<String> workingAvailableChannels = channelsAvailable.getChannelSet(currentTime);
+	  
+	  //find the channels used in the prior schedule time slot as they should not be used
+	  if (currentTime > 0)
+	  {
+		  Integer priorTime = currentTime - 1;
+		  
+		  //remove previous channels from working list for both srcNode and snkNode
+		  this.extractChannels(schedule, workingAvailableChannels, srcNodeIndex, priorTime);
+		  this.extractChannels(schedule, workingAvailableChannels, snkNodeIndex, priorTime);
+	  }
+	 
+	  //get the last used channel for the node
+	  Integer lastUsedChannel = workLoad.getNodeChannel(nodeName);
+	  
+	  //increment channel as we don't use the same channel in consecutive time slots
+	  Integer workingChannel = this.advanceChannel(lastUsedChannel);
+	  
+	  //search for next available channel from working set
+	  boolean channelFound = false;
+	  while (!channelFound && !workingAvailableChannels.isEmpty())
+	  {
+		  String foundChannelName = workingChannel.toString();
+		  //channelRemoved is true if the channel removed from the working set,
+		  //making it a valid channel to use
+		  boolean channelRemoved = workingAvailableChannels.remove(foundChannelName);
+		  
+		  //if found a valid channel, return that channel, else continue searching
+		  if (channelRemoved)
+		  {
+			  return foundChannelName;
+		  }
+		  //setup next channel for loop
+		  else
+		  {
+			  workingChannel = this.advanceChannel(workingChannel);
+		  }
+	  }
+	  //return UNKNOWN to indicate no channel found. This should never happen.
+	  return UNKNOWN;
+  }
 
   public void selectPriority() {
     setScheduleSelected(ScheduleChoices.PRIORITY);
@@ -1150,10 +1189,8 @@ public class Program implements SystemAttributes {
   }
 
   /**
-   * Method to get the Table of the current schedule.
-   * 
-   * @author sgoddard
-   * @return scheduleBuilt, a ProgramSchedule object
+   * Returns the ProgramSchedule attribute of the Program object.
+   * @return scheduleBuilt.
    */
   public ProgramSchedule getSchedule() {
     return scheduleBuilt;
@@ -1216,25 +1253,62 @@ public class Program implements SystemAttributes {
   }
 
   /**
-   * This method creates an array of node names sorted alphabetically and a new mapping from node names to index
-   * in the schedule table. Then it adds the name, index mapping to nodeIndexMap, the HashMap to be returned.
+   * Creates a new mapping from node names (sorted alphabetically) to their index in the
+   * schedule table and returns the mapping.
    * 
-   * @author sgoddard
-   * @return HashMap of node to index mapping
+   * @return A HashMap of the node to index mapping. 
    */
   public HashMap<String, Integer> getNodeMapIndex() {
     var orderedNodes = workLoad.getNodeNamesOrderedAlphabetically(); // create an array of node
                                                                      // names
-    																 // sorted alphabetically
+    // sorted alphabetically
     var nodeIndexMap = new HashMap<String, Integer>(); // create a new mapping from node names to
                                                        // index in schedule
-    												   // table
+    // table
     var nNodes = orderedNodes.length;
     for (int index = 0; index < nNodes; index++) { // set up the node to index mapping
       var name = orderedNodes[index];
       nodeIndexMap.put(name, index); // add name, index mapping to NodeIndex map
     }
     return nodeIndexMap;
+  }
+  
+  /**
+   * Helper method for findNextAvailableChannel(...). Finds the channels from
+   * the given node and time slot and removes it from the workingChannelSet. <br> <br>
+   * 
+   * NOTE: Calls methods and modifies the @param workingChannelSet.
+   */
+  private void extractChannels(ProgramSchedule schedule, HashSet<String> workingChannelSet, 
+		  							Integer nodeIndex, Integer timeSlot)
+  {
+	  //create for parsing instructions
+	  WarpDSL dsl = new WarpDSL();
+	  
+	  String priorInstruction = schedule.get(timeSlot).get(nodeIndex);
+
+	  //get the parameters from the instruction in the node's prior time slot
+	  ArrayList<InstructionParameters> instructionParametersList = dsl.getInstructionParameters(priorInstruction); 
+  	
+	  for (int i = 0; i < instructionParametersList.size(); i++) {
+		  //get a copy of the parameters
+		  InstructionParameters instructionParameters = instructionParametersList.get(i);
+		  
+		  //remove parameters from channels
+  		  workingChannelSet.remove(instructionParameters.getChannel());
+	  }
+  }
+  
+  /**
+   * Returns the next channel, rolling over to zero when channel reaches channel length.
+   * 
+   * @return The next channel with rollover.
+   */
+  private Integer advanceChannel(Integer channel)
+  {
+	  if (channel < getNumChannels())
+		  return (channel + 1);
+	  return 0;
   }
 
 }
