@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_1BBjcET6Ee2_n5XNBGdaxw" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_1BBjcUT6Ee2_n5XNBGdaxw" source="codegen">
         <details xmi:id="_1BBjckT6Ee2_n5XNBGdaxw" key="codegenDirectory" value="/cs2820-fall22/src"/>
-        <details xmi:id="_6uCJkET6Ee2_n5XNBGdaxw" key="AssociatedSourceCode" value="/cs2820-fall22/src/edu/uiowa/cs/warp/AbstractMap.java;2633489473/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Activation.java;3634548837/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Activations.java;3305092594/1;/cs2820-fall22/src/edu/uiowa/cs/warp/BasicPoset.java;3238489715/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelAnalysis.java;1458608893/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelVisualization.java;2873127052/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Channels.java;105405152/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelsTest.java;3718395581/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CodeFragment.java;1941462046/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CombinedActivation.java;3978818808/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CommunicationGraph.java;724670632/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ConnectivityPoset.java;3754377617/1;/cs2820-fall22/src/edu/uiowa/cs/warp/DeadlineComparator.java;492899634/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Description.java;2596849957/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Edge.java;1242144003/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FileManager.java;2522714670/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Flow.java;889275975/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FlowMap.java;3735737588/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FlowNodeToActivationMap.java;4234899521/1;/cs2820-fall22/src/edu/uiowa/cs/warp/GraphViz.java;1071888484/1;/cs2820-fall22/src/edu/uiowa/cs/warp/GraphVizListener.java;2126849807/1;/cs2820-fall22/src/edu/uiowa/cs/warp/InputGraphFile.java;937049578/1;/cs2820-fall22/src/edu/uiowa/cs/warp/InstructionTimeSlot.java;3408505142/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatencyAnalysis.java;2064230864/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatencyVisualization.java;2426998793/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatestReleaseTimeComparator.java;1106993157/1;/cs2820-fall22/src/edu/uiowa/cs/warp/MaxPhaseComparator.java;1745026972/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Node.java;1243472081/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NodeMap.java;2177811796/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NonPreemptiveSchedule.java;387408079/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NotImplentedVisualization.java;3646556153/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PeriodComparator.java;3057078727/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Poset.java;4263200805/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PreemptiveSchedule.java;3080876127/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PriorityComparator.java;349151360/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Program.java;2871276497/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ProgramSchedule.java;1770485609/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ProgramVisualization.java;867879725/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReleaseTimeComparator.java;2065273961/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReleaseTimeQueue.java;1776494724/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityAnalysis.java;384175461/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityParameters.java;1976749484/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityRow.java;3195166460/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityTable.java;2918095589/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityVisualization.java;2067458194/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReportVisualization.java;2571131140/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Row.java;3413533457/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SchedulableObjectQueue.java;3263525257/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Schedule.java;3152618411/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ScheduleTable.java;970860350/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ScheduleTime.java;2579980776/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SimulatorInput.java;3699590899/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SortedPeriodQueue.java;3537725478/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SystemAttributes.java;876440066/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SystemFactory.java;4134708055/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Table.java;2577872269/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Visualization.java;2548788944/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationFactory.java;1134295780/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationImplementation.java;1561738288/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationObject.java;823199562/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadListener.java;195958787/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadDescription.java;1981400958/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpInterface.java;2926400465/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpPoset.java;4000167019/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpSystem.java;1603794739/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoad.java;727085344/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpDSL.java;1986156920/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Warp.java;418770348/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadTest.java;2456256290/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SchedulableObject.java;2451757979/1;"/>
+        <details xmi:id="_6uCJkET6Ee2_n5XNBGdaxw" key="AssociatedSourceCode" value="/cs2820-fall22/src/edu/uiowa/cs/warp/AbstractMap.java;2633489473/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Activation.java;3634548837/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Activations.java;3305092594/1;/cs2820-fall22/src/edu/uiowa/cs/warp/BasicPoset.java;3238489715/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelAnalysis.java;2040859700/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelVisualization.java;2873127052/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Channels.java;105405152/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelsTest.java;3718395581/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CodeFragment.java;1941462046/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CombinedActivation.java;3978818808/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CommunicationGraph.java;724670632/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ConnectivityPoset.java;3754377617/1;/cs2820-fall22/src/edu/uiowa/cs/warp/DeadlineComparator.java;492899634/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Description.java;2596849957/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Edge.java;1242144003/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FileManager.java;2522714670/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Flow.java;889275975/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FlowMap.java;3735737588/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FlowNodeToActivationMap.java;4234899521/1;/cs2820-fall22/src/edu/uiowa/cs/warp/GraphViz.java;1071888484/1;/cs2820-fall22/src/edu/uiowa/cs/warp/GraphVizListener.java;2126849807/1;/cs2820-fall22/src/edu/uiowa/cs/warp/InputGraphFile.java;937049578/1;/cs2820-fall22/src/edu/uiowa/cs/warp/InstructionTimeSlot.java;3408505142/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatencyAnalysis.java;2064230864/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatencyVisualization.java;2426998793/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatestReleaseTimeComparator.java;1106993157/1;/cs2820-fall22/src/edu/uiowa/cs/warp/MaxPhaseComparator.java;1745026972/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Node.java;1243472081/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NodeMap.java;2177811796/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NonPreemptiveSchedule.java;387408079/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NotImplentedVisualization.java;3646556153/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PeriodComparator.java;3057078727/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Poset.java;4263200805/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PreemptiveSchedule.java;3080876127/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PriorityComparator.java;349151360/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Program.java;1200693028/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ProgramSchedule.java;1770485609/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ProgramVisualization.java;867879725/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReleaseTimeComparator.java;2065273961/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReleaseTimeQueue.java;1776494724/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityAnalysis.java;384175461/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityParameters.java;1976749484/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityRow.java;3195166460/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityTable.java;2918095589/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityVisualization.java;2067458194/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReportVisualization.java;2571131140/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Row.java;3413533457/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SchedulableObjectQueue.java;3263525257/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Schedule.java;3152618411/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ScheduleTable.java;970860350/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ScheduleTime.java;2579980776/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SimulatorInput.java;3699590899/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SortedPeriodQueue.java;3537725478/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SystemAttributes.java;876440066/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SystemFactory.java;4134708055/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Table.java;2577872269/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Visualization.java;2548788944/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationFactory.java;1134295780/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationImplementation.java;1561738288/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationObject.java;823199562/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadListener.java;195958787/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadDescription.java;1981400958/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpInterface.java;2926400465/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpPoset.java;4000167019/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpSystem.java;1603794739/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoad.java;727085344/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpDSL.java;1986156920/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Warp.java;418770348/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadTest.java;2456256290/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SchedulableObject.java;2451757979/1;"/>
       </contents>
       <contents xmi:type="ecore:EAnnotation" xmi:id="_8PQCUEc3Ee2VGuPmUBocQA" source="preferences">
         <contents xmi:type="ecore:EAnnotation" xmi:id="_8PQCUUc3Ee2VGuPmUBocQA" source="com.yattasolutions.codegen.reverse">
@@ -788,7 +788,7 @@ local connectivity.&#xD;
               </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_2ERJIET6Ee2_n5XNBGdaxw" name="ChannelAnalysis">
-              <ownedComment xmi:id="_84WpsEc3Ee2VGuPmUBocQA">
+              <ownedComment xmi:id="_KndwoE_hEe2CJKd1nB41sw">
                 <body>&lt;h1>Implementation of the ChannelAnalysis class&lt;/h1>&#xD;
 Used to analyze either Program or WarpInterface by converting to program.&#xD;
 Can be used to detect channel conflicts.&#xD;
@@ -808,9 +808,7 @@ Can be used to detect channel conflicts.&#xD;
                   <name xsi:nil="true"/>
                 </ownedParameter>
                 <language>java</language>
-                <body>this.program = warp.toProgram();&#xD;
- this.programTable = program.getSchedule();&#xD;
- conflictExists = false;&#xD;
+                <body>this(warp.toProgram());&#xD;
   </body>
               </ownedBehavior>
               <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_2i93U0T6Ee2_n5XNBGdaxw" name="ChannelAnalysis" specification="_2dPp1UT6Ee2_n5XNBGdaxw">
@@ -834,7 +832,7 @@ Can be used to detect channel conflicts.&#xD;
   </body>
               </ownedBehavior>
               <ownedOperation xmi:id="_2ES-UET6Ee2_n5XNBGdaxw" name="isChannelConflict" method="_2i93VkT6Ee2_n5XNBGdaxw">
-                <ownedComment xmi:id="_84XQw0c3Ee2VGuPmUBocQA">
+                <ownedComment xmi:id="_KneXsU_hEe2CJKd1nB41sw">
                   <body>Determines whether or not there is a channel conflict.&#xD;
    * &#xD;
    * @author sgoddard&#xD;
@@ -848,8 +846,9 @@ Can be used to detect channel conflicts.&#xD;
                 <eAnnotations xmi:id="_2dPp0kT6Ee2_n5XNBGdaxw" source="http://www.eclipse.org/uml2/2.0.0/UML">
                   <details xmi:id="_2dPp00T6Ee2_n5XNBGdaxw" key="create"/>
                 </eAnnotations>
-                <ownedComment xmi:id="_84XQwEc3Ee2VGuPmUBocQA">
-                  <body>Constructor that takes in a WarpInterface and converts it to a a program then sets the program and it's schedule.&#xD;
+                <ownedComment xmi:id="_KndwoU_hEe2CJKd1nB41sw">
+                  <body>Constructor that takes in a WarpInterface and converts it to a a program, calls the other &#xD;
+   * class constructor with the Program object parameter then sets the program and it's schedule.&#xD;
    * &#xD;
    * @author sgoddard&#xD;
    * @param warp WarpInterface to analyze</body>
@@ -861,7 +860,7 @@ Can be used to detect channel conflicts.&#xD;
                 <eAnnotations xmi:id="_2dPp10T6Ee2_n5XNBGdaxw" source="http://www.eclipse.org/uml2/2.0.0/UML">
                   <details xmi:id="_2dPp2ET6Ee2_n5XNBGdaxw" key="create"/>
                 </eAnnotations>
-                <ownedComment xmi:id="_84XQwUc3Ee2VGuPmUBocQA">
+                <ownedComment xmi:id="_Kndwok_hEe2CJKd1nB41sw">
                   <body>Constructor to set the program and it's schedule.&#xD;
    * &#xD;
    * @author sgoddard&#xD;
@@ -871,10 +870,10 @@ Can be used to detect channel conflicts.&#xD;
                 <ownedParameter xmi:id="_2dPp2UT6Ee2_n5XNBGdaxw" type="_2ERJIET6Ee2_n5XNBGdaxw" direction="return"/>
               </ownedOperation>
               <ownedOperation xmi:id="_84U0gEc3Ee2VGuPmUBocQA" name="getChannelAnalysisTable">
-                <ownedComment xmi:id="_84XQwkc3Ee2VGuPmUBocQA">
+                <ownedComment xmi:id="_KneXsE_hEe2CJKd1nB41sw">
                   <body>Method to be implemented that gets channelAnalysisTable.&#xD;
    * &#xD;
-   * @author sgoddard&#xD;
+   * @author eborchard&#xD;
    * @return ProgramSchedule</body>
                 </ownedComment>
                 <ownedParameter xmi:id="_84VbkEc3Ee2VGuPmUBocQA" type="_2HNIYET6Ee2_n5XNBGdaxw" direction="return"/>
@@ -3870,7 +3869,7 @@ the GraphViz contents.</body>
               </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_2GFHAET6Ee2_n5XNBGdaxw" name="LatencyAnalysis">
-              <ownedComment xmi:id="_-pU4EUc3Ee2VGuPmUBocQA">
+              <ownedComment xmi:id="_LUB7sE_hEe2CJKd1nB41sw">
                 <body>@author sgoddard2&#xD;
 @version 1.3</body>
               </ownedComment>
@@ -5464,7 +5463,7 @@ priority schedule for the Poset using numChannels. &#xD;
               </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_2G0G0ET6Ee2_n5XNBGdaxw" name="Program" visibility="public">
-              <ownedComment xmi:id="_-pXUXkc3Ee2VGuPmUBocQA">
+              <ownedComment xmi:id="_KneXsk_hEe2CJKd1nB41sw">
                 <body>@author sgoddard&#xD;
  *</body>
               </ownedComment>
@@ -6604,84 +6603,46 @@ priority schedule for the Poset using numChannels. &#xD;
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
                 </ownedParameter>
                 <language>java</language>
-                <body>var newChannel = UNKNOWN; // indicates no channel was available. The caller will need to check&#xD;
-                           // this result&#xD;
-&#xD;
- // create an instance of the Warp DSL class for parsing instructions&#xD;
- var dsl = new WarpDSL();&#xD;
- InstructionTimeSlot priorInstructionTimeSlot;&#xD;
-&#xD;
- var channels = channelsAvailable.getChannelSet(currentTime);&#xD;
- if (currentTime > 0) { // get the prior schedule time slot to see what channels were used in&#xD;
-                        // that slot, which have to be avoided here&#xD;
-   Integer priorTime = currentTime - 1;&#xD;
-   priorInstructionTimeSlot = schedule.get(priorTime); // get a copy of the prior time slot&#xD;
-   var srcPriorInstruction = priorInstructionTimeSlot.get(srcNodeIndex);&#xD;
-   var snkPriorInstruction = priorInstructionTimeSlot.get(snkNodeIndex);&#xD;
-&#xD;
-   // extract the channels used by the src and snk nodes in the prior time slot and store them in&#xD;
-   // an array&#xD;
-   var instructionParametersArrayList = dsl.getInstructionParameters(srcPriorInstruction); // get&#xD;
-                                                                                           // the&#xD;
-                                                                                           // parameters&#xD;
-                                                                                           // from&#xD;
-                                                                                           // the&#xD;
-                                                                                           // instruction&#xD;
-                                                                                           // in&#xD;
-                                                                                           // the&#xD;
-                                                                                           // src&#xD;
-                                                                                           // node's&#xD;
-                                                                                           // prior&#xD;
-                                                                                           // time&#xD;
-                                                                                           // slot&#xD;
-   for (int i = 0; i &lt; instructionParametersArrayList.size(); i++) {&#xD;
-     var instructionParameters = instructionParametersArrayList.get(i); // get a copy of the&#xD;
-                                                                        // paramaters&#xD;
-     channels.remove(instructionParameters.getChannel());&#xD;
-   }&#xD;
-   instructionParametersArrayList = dsl.getInstructionParameters(snkPriorInstruction); // get the&#xD;
-                                                                                       // parameters&#xD;
-                                                                                       // from&#xD;
-                                                                                       // the&#xD;
-                                                                                       // instruction&#xD;
-                                                                                       // in the&#xD;
-                                                                                       // snk&#xD;
-                                                                                       // node's&#xD;
-                                                                                       // prior&#xD;
-                                                                                       // time&#xD;
-                                                                                       // slot&#xD;
-   for (int i = 0; i &lt; instructionParametersArrayList.size(); i++) {&#xD;
-     var instructionParameters = instructionParametersArrayList.get(i); // get a copy of the&#xD;
-                                                                        // paramaters&#xD;
-     channels.remove(instructionParameters.getChannel());&#xD;
-   }&#xD;
- }&#xD;
- Integer channel = workLoad.getNodeChannel(nodeName); // get the last used channel for the node&#xD;
- channel++; // increment the channel because we don't use the same channel in consecutive time&#xD;
-            // slots for the same node&#xD;
- if (channel >= getNumChannels()) { // valid range is 0..NumChannels-1. Reset when channel hits&#xD;
-                                    // max&#xD;
-   channel = 0;&#xD;
- }&#xD;
- var channelFound = false;&#xD;
- while (!channelFound &amp;&amp; !channels.isEmpty()) { // loop until a channel is found or we run out of&#xD;
-                                                // channels to assign&#xD;
-   var channelString = String.valueOf(channel);&#xD;
-   var channelRemoved = channels.remove(channelString);&#xD;
-   if (channelRemoved) {&#xD;
-     // newChannel has the channel&#xD;
-     newChannel = channelString;&#xD;
-     channelFound = true;&#xD;
-   } else {&#xD;
-     // try another channel&#xD;
-     channel += 1;&#xD;
-     if (channel >= getNumChannels()) { // valid range is 0..NumChannels-1. Reset when channel&#xD;
-                                        // hits max&#xD;
-       channel = 0;&#xD;
-     }&#xD;
-   }&#xD;
- }&#xD;
- return newChannel; // returns UNKNOWN to indicate no channel found. This should never happen.&#xD;
+                <body>HashSet&lt;String> workingAvailableChannels = channelsAvailable.getChannelSet(currentTime);&#xD;
+	  &#xD;
+	  //find the channels used in the prior schedule time slot as they should not be used&#xD;
+	  if (currentTime > 0)&#xD;
+	  {&#xD;
+		  Integer priorTime = currentTime - 1;&#xD;
+		  &#xD;
+		  //remove previous channels from working list for both srcNode and snkNode&#xD;
+		  this.extractChannels(schedule, workingAvailableChannels, srcNodeIndex, priorTime);&#xD;
+		  this.extractChannels(schedule, workingAvailableChannels, snkNodeIndex, priorTime);&#xD;
+	  }&#xD;
+	 &#xD;
+	  //get the last used channel for the node&#xD;
+	  Integer lastUsedChannel = workLoad.getNodeChannel(nodeName);&#xD;
+	  &#xD;
+	  //increment channel as we don't use the same channel in consecutive time slots&#xD;
+	  Integer workingChannel = this.advanceChannel(lastUsedChannel);&#xD;
+	  &#xD;
+	  //search for next available channel from working set&#xD;
+	  boolean channelFound = false;&#xD;
+	  while (!channelFound &amp;&amp; !workingAvailableChannels.isEmpty())&#xD;
+	  {&#xD;
+		  String foundChannelName = workingChannel.toString();&#xD;
+		  //channelRemoved is true if the channel removed from the working set,&#xD;
+		  //making it a valid channel to use&#xD;
+		  boolean channelRemoved = workingAvailableChannels.remove(foundChannelName);&#xD;
+		  &#xD;
+		  //if found a valid channel, return that channel, else continue searching&#xD;
+		  if (channelRemoved)&#xD;
+		  {&#xD;
+			  return foundChannelName;&#xD;
+		  }&#xD;
+		  //setup next channel for loop&#xD;
+		  else&#xD;
+		  {&#xD;
+			  workingChannel = this.advanceChannel(workingChannel);&#xD;
+		  }&#xD;
+	  }&#xD;
+	  //return UNKNOWN to indicate no channel found. This should never happen.&#xD;
+	  return UNKNOWN;&#xD;
   </body>
               </ownedBehavior>
               <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_2jYuHET6Ee2_n5XNBGdaxw" name="selectPriority" specification="_2G9QwET6Ee2_n5XNBGdaxw">
@@ -6908,10 +6869,10 @@ priority schedule for the Poset using numChannels. &#xD;
                 <language>java</language>
                 <body>var orderedNodes = workLoad.getNodeNamesOrderedAlphabetically(); // create an array of node&#xD;
                                                                   // names&#xD;
- 																 // sorted alphabetically&#xD;
+ // sorted alphabetically&#xD;
  var nodeIndexMap = new HashMap&lt;String, Integer>(); // create a new mapping from node names to&#xD;
                                                     // index in schedule&#xD;
- 												   // table&#xD;
+ // table&#xD;
  var nNodes = orderedNodes.length;&#xD;
  for (int index = 0; index &lt; nNodes; index++) { // set up the node to index mapping&#xD;
    var name = orderedNodes[index];&#xD;
@@ -6940,12 +6901,50 @@ priority schedule for the Poset using numChannels. &#xD;
  buildProgram(choice);&#xD;
   </body>
               </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Knb7cE_hEe2CJKd1nB41sw" name="extractChannels" specification="_KnVNwE_hEe2CJKd1nB41sw">
+                <ownedParameter xmi:id="_Knb7cU_hEe2CJKd1nB41sw" name="schedule" type="_2HNIYET6Ee2_n5XNBGdaxw"/>
+                <ownedParameter xmi:id="_Knb7ck_hEe2CJKd1nB41sw" name="workingChannelSet" type="_2dFRwET6Ee2_n5XNBGdaxw"/>
+                <ownedParameter xmi:id="_Knb7c0_hEe2CJKd1nB41sw" name="nodeIndex">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_Knb7dE_hEe2CJKd1nB41sw" name="timeSlot">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </ownedParameter>
+                <language>java</language>
+                <body>//create for parsing instructions&#xD;
+	  WarpDSL dsl = new WarpDSL();&#xD;
+	  &#xD;
+	  String priorInstruction = schedule.get(timeSlot).get(nodeIndex);&#xD;
+&#xD;
+	  //get the parameters from the instruction in the node's prior time slot&#xD;
+	  ArrayList&lt;InstructionParameters> instructionParametersList = dsl.getInstructionParameters(priorInstruction); &#xD;
+  	&#xD;
+	  for (int i = 0; i &lt; instructionParametersList.size(); i++) {&#xD;
+		  //get a copy of the parameters&#xD;
+		  InstructionParameters instructionParameters = instructionParametersList.get(i);&#xD;
+		  &#xD;
+		  //remove parameters from channels&#xD;
+  		  workingChannelSet.remove(instructionParameters.getChannel());&#xD;
+	  }&#xD;
+  </body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KncigE_hEe2CJKd1nB41sw" name="advanceChannel" specification="_KnXC8E_hEe2CJKd1nB41sw">
+                <ownedParameter xmi:id="_KncigU_hEe2CJKd1nB41sw" name="channel">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_Kncigk_hEe2CJKd1nB41sw" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </ownedParameter>
+                <language>java</language>
+                <body>if (channel &lt; getNumChannels())&#xD;
+		  return (channel + 1);&#xD;
+	  return 0;&#xD;
+  </body>
+              </ownedBehavior>
               <ownedOperation xmi:id="_2G3xMET6Ee2_n5XNBGdaxw" name="toWorkLoad" method="_2jXf-kT6Ee2_n5XNBGdaxw">
-                <ownedComment xmi:id="_-pXUX0c3Ee2VGuPmUBocQA">
-                  <body>Method to cast compatible classes' objects to WorkLoad object.&#xD;
-   * &#xD;
-   * @author sgoddard&#xD;
-   * @return workLoad object</body>
+                <ownedComment xmi:id="_KneXs0_hEe2CJKd1nB41sw">
+                  <body>Returns the WorkLoad attribute of the Program object.&#xD;
+@return workLoad.</body>
                 </ownedComment>
                 <ownedParameter xmi:id="_2eQ9gkT6Ee2_n5XNBGdaxw" type="_2I6YkET6Ee2_n5XNBGdaxw" direction="return"/>
               </ownedOperation>
@@ -7030,11 +7029,9 @@ priority schedule for the Poset using numChannels. &#xD;
               <ownedOperation xmi:id="_2G9QwkT6Ee2_n5XNBGdaxw" name="selectDM" method="_2jYuHkT6Ee2_n5XNBGdaxw"/>
               <ownedOperation xmi:id="_2G9Qw0T6Ee2_n5XNBGdaxw" name="selectRtHART" method="_2jYuH0T6Ee2_n5XNBGdaxw"/>
               <ownedOperation xmi:id="_2G930ET6Ee2_n5XNBGdaxw" name="getSchedule" method="_2jZVIkT6Ee2_n5XNBGdaxw">
-                <ownedComment xmi:id="_-pXUYEc3Ee2VGuPmUBocQA">
-                  <body>Method to get the Table of the current schedule.&#xD;
-   * &#xD;
-   * @author sgoddard&#xD;
-   * @return scheduleBuilt, a ProgramSchedule object</body>
+                <ownedComment xmi:id="_KneXtU_hEe2CJKd1nB41sw">
+                  <body>Returns the ProgramSchedule attribute of the Program object.&#xD;
+   * @return scheduleBuilt.</body>
                 </ownedComment>
                 <ownedParameter xmi:id="_2eUn4ET6Ee2_n5XNBGdaxw" type="_2HNIYET6Ee2_n5XNBGdaxw" direction="return"/>
               </ownedOperation>
@@ -7093,12 +7090,11 @@ priority schedule for the Poset using numChannels. &#xD;
                 </ownedParameter>
               </ownedOperation>
               <ownedOperation xmi:id="_2HFMkkT6Ee2_n5XNBGdaxw" name="getNodeMapIndex" method="_2jZ8OkT6Ee2_n5XNBGdaxw">
-                <ownedComment xmi:id="_-pXUYUc3Ee2VGuPmUBocQA">
-                  <body>This method creates an array of node names sorted alphabetically and a new mapping from node names to index&#xD;
-   * in the schedule table. Then it adds the name, index mapping to nodeIndexMap, the HashMap to be returned.&#xD;
+                <ownedComment xmi:id="_Kne-wE_hEe2CJKd1nB41sw">
+                  <body>Creates a new mapping from node names (sorted alphabetically) to their index in the&#xD;
+   * schedule table and returns the mapping.&#xD;
    * &#xD;
-   * @author sgoddard&#xD;
-   * @return HashMap of node to index mapping</body>
+   * @return A HashMap of the node to index mapping.</body>
                 </ownedComment>
                 <ownedParameter xmi:id="_2giOYkT6Ee2_n5XNBGdaxw" type="_2dC1gET6Ee2_n5XNBGdaxw" direction="return"/>
               </ownedOperation>
@@ -7168,6 +7164,17 @@ priority schedule for the Poset using numChannels. &#xD;
                 </ownedParameter>
               </ownedOperation>
               <ownedOperation xmi:id="_2eTZwET6Ee2_n5XNBGdaxw" name="findNextAvailableChannel" visibility="private" method="_2jYuFUT6Ee2_n5XNBGdaxw">
+                <ownedComment xmi:id="_KneXtE_hEe2CJKd1nB41sw">
+                  <body>For a given a node, returns the best channel to be used next in the schedule.&#xD;
+   * &#xD;
+   * @author sgoddard&#xD;
+   * @param schedule, the ProgramSchedule to get the prior time slot&#xD;
+   * @param nodeName, a String of the name of the node&#xD;
+   * @param currentTime, an Integer of the current time&#xD;
+   * @param srcNodeIndex, an Integer of the source node index value&#xD;
+   * @param snkNodeIndex, an Integer of the sink node index value&#xD;
+   * @return UNKNOWN (a string) to indicate no channel found.</body>
+                </ownedComment>
                 <ownedParameter xmi:id="_2eTZwUT6Ee2_n5XNBGdaxw" name="schedule" type="_2HNIYET6Ee2_n5XNBGdaxw"/>
                 <ownedParameter xmi:id="_2eTZwkT6Ee2_n5XNBGdaxw" name="nodeName">
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -7221,6 +7228,43 @@ priority schedule for the Poset using numChannels. &#xD;
                   <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
                 </ownedParameter>
                 <ownedParameter xmi:id="_-HjAtEc3Ee2VGuPmUBocQA" type="_2G0G0ET6Ee2_n5XNBGdaxw" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_KnVNwE_hEe2CJKd1nB41sw" name="extractChannels" visibility="private" method="_Knb7cE_hEe2CJKd1nB41sw">
+                <ownedComment xmi:id="_Kne-wU_hEe2CJKd1nB41sw">
+                  <body>Helper method for findNextAvailableChannel(...). Finds the channels from&#xD;
+   * the given node and time slot and removes it from the workingChannelSet. &lt;br> &lt;br>&#xD;
+   * &#xD;
+   * NOTE: Calls methods and modifies the @param workingChannelSet.&#xD;
+   * &#xD;
+   * @author sgoddard&#xD;
+   * @param schedule, the ProgramSchedule to get prior instruction&#xD;
+   * @param workingChannelSet, a String HashSet of channels that are potentially viable&#xD;
+   * @param nodeIndex, an Integer representing the node&#xD;
+   * @param timeSlot, an Integer representing the time slot</body>
+                </ownedComment>
+                <ownedParameter xmi:id="_KnVNwU_hEe2CJKd1nB41sw" name="schedule" type="_2HNIYET6Ee2_n5XNBGdaxw"/>
+                <ownedParameter xmi:id="_KnVNwk_hEe2CJKd1nB41sw" name="workingChannelSet" type="_2dFRwET6Ee2_n5XNBGdaxw"/>
+                <ownedParameter xmi:id="_KnVNw0_hEe2CJKd1nB41sw" name="nodeIndex">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_KnVNxE_hEe2CJKd1nB41sw" name="timeSlot">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:id="_KnXC8E_hEe2CJKd1nB41sw" name="advanceChannel" visibility="private" method="_KncigE_hEe2CJKd1nB41sw">
+                <ownedComment xmi:id="_Kne-wk_hEe2CJKd1nB41sw">
+                  <body>Returns the next channel, rolling over to zero when channel reaches channel length.&#xD;
+   * &#xD;
+   * @author sgoddard&#xD;
+   * @param channel, an Integer of the given channel&#xD;
+   * @return The next channel with rollover.</body>
+                </ownedComment>
+                <ownedParameter xmi:id="_KnXC8U_hEe2CJKd1nB41sw" name="channel">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_KnXqAE_hEe2CJKd1nB41sw" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </ownedParameter>
               </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_2HNIYET6Ee2_n5XNBGdaxw" name="ProgramSchedule">
@@ -15144,8 +15188,9 @@ on the arguments given on runtime. Outputs a file with visualization.&lt;/p>&#xD
   <UMLLabProfile:Reference xmi:id="_2k-pg0T6Ee2_n5XNBGdaxw" base_Element="_2k-pgUT6Ee2_n5XNBGdaxw"/>
   <UMLLabProfile:Reference xmi:id="_2k_QkkT6Ee2_n5XNBGdaxw" base_Element="_2k_QkET6Ee2_n5XNBGdaxw"/>
   <UMLLabProfile:Patch xmi:id="__mx-0Ec3Ee2VGuPmUBocQA" base_Element="_2FR1wET6Ee2_n5XNBGdaxw" patchText="@@ -359,12 +359,8 @@&#xA; tate&#xA;-()()&#xA;  %7B%0D%0A&#xA;" conflicting="false"/>
-  <UMLLabProfile:Patch xmi:id="__myl4Ec3Ee2VGuPmUBocQA" base_Element="_2GFHAET6Ee2_n5XNBGdaxw" patchText="@@ -192,22 +192,25 @@&#xA; is %7B%0D%0A%0D%0A&#xA;-public&#xA;+  private&#xA;  static &#xA;@@ -254,22 +254,25 @@&#xA; MISS%22;%0D%0A&#xA;-public&#xA;+  private&#xA;  static &#xA;" conflicting="false"/>
   <UMLLabProfile:Patch xmi:id="__mzM8Ec3Ee2VGuPmUBocQA" base_Element="_2H_ykET6Ee2_n5XNBGdaxw" patchText="@@ -117,12 +117,8 @@&#xA; ices&#xA;-()()&#xA;  %7B%0D%0A&#xA;" conflicting="false"/>
   <UMLLabProfile:Patch xmi:id="__mz0AEc3Ee2VGuPmUBocQA" base_Element="_2IL_0ET6Ee2_n5XNBGdaxw" patchText="@@ -145,28 +145,24 @@&#xA; ystemChoices&#xA;-()()&#xA;  %7B%0D%0A    SOUR&#xA;@@ -288,12 +288,8 @@&#xA; ices&#xA;-()()&#xA;  %7B%0D%0A&#xA;" conflicting="false"/>
   <UMLLabProfile:Patch xmi:id="__m0bEEc3Ee2VGuPmUBocQA" base_Element="_2JUoQET6Ee2_n5XNBGdaxw" patchText="@@ -136,122 +136,8 @@&#xA;  */%0D&#xA;-%0Aimport edu.uiowa.cs.warp.WarpDSL.InstructionParameters;%0D%0Aimport edu.uiowa.cs.warp.WarpDSL.InstructionParameters;%0D&#xA; %0A%0D%0Ai&#xA;" conflicting="false"/>
+  <UMLLabProfile:Generics xmi:id="_KnWb4E_hEe2CJKd1nB41sw" genericsValue="String" base_Element="_KnVNwk_hEe2CJKd1nB41sw"/>
+  <UMLLabProfile:Patch xmi:id="_Lk96sE_hEe2CJKd1nB41sw" base_Element="_2GFHAET6Ee2_n5XNBGdaxw" patchText="@@ -254,22 +254,25 @@&#xA; MISS%22;%0D%0A&#xA;-public&#xA;+  private&#xA;  static &#xA;" conflicting="false"/>
 </xmi:XMI>

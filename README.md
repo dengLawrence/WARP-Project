@@ -70,7 +70,15 @@ F22-HW5 (Refactoring) Partners' Tasks Completed:<br>
 o-------------------------------------------------------------------o<br>
 ** Ethan Borchard: ** <br>
 Refactored the implementation of findNextAvailableChannel() in the Program class.
+- Created JavaDoc for each method
+- Updated Program Class UML
 
 ** Alex Lenaers: ** <br>
+Main refactoring of the implementation of findNextAvailableChannel() in the Program class.
+- Cleaned up comments
+- Created helper methods
+- Changed to static variable types
+- Changed variable names to be more descriptive
+
 
 

@@ -967,85 +967,18 @@ public class Program implements SystemAttributes {
     }
     return vacantSlot;
   }
-
-  private String archive_findNextAvailableChannel(ProgramSchedule schedule, String nodeName,
-      Integer currentTime, Integer srcNodeIndex, Integer snkNodeIndex) {
-
-	// indicates no channel was available. The caller will need to check this result
-    String newChannel = UNKNOWN;
-
-    // create an instance of the Warp DSL class for parsing instructions
-    WarpDSL dsl = new WarpDSL();
-    InstructionTimeSlot priorInstructionTimeSlot;
-
-    HashSet<String> channels = channelsAvailable.getChannelSet(currentTime);
-    
-    if (currentTime > 0) {
-    	//get the prior schedule time slot to see what channels were used in
-    	//that slot, which have to be avoided here
-    	Integer priorTime = currentTime - 1;
-    	priorInstructionTimeSlot = schedule.get(priorTime); // get a copy of the prior time slot
-    	
-    	String srcPriorInstruction = priorInstructionTimeSlot.get(srcNodeIndex);
-    	String snkPriorInstruction = priorInstructionTimeSlot.get(snkNodeIndex);
-    	
-
-    	// extract the channels used by the src and snk nodes in the prior time slot and store them in
-    	// an array
-    	
-    		//get the parameters from the instruction in the src node's prior time slot
-    	ArrayList<InstructionParameters> instructionParametersArrayList = dsl.getInstructionParameters(srcPriorInstruction); 
-    	
-    	for (int i = 0; i < instructionParametersArrayList.size(); i++) {
-    		//get a copy of the parameters
-    		InstructionParameters instructionParameters = instructionParametersArrayList.get(i);
-    		channels.remove(instructionParameters.getChannel());
-    	}
-    	
-    		//get the parameters from the instruction in the snk node's prior time slot
-    	instructionParametersArrayList = dsl.getInstructionParameters(snkPriorInstruction);
-    		for (int i = 0; i < instructionParametersArrayList.size(); i++) {
-    			//get a copy of the parameters
-    			InstructionParameters instructionParameters = instructionParametersArrayList.get(i);
-    			channels.remove(instructionParameters.getChannel());
-    		}
-    }
-    // get the last used channel for the node
-    Integer channel = workLoad.getNodeChannel(nodeName);
-    
-    // increment the channel because we don't use the same channel in consecutive time slots for the same node
-    channel++; 
-    
-    // valid range is 0..NumChannels-1. Reset when channel hits max
-    if (channel >= getNumChannels()) {
-      channel = 0;
-    }
-    
-    
-    boolean channelFound = false;
-    while (!channelFound && !channels.isEmpty()) { // loop until a channel is found or we run out of
-                                                   // channels to assign
-      String channelString = String.valueOf(channel);
-      boolean channelRemoved = channels.remove(channelString);
-      
-      // newChannel has the channel
-      if (channelRemoved) {
-    	  newChannel = channelString;
-    	  channelFound = true;
-      } 
-      // try another channel
-      else {
-    	  channel += 1;
-    	  
-    	  // valid range is 0..NumChannels-1. Reset when channel hits max
-    	  if (channel >= getNumChannels()) {
-        	channel = 0;
-        	}
-      	}
-    }
-    return newChannel; // returns UNKNOWN to indicate no channel found. This should never happen.
-  }
   
+  /**
+   * For a given a node, returns the best channel to be used next in the schedule.
+   * 
+   * @author sgoddard
+   * @param schedule, the ProgramSchedule to get the prior time slot
+   * @param nodeName, a String of the name of the node
+   * @param currentTime, an Integer of the current time
+   * @param srcNodeIndex, an Integer of the source node index value
+   * @param snkNodeIndex, an Integer of the sink node index value
+   * @return UNKNOWN (a string) to indicate no channel found.
+   */
   private String findNextAvailableChannel(ProgramSchedule schedule, String nodeName,
 		  Integer currentTime, Integer srcNodeIndex, Integer snkNodeIndex)
   {
@@ -1278,6 +1211,12 @@ public class Program implements SystemAttributes {
    * the given node and time slot and removes it from the workingChannelSet. <br> <br>
    * 
    * NOTE: Calls methods and modifies the @param workingChannelSet.
+   * 
+   * @author sgoddard
+   * @param schedule, the ProgramSchedule to get prior instruction
+   * @param workingChannelSet, a String HashSet of channels that are potentially viable
+   * @param nodeIndex, an Integer representing the node
+   * @param timeSlot, an Integer representing the time slot
    */
   private void extractChannels(ProgramSchedule schedule, HashSet<String> workingChannelSet, 
 		  							Integer nodeIndex, Integer timeSlot)
@@ -1302,6 +1241,8 @@ public class Program implements SystemAttributes {
   /**
    * Returns the next channel, rolling over to zero when channel reaches channel length.
    * 
+   * @author sgoddard
+   * @param channel, an Integer of the given channel
    * @return The next channel with rollover.
    */
   private Integer advanceChannel(Integer channel)
