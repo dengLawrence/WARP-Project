@@ -80,5 +80,16 @@ Main refactoring of the implementation of findNextAvailableChannel() in the Prog
 - Changed to static variable types
 - Changed variable names to be more descriptive
 
+### F22-Project:
+**Team Members**:
+- Alex Lenaers
+- David Lin
+- Ethan Borchard
+- Lawrence Deng
+
+o--------o<br>
+**Sprint 1**<br>
+o--------o<br>
+
 
 
