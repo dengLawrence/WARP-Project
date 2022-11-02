@@ -79,6 +79,7 @@ Main refactoring of the implementation of findNextAvailableChannel() in the Prog
 - Created helper methods
 - Changed to static variable types
 - Changed variable names to be more descriptive
+<br> <br> <br>
 
 ### F22-Project:
 **Team Members**:
@@ -86,10 +87,36 @@ Main refactoring of the implementation of findNextAvailableChannel() in the Prog
 - David Lin
 - Ethan Borchard
 - Lawrence Deng
+<br>
 
-o--------o<br>
-**Sprint 1**<br>
-o--------o<br>
+**Project Description:**
+The ultimate aim of this project is to complete the ChannelAnalysis and ChannelVisualisation classes so that they create *.ch files and evaluate
+the channel allocation of WARP flows, as requested in the Warp main program when the runtime configuration option -ca is used.
+
+-----------------------------**Sprint 1**-----------------------------<br>
+<br>
+**Tasks to Be Done:**
+- README.md Documentation: Lawrence
+- UML Sequence Diagram: David
+- Design methods for ChannelVisualization:
+- Design test cases for ChannelVisualization:
+- 
+- ChannelVisualization Methods: TBD
+- ChannelVisualization JavaDoc: TBD
+- ChannelVisualization JUnit Tests: TBD
+- ChannelAnalysis Methods: TBD
+- ChannelAnalysis JavaDoc: TBD
+- ChannelAnalysis JUnit Tests: TBD
+<br>
+
+**Other Artifacts:**
+- UML Sequence Diagram
+- Method Design Documents
+<br>
+
+**Record/Timeline:**
+- 10/26/2022 First team meeting in lab.
+- 10/31/2022 Team meeting to discuss sequence diagram and task designation for Sprint 1 delivery.
 
 
 
