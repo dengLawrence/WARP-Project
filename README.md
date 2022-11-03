@@ -96,27 +96,31 @@ the channel allocation of WARP flows, as requested in the Warp main program when
 -----------------------------**Sprint 1**-----------------------------<br>
 <br>
 **Tasks to Be Done:**
+Sprint 1:
 - README.md Documentation: Lawrence
 - UML Sequence Diagram: David
-- Design methods for ChannelVisualization:
+- Design methods for ChannelVisualization: Ethan
+- UML Class Diagrams: Ethan
 - Design test cases for ChannelVisualization:
-- 
-- ChannelVisualization Methods: TBD
+Later Sprints:
+- ChannelVisualization Methods Implementation: TBD
 - ChannelVisualization JavaDoc: TBD
 - ChannelVisualization JUnit Tests: TBD
-- ChannelAnalysis Methods: TBD
+- ChannelAnalysis Methods Implementation: TBD
 - ChannelAnalysis JavaDoc: TBD
 - ChannelAnalysis JUnit Tests: TBD
 <br>
 
-**Other Artifacts:**
+**Project Artifacts:**
 - UML Sequence Diagram
+- UML Class Diagram for ChannelVisualization (update as methods created)
+- UML Class Diagram for ChannelAnalysis (update as methods created)
 - Method Design Documents
 <br>
 
 **Record/Timeline:**
-- 10/26/2022 First team meeting in lab.
-- 10/31/2022 Team meeting to discuss sequence diagram and task designation for Sprint 1 delivery.
-
+- 10/26/2022 : First team meeting in lab.
+- 10/31/2022 : Team meeting to discuss sequence diagram and task designation for Sprint 1 delivery.
+- 11/2/2022 : Lab meeting - Began discussing methods needed to meet project requirements and completed sketch of sequence diagram. 
 
 
