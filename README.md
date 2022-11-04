@@ -89,20 +89,34 @@ Main refactoring of the implementation of findNextAvailableChannel() in the Prog
 - Lawrence Deng
 <br>
 
-**Project Description:**
-The ultimate aim of this project is to complete the ChannelAnalysis and ChannelVisualisation classes so that they create *.ch files and evaluate
-the channel allocation of WARP flows, as requested in the Warp main program when the runtime configuration option -ca is used.
+**Project Description:**<br>
+
+The ultimate aim of this project is to complete the ChannelAnalysis and ChannelVisualization classes so that they 
+create *.ch files and evaluate the channel allocation of WARP flows, as requested in the Warp main program when the
+runtime configuration option -ca is used. To do this, method(s) must be implemented within the ChannelAnalysis class
+to correctly analyze and return the state of each channel, and method(s) must be implemented within the ChannelVisualization
+class to correctly visualize and display the information found in ChannelAnalysis.
+<br>
+
+**Project Schedule:**<br>
+
+Sprint 1 (Due Nov. 8th): Create high level plan and design documents in addition to a UML Sequence diagram. <br>
+Sprint 2 (Due Nov. 18th): ChannelVisualization implementation, documentation, and testing. <br>
+Sprint 3 (Due Dec. 9th): ChannelAnalysis implementation, documentation, and testing. System documentation and testing. <br>
 
 -----------------------------**Sprint 1**-----------------------------<br>
 <br>
-**Tasks to Be Done:**
-Sprint 1:
+**Tasks to Be Done:**<br>
+
+Sprint 1: <br>
 - README.md Documentation: Lawrence
 - UML Sequence Diagram: David
 - Design methods for ChannelVisualization: Ethan
 - UML Class Diagrams: Ethan
-- Design test cases for ChannelVisualization:
-Later Sprints:
+<br>
+
+Later Sprints: <br>
+- Design test cases for ChannelVisualization: TBD
 - ChannelVisualization Methods Implementation: TBD
 - ChannelVisualization JavaDoc: TBD
 - ChannelVisualization JUnit Tests: TBD
@@ -111,10 +125,10 @@ Later Sprints:
 - ChannelAnalysis JUnit Tests: TBD
 <br>
 
-**Project Artifacts:**
+**Other Project Artifacts:**
 - UML Sequence Diagram
-- UML Class Diagram for ChannelVisualization (update as methods created)
-- UML Class Diagram for ChannelAnalysis (update as methods created)
+- UML Class Diagram for ChannelVisualization (updated as methods are created)
+- UML Class Diagram for ChannelAnalysis (updated as methods are created)
 - Method Design Documents
 <br>
 
