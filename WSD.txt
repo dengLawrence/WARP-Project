@@ -1,6 +1,18 @@
 title Warp Sequence Diagram
 
-Warp->ChannelAnalysis:caRequested 
-ChannelAnalysis-->Warp:True or False flag
-Warp->ChannelAnalysis:If False flag, ???
-Warp->VisualizationFactory: If True Flag, visualize(warp, SystemChoices.Channel)
+User->Warp: calls caRequested
+Warp->Visualization Factory: visualize()
+Visualization Factory->Visualization Implementation: createProgramVisualization()
+Visualization Implementation->Visualization Implementation: createVisualization()
+Visualization Implementation->Channel Visualization: createVisualization()
+Channel Visualization->Warp System: calls Channel Visualization constructor
+Warp System->Channel Analysis: toChannelAnalysis()
+Channel Analysis->Channel Analysis: Analysis
+Channel Analysis-->Channel Visualization: returns Channel Analysis object
+Channel Visualization-->Visualization Implementation: returns Channel Visualization object
+Visualization Implementation->Channel Visualization: createVisualization()
+Channel Visualization-->Visualization Implementation: returns Description object
+Visualization Implementation-->Visualization Factory: returns Visualization Implementation object
+Visualization Factory-->Warp: returns Visualization object
+User->Visualization Implementation: writes toFile()
+Visualization Implementation->Output: calls toFile()

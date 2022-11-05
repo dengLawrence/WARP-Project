@@ -135,6 +135,7 @@ Later Sprints: <br>
 **Record/Timeline:**
 - 10/26/2022 : First team meeting in lab.
 - 10/31/2022 : Team meeting to discuss sequence diagram and task designation for Sprint 1 delivery.
-- 11/2/2022 : Lab meeting - Began discussing methods needed to meet project requirements and completed sketch of sequence diagram. 
+- 11/2/2022 : Lab meeting - Began discussing methods needed to meet project requirements and completed sketch of sequence diagram.
+- 11/4/2022 : Warp Sequence Diagram is uploaded. -David
 
 
