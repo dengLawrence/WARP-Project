@@ -14,5 +14,5 @@ Visualization Implementation->Channel Visualization: createVisualization()
 Channel Visualization-->Visualization Implementation: returns Description object
 Visualization Implementation-->Visualization Factory: returns Visualization Implementation object
 Visualization Factory-->Warp: returns Visualization object
-User->Visualization Implementation: writes toFile()
-Visualization Implementation->Output: calls toFile()
+Warp->Visualization Implementation: calls toFile()
+Visualization Implementation->Output: writes toFile()
