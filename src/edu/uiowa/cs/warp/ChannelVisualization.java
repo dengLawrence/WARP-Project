@@ -23,4 +23,6 @@ public class ChannelVisualization extends VisualizationObject {
     this.warp = warp;
     this.ca = warp.toChannelAnalysis();
   }
+  
+  
 }

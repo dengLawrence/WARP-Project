@@ -109,10 +109,10 @@ Sprint 3 (Due Dec. 9th): ChannelAnalysis implementation, documentation, and test
 **Tasks to Be Done:**<br>
 
 Sprint 1: <br>
-- README.md Documentation: Lawrence
-- UML Sequence Diagram: David
-- Design methods for ChannelVisualization: Ethan
-- UML Class Diagrams: Ethan
+- README.md Layout and Documentation: Lawrence
+- Finalized UML Sequence Diagram: David
+- Create method stubs for potential ChannelVisualization methods: Ethan
+- ChannelVisualization UML Class Diagram: Ethan
 <br>
 
 Later Sprints: <br>
@@ -125,10 +125,10 @@ Later Sprints: <br>
 - ChannelAnalysis JUnit Tests: TBD
 <br>
 
-**Other Project Artifacts:**
-- UML Sequence Diagram
-- UML Class Diagram for ChannelVisualization (updated as methods are created)
-- UML Class Diagram for ChannelAnalysis (updated as methods are created)
+**Other Project Artifacts:** <br>
+See F22 Project Plan Documents folder:
+- UML Sequence Diagram (WSD.txt and WSD.png)
+- UML Class Diagram for ChannelVisualization (ChannelVisualization.umlcd)
 - Method Design Documents
 <br>
 
@@ -137,5 +137,6 @@ Later Sprints: <br>
 - 10/31/2022 : Team meeting to discuss sequence diagram and task designation for Sprint 1 delivery.
 - 11/2/2022 : Lab meeting - Began discussing methods needed to meet project requirements and completed sketch of sequence diagram.
 - 11/4/2022 : Warp Sequence Diagram is uploaded. -David
+- 11/6/2022 : ChannelVisualization UML class diagram and test classes for ChannelVisualization & ChannelAnalysis classes created. -Ethan
 
 
