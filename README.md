@@ -126,7 +126,7 @@ Later Sprints: <br>
 <br>
 
 **Other Project Artifacts:** <br>
-See F22 Project Plan Documents folder:
+See *Project Plan Files*:
 - UML Sequence Diagram (WSD.txt and WSD.png)
 - UML Class Diagram for ChannelVisualization (ChannelVisualization.umlcd)
 - Method Design Documents
