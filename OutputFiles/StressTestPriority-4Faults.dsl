@@ -1,4 +1,4 @@
-// Course CS2820 Authentication Tag: /UWpleyYjl8MPg43hV71QF/NmTMDkDich6hYLM2ZN9TZgTivHqCgJ3I404c+J0PKUgHz+uNEYLGABiRVVA4k/xzVHjkDQA1P5l0xt1wWHnQ=
+// Course CS2820 Authentication Tag: +3n0c29DI0h09UlhlMD05efVBUauRy4weU7oEXqm5N/2KEtSAFRqayF/GqM/D0KJjkoKU/hcKbxBINH3KxMf6hzVHjkDQA1P5l0xt1wWHnQ=
 WARP system for graph StressTest created with the following parameters:
 Scheduler Name:	Priority
 numFaults:	4

@@ -120,16 +120,19 @@ Later Sprints: <br>
 - ChannelVisualization Methods Implementation: TBD
 - ChannelVisualization JavaDoc: TBD
 - ChannelVisualization JUnit Tests: TBD
+- Sprint 2 README.md updates: TBD
+<br><br>
 - ChannelAnalysis Methods Implementation: TBD
 - ChannelAnalysis JavaDoc: TBD
 - ChannelAnalysis JUnit Tests: TBD
+- Sprint 3 README.md updates: TBD
 <br>
 
 **Other Project Artifacts:** <br>
 See *Project Plan Files*:
-- UML Sequence Diagram (WSD.txt and WSD.png)
-- UML Class Diagram for ChannelVisualization (ChannelVisualization.umlcd)
-- Method Design Documents
+- UML Sequence Diagram (*WSD.txt* and *WSD.png*)
+- UML Class Diagram for ChannelVisualization (*ChannelVisualization.umlcd*)
+- Method Design File (*MethodIdeas.md*)
 <br>
 
 **Record/Timeline:**
@@ -138,5 +141,6 @@ See *Project Plan Files*:
 - 11/2/2022 : Lab meeting - Began discussing methods needed to meet project requirements and completed sketch of sequence diagram.
 - 11/4/2022 : Warp Sequence Diagram is uploaded. -David
 - 11/6/2022 : ChannelVisualization UML class diagram and test classes for ChannelVisualization & ChannelAnalysis classes created. -Ethan
+- 11/7/2022 : ChannelVisualization placeholder methods were created and the method design file (*MethodIdeas.md*) was created. -Ethan and Lawrence
 
 
