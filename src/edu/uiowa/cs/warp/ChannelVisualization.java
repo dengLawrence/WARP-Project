@@ -19,43 +19,34 @@ public class ChannelVisualization extends VisualizationObject {
   private static final String OBJECT_NAME = "Channel Analysis";
   private WarpInterface warp;
   private ChannelAnalysis ca;
-  
-  private Program program;
-  
-  private ProgramSchedule sourceCode;
 
   ChannelVisualization(WarpInterface warp) {
     super(new FileManager(), warp, SOURCE_SUFFIX);
     this.warp = warp;
-    this.program = warp.toProgram();
-    this.sourceCode = program.getSchedule();
     this.ca = warp.toChannelAnalysis();
   }
   
+// Method stub for the visualization method that parses the ProgramSchedule object from
+// getChannelAnalysisTable() to add the necessary strings to the Description variable, content,
+// to create the output specified in the project pdf file. 
+//  @Override
+//  public Description visualization() {
+//    Description content = new Description();
+//    content.add("Test2\n");
+//    
+//    ca.getChannelAnalysisTable();
+//  
+//    return content;
+//  }
+
   
-  @Override
-  public Description visualization() {
-    Description content = new Description();
-    
-    content.add("Test2\n");
-    for (int rowIndex = 0; rowIndex < sourceCode.size(); rowIndex++) {
-        ArrayList<String> rowArrayList = sourceCode.get(rowIndex);
-        var row = rowArrayList.toArray(new String[rowArrayList.size()]);
-        String rowString = String.format("%d\t", rowIndex) + String.join("\t", row) + "\n";
-        content.add(rowString);
-      }
-      return content;
-  }
-  
-  @Override
-  public Description createHeader() {
-    Description header = new Description();
-    
-    header.add("Test1\n");
-    header.add(String.format("WARP system for graph %s created with the following parameters:\n",
-        program.getName()));
-    
-    return header;
-  }
+// Method stub that creates the header strings and adds them to the Description object, header.
+//  @Override
+//  public Description createHeader() {
+//    Description header = new Description();
+//    header.add("Test1\n");
+//    
+//    return header;
+//  }
   
 }

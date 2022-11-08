@@ -108,20 +108,22 @@ Sprint 3 (Due Dec. 9th): ChannelAnalysis implementation, documentation, and test
 <br>
 **Tasks to Be Done:**<br>
 
-Sprint 1: <br>
+*Sprint 1*: <br>
 - README.md Layout and Documentation: Lawrence
 - Finalized UML Sequence Diagram: David
-- Create method stubs for potential ChannelVisualization methods: Ethan
+- Create Method Design document: Ethan
 - ChannelVisualization UML Class Diagram: Ethan
+<br><br>
+
+*Sprint 2*: <br>
+- Design test cases for ChannelVisualization: Ethan
+- ChannelVisualization Methods Implementation: Ethan
+- ChannelVisualization JavaDoc: Alex
+- ChannelVisualization JUnit Tests: Lawrence and David
+- Sprint 2 README.md updates: Everyone
 <br>
 
-Later Sprints: <br>
-- Design test cases for ChannelVisualization: TBD
-- ChannelVisualization Methods Implementation: TBD
-- ChannelVisualization JavaDoc: TBD
-- ChannelVisualization JUnit Tests: TBD
-- Sprint 2 README.md updates: TBD
-<br><br>
+*Sprint3*: <br>
 - ChannelAnalysis Methods Implementation: TBD
 - ChannelAnalysis JavaDoc: TBD
 - ChannelAnalysis JUnit Tests: TBD
