@@ -50,7 +50,10 @@ public class ChannelAnalysis {
   }
   
   /**
-   * Method to be implemented that gets channelAnalysisTable.
+   * This method parses the programSchedule object, programTable, to create a channel analysis table.
+   * The Visualization() method within ChannelVisualization will then use this analysis table to
+   * create the desired visualization (similar to how ProgramVisualization uses the "sourceCode"
+   * variable to create the *dsl file visualization.
    * 
    * @author eborchard
    * @return ProgramSchedule

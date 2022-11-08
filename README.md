@@ -79,6 +79,70 @@ Main refactoring of the implementation of findNextAvailableChannel() in the Prog
 - Created helper methods
 - Changed to static variable types
 - Changed variable names to be more descriptive
+<br> <br> <br>
 
+### F22-Project:
+**Team Members**:
+- Alex Lenaers
+- David Lin
+- Ethan Borchard
+- Lawrence Deng
+<br>
+
+**Project Description:**<br>
+
+The ultimate aim of this project is to complete the ChannelAnalysis and ChannelVisualization classes so that they 
+create *.ch files and evaluate the channel allocation of WARP flows, as requested in the Warp main program when the
+runtime configuration option -ca is used. To do this, method(s) must be implemented within the ChannelAnalysis class
+to correctly analyze and return the state of each channel, and method(s) must be implemented within the ChannelVisualization
+class to correctly visualize and display the information found in ChannelAnalysis.
+<br>
+
+**Project Schedule:**<br>
+
+Sprint 1 (Due Nov. 8th): Create high level plan and design documents in addition to a UML Sequence diagram. <br>
+Sprint 2 (Due Nov. 18th): ChannelVisualization implementation, documentation, and testing. <br>
+Sprint 3 (Due Dec. 9th): ChannelAnalysis implementation, documentation, and testing. System documentation and testing. <br>
+
+-----------------------------**Sprint 1**-----------------------------<br>
+<br>
+**Tasks to Be Done:**<br>
+
+*Sprint 1*: <br>
+- README.md Layout and Documentation: Lawrence
+- Finalized UML Sequence Diagram: David
+- Create Method Design document: Ethan
+- ChannelVisualization UML Class Diagram: Ethan
+<br><br>
+
+*Sprint 2*: <br>
+- Design test cases for ChannelVisualization: Ethan
+- ChannelVisualization Methods Implementation: Ethan
+- ChannelVisualization JavaDoc: Alex
+- ChannelVisualization JUnit Tests: Lawrence and David
+- Sprint 2 README.md updates: Everyone
+<br>
+
+*Sprint3*: <br>
+- ChannelAnalysis Methods Implementation: TBD
+- ChannelAnalysis JavaDoc: TBD
+- ChannelAnalysis JUnit Tests: TBD
+- Sprint 3 README.md updates: TBD
+<br>
+
+**Other Project Artifacts:** <br>
+See *Project Plan Files*:
+- UML Sequence Diagram (*WSD.txt* and *WSD.png*)
+- UML Class Diagram for ChannelVisualization (*ChannelVisualization.umlcd*)
+- Method Design File (*MethodIdeas.md*)
+<br>
+
+**Record/Timeline:**
+- 10/26/2022 : First team meeting in lab.
+- 10/31/2022 : Team meeting to discuss sequence diagram and task designation for Sprint 1 delivery.
+- 11/2/2022 : Lab meeting - Began discussing methods needed to meet project requirements and completed sketch of sequence diagram.
+- 11/4/2022 : Warp Sequence Diagram is uploaded. -David
+- 11/6/2022 : ChannelVisualization UML class diagram and test classes for ChannelVisualization & ChannelAnalysis classes created. -Ethan
+- 11/7/2022 : ChannelVisualization placeholder methods were created and the method design file (*MethodIdeas.md*) was created. -Ethan and Lawrence
 
 
