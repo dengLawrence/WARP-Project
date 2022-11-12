@@ -1,0 +1,5 @@
+// Course CS2820 Authentication Tag: oMHZqH4+2jb6nBAooPhmLuk0JF/36n8mHkRarlOcFHrqi9/AZ7G4ytSWdypYDZmR2wElGRdi8RuaDd1iiTc5ALyP96TS+Me51xnYFBUSILE=
+Example {
+F0: A -> B -> C
+F1: C -> B -> A
+}

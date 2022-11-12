@@ -1,4 +1,4 @@
-// Course CS2820 Authentication Tag: 2HhL+R8O629fh8SO1xFMVaCa4Xc/6uCdEAmW79ICgVlAngRbtaxk4y0lvgydI2cSDGmVEH4l+kJH+huQJ9+x9Kpy6kT/qe0L0a9Fuu23II8=
+// Course CS2820 Authentication Tag: M/fFgJBn+hJ9nIkEhRgMc4tks0WWeK+uJ4reFuOkYDLqi9/AZ7G4ytSWdypYDZmRPxcASwniHDPF0tPE6zdGW6py6kT/qe0L0a9Fuu23II8=
 Latency Report
 Maximum latency for F1:0 is 6
 Maximum latency for F1:1 is 6

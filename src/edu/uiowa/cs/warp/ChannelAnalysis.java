@@ -69,8 +69,7 @@ public class ChannelAnalysis {
    * @author eborchard
    */
   public void createChannelAnalysisTable() {
-      // TODO implement this operation
-      throw new UnsupportedOperationException("not implemented");
+      System.out.println(this.programTable);
    }
 
   /**
