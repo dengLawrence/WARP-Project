@@ -116,10 +116,10 @@ Sprint 3 (Due Dec. 9th): ChannelAnalysis implementation, documentation, and test
 <br><br>
 
 *Sprint 2*: <br>
-- Design test cases for ChannelVisualization: Ethan
+- Design test cases for ChannelVisualization: Alex
 - ChannelVisualization Methods Implementation: Ethan
-- ChannelVisualization JavaDoc: Alex
-- ChannelVisualization JUnit Tests: Lawrence and David
+- ChannelVisualization JavaDoc: Ethan
+- ChannelVisualization JUnit Tests: Lawrence, David, Alex
 - Sprint 2 README.md updates: Everyone
 <br>
 
@@ -144,5 +144,6 @@ See *Project Plan Files*:
 - 11/4/2022 : Warp Sequence Diagram is uploaded. -David
 - 11/6/2022 : ChannelVisualization UML class diagram and test classes for ChannelVisualization & ChannelAnalysis classes created. -Ethan
 - 11/7/2022 : ChannelVisualization placeholder methods were created and the method design file (*MethodIdeas.md*) was created. -Ethan and Lawrence
+- 11/9/2022 : Lab meeting - delegated roles for Sprint 2.
 
 

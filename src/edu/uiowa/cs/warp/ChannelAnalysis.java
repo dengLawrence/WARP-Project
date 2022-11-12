@@ -50,15 +50,25 @@ public class ChannelAnalysis {
   }
   
   /**
+   * Method that retrieves the channel analysis table created in the createChannelAnalysisTable() method.
+   * 
+   * @author eborchard
+   * @return ProgramSchedule
+   */
+  public ProgramSchedule getChannelAnalysisTable() {
+      // TODO temporarily hard code the output from a *.ch file to return to the Visualization() method.
+      throw new UnsupportedOperationException("not implemented");
+   }
+  
+  /**
    * This method parses the programSchedule object, programTable, to create a channel analysis table.
    * The Visualization() method within ChannelVisualization will then use this analysis table to
    * create the desired visualization (similar to how ProgramVisualization uses the "sourceCode"
    * variable to create the *dsl file visualization.
    * 
    * @author eborchard
-   * @return ProgramSchedule
    */
-  public ProgramSchedule getChannelAnalysisTable() {
+  public void createChannelAnalysisTable() {
       // TODO implement this operation
       throw new UnsupportedOperationException("not implemented");
    }

@@ -1,4 +1,4 @@
-// Course CS2820 Authentication Tag: jJMqYw6A/sAjbRkSYAk9Pi/Psz1jorRgckq558TjIYJdXseYKTSfKYCSBMBMBjoqSmc8+5sG5JYYRPrSmiIVy6SVWj2Frya/KZ4/cDGCw0w=
+// Course CS2820 Authentication Tag: 2HhL+R8O629fh8SO1xFMVbMvJHm6fwQAmQGj+HB2fpxAngRbtaxk4y0lvgydI2cSDGmVEH4l+kJH+huQJ9+x9KSVWj2Frya/KZ4/cDGCw0w=
 StressTest {
 F1 (1, 20, 20, 0) : B -> C -> D
 F5 (5, 75, 75, 0) : A -> B -> C -> D -> E 

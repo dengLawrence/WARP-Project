@@ -2,7 +2,9 @@
 This file contains method ideas needed in the ChannelVisualization, ChannelAnalysis, and potential other classes necessary to fulfill the requirements outlined in the *Project Description*. 
 
 **ChannelAnalysis.java**:<br>
-The main method that needs to implemented within ChannelAnalysis is getChannelAnalysisTable(). This method parses the programSchedule object, programTable, to create a channel analysis table which is also a programScheudle object. We need to visually compare equivalent \*.dsl and \*.ch output files (uploaded on ICON) to create the code within the body of this method that parses the "programTable" to create our channel analysis table (which is essentially a 2D ArrayList). This method can then be called by the visualization() method within ChannelVisualiztion (ca.getChannelAnalysisTable).
+The primary method that needs to implemented within ChannelAnalysis is a createChannelAnalysisTable() method. This method parses the programSchedule object, programTable, to create a channel analysis table which is also a programScheudle object. There are attributes and methods within the Program.java class that should be used to do this (Look at the code we refactored for HW5, specifically in the extractChannels method). We need to visually compare equivalent \*.dsl and \*.ch output files (uploaded on ICON) to create the code within the body of this method that parses the "programTable" to create our channel analysis table (which is essentially a 2D ArrayList). This method can then be called by the visualization() method within ChannelVisualiztion (using ca.getChannelAnalysisTable).
+
+Channel conflicts should also be reported for the output of the Warp.java main program.
 
 **ChannelVisualization.java**:<br>
 We are modeling the methods needed to create the channel visualization after the code in *ProgramVisualization.java*.
