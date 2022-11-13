@@ -1,4 +1,4 @@
-// Course CS2820 Authentication Tag: M/fFgJBn+hJ9nIkEhRgMc/bh/AdoXU6US5EOv+sdL4bqi9/AZ7G4ytSWdypYDZmRihpDB5g9tZ6+qPkq7Nu0x0Hr39N7gc+0nQjpqOQwcV0=
+// Course CS2820 Authentication Tag: v5Wmn4i4TFxNL6unXfhpQFssnhHC9dwfuaElS9qCD25UZXG9rYnVlajSJEANicnw3iGZzk1QSUpVnQafxhW9sUHr39N7gc+0nQjpqOQwcV0=
 strict digraph StressTest {
     B  -> C  -> D; 
     A  -> B  -> C  -> D  -> E; 
