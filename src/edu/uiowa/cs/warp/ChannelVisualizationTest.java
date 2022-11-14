@@ -31,8 +31,8 @@ class ChannelVisualizationTest {
 		Description actual = channelVis.visualization();
 		
 		Description expected = new Description();
-		expected.add("0	-	-	-	-	-	-	-	-	-	-	-	-	");
-		expected.add("1	[A]::F0:(A:B); [C]::F1:(C:D)	-	[E]::F1:(E:F), F1:(D:E)	-	-	-	-	-	-	-	-	-	");
+		expected.add("0 -	-	-	-	-	-	-	-	-	-	-	-	");
+		expected.add("1 [A]::F0:(A:B); [C]::F1:(C:D)	-	[E]::F1:(E:F), F1:(D:E)	-	-	-	-	-	-	-	-	-	");
 		expected.add("2	-	[A]::F0:(A:B); [D]::F1:(D:E); F1:(C:D)	-	[E]::F1:(E:F)	-	-	-	-	-	-	-	-	");
 		for(int i = 3; i <= 15; i++) {
 			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	-	-	", i));

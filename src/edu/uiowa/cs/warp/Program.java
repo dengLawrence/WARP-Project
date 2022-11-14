@@ -1023,6 +1023,52 @@ public class Program implements SystemAttributes {
 	  //return UNKNOWN to indicate no channel found. This should never happen.
 	  return UNKNOWN;
   }
+  
+  /**
+   * Helper method for findNextAvailableChannel(...). Finds the channels from
+   * the given node and time slot and removes it from the workingChannelSet. <br> <br>
+   * 
+   * NOTE: Calls methods and modifies the @param workingChannelSet.
+   * 
+   * @author sgoddard
+   * @param schedule, the ProgramSchedule to get prior instruction
+   * @param workingChannelSet, a String HashSet of channels that are potentially viable
+   * @param nodeIndex, an Integer representing the node
+   * @param timeSlot, an Integer representing the time slot
+   */
+  private void extractChannels(ProgramSchedule schedule, HashSet<String> workingChannelSet, 
+		  							Integer nodeIndex, Integer timeSlot)
+  {
+	  //create for parsing instructions
+	  WarpDSL dsl = new WarpDSL();
+	  
+	  String priorInstruction = schedule.get(timeSlot).get(nodeIndex);
+
+	  //get the parameters from the instruction in the node's prior time slot
+	  ArrayList<InstructionParameters> instructionParametersList = dsl.getInstructionParameters(priorInstruction); 
+  	
+	  for (int i = 0; i < instructionParametersList.size(); i++) {
+		  //get a copy of the parameters
+		  InstructionParameters instructionParameters = instructionParametersList.get(i);
+		  
+		  //remove parameters from channels
+  		  workingChannelSet.remove(instructionParameters.getChannel());
+	  }
+  }
+  
+  /**
+   * Returns the next channel, rolling over to zero when channel reaches channel length.
+   * 
+   * @author sgoddard
+   * @param channel, an Integer of the given channel
+   * @return The next channel with rollover.
+   */
+  private Integer advanceChannel(Integer channel)
+  {
+	  if (channel < getNumChannels())
+		  return (channel + 1);
+	  return 0;
+  }
 
   public void selectPriority() {
     setScheduleSelected(ScheduleChoices.PRIORITY);
@@ -1204,52 +1250,6 @@ public class Program implements SystemAttributes {
       nodeIndexMap.put(name, index); // add name, index mapping to NodeIndex map
     }
     return nodeIndexMap;
-  }
-  
-  /**
-   * Helper method for findNextAvailableChannel(...). Finds the channels from
-   * the given node and time slot and removes it from the workingChannelSet. <br> <br>
-   * 
-   * NOTE: Calls methods and modifies the @param workingChannelSet.
-   * 
-   * @author sgoddard
-   * @param schedule, the ProgramSchedule to get prior instruction
-   * @param workingChannelSet, a String HashSet of channels that are potentially viable
-   * @param nodeIndex, an Integer representing the node
-   * @param timeSlot, an Integer representing the time slot
-   */
-  private void extractChannels(ProgramSchedule schedule, HashSet<String> workingChannelSet, 
-		  							Integer nodeIndex, Integer timeSlot)
-  {
-	  //create for parsing instructions
-	  WarpDSL dsl = new WarpDSL();
-	  
-	  String priorInstruction = schedule.get(timeSlot).get(nodeIndex);
-
-	  //get the parameters from the instruction in the node's prior time slot
-	  ArrayList<InstructionParameters> instructionParametersList = dsl.getInstructionParameters(priorInstruction); 
-  	
-	  for (int i = 0; i < instructionParametersList.size(); i++) {
-		  //get a copy of the parameters
-		  InstructionParameters instructionParameters = instructionParametersList.get(i);
-		  
-		  //remove parameters from channels
-  		  workingChannelSet.remove(instructionParameters.getChannel());
-	  }
-  }
-  
-  /**
-   * Returns the next channel, rolling over to zero when channel reaches channel length.
-   * 
-   * @author sgoddard
-   * @param channel, an Integer of the given channel
-   * @return The next channel with rollover.
-   */
-  private Integer advanceChannel(Integer channel)
-  {
-	  if (channel < getNumChannels())
-		  return (channel + 1);
-	  return 0;
   }
 
 }

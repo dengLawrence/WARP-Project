@@ -147,4 +147,5 @@ See *Project Plan Files*:
 - 11/9/2022 : Lab meeting - delegated roles for Sprint 2.
 - 11/12/2022 : Started ChannelVisualizationTest.java -Lawrence
 - 11/13/2022 : Implemented most of ChannelVisualiztion.java and created a dummy method within ChannelAnalysis.java.
+- 11/14/2022 : Meeting to discuss ChannelVisualiztion.java implementation and testing. -Ethan, Lawrence, David
 
