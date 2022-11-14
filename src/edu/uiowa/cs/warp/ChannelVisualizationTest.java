@@ -14,6 +14,7 @@ class ChannelVisualizationTest {
 	}
 
 	//creates a ChannelVisualization file to be tested according to an input file and other WarpSystem parameters.
+	//@author lldeng
 	private ChannelVisualization createChannelVisualization(Integer numFaults, String inputFile, Integer numChannels) {
 		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
 		ScheduleChoices choice = ScheduleChoices.PRIORITY;
