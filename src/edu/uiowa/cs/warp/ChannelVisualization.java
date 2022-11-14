@@ -26,16 +26,20 @@ public class ChannelVisualization extends VisualizationObject {
     this.ca = warp.toChannelAnalysis();
   }
   
-// Method stub for the visualization method that parses the ProgramSchedule object from
-// getChannelAnalysisTable() to add the necessary strings to the Description variable, content,
-// to create the output specified in the project pdf file. 
+  /**
+   * Creates a Description object for channel visualization.
+   * 
+   * @author eborchard
+   * @return Description containing visualization of the channel analysis
+   */
   @Override
   public Description visualization() {
     Description content = new Description();
     ProgramSchedule sourceCode = ca.getChannelAnalysisTable();
 
+    /* create schedule output header of column time slots in order, with \t as separator */
     String timeSlotString = "Channel/Time Slot ";
-    
+    /* loop through the time slots, stopping just before last time slot */
     for (Integer timeSlotNumber = 0; timeSlotNumber < sourceCode.size() - 1; timeSlotNumber++) {
     	timeSlotString += timeSlotNumber.toString() + "\t";
     }
@@ -43,23 +47,31 @@ public class ChannelVisualization extends VisualizationObject {
     timeSlotString += (sourceCode.size() - 1) + "\n";
     content.add(timeSlotString);
     
-    ProgramSchedule dummyCode = ca.getDummyChannelAnalysisTable();
+    ProgramSchedule dummyTable = ca.getDummyChannelAnalysisTable();
 
-    for (int rowIndex = 0; rowIndex < dummyCode.size(); rowIndex++) {
-        ArrayList<String> rowArrayList = dummyCode.get(rowIndex);
+    for (int rowIndex = 0; rowIndex < dummyTable.size(); rowIndex++) {
+        ArrayList<String> rowArrayList = dummyTable.get(rowIndex);
         var row = rowArrayList.toArray(new String[rowArrayList.size()]);
         String rowString = String.format("%d\t", rowIndex) + String.join("\t", row) + "\n";
         content.add(rowString);
       }  
+    
+//    content.add("\n\n");
+//    
+//    for (int rowIndex = 0; rowIndex < sourceCode.size(); rowIndex++) {
+//        ArrayList<String> rowArrayList = sourceCode.get(rowIndex);
+//        var row = rowArrayList.toString();
+//        content.add(row + "\n");
+//      }
     
     return content;
   }
 
   
   /**
-   * Creates a Description object for the header of the visualization output.
+   * Creates a Description object for the header of the channel visualization output.
    * 
-   * @author sgoddard
+   * @author sgoddard (modified: eborchard)
    * @return Description containing visualization of the header
    */
   @Override

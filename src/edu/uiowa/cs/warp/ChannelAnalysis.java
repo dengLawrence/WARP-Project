@@ -59,6 +59,26 @@ public class ChannelAnalysis {
 	  return programTable;
    }
   
+  /**
+   * This method parses the programSchedule object, programTable, to create a channel analysis table.
+   * The Visualization() method within ChannelVisualization will then use this analysis table to
+   * create the desired visualization (similar to how ProgramVisualization uses the "sourceCode"
+   * variable to create the *dsl file visualization.
+   * 
+   * @author eborchard
+   */
+  public void createChannelAnalysisTable() {
+      System.out.println(this.programTable);
+   }
+
+  /**
+   * Temporary method used for testing the Visualization() method in ChannelVisualization (For Sprint 2).
+   * Contains hard code of each Channel row from ExampleXPriority-1Faults.ch and adds them to a new ProgramSchedule.
+   * 
+   * @author eborchard
+   * @return dummyTable, hard code of the body of the channel analysis table of ExampleXPriority-1Faults.ch
+   * found on ICON
+   */
   public ProgramSchedule getDummyChannelAnalysisTable() {
 	  ProgramSchedule dummyTable = new ProgramSchedule();
 	  
@@ -130,18 +150,6 @@ public class ChannelAnalysis {
 	  return dummyTable;
    }
   
-  /**
-   * This method parses the programSchedule object, programTable, to create a channel analysis table.
-   * The Visualization() method within ChannelVisualization will then use this analysis table to
-   * create the desired visualization (similar to how ProgramVisualization uses the "sourceCode"
-   * variable to create the *dsl file visualization.
-   * 
-   * @author eborchard
-   */
-  public void createChannelAnalysisTable() {
-      System.out.println(this.programTable);
-   }
-
   /**
    * Determines whether or not there is a channel conflict.
    * 
