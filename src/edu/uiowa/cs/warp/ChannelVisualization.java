@@ -38,31 +38,33 @@ public class ChannelVisualization extends VisualizationObject {
     ProgramSchedule sourceCode = ca.getChannelAnalysisTable();
 
     /* create schedule output header of column time slots in order, with \t as separator */
-    String timeSlotString = "Channel/Time Slot ";
+    String columnString = "Channel/Time Slot ";
     /* loop through the time slots, stopping just before last time slot */
-    for (Integer timeSlotNumber = 0; timeSlotNumber < sourceCode.size() - 1; timeSlotNumber++) {
-    	timeSlotString += timeSlotNumber.toString() + "\t";
+    for (Integer columnNumber = 0; columnNumber < sourceCode.getNumColumns() - 1; columnNumber++) {
+    	columnString += columnNumber.toString() + "\t";
     }
     /* add the last time slot with \n instead of \t at the end */
-    timeSlotString += (sourceCode.size() - 1) + "\n";
-    content.add(timeSlotString);
+    columnString += (sourceCode.getNumColumns() - 1) + "\n";
+    content.add(columnString);
     
-    ProgramSchedule dummyTable = ca.getDummyChannelAnalysisTable();
-
-    for (int rowIndex = 0; rowIndex < dummyTable.size(); rowIndex++) {
-        ArrayList<String> rowArrayList = dummyTable.get(rowIndex);
-        var row = rowArrayList.toArray(new String[rowArrayList.size()]);
-        String rowString = String.format("%d\t", rowIndex) + String.join("\t", row) + "\n";
-        content.add(rowString);
-      }  
     
-//    content.add("\n\n");
-//    
-//    for (int rowIndex = 0; rowIndex < sourceCode.size(); rowIndex++) {
-//        ArrayList<String> rowArrayList = sourceCode.get(rowIndex);
-//        var row = rowArrayList.toString();
-//        content.add(row + "\n");
-//      }
+    for (Integer rowIndex = 0; rowIndex < sourceCode.getNumRows(); rowIndex++) {
+    	String rowString = rowIndex.toString();
+    	for (Integer columnIndex = 0; columnIndex < sourceCode.getNumColumns(); columnIndex++) {
+        	var entry = sourceCode.get(rowIndex, columnIndex);
+    		if (entry == null) {
+    			rowString += "\t-";
+    		}
+    		else {
+    			rowString += "\t" + entry;
+    		}
+    		
+    		if (columnIndex == sourceCode.getNumColumns() - 1) {
+    			rowString += "\n";
+    		}
+    	}
+    	content.add(rowString);
+      }
     
     return content;
   }
