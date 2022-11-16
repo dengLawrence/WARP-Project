@@ -40,8 +40,8 @@ class ChannelVisualizationTest {
 		for(int i = 9; i <= 15; i++) {
 			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	\n", i));
 		}
-		//System.out.print(actual);
-		//System.out.print(expected);
+		System.out.print(actual);
+		System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
  
@@ -55,8 +55,8 @@ class ChannelVisualizationTest {
 		expected.add("Scheduler Name:	Priority\n");
 		expected.add("numFaults:	1\n");
 		
-		System.out.print(expected.get(2));
-		System.out.print(actual.get(2));
-		assertTrue(expected.get(2).equals(actual.get(2)));
+		//System.out.print(expected);
+		//System.out.print(actual);
+		assertTrue(expected.equals(actual));
 	}
 }
