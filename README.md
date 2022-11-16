@@ -125,8 +125,8 @@ Sprint 3 (Due Dec. 9th): ChannelAnalysis implementation, documentation, and test
 
 *Sprint3*: <br>
 - ChannelAnalysis Methods Implementation: TBD
-- ChannelAnalysis JavaDoc: TBD
-- ChannelAnalysis JUnit Tests: TBD
+- ChannelAnalysis JavaDoc: Alex?
+- ChannelAnalysis JUnit Tests: Alex?
 - Sprint 3 README.md updates: TBD
 <br>
 
@@ -148,4 +148,5 @@ See *Project Plan Files*:
 - 11/12/2022 : Started ChannelVisualizationTest.java -Lawrence
 - 11/13/2022 : Implemented most of ChannelVisualiztion.java and created a dummy method within ChannelAnalysis.java.
 - 11/14/2022 : Meeting to discuss ChannelVisualiztion.java implementation and testing. -Ethan, Lawrence, David
+- 11/14/2022 : Added initial 2 tests to ChannelVisualizationTest.java. -David, Lawrence
 
