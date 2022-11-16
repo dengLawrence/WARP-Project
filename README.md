@@ -124,16 +124,44 @@ Sprint 3 (Due Dec. 9th): ChannelAnalysis implementation, documentation, and test
 <br>
 
 *Sprint3*: <br>
-- ChannelAnalysis Methods Implementation: TBD
-- ChannelAnalysis JavaDoc: TBD
-- ChannelAnalysis JUnit Tests: TBD
-- Sprint 3 README.md updates: TBD
+- ChannelAnalysis Methods Implementation: Ethan
+- ChannelAnalysis JavaDoc: Alex?
+- ChannelAnalysis JUnit Tests: Alex, Lawrence, David
+- Sprint 3 README.md updates: Everyone
 <br>
 
 **Other Project Artifacts:** <br>
 See *Project Plan Files*:
 - UML Sequence Diagram (*WSD.txt* and *WSD.png*)
 - UML Class Diagram for ChannelVisualization (*ChannelVisualization.umlcd*)
+- Method Design File (*MethodIdeas.md*)
+<br>
+
+-----------------------------**Sprint 2**-----------------------------<br>
+<br>
+**Tasks to Be Done:**<br>
+
+*Sprint 2*: <br>
+- Design test cases for ChannelVisualization: Alex
+- ChannelVisualization Methods Implementation: Ethan
+- ChannelVisualization JavaDoc: Ethan
+- ChannelVisualization JUnit Tests: Lawrence, David, Alex
+- Sprint 2 README.md updates: Everyone
+<br>
+
+*Sprint3*: <br>
+- Design test cases for ChannelAnalysis: Lawrence, David, Alex
+- ChannelAnalysis Methods Implementation: Ethan, Lawrence
+- ChannelAnalysis JavaDoc: Ethan
+- ChannelAnalysis JUnit Tests: Lawrence, David, Alex
+- Sprint 3 README.md updates: Everyone
+<br>
+
+**Other Project Artifacts:** <br>
+See *Project Plan Files*:
+- UML Sequence Diagram (*WSD.txt* and *WSD.png*)
+- UML Class Diagram for ChannelVisualization (*ChannelVisualization.umlcd*)
+- UML Class Diagram for ChannelAnalysis (*ChannelAnalysis.umlcd*)
 - Method Design File (*MethodIdeas.md*)
 <br>
 
@@ -149,4 +177,7 @@ See *Project Plan Files*:
 - 11/13/2022 : Implemented most of ChannelVisualiztion.java and created a dummy method within ChannelAnalysis.java.
 - 11/14/2022 : Meeting to discuss ChannelVisualiztion.java implementation and testing. -Ethan, Lawrence, David
 - 11/14/2022 : Added initial 2 tests to ChannelVisualizationTest.java. -David, Lawrence
+- 11/15/2022 : Updated implementation of ChannelVisualization.java to work for tests. -Ethan
+- 11/16/2022 : Finalized ChannelVisualization.java with JavaDoc comments. -Ethan
+- 11/16/2022 : Lab meeting - delegated roles and planned for Sprint 3.
 

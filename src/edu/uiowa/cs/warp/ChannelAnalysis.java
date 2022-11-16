@@ -26,6 +26,9 @@ public class ChannelAnalysis {
    */
   private Boolean conflictExists;
   
+  /**
+   * Reference to the channel analysis ProgramSchedule, built in constructor.
+   */
   private ProgramSchedule channelAnalysisTable;
 
   /**
@@ -40,7 +43,7 @@ public class ChannelAnalysis {
   }
 
   /**
-   * Constructor to set the program and it's schedule.
+   * Constructor to set the program and it's schedule. Builds channel analysis table.
    * 
    * @author sgoddard
    * @param program The program to analyze
@@ -68,20 +71,22 @@ public class ChannelAnalysis {
    * The Visualization() method within ChannelVisualization will then use this analysis table to
    * create the desired visualization (similar to how ProgramVisualization uses the "sourceCode"
    * variable to create the *dsl file visualization.
+   * Should be private.
    * 
    * @author eborchard
    */
   public void buildChannelAnalysisTable() {
+	  //TODO Implement this method to create proper visualization of channel allocations (See MethodIdeas.md).
 	  var numRows = programTable.getNumRows();
 	  var numColumns = program.getNumChannels();
 	  channelAnalysisTable = new ProgramSchedule(numRows,numColumns);
    }
   
   /**
-   * Method that retrieves the channel analysis table created in the createChannelAnalysisTable() method.
+   * Method that retrieves the channel analysis table created in the buildChannelAnalysisTable() method.
    * 
    * @author eborchard
-   * @return ProgramSchedule
+   * @return ProgramSchedule The completed channel analysis table.
    */
   public ProgramSchedule getChannelAnalysisTable() {
 	  return channelAnalysisTable;
