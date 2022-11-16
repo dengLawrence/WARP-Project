@@ -1,4 +1,4 @@
-// Course CS2820 Authentication Tag: OMkFUNGDady7paqEePnR9F9m37UDemCwtXJhCzsEyns58tsBlsCwgk8qofpkn6eAOd3+EizJ4QUXw8J9brsaQtSfpOxTjiS746YA6LH7zA8=
+// Course CS2820 Authentication Tag: Wl5e37fMZ3O42KY5VktVlrjE+F+jwcbTZP3eTIgAjevRw6i/vK4fVBVlbBuEUuF75CO/vEx0nM+wTtiaDLa34xDWbNRe15IBJ+1z/BAr2Yo=
 strict digraph ExampleX {
     A  -> B  -> C; 
     C  -> B  -> A; 

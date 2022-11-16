@@ -1,9 +1,5 @@
 package edu.uiowa.cs.warp;
 
-import java.util.ArrayList;
-
-import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
-
 /**
  * <h1>Implementation of the ChannelAnalysis class</h1>
  * Used to analyze either Program or WarpInterface by converting to program.
@@ -75,6 +71,7 @@ public class ChannelAnalysis {
    * The Visualization() method within ChannelVisualization will then use this analysis table to
    * create the desired visualization (similar to how ProgramVisualization uses the "sourceCode"
    * variable to create the *dsl file visualization.
+   * Should be private.
    * 
    * @author eborchard
    */

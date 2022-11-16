@@ -59,12 +59,12 @@ public class ChannelVisualization extends VisualizationObject {
 
     /* create schedule output header of column time slots in order (zero-indexed), with \t as separator */
     String columnString = "Channel/Time Slot ";
-    /* loop through the time slots, stopping just before last time slot */
-    for (Integer columnNumber = 0; columnNumber < sourceCode.getNumColumns() - 1; columnNumber++) {
+    /* loop through the time slots adding the number and tab */
+    for (Integer columnNumber = 0; columnNumber < sourceCode.getNumColumns(); columnNumber++) {
     	columnString += columnNumber.toString() + "\t";
     }
-    /* add the last time slot with \n instead of \t at the end */
-    columnString += (sourceCode.getNumColumns() - 1) + "\n";
+    /* add \n at the end */
+    columnString += "\n";
     content.add(columnString);
     
     /* loop through each index of the program schedule table */
