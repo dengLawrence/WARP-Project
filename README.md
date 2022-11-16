@@ -137,6 +137,32 @@ See *Project Plan Files*:
 - Method Design File (*MethodIdeas.md*)
 <br>
 
+-----------------------------**Sprint 2**-----------------------------<br>
+<br>
+**Tasks to Be Done:**<br>
+
+*Sprint 2*: <br>
+- Design test cases for ChannelVisualization: Alex
+- ChannelVisualization Methods Implementation: Ethan
+- ChannelVisualization JavaDoc: Ethan
+- ChannelVisualization JUnit Tests: Lawrence, David, Alex
+- Sprint 2 README.md updates: Everyone
+<br>
+
+*Sprint3*: <br>
+- ChannelAnalysis Methods Implementation: TBD
+- ChannelAnalysis JavaDoc: Alex?
+- ChannelAnalysis JUnit Tests: Alex?
+- Sprint 3 README.md updates: Everyone
+<br>
+
+**Other Project Artifacts:** <br>
+See *Project Plan Files*:
+- UML Sequence Diagram (*WSD.txt* and *WSD.png*)
+- UML Class Diagram for ChannelVisualization (*ChannelVisualization.umlcd*)
+- Method Design File (*MethodIdeas.md*)
+<br>
+
 **Record/Timeline:**
 - 10/26/2022 : First team meeting in lab.
 - 10/31/2022 : Team meeting to discuss sequence diagram and task designation for Sprint 1 delivery.
@@ -149,4 +175,5 @@ See *Project Plan Files*:
 - 11/13/2022 : Implemented most of ChannelVisualiztion.java and created a dummy method within ChannelAnalysis.java.
 - 11/14/2022 : Meeting to discuss ChannelVisualiztion.java implementation and testing. -Ethan, Lawrence, David
 - 11/14/2022 : Added initial 2 tests to ChannelVisualizationTest.java. -David, Lawrence
+- 11/15/2022 : Updated implementation of ChannelVisualization.java to work for tests. -Ethan
 
