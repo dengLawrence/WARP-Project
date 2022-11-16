@@ -125,8 +125,8 @@ Sprint 3 (Due Dec. 9th): ChannelAnalysis implementation, documentation, and test
 
 *Sprint3*: <br>
 - ChannelAnalysis Methods Implementation: TBD
-- ChannelAnalysis JavaDoc: TBD
-- ChannelAnalysis JUnit Tests: TBD
+- ChannelAnalysis JavaDoc: Alex?
+- ChannelAnalysis JUnit Tests: Alex?
 - Sprint 3 README.md updates: TBD
 <br>
 
