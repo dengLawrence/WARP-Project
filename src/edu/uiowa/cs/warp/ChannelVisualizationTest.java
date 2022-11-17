@@ -41,8 +41,8 @@ class ChannelVisualizationTest {
 		for(int i = 9; i <= 15; i++) {
 			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	\n", i));
 		}
-		System.out.print(actual);
-		System.out.print(expected);
+		//System.out.print(actual);
+		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
  
@@ -52,12 +52,12 @@ class ChannelVisualizationTest {
 		Description actual = channelVis.createHeader();
 		
 		Description expected = new Description();
-		expected.add("Channel Analysisfor graph ExampleX created with the following parameters:\n");
+		expected.add("Channel Analysis for graph ExampleX created with the following parameters:\n");
 		expected.add("Scheduler Name:	Priority\n");
 		expected.add("numFaults:	1\n");
 		
-		//System.out.print(expected);
 		//System.out.print(actual);
+		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
 }
