@@ -18,7 +18,7 @@ class ChannelVisualizationTest {
 		ChannelVisualization channelVis = new ChannelVisualization(warp);
 		return channelVis;
 	}
-	// CHECKS THE TABSSSS!!!!!!!
+	/* CHECKS THE TABSSSS!!!!!!!
 	// DO NOT TOUCH UNTIL CODE IS FULLY IMPLEMENTED!!!
 	//Checks that the Description object returned by visualization() matches with the lines of ExampleXPriority-1Faults.ch
 	//from the ICON Project BugExistsOutputFiles
@@ -44,10 +44,10 @@ class ChannelVisualizationTest {
 		//System.out.print(actual);
 		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
-	}
+	} */
  
 	@Test
-	void HeaderTest() {
+	void headerTest() {
 		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 15);
 		Description actual = channelVis.createHeader();
 		
@@ -60,4 +60,29 @@ class ChannelVisualizationTest {
 		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
+	@Test
+	void emptyTableTest() {
+		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 15);
+		Description actual =channelVis.visualization();
+		
+		Description expected = new Description();
+		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	\n");
+		for(int i = 0; i <= 9; i++) {
+			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-\n", i));
+		}
+		//System.out.print(actual);
+		//System.out.print(expected);
+		assertTrue(expected.equals(actual));
+	}
+	/*@Test
+	void setAndGetTest() {
+		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 15);
+		Description actual =channelVis.visualization();
+		
+		Description expected = new Description();
+		
+		//System.out.print(actual);
+		//System.out.print(expected);
+		assertTrue(expected.equals(actual));
+	}*/
 }
