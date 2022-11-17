@@ -32,12 +32,12 @@ class ChannelVisualizationTest {
 	    expected.add("E2E:\t0.99\n");
 	    expected.add("nChannels:\t15\n");
 		
-	    System.out.print(actual);
-	    System.out.print(expected);
+	    //System.out.print(actual);
+	    //System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
 
-	//Tests that the header created by createHeader() matches the expected visualization of ExampleX.txt
+	//Tests that the header created by createHeader() matches the expected header of ExampleX.txt
 	//@author dlin4
 	@Test
 	void headerTestExampleX() {
@@ -62,12 +62,12 @@ class ChannelVisualizationTest {
 		Description actual = channelVis.visualization();
 		
 		Description expected = new Description();
-		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	\n");
-		for(int i = 0; i <= 9; i++) {
-			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-\n", i));
+		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
+		for(int i = 0; i <= 15; i++) {
+			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
 		}
-		//System.out.print(actual);
-		//System.out.print(expected);
+		System.out.print(actual);
+		System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
 	
