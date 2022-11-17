@@ -77,8 +77,8 @@ public class ChannelAnalysis {
    */
   public void buildChannelAnalysisTable() {
 	  //TODO Implement this method to create proper visualization of channel allocations (See MethodIdeas.md).
-	  var numRows = programTable.getNumRows();
-	  var numColumns = program.getNumChannels();
+	  var numColumns = programTable.getNumRows();
+	  var numRows = program.getNumChannels();
 	  channelAnalysisTable = new ProgramSchedule(numRows,numColumns);
    }
   
