@@ -20,6 +20,17 @@ class ChannelVisualizationTest {
 		return channelVis;
 	}
 	
+	//Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
+	//MODIFIED ChannelAnalysis class (see classes below) to test completely empty tables.
+	//@author lldeng
+	private ChannelVisualization createChannelVisualizationMod(Integer numFaults, String inputFile, Integer numChannels) {
+		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
+		ScheduleChoices choice = ScheduleChoices.PRIORITY;
+		WarpInterface warp = new WarpSystemMod(workload, numChannels, choice);
+		ChannelVisualization channelVis = new ChannelVisualization(warp);
+		return channelVis;
+	}
+	
 	//Tests that the header prints out additional information (other parameters) when numFaults is set to 0
 	//@author lldeng
 	@Test
@@ -144,7 +155,22 @@ class ChannelVisualizationTest {
 		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
+	
+	//Tests that a table with no rows or columns is made (Test file is irrelevant)
+	//@author lldeng
+	@Test
+	void visualizationTestNoTable() {
+		ChannelVisualization channelVis = createChannelVisualizationMod(1, "ExampleX.txt", 16);
+		Description actual = channelVis.visualization();
 		
+		Description expected = new Description();
+		expected.add("Channel/Time Slot \n");
+		
+		//System.out.print(actual);
+		//System.out.print(expected);
+		assertTrue(expected.equals(actual));
+	}
+	
 	/* Currently not in use. Will be uncommented when ChannelAnalysis is fully implemented.
 	//CHECKS THE TABSSSS!!!!!!!
 	//DO NOT TOUCH UNTIL CODE IS FULLY IMPLEMENTED!!!
@@ -185,4 +211,36 @@ class ChannelVisualizationTest {
 		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}*/
+}
+
+class ChannelAnalysisMod extends ChannelAnalysis {
+	
+	ChannelAnalysisMod(WarpInterface warp) {
+		this(warp.toProgram());
+	}
+
+	ChannelAnalysisMod(Program program) {
+		super(program);
+		buildEmptyChannelAnalysisTable();
+	}
+	
+	private void buildEmptyChannelAnalysisTable() {
+		var numColumns = 0;
+		var numRows = 0;
+		channelAnalysisTable = new ProgramSchedule(numRows,numColumns);
+	}
+}
+
+class WarpSystemMod extends WarpSystem {
+
+	public WarpSystemMod(WorkLoad workLoad, Integer numChannels, ScheduleChoices choice) {
+		super(workLoad, numChannels, choice);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public ChannelAnalysis toChannelAnalysis() {
+		ChannelAnalysis ca = new ChannelAnalysisMod(this);
+		return ca;
+	}
 }

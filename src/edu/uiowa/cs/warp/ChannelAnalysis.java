@@ -13,23 +13,27 @@ public class ChannelAnalysis {
 
   /**
    * Reference to the program, set in constructor.
+   * Will be set to private once ChannelAnalysis is fully implemented.
    */
-  private Program program;
+  protected Program program;
 
   /**
    * Reference to ProgramSchedule within the Program class, set in constructor.
+   * Will be set to private once ChannelAnalysis is fully implemented.
    */
-  private ProgramSchedule programTable;
+  protected ProgramSchedule programTable;
 
   /**
    * Channel conflict exists flag
+   * Will be set to private once ChannelAnalysis is fully implemented.
    */
-  private Boolean conflictExists;
+  protected Boolean conflictExists;
   
   /**
    * Reference to the channel analysis ProgramSchedule, built in constructor.
+   * Will be set to private once ChannelAnalysis is fully implemented.
    */
-  private ProgramSchedule channelAnalysisTable;
+  protected ProgramSchedule channelAnalysisTable;
 
   /**
    * Constructor that takes in a WarpInterface and converts it to a a program, calls the other 
