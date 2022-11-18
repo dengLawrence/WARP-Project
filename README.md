@@ -165,6 +165,26 @@ See *Project Plan Files*:
 - Method Design File (*MethodIdeas.md*)
 <br>
 
+-----------------------------**Sprint 3**-----------------------------<br>
+<br>
+**Tasks to Be Done:**<br>
+
+*Sprint3*: <br>
+- Design test cases for ChannelAnalysis: Lawrence, David, Alex
+- ChannelAnalysis Methods Implementation: Ethan, Lawrence
+- ChannelAnalysis JavaDoc: Ethan
+- ChannelAnalysis JUnit Tests: Lawrence, David, Alex
+- Sprint 3 README.md updates: Everyone
+<br>
+
+**Other Project Artifacts:** <br>
+See *Project Plan Files*:
+- UML Sequence Diagram (*WSD.txt* and *WSD.png*)
+- UML Class Diagram for ChannelVisualization (*ChannelVisualization.umlcd*)
+- UML Class Diagram for ChannelAnalysis (*ChannelAnalysis.umlcd*)
+- Method Design File (*MethodIdeas.md*)
+<br>
+
 **Record/Timeline:**
 - 10/26/2022 : First team meeting in lab.
 - 10/31/2022 : Team meeting to discuss sequence diagram and task designation for Sprint 1 delivery.
