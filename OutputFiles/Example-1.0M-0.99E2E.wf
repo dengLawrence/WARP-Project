@@ -1,0 +1,8 @@
+// Course CS2820 Authentication Tag: oMHZqH4+2jb6nBAooPhmLoMuP7tIqD0K/EZsDLNBU6nqi9/AZ7G4ytSWdypYDZmR2wElGRdi8RuaDd1iiTc5AG18LyS9v+j/xnKZjaiAO7k=
+WARP_Example{
+// M = 1.0 and End-to-End reliability = 0.99
+// Flow F0 has a minimum communication cost of 2 and a worst-case communication cost of 10
+ F0 (0,100,100,0) : A -5-> B -5-> C
+// Flow F1 has a minimum communication cost of 2 and a worst-case communication cost of 10
+ F1 (1,100,100,0) : C -5-> B -5-> A
+}

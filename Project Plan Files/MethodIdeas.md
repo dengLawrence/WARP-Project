@@ -2,9 +2,12 @@
 This file contains method ideas needed in the ChannelVisualization, ChannelAnalysis, and potential other classes necessary to fulfill the requirements outlined in the *Project Description*. 
 
 **ChannelAnalysis.java**:<br>
-The main method that needs to implemented within ChannelAnalysis is getChannelAnalysisTable(). This method parses the programSchedule object, programTable, to create a channel analysis table which is also a programScheudle object. We need to visually compare equivalent \*.dsl and \*.ch output files (uploaded on ICON) to create the code within the body of this method that parses the "programTable" to create our channel analysis table (which is essentially a 2D ArrayList). This method can then be called by the visualization() method within ChannelVisualiztion (ca.getChannelAnalysisTable).
+*SPRINT 3 UPDATE:*<br>
+The primary method that needs to implemented within ChannelAnalysis is the buildChannelAnalysisTable() method. This method parses the programSchedule object, programTable, to create a channel analysis table which is also a programScheudle object. We need to visually compare equivalent \*.dsl and \*.ch output files (uploaded on ICON) to create the code within the body of this method to create our channel analysis table (which is essentially a 2D ArrayList). The completed channel analysis table is then retrieved by the visualization() method within ChannelVisualiztion (using ca.getChannelAnalysisTable).<br>
 
-**ChannelVisualization.java**:<br>
+Implementation idea: Loop through programTable using the .get(row, column) method and instantiate Strings for each instruction. Then create a new WarpDSL object. Create an instruction parameters array using dsl.getInstructionParameters(instruction) for each entry of programTable. For each instruction, use .getName() for the push or pull instruction, .getFlow() for the flow name, and .getSrc() and .getSnk() for the source and sink nodes. Using each of these parameters, we can use the .format method to create the String entries of the channel analysis table (i.e. "[A]::F0:(A:B)"). This should be fairly straightforward. We will need an if statement for checking if multiple instructions are in the same time slot for the same coordinator (separate with a comma in the output). We will also need to check if more than one coordinator is allocated the same channel in the same time slot. This is a channel conflict and needs to add a semicolon in the output String and also needs to set the conflictExists flag to true. Each of these Strings will be converted to an InstructionTimeSlot object and added to the ProgramSchedule object, "channelAnalysisTable."
+
+**ChannelVisualization.java (COMPLETE AS OF SPRINT 2)**:<br>
 We are modeling the methods needed to create the channel visualization after the code in *ProgramVisualization.java*.
 
 *Visualization()*:<br>

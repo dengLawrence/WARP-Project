@@ -7,10 +7,13 @@ Visualization Implementation->Visualization Implementation: createVisualization(
 Visualization Implementation->Channel Visualization: createVisualization()
 Channel Visualization->Warp System: calls Channel Visualization constructor
 Warp System->Channel Analysis: toChannelAnalysis()
-Channel Analysis->Channel Analysis: Analysis
+Channel Analysis->Channel Analysis: buildChannelAnalysisTable()
 Channel Analysis-->Channel Visualization: returns Channel Analysis object
 Channel Visualization-->Visualization Implementation: returns Channel Visualization object
 Visualization Implementation->Channel Visualization: createVisualization()
+Channel Visualization->Channel Analysis: Visualization()
+Channel Analysis->Channel Analysis: getChannelAnalysisTable()
+Channel Analysis-->Channel Visualization: returns Program Schedule object
 Channel Visualization-->Visualization Implementation: returns Description object
 Visualization Implementation-->Visualization Factory: returns Visualization Implementation object
 Visualization Factory-->Warp: returns Visualization object
