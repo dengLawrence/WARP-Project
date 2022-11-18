@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import edu.uiowa.cs.warp.SystemAttributes.ScheduleChoices;
 
 class ChannelVisualizationTest {
+	
+	//NOTE: Until ChannelAnalysis.java is fully implemented, filled tables with flow instructions cannot be tested.
 
 	//Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
 	//@author lldeng
@@ -18,11 +20,11 @@ class ChannelVisualizationTest {
 		return channelVis;
 	}
 	
-	//Tests that the header prints out additional information when numFaults is set to 0
+	//Tests that the header prints out additional information (other parameters) when numFaults is set to 0
 	//@author lldeng
 	@Test
-	void headerNumFaultsEqualsZero() {
-		ChannelVisualization channelVis = createChannelVisualization(0, "ExampleX.txt", 15);
+	void createHeaderTestNumFaultsEqualsZero() {
+		ChannelVisualization channelVis = createChannelVisualization(0, "ExampleX.txt", 16);
 		Description actual = channelVis.createHeader();
 		
 		Description expected = new Description();
@@ -30,18 +32,18 @@ class ChannelVisualizationTest {
 		expected.add("Scheduler Name:	Priority\n");
 		expected.add("M:\t0.9\n");
 	    expected.add("E2E:\t0.99\n");
-	    expected.add("nChannels:\t15\n");
+	    expected.add("nChannels:\t16\n");
 		
 	    //System.out.print(actual);
 	    //System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
 
-	//Tests that the header created by createHeader() matches the expected header of ExampleX.txt
+	//Tests that the header created by createHeader() matches the expected header of ExampleX.txt with numFaults 1
 	//@author dlin4
 	@Test
-	void headerTestExampleX() {
-		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 15);
+	void createHeaderTestExampleX() {
+		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 16);
 		Description actual = channelVis.createHeader();
 		
 		Description expected = new Description();
@@ -54,35 +56,95 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}
 	
-	//Tests that checks an empty table is correctly initialized for ExampleX.txt
-	//@author dlin4
+	//Tests that the header created by createHeader() matches the expected header of Example.txt with numFaults 2
+	//@author lldeng
 	@Test
-	void visualizationEmptyTableTestExampleX() {
-		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 15);
-		Description actual = channelVis.visualization();
+	void createHeaderTestExample() {
+		ChannelVisualization channelVis = createChannelVisualization(2, "Example.txt", 16);
+		Description actual = channelVis.createHeader();
 		
 		Description expected = new Description();
-		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
-		for(int i = 0; i <= 15; i++) {
-			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
-		}
-		System.out.print(actual);
-		System.out.print(expected);
-		assertTrue(expected.equals(actual));
-	}
-	
-	/* @Test
-	void setAndGetTest() {
-		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 15);
-		Description actual = channelVis.visualization();
-		
-		Description expected = new Description();
+		expected.add("Channel Analysis for graph Example created with the following parameters:\n");
+		expected.add("Scheduler Name:	Priority\n");
+		expected.add("numFaults:	2\n");
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
-	}*/
+	}
 	
+	//Tests that an empty visualization table is correctly initialized for ExampleX.txt
+	//@author dlin4
+	@Test
+	void visualizationTestEmptyTableExampleX() {
+		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 16);
+		Description actual = channelVis.visualization();
+		
+		Description expected = new Description();
+		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
+		for(int i = 0; i < 16; i++) {
+			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
+		}
+		
+		//System.out.print(actual);
+		//System.out.print(expected);
+		assertTrue(expected.equals(actual));
+	}
+	
+	//Tests that an empty visualization table is correctly initialized for TestBug.txt
+	//@author lldeng
+	@Test
+	void visualizationTestEmptyTableTestBug() {
+		ChannelVisualization channelVis = createChannelVisualization(1, "TestBug.txt", 16);
+		Description actual = channelVis.visualization();
+		
+		Description expected = new Description();
+		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	10	11	\n");
+		for(int i = 0; i < 16; i++) {
+			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	-	-\n", i));
+		}
+		
+		//System.out.print(actual);
+		//System.out.print(expected);
+		assertTrue(expected.equals(actual));
+	}
+	
+	//Tests that an empty table with only one row is correctly initialized for TestBug.txt with numChannels = 1
+	//@author lldeng
+	@Test
+	void visualizationTestOneChannelTestBug() {
+		ChannelVisualization channelVis = createChannelVisualization(1, "TestBug.txt", 1);
+		Description actual = channelVis.visualization();
+		
+		Description expected = new Description();
+		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	10	11	\n");
+		for(int i = 0; i < 1; i++) {
+			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	-	-\n", i));
+		}
+		
+		//System.out.print(actual);
+		//System.out.print(expected);
+		assertTrue(expected.equals(actual));
+	}
+	
+	//Tests that an empty table with 25 rows is correctly initialized for ExampleX.txt with numChannels = 25
+	//@author lldeng
+	@Test
+	void visualizationTestTwentyFiveChannelsExampleX() {
+		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 25);
+		Description actual = channelVis.visualization();
+		
+		Description expected = new Description();
+		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
+		for(int i = 0; i < 25; i++) {
+			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
+		}
+		
+		//System.out.print(actual);
+		//System.out.print(expected);
+		assertTrue(expected.equals(actual));
+	}
+		
 	/* Currently not in use. Will be uncommented when ChannelAnalysis is fully implemented.
 	//CHECKS THE TABSSSS!!!!!!!
 	//DO NOT TOUCH UNTIL CODE IS FULLY IMPLEMENTED!!!
@@ -90,7 +152,7 @@ class ChannelVisualizationTest {
 	//from the ICON Project BugExistsOutputFiles
 	@Test
 	void visualizationExampleXOutput() {
-		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 15);
+		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 16);
 		Description actual = channelVis.visualization();
 		
 		Description expected = new Description();
@@ -111,35 +173,7 @@ class ChannelVisualizationTest {
 		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	} */
- 
-	@Test
-	void headerTest() {
-		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 15);
-		Description actual = channelVis.createHeader();
-		
-		Description expected = new Description();
-		expected.add("Channel Analysis for graph ExampleX created with the following parameters:\n");
-		expected.add("Scheduler Name:	Priority\n");
-		expected.add("numFaults:	1\n");
-		
-		//System.out.print(actual);
-		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
-	}
-	@Test
-	void emptyTableTest() {
-		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 15);
-		Description actual =channelVis.visualization();
-		
-		Description expected = new Description();
-		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	\n");
-		for(int i = 0; i <= 9; i++) {
-			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-\n", i));
-		}
-		System.out.print(actual);
-		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
-	}
+
 	/*@Test
 	void setAndGetTest() {
 		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 15);

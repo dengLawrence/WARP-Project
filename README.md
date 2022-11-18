@@ -180,4 +180,6 @@ See *Project Plan Files*:
 - 11/15/2022 : Updated implementation of ChannelVisualization.java to work for tests. -Ethan
 - 11/16/2022 : Finalized ChannelVisualization.java with JavaDoc comments. -Ethan
 - 11/16/2022 : Lab meeting - delegated roles and planned for Sprint 3.
+- 11/16/2022 : Updated UML Sequence Diagram and ChannelVisualizationTest.java. -David
+- 11/16/2022 : Completed JUnit tests for ChannelVisualization.java (empty tables only). -Lawrence
 
