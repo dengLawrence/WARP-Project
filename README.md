@@ -184,4 +184,4 @@ See *Project Plan Files*:
 - 11/17/2022 : Completed JUnit tests for ChannelVisualization.java (empty tables only). -Lawrence, David
 - 11/18/2022 : Created ChannelAnalysis UML class diagram and updated MethodIdeas.md. -Ethan
 - 11/18/2022 : Added additional JUnit tests. -Lawrence
-
+- 11/18/2022 : Added 2 JUnit tests and timeouts. - David
