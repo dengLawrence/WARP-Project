@@ -21,12 +21,23 @@ class ChannelVisualizationTest {
 	}
 	
 	//Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
-	//MODIFIED ChannelAnalysis class (see classes below) to test completely empty tables.
+	//MODIFIED ChannelAnalysis class (see classes below) to test 0x0 table.
 	//@author lldeng
-	private ChannelVisualization createChannelVisualizationMod(Integer numFaults, String inputFile, Integer numChannels) {
+	private ChannelVisualization createChannelVisualizationModNone(Integer numFaults, String inputFile, Integer numChannels) {
 		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
 		ScheduleChoices choice = ScheduleChoices.PRIORITY;
-		WarpInterface warp = new WarpSystemMod(workload, numChannels, choice);
+		WarpInterface warp = new WarpSystemModNone(workload, numChannels, choice);
+		ChannelVisualization channelVis = new ChannelVisualization(warp);
+		return channelVis;
+	}
+	
+	//Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
+	//MODIFIED ChannelAnalysis class (see classes below) to test table with certain cells filled.
+	//@author lldeng
+	private ChannelVisualization createChannelVisualizationModFilled(Integer numFaults, String inputFile, Integer numChannels) {
+		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
+		ScheduleChoices choice = ScheduleChoices.PRIORITY;
+		WarpInterface warp = new WarpSystemModFilled(workload, numChannels, choice);
 		ChannelVisualization channelVis = new ChannelVisualization(warp);
 		return channelVis;
 	}
@@ -156,15 +167,36 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}
 	
-	//Tests that a table with no rows or columns is made (Test file is irrelevant)
+	//Tests that a table with no rows or columns is made using the modded ChannelAnalysis class(Test file is irrelevant)
 	//@author lldeng
 	@Test
 	void visualizationTestNoTable() {
-		ChannelVisualization channelVis = createChannelVisualizationMod(1, "ExampleX.txt", 16);
+		ChannelVisualization channelVis = createChannelVisualizationModNone(1, "ExampleX.txt", 16);
 		Description actual = channelVis.visualization();
 		
 		Description expected = new Description();
 		expected.add("Channel/Time Slot \n");
+		
+		//System.out.print(actual);
+		//System.out.print(expected);
+		assertTrue(expected.equals(actual));
+	}
+	
+	//Tests that a table with actual input string values is created using the modded ChannelAnalysis class
+	//@author lldeng
+	@Test
+	void visualizationTestPartiallyFilledTable() {
+		ChannelVisualization channelVis = createChannelVisualizationModFilled(1, "ExampleX.txt", 16);
+		Description actual = channelVis.visualization();
+		
+		Description expected = new Description();
+		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
+		for(int i = 0; i < 8; i++) {
+			expected.add(String.format("%s	test	test	test	test	test	test	test	test	test	test\n", i));
+		}
+		for(int i = 8; i < 16; i++) {
+			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
+		}
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
@@ -213,13 +245,17 @@ class ChannelVisualizationTest {
 	}*/
 }
 
-class ChannelAnalysisMod extends ChannelAnalysis {
+//This class extends the ChannelAnalysis class to override the current implementation in order to test that
+//ChannelVisualization correctly creates a visualization with no rows or columns when the ChannelAnalysis
+//table has no rows or columns.
+//@author lldeng
+class ChannelAnalysisModNone extends ChannelAnalysis {
 	
-	ChannelAnalysisMod(WarpInterface warp) {
+	ChannelAnalysisModNone(WarpInterface warp) {
 		this(warp.toProgram());
 	}
 
-	ChannelAnalysisMod(Program program) {
+	ChannelAnalysisModNone(Program program) {
 		super(program);
 		buildEmptyChannelAnalysisTable();
 	}
@@ -231,16 +267,63 @@ class ChannelAnalysisMod extends ChannelAnalysis {
 	}
 }
 
-class WarpSystemMod extends WarpSystem {
+//This class extends the WarpSystem class to create a WarpSystem object using the modified ChannelAnalysis
+//class that creates a table with no rows or columns (see class directly above)
+//@author lldeng
+class WarpSystemModNone extends WarpSystem {
 
-	public WarpSystemMod(WorkLoad workLoad, Integer numChannels, ScheduleChoices choice) {
+	public WarpSystemModNone(WorkLoad workLoad, Integer numChannels, ScheduleChoices choice) {
 		super(workLoad, numChannels, choice);
 		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
 	public ChannelAnalysis toChannelAnalysis() {
-		ChannelAnalysis ca = new ChannelAnalysisMod(this);
+		ChannelAnalysis ca = new ChannelAnalysisModNone(this);
+		return ca;
+	}
+}
+
+//This class extends the ChannelAnalysis class to override the current implementation in order to test that
+//ChannelVisualization correctly creates a visualization with actual string values when the ChannelAnalysis
+//table has those string values set in certain Channel/Timeslot cells.
+//@author lldeng
+class ChannelAnalysisModFilled extends ChannelAnalysis {
+	
+	ChannelAnalysisModFilled(WarpInterface warp) {
+		this(warp.toProgram());
+	}
+
+	ChannelAnalysisModFilled(Program program) {
+		super(program);
+		buildFilledChannelAnalysisTable();
+	}
+	
+	private void buildFilledChannelAnalysisTable() {
+		var numColumns = programTable.getNumRows();
+		var numRows = program.getNumChannels();
+		channelAnalysisTable = new ProgramSchedule(numRows,numColumns);
+		for(int i = 0; i < numRows/2; i++) {
+			for(int j = 0; j < numColumns; j++) {
+				channelAnalysisTable.set(i, j, "test");
+			}
+		}
+	}
+}
+
+//This class extends the WarpSystem class to create a WarpSystem object using the modified ChannelAnalysis
+//class that creates a table with input strings at certain table positions (see class directly above)
+//@author lldeng
+class WarpSystemModFilled extends WarpSystem {
+
+	public WarpSystemModFilled(WorkLoad workLoad, Integer numChannels, ScheduleChoices choice) {
+		super(workLoad, numChannels, choice);
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public ChannelAnalysis toChannelAnalysis() {
+		ChannelAnalysis ca = new ChannelAnalysisModFilled(this);
 		return ca;
 	}
 }
