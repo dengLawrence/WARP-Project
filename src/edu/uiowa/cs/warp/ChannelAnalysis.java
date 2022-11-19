@@ -1,5 +1,7 @@
 package edu.uiowa.cs.warp;
 
+import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
+
 /**
  * <h1>Implementation of the ChannelAnalysis class</h1>
  * Used to analyze either Program or WarpInterface by converting to program.
@@ -84,6 +86,26 @@ public class ChannelAnalysis {
 	  var numColumns = programTable.getNumRows();
 	  var numRows = program.getNumChannels();
 	  channelAnalysisTable = new ProgramSchedule(numRows,numColumns);
+	  
+	  var dsl = new WarpDSL();
+	  
+	  for (int i = 0; i < numColumns; i++) {
+		  for (int j = 0; j < programTable.getNumColumns(); j++) {
+			  String instr = programTable.get(i, j);
+			  var instructionParametersArray = dsl.getInstructionParameters(instr);
+			  for (InstructionParameters entry : instructionParametersArray) {
+				  String name = entry.getName();
+				  if (name.equals("push")) {
+					  String src = entry.getSrc();
+					  String snk = entry.getSnk();
+					  String flow = entry.getFlow();
+					  String output = String.format("[%s]::%s:(%s:%s)", src, flow, src, snk);
+					  int channel = Integer.parseInt(entry.getChannel());
+					  channelAnalysisTable.set(channel, i, output);
+				  }
+			  }
+		  }
+	  }
    }
   
   /**
