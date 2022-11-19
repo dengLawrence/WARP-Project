@@ -36,6 +36,12 @@ public class ChannelAnalysis {
    * Will be set to private once ChannelAnalysis is fully implemented.
    */
   protected ProgramSchedule channelAnalysisTable;
+  
+  /**
+   * Necessary for the current implementation of buildChannelAnalysisTable().
+   * May be removed with later refactoring of this method.
+   */
+  private String pushInstruction;
 
   /**
    * Constructor that takes in a WarpInterface and converts it to a a program, calls the other 
@@ -82,7 +88,8 @@ public class ChannelAnalysis {
    * @author eborchard
    */
   public void buildChannelAnalysisTable() {
-	  //TODO Implement this method to create proper visualization of channel allocations (See MethodIdeas.md).
+	  //TODO This current implementation needs to be refactored, but it currently 
+	  //handles everything expect channel conflicts.
 	  var numColumns = programTable.getNumRows();
 	  var numRows = program.getNumChannels();
 	  channelAnalysisTable = new ProgramSchedule(numRows,numColumns);
@@ -96,10 +103,20 @@ public class ChannelAnalysis {
 			  for (InstructionParameters entry : instructionParametersArray) {
 				  String name = entry.getName();
 				  if (name.equals("push")) {
-					  String src = entry.getSrc();
-					  String snk = entry.getSnk();
-					  String flow = entry.getFlow();
-					  String output = String.format("[%s]::%s:(%s:%s)", src, flow, src, snk);
+					  setPushInstruction(entry);
+					  String src1 = entry.getSrc();
+					  String snk1 = entry.getSnk();
+					  String flow1 = entry.getFlow();
+					  String output = String.format("[%s]::%s:(%s:%s)", src1, flow1, src1, snk1);
+					  int channel = Integer.parseInt(entry.getChannel());
+					  channelAnalysisTable.set(channel, i, output);
+				  }
+				  if (name.equals("pull")) {
+					  String pushInstr = getPushInstruction();
+					  String src2 = entry.getSrc();
+					  String snk2 = entry.getSnk();
+					  String flow2 = entry.getFlow();
+					  String output = String.format("%s, %s:(%s:%s)", pushInstr, flow2, src2, snk2);
 					  int channel = Integer.parseInt(entry.getChannel());
 					  channelAnalysisTable.set(channel, i, output);
 				  }
@@ -107,6 +124,17 @@ public class ChannelAnalysis {
 		  }
 	  }
    }
+  
+  private void setPushInstruction(InstructionParameters entry) {
+	  String src1 = entry.getSrc();
+	  String snk1 = entry.getSnk();
+	  String flow1 = entry.getFlow();
+	  pushInstruction = String.format("[%s]::%s:(%s:%s)", src1, flow1, src1, snk1);
+  }
+  
+  private String getPushInstruction() {
+	  return pushInstruction;
+  }
   
   /**
    * Method that retrieves the channel analysis table created in the buildChannelAnalysisTable() method.

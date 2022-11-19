@@ -192,6 +192,8 @@ See *Project Plan Files*:
 - 11/4/2022 : Warp Sequence Diagram is uploaded. -David
 - 11/6/2022 : ChannelVisualization UML class diagram and test classes for ChannelVisualization & ChannelAnalysis classes created. -Ethan
 - 11/7/2022 : ChannelVisualization placeholder methods were created and the method design file (*MethodIdeas.md*) was created. -Ethan and Lawrence
+<br>
+*Start of Sprint 2*<br>
 - 11/9/2022 : Lab meeting - delegated roles for Sprint 2.
 - 11/12/2022 : Started ChannelVisualizationTest.java -Lawrence
 - 11/13/2022 : Implemented most of ChannelVisualiztion.java and created a dummy method within ChannelAnalysis.java. -Ethan
@@ -205,3 +207,7 @@ See *Project Plan Files*:
 - 11/18/2022 : Created ChannelAnalysis UML class diagram and updated MethodIdeas.md. -Ethan
 - 11/18/2022 : Added additional JUnit tests. -Lawrence
 - 11/18/2022 : Added 2 JUnit tests and timeouts. - David
+<br>
+*Start of Sprint 3*<br>
+- 11/18/2022 : Added rudimentary implementation of buildChannelAnalysisTable. Does not handle channel conflicts and will need to be refactored. -Ethan
+

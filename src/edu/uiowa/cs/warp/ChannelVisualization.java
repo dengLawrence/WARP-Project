@@ -71,6 +71,7 @@ public class ChannelVisualization extends VisualizationObject {
     for (Integer rowIndex = 0; rowIndex < sourceCode.getNumRows(); rowIndex++) {
     	/* create new row string staring with the channel number */
     	String rowString = rowIndex.toString();
+    	rowString += "\t\t";
     	for (Integer columnIndex = 0; columnIndex < sourceCode.getNumColumns(); columnIndex++) {
         	var entry = sourceCode.get(rowIndex, columnIndex);
         	/* if entry is null, append a tab and hyphen */
