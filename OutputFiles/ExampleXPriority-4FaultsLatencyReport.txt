@@ -1,0 +1,7 @@
+// Course CS2820 Authentication Tag: m3f7wvftYoPFqqkHneOsEKPY3YHYusQ/3EmzeVGxoD1zuyJWgqrIXyHEOHmJTdChAknBAZACJ0g0w+qZN5E+M9A256rudAyx9nomQqfvXr0=
+Latency Report
+UNKNOWN latency for F0:0; Not enough transmissions attempted
+UNKNOWN latency for F0:1; Not enough transmissions attempted
+******************************
+UNKNOWN latency for F1:0; Not enough transmissions attempted
+******************************
