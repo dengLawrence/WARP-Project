@@ -1,4 +1,4 @@
-// Course CS2820 Authentication Tag: jbbhQQvinfGfmrFNmf+whiorfGaf0fcCLVmgTdmN89m7ZqO5Uxidetv3fECzGbR25LGG6C5S5btAqWDWaSTrZCvu3k5BFlYERvRNI9H5UAY=
+// Course CS2820 Authentication Tag: pzDm6Xrojy8U/+kVZNIWCfTtLtEolWbR5uxC9Lx6rKyplf86Bx+mgOsWsD8802Ex00aT4bot91RpZKeZ2k1vTivu3k5BFlYERvRNI9H5UAY=
 Channel Analysis for graph ExampleX created with the following parameters:
 Scheduler Name:	Priority
 numFaults:	1

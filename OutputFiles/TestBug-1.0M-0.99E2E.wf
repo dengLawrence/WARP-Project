@@ -1,8 +1,8 @@
-// Course CS2820 Authentication Tag: bM0j07HgAhBujV0UCao/VgiB6HTnbyBUPczR1iCQCCrqi9/AZ7G4ytSWdypYDZmRGpWM4c8A7i9DUo7xfeFdu4P/YwUdn/DZ7RGTG9/5tzY=
+// Course CS2820 Authentication Tag: A1VzitUg7HHu1tnIxc5Qr/xScYxMX9KHvEIkovIJ7ahOOV5UdeFucKbKeEdPFwUxQB6dHqhvBVRKEtBKxg6t8pOak4CaeKXenhmFYLWpLAk=
 WARP_TestBug{
 // M = 1.0 and End-to-End reliability = 0.99
-// Flow F0 has a minimum communication cost of 1 and a worst-case communication cost of 5
- F0 (1,12,8,0) : A -5-> B
-// Flow F1 has a minimum communication cost of 3 and a worst-case communication cost of 15
- F1 (2,12,8,0) : C -5-> D -5-> E -5-> F
+// Flow F0 has a minimum communication cost of 1 and a worst-case communication cost of 2
+ F0 (1,12,8,0) : A -2-> B
+// Flow F1 has a minimum communication cost of 3 and a worst-case communication cost of 6
+ F1 (2,12,8,0) : C -2-> D -2-> E -2-> F
 }
