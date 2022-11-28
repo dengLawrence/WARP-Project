@@ -109,21 +109,29 @@ public class ChannelAnalysis {
 			  //Loop through these instruction parameters
 			  for (int k = 0; k < instructionParametersArray.size(); k++) {
 				  InstructionParameters instr = instructionParametersArray.get(k);
-				  InstructionParameters nextInstr = instructionParametersArray.get(k+1);
+				  InstructionParameters nextInstr = null;
+				  if(k < instructionParametersArray.size() - 1) {
+					  nextInstr = instructionParametersArray.get(k+1);
+				  }
 				  String name = instr.getName();
 				  if (name.equals("push")) {
 					  String src1 = instr.getSrc();
 					  String snk1 = instr.getSnk();
 					  String flow1 = instr.getFlow();
 					  String output = String.format("[%s]::%s:(%s:%s)", src1, flow1, src1, snk1);
-					  if (nextInstr.getName().equals("pull")) {
-						  String src2 = instr.getSrc();
-						  String snk2 = instr.getSnk();
-						  String flow2 = instr.getFlow();
-						  output += String.format("%s, %s:(%s:%s)", output, flow2, src2, snk2);
+					  if (nextInstr != null && nextInstr.getName().equals("pull")) {
+						  String src2 = nextInstr.getSrc();
+						  String snk2 = nextInstr.getSnk();
+						  String flow2 = nextInstr.getFlow();
+						  output += String.format(", %s:(%s:%s)", flow2, src2, snk2);
 						  k++;
 					  }
 					  int channel = Integer.parseInt(instr.getChannel());
+					  if(channelAnalysisTable.get(channel, i) != null) {
+						  String tableString = channelAnalysisTable.get(channel, i);
+						  tableString += String.format("; %s", output);
+						  output = tableString;
+					  }
 					  channelAnalysisTable.set(channel, i, output);
 				  }
 //				  String name = instr.getName();

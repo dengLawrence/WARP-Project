@@ -210,4 +210,4 @@ See *Project Plan Files*:
 <br>
 *Start of Sprint 3*<br>
 - 11/18/2022 : Added rudimentary implementation of buildChannelAnalysisTable. Does not handle channel conflicts and will need to be refactored. -Ethan
-
+- 11/28/2022 : Team meeting and Completed rudimentary implementation of buildChannelAnalysisTable (w/ conflicts). Needs clean-up. -Ethan, David, Alex, Lawrence
