@@ -131,6 +131,7 @@ public class ChannelAnalysis {
 						  String tableString = channelAnalysisTable.get(channel, i);
 						  tableString += String.format("; %s", output);
 						  output = tableString;
+						  conflictExists = true;
 					  }
 					  channelAnalysisTable.set(channel, i, output);
 				  }
