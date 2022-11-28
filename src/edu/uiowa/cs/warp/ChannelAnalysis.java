@@ -36,12 +36,6 @@ public class ChannelAnalysis {
    * Will be set to private once ChannelAnalysis is fully implemented.
    */
   protected ProgramSchedule channelAnalysisTable;
-  
-  /**
-   * Necessary for the current implementation of buildChannelAnalysisTable().
-   * May be removed with later refactoring of this method.
-   */
-  private String tableEntry;
 
   /**
    * Constructor that takes in a WarpInterface and converts it to a a program, calls the other 
@@ -85,11 +79,10 @@ public class ChannelAnalysis {
    * variable to create the *dsl file visualization.
    * Should be private.
    * 
-   * @author eborchard
+   * @author eborchard, lldeng
    */
   public void buildChannelAnalysisTable() {
-	  //TODO This current implementation needs to be refactored, but it currently 
-	  //handles everything expect channel conflicts.
+	  //TODO Needs refactoring.
 	  
 	  //Create a new channel analysis table with the correct rows and columns based on input file
 	  var numColumns = programTable.getNumRows();
@@ -124,7 +117,6 @@ public class ChannelAnalysis {
 						  String snk2 = nextInstr.getSnk();
 						  String flow2 = nextInstr.getFlow();
 						  output += String.format(", %s:(%s:%s)", flow2, src2, snk2);
-						  k++;
 					  }
 					  int channel = Integer.parseInt(instr.getChannel());
 					  if(channelAnalysisTable.get(channel, i) != null) {
@@ -135,50 +127,10 @@ public class ChannelAnalysis {
 					  }
 					  channelAnalysisTable.set(channel, i, output);
 				  }
-//				  String name = instr.getName();
-//				  //If it is a push or pull instruction, call setTableEntry to create the correct formatting
-//				  if (name.equals("push") | name.equals("pull")) {
-//					  String src = instr.getSrc();
-//					  String snk = instr.getSnk();
-//					  String flow = instr.getFlow();
-//					  setTableEntry(name, src, snk, flow);
-//					  String output = getTableEntry();
-//					  //Get the channel and set the new entry of the channel analysis table
-//					  int channel = Integer.parseInt(instr.getChannel());
-//					  channelAnalysisTable.set(channel, i, output);
-				 
 			  }
 		  }
 	  }
    }
-  
-  /**
-   * Private helper method that takes in an instruction's parameters and updates the global 
-   * String variable, tableEntry, with the requested formatting based on if it is a push or pull instruction.
-   * 
-   * @author eborchard
-   * @param name, a String of the current instruction name (push or pull)
-   * @param src, a String of the source node for the given instruction
-   * @param snk, a String of the sink node for the given instruction
-   * @param flow, a String of the flow name for the given instruction
-   */
-  private void setTableEntry(String name, String src, String snk, String flow) {
-	  if (name.equals("push")) {
-		  tableEntry = String.format("[%s]::%s:(%s:%s)", src, flow, src, snk);
-	  } else {
-		  tableEntry = String.format("%s, %s:(%s:%s)", tableEntry, flow, src, snk);
-	  }
-  }
-  
-  /**
-   * Private helper method to get tableEntry.
-   * 
-   * @author eborchard
-   * @return tableEntry, String with formatted channel analysis table output
-   */
-  private String getTableEntry() {
-	  return tableEntry;
-  }
   
   /**
    * Method that retrieves the channel analysis table created in the buildChannelAnalysisTable() method.

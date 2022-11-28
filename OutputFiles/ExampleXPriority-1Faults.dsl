@@ -1,4 +1,4 @@
-// Course CS2820 Authentication Tag: h+67eF4Ud6peKXE1hZTtjZGBT+GDnQrucPfnuh1QCEtzuyJWgqrIXyHEOHmJTdChvkve3gWxi3p8bqXazlXoBMWHe1FPNUvJhoMGfcBBTMo=
+// Course CS2820 Authentication Tag: S1XcG0HXSj0iDe72LKel/C5mLdeo+Aj7I0hMW1oLWP6plf86Bx+mgOsWsD8802ExPHbwCxLc6ONhySjyoiUxasWHe1FPNUvJhoMGfcBBTMo=
 WARP system for graph ExampleX created with the following parameters:
 Scheduler Name:	Priority
 numFaults:	1
