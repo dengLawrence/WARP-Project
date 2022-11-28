@@ -107,19 +107,37 @@ public class ChannelAnalysis {
 			  //Create an array of the instruction parameters of each entry
 			  var instructionParametersArray = dsl.getInstructionParameters(instruction);
 			  //Loop through these instruction parameters
-			  for (InstructionParameters instr : instructionParametersArray) {
+			  for (int k = 0; k < instructionParametersArray.size(); k++) {
+				  InstructionParameters instr = instructionParametersArray.get(k);
+				  InstructionParameters nextInstr = instructionParametersArray.get(k+1);
 				  String name = instr.getName();
-				  //If it is a push or pull instruction, call setTableEntry to create the correct formatting
-				  if (name.equals("push") | name.equals("pull")) {
-					  String src = instr.getSrc();
-					  String snk = instr.getSnk();
-					  String flow = instr.getFlow();
-					  setTableEntry(name, src, snk, flow);
-					  String output = getTableEntry();
-					  //Get the channel and set the new entry of the channel analysis table
+				  if (name.equals("push")) {
+					  String src1 = instr.getSrc();
+					  String snk1 = instr.getSnk();
+					  String flow1 = instr.getFlow();
+					  String output = String.format("[%s]::%s:(%s:%s)", src1, flow1, src1, snk1);
+					  if (nextInstr.getName().equals("pull")) {
+						  String src2 = instr.getSrc();
+						  String snk2 = instr.getSnk();
+						  String flow2 = instr.getFlow();
+						  output += String.format("%s, %s:(%s:%s)", output, flow2, src2, snk2);
+						  k++;
+					  }
 					  int channel = Integer.parseInt(instr.getChannel());
 					  channelAnalysisTable.set(channel, i, output);
 				  }
+//				  String name = instr.getName();
+//				  //If it is a push or pull instruction, call setTableEntry to create the correct formatting
+//				  if (name.equals("push") | name.equals("pull")) {
+//					  String src = instr.getSrc();
+//					  String snk = instr.getSnk();
+//					  String flow = instr.getFlow();
+//					  setTableEntry(name, src, snk, flow);
+//					  String output = getTableEntry();
+//					  //Get the channel and set the new entry of the channel analysis table
+//					  int channel = Integer.parseInt(instr.getChannel());
+//					  channelAnalysisTable.set(channel, i, output);
+				 
 			  }
 		  }
 	  }
