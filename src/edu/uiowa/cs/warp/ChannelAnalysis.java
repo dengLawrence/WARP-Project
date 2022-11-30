@@ -108,29 +108,41 @@ public class ChannelAnalysis {
 				  }
 				  String name = instr.getName();
 				  if (name.equals("push")) {
-					  String src1 = instr.getSrc();
-					  String snk1 = instr.getSnk();
-					  String flow1 = instr.getFlow();
-					  String output = String.format("[%s]::%s:(%s:%s)", src1, flow1, src1, snk1);
-					  if (nextInstr != null && nextInstr.getName().equals("pull")) {
-						  String src2 = nextInstr.getSrc();
-						  String snk2 = nextInstr.getSnk();
-						  String flow2 = nextInstr.getFlow();
-						  output += String.format(", %s:(%s:%s)", flow2, src2, snk2);
-					  }
-					  int channel = Integer.parseInt(instr.getChannel());
-					  if(channelAnalysisTable.get(channel, i) != null) {
-						  String tableString = channelAnalysisTable.get(channel, i);
-						  tableString += String.format("; %s", output);
-						  output = tableString;
-						  conflictExists = true;
-					  }
-					  channelAnalysisTable.set(channel, i, output);
+					  setTableEntry(i, instr, nextInstr);
 				  }
 			  }
 		  }
 	  }
    }
+
+  /**
+   * 
+   * 
+   * @param i
+   * @param instr
+   * @param nextInstr
+   */
+  public void setTableEntry(int i, InstructionParameters instr, InstructionParameters nextInstr) {
+	  String pushSrc = instr.getSrc();
+	  String pushSnk = instr.getSnk();
+	  String pushFlow = instr.getFlow();
+	  String output = String.format("[%s]::%s:(%s:%s)", pushSrc, pushFlow, pushSrc, pushSnk);
+	  if (nextInstr != null && nextInstr.getName().equals("pull")) {
+		  String pullSrc = nextInstr.getSrc();
+		  String pullSnk = nextInstr.getSnk();
+		  String pullFlow = nextInstr.getFlow();
+		  output += String.format(", %s:(%s:%s)", pullFlow, pullSrc, pullSnk);
+	  }
+	  int channel = Integer.parseInt(instr.getChannel());
+	  String currentTableEntry = channelAnalysisTable.get(channel, i);
+	  if(currentTableEntry != null) {
+		  String tableString = currentTableEntry;
+		  tableString += String.format("; %s", output);
+		  output = tableString;
+		  conflictExists = true;
+	  }
+	  channelAnalysisTable.set(channel, i, output);
+  }
   
   /**
    * Method that retrieves the channel analysis table created in the buildChannelAnalysisTable() method.

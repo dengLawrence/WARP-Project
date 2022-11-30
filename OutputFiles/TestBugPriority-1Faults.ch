@@ -1,4 +1,4 @@
-// Course CS2820 Authentication Tag: MqRlgNSDnsy+BHGqO7uS93Q8gvGiY6OOWljjY1whxUWplf86Bx+mgOsWsD8802Ex0DNk/ZyRtg5Z9fWdy2CU1bGd+3VSIL8kJzmey/3CWxM=
+// Course CS2820 Authentication Tag: 0FCFpaT5uKt7NPqJPNDXPVPHaA57gloqCyWTyp3WtOwSJeOEBNJNjjn422pt7Q3/M0haTSLNi7xMfY6Gfse2EbGd+3VSIL8kJzmey/3CWxM=
 Channel Analysis for graph TestBug created with the following parameters:
 Scheduler Name:	Priority
 numFaults:	1
