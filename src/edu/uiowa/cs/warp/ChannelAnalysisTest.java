@@ -1,10 +1,11 @@
-<<<<<<< HEAD
-=======
 package edu.uiowa.cs.warp;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
+import java.util.concurrent.TimeUnit;
+//test
 
 import edu.uiowa.cs.warp.SystemAttributes.ScheduleChoices;
 
@@ -31,4 +32,3 @@ class ChannelAnalysisTest {
 	}
 
 }
->>>>>>> a006a5fc0c432e4912d4fa82b58026eff3c3fe84
