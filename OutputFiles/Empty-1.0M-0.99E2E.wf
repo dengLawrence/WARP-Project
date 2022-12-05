@@ -1,0 +1,6 @@
+// Course CS2820 Authentication Tag: tLLmtxnPY8e4kAlUWVjtQiYi5Eg9tFzyCju3kinum5xmL0BvJqU3xXhzxBUb/rebcwvmBIz0ZqtUl8v8yyvOKPVTzi/1RmZvT4eLjc/2RAA=
+WARP_Empty{
+// M = 1.0 and End-to-End reliability = 0.99
+// Flow F0 has a minimum communication cost of 1 and a worst-case communication cost of 2
+ F0 (1,5,5,0) : A -2-> B
+}
