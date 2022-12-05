@@ -1,4 +1,4 @@
-// Course CS2820 Authentication Tag: 7b6HpSUlGJ29XI9QebzS2/QTAJZbv9lGuCwz4w5iq019IovtWnCuaboHtawYxKb1/j4FSSPYQ2cdr6xToEeBQTbYNtIl6KT4PivsEu30e+I=
+// Course CS2820 Authentication Tag: rQ/NoaNQZKUvd/ROpFFj//ysteJkk5b583Yq3ByrnH4woKIAyCme+vbkUb4vMTwtk6L6AMp9jzKBYHAthcq7qcRXRVFVA1AzUPYtFwKKPTU=
 strict digraph TestBug {
     A  -> B; 
     C  -> D  -> E  -> F; 

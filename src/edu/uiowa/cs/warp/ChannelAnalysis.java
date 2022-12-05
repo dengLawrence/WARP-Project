@@ -3,9 +3,9 @@ package edu.uiowa.cs.warp;
 import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
 
 /**
- * <h1>Implementation of the ChannelAnalysis class</h1>
- * Used to analyze either Program or WarpInterface by converting to program.
- * Can be used to detect channel conflicts.
+ * <h1>Implementation of the ChannelAnalysis class.</h1>
+ * <p>Used to analyze either Program or WarpInterface by converting to program.
+ * Evaluates the channel allocation of WARP flows including detection of channel conflicts.</p>
  * 
  * @author sgoddard
  * @version 1.4
@@ -73,18 +73,15 @@ public class ChannelAnalysis {
   }
   
   /**
-   * This method parses the program object, programTable, and WarpDSL to create a channel analysis table.
-   * The Visualization() method within ChannelVisualization will then use this analysis table to
-   * create the desired visualization (similar to how ProgramVisualization uses the "sourceCode"
-   * variable to create the *dsl file visualization).
+   * buildChannelAnalysisTable() parses the program schedule (programTable) and WarpDSL to create a channel
+   * analysis table. The Visualization() method within ChannelVisualization will then use this analysis table
+   * to create the desired visualization.
    * 
    * Should be private.
    * 
    * @author eborchard, lldeng
    */
   public void buildChannelAnalysisTable() {
-	  //TODO Needs to be refactored.
-	  
 	  //Create a new channel analysis table with the correct number of rows and columns based on input file,
 	  //where the number of rows is the number of channels in the program and the number of columns is the
 	  //number of rows in the programTable (the number of TimeSlots in the program).
@@ -138,6 +135,7 @@ public class ChannelAnalysis {
    * instructions in the same channel and timeSlot, the method adds a semicolon between the different
    * coordinators' instructions in the channel analysis table entry and sets the conflictExists flag to true.
    * 
+   * @author eborchard, lldeng
    * @param timeSlot The timeSlot of the instruction, which is also the column number of the channel analysis table.
    * @param currInstr The current InstructionParameter, from looping through the InstructionParametersArray.
    * @param nextInstr The InstructionParameter after the current one, which may be a 'pull' instruction.
@@ -173,7 +171,7 @@ public class ChannelAnalysis {
   }
   
   /**
-   * Method that retrieves the channel analysis table created in the buildChannelAnalysisTable() method.
+   * Method that retrieves the channel analysis table created from the buildChannelAnalysisTable() method.
    * 
    * @author eborchard
    * @return ProgramSchedule The completed channel analysis table.

@@ -1,8 +1,10 @@
 package edu.uiowa.cs.warp;
 
 /**
- * ChannelVisualization creates the visualizations for the channel analysis of the WARP program.
- * <p>
+ * <h1>Implementation of Channel Visualization.</h1>
+ * <p>The ChannelVisualization class allows a Warp Interface to be visualized when the -ca flag is
+ * requested at runtime. A Description object of the visualization is created from the retrieved channel
+ * analysis table. A Description object of the header for file output can also be created.</p>
  * 
  * CS2820 Fall 2022 Project: Implement this class to create the file visualization that is requested
  * in Warp.
@@ -46,58 +48,58 @@ public class ChannelVisualization extends VisualizationObject {
   }
   
   /**
-   * Creates a Description object for channel visualization by formatting the columns with the time slot numbers and
-   * adding rows by parsing individual table entries of the ProgramSchedule retrieved from getChannelAnalysisTable().
+   * Creates a Description object of the channel allocation visualization. This method is called by
+   * VisualizationObject.java to retrieve this Description for display and file visualization.
+   * This method parses the channel analysis table created in the constructor. Row and column labels are
+   * created and the entries of the channel analysis table are added.
    * 
    * @author eborchard
-   * @return Description containing visualization of the channel analysis
+   * @return Description containing visualization of the channel analysis.
    */
   @Override
   public Description visualization() {
-    Description content = new Description();
-    ProgramSchedule sourceCode = ca.getChannelAnalysisTable();
+    Description visualization = new Description();
+    ProgramSchedule caTable = ca.getChannelAnalysisTable();
 
-    /* create schedule output header of column time slots in order (zero-indexed), with \t as separator */
+    /* The first row in the visualization starts with the axis labels... */
     String columnString = "Channel/Time Slot ";
-    /* loop through the time slots adding the number and tab */
-    for (Integer columnNumber = 0; columnNumber < sourceCode.getNumColumns(); columnNumber++) {
+    /* ...which is followed by the time slot numbers (zero-indexed) as the column headers. */
+    for (Integer columnNumber = 0; columnNumber < caTable.getNumColumns(); columnNumber++) {
     	columnString += columnNumber.toString() + "\t";
     }
-    /* add \n at the end */
+    /* Start a new line for the body of the visualization table. */
     columnString += "\n";
-    content.add(columnString);
+    visualization.add(columnString);
     
-    /* loop through each index of the program schedule table */
-    for (Integer rowIndex = 0; rowIndex < sourceCode.getNumRows(); rowIndex++) {
-    	/* create new row string staring with the channel number */
+    /* Loop through the rows and columns of the caTable to retrieve each individual table entry. */
+    for (Integer rowIndex = 0; rowIndex < caTable.getNumRows(); rowIndex++) {
     	String rowString = rowIndex.toString();
-    	rowString += "\t\t";
-    	for (Integer columnIndex = 0; columnIndex < sourceCode.getNumColumns(); columnIndex++) {
-        	var entry = sourceCode.get(rowIndex, columnIndex);
-        	/* if entry is null, append a tab and hyphen */
+    	for (Integer columnIndex = 0; columnIndex < caTable.getNumColumns(); columnIndex++) {
+        	var entry = caTable.get(rowIndex, columnIndex);
+        	/* If the caTable entry is null, that channel/time slot is not being used. Append a tab and hyphen. */
     		if (entry == null) {
     			rowString += "\t-";
-    		/* else append a tab and the contents of the entry */
+    		/* Else the channel/time slot is being used. Append a tab and the contents of the entry. */
     		} else {        
     			rowString += "\t" + entry;
     		}
-    		/* append new line character when last column index is reached */
-    		if (columnIndex == sourceCode.getNumColumns() - 1) {
+    		/* Append a new line character when the last time slot is reached. */
+    		if (columnIndex == caTable.getNumColumns() - 1) {
     			rowString += "\n";
     		}
     	}
-    	/* add each row to content */
-    	content.add(rowString);
+    	/* Add each newly created row string to the Description, visualization. */
+    	visualization.add(rowString);
       }
-    return content;
+    return visualization;
   }
 
   
   /**
-   * Creates a Description object for the header of the channel visualization output.
+   * Creates a Description object for the header of the channel visualization file output.
    * 
    * @author sgoddard (modified: eborchard)
-   * @return Description containing visualization of the header
+   * @return Description containing visualization of the header.
    */
   @Override
   public Description createHeader() {
