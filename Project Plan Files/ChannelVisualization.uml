@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_wbnQkF3-Ee2F0PVRnb5fbg" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_wbn3oF3-Ee2F0PVRnb5fbg" source="codegen">
         <details xmi:id="_wbn3oV3-Ee2F0PVRnb5fbg" key="codegenDirectory" value="/cs2820-fall22/src"/>
-        <details xmi:id="_1k4QcF3-Ee2F0PVRnb5fbg" key="AssociatedSourceCode" value="/cs2820-fall22/src/edu/uiowa/cs/warp/AbstractMap.java;2633489473/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Activation.java;3634548837/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Activations.java;3305092594/1;/cs2820-fall22/src/edu/uiowa/cs/warp/BasicPoset.java;3238489715/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelAnalysis.java;1654804636/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelVisualization.java;575630107/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Channels.java;105405152/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelsTest.java;3718395581/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CodeFragment.java;1941462046/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CombinedActivation.java;3978818808/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CommunicationGraph.java;724670632/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ConnectivityPoset.java;3754377617/1;/cs2820-fall22/src/edu/uiowa/cs/warp/DeadlineComparator.java;492899634/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Description.java;2596849957/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Edge.java;1242144003/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FileManager.java;2522714670/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Flow.java;889275975/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FlowMap.java;3735737588/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FlowNodeToActivationMap.java;4234899521/1;/cs2820-fall22/src/edu/uiowa/cs/warp/GraphViz.java;1071888484/1;/cs2820-fall22/src/edu/uiowa/cs/warp/GraphVizListener.java;2126849807/1;/cs2820-fall22/src/edu/uiowa/cs/warp/InputGraphFile.java;937049578/1;/cs2820-fall22/src/edu/uiowa/cs/warp/InstructionTimeSlot.java;3408505142/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatencyAnalysis.java;2064230864/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatencyVisualization.java;2426998793/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatestReleaseTimeComparator.java;1106993157/1;/cs2820-fall22/src/edu/uiowa/cs/warp/MaxPhaseComparator.java;1745026972/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Node.java;1243472081/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NodeMap.java;2177811796/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NonPreemptiveSchedule.java;387408079/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NotImplentedVisualization.java;3646556153/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PeriodComparator.java;3057078727/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Poset.java;4263200805/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PreemptiveSchedule.java;3080876127/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PriorityComparator.java;349151360/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Program.java;183186416/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ProgramSchedule.java;1770485609/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ProgramVisualization.java;867879725/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReleaseTimeComparator.java;2065273961/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReleaseTimeQueue.java;1776494724/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityAnalysis.java;384175461/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityParameters.java;1976749484/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityRow.java;3195166460/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityTable.java;2918095589/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityVisualization.java;2067458194/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReportVisualization.java;2571131140/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Row.java;3413533457/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SchedulableObjectQueue.java;3263525257/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Schedule.java;3152618411/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ScheduleTable.java;970860350/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ScheduleTime.java;2579980776/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SimulatorInput.java;3699590899/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SortedPeriodQueue.java;3537725478/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SystemAttributes.java;876440066/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SystemFactory.java;4134708055/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Table.java;2577872269/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Visualization.java;2548788944/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationFactory.java;1134295780/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationImplementation.java;1561738288/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationObject.java;823199562/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadListener.java;195958787/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpPoset.java;4000167019/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpInterface.java;2926400465/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpDSL.java;1986156920/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpSystem.java;1603794739/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoad.java;727085344/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadDescription.java;1981400958/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Warp.java;418770348/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadTest.java;2456256290/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SchedulableObject.java;2451757979/1;"/>
+        <details xmi:id="_1k4QcF3-Ee2F0PVRnb5fbg" key="AssociatedSourceCode" value="/cs2820-fall22/src/edu/uiowa/cs/warp/AbstractMap.java;2633489473/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Activation.java;3634548837/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Activations.java;3305092594/1;/cs2820-fall22/src/edu/uiowa/cs/warp/BasicPoset.java;3238489715/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelAnalysis.java;1458414993/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelVisualization.java;3266509205/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Channels.java;105405152/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ChannelsTest.java;3718395581/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CodeFragment.java;1941462046/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CombinedActivation.java;3978818808/1;/cs2820-fall22/src/edu/uiowa/cs/warp/CommunicationGraph.java;724670632/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ConnectivityPoset.java;3754377617/1;/cs2820-fall22/src/edu/uiowa/cs/warp/DeadlineComparator.java;492899634/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Description.java;2596849957/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Edge.java;1242144003/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FileManager.java;2522714670/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Flow.java;889275975/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FlowMap.java;3735737588/1;/cs2820-fall22/src/edu/uiowa/cs/warp/FlowNodeToActivationMap.java;4234899521/1;/cs2820-fall22/src/edu/uiowa/cs/warp/GraphViz.java;1071888484/1;/cs2820-fall22/src/edu/uiowa/cs/warp/GraphVizListener.java;2126849807/1;/cs2820-fall22/src/edu/uiowa/cs/warp/InputGraphFile.java;937049578/1;/cs2820-fall22/src/edu/uiowa/cs/warp/InstructionTimeSlot.java;3408505142/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatencyAnalysis.java;2064230864/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatencyVisualization.java;2426998793/1;/cs2820-fall22/src/edu/uiowa/cs/warp/LatestReleaseTimeComparator.java;1106993157/1;/cs2820-fall22/src/edu/uiowa/cs/warp/MaxPhaseComparator.java;1745026972/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Node.java;1243472081/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NodeMap.java;2177811796/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NonPreemptiveSchedule.java;387408079/1;/cs2820-fall22/src/edu/uiowa/cs/warp/NotImplentedVisualization.java;3646556153/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PeriodComparator.java;3057078727/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Poset.java;4263200805/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PreemptiveSchedule.java;3080876127/1;/cs2820-fall22/src/edu/uiowa/cs/warp/PriorityComparator.java;349151360/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Program.java;183186416/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ProgramSchedule.java;1770485609/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ProgramVisualization.java;867879725/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReleaseTimeComparator.java;2065273961/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReleaseTimeQueue.java;1776494724/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityAnalysis.java;384175461/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityParameters.java;1976749484/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityRow.java;3195166460/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityTable.java;2918095589/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReliabilityVisualization.java;2067458194/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ReportVisualization.java;2571131140/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Row.java;3413533457/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SchedulableObjectQueue.java;3263525257/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Schedule.java;3152618411/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ScheduleTable.java;970860350/1;/cs2820-fall22/src/edu/uiowa/cs/warp/ScheduleTime.java;2579980776/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SimulatorInput.java;3699590899/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SortedPeriodQueue.java;3537725478/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SystemAttributes.java;876440066/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SystemFactory.java;4134708055/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Table.java;2577872269/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Visualization.java;2548788944/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationFactory.java;1134295780/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationImplementation.java;1561738288/1;/cs2820-fall22/src/edu/uiowa/cs/warp/VisualizationObject.java;823199562/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadListener.java;195958787/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpPoset.java;4000167019/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpInterface.java;2926400465/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpDSL.java;1986156920/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WarpSystem.java;1603794739/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoad.java;727085344/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadDescription.java;1981400958/1;/cs2820-fall22/src/edu/uiowa/cs/warp/Warp.java;418770348/1;/cs2820-fall22/src/edu/uiowa/cs/warp/WorkLoadTest.java;2456256290/1;/cs2820-fall22/src/edu/uiowa/cs/warp/SchedulableObject.java;2451757979/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_yB2OkF3-Ee2F0PVRnb5fbg">
@@ -781,10 +781,10 @@ local connectivity.&#xD;
               </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_yLB_wF3-Ee2F0PVRnb5fbg" name="ChannelAnalysis">
-              <ownedComment xmi:id="_pGCAAmdHEe24LcnSyvVffw">
-                <body>&lt;h1>Implementation of the ChannelAnalysis class&lt;/h1>&#xD;
-Used to analyze either Program or WarpInterface by converting to program.&#xD;
-Can be used to detect channel conflicts.&#xD;
+              <ownedComment xmi:id="_kwMBlHVzEe20U5njgs2rLQ">
+                <body>&lt;h1>Implementation of the ChannelAnalysis class.&lt;/h1>&#xD;
+&lt;p>Used to analyze either Program or WarpInterface by converting to program.&#xD;
+Evaluates the channel allocation of WARP flows including detection of channel conflicts.&lt;/p>&#xD;
 &#xD;
 @author sgoddard&#xD;
 @version 1.4&#xD;
@@ -828,21 +828,101 @@ Can be used to detect channel conflicts.&#xD;
               </ownedBehavior>
               <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_6iTfYGXjEe2WcJ2UPddx8Q" name="buildChannelAnalysisTable" specification="_6hlGoGXjEe2WcJ2UPddx8Q">
                 <language>java</language>
-                <body>//TODO Implement this method to create proper visualization of channel allocations (See MethodIdeas.md).&#xD;
+                <body>/* Create a new channel analysis table with the correct number of rows and columns based on input file,&#xD;
+	   * where the number of rows is the number of channels in the program and the number of columns is the&#xD;
+	   * number of rows in the programTable (the number of TimeSlots in the program).&#xD;
+	   * The table entries are initially set to null. &#xD;
+	   */&#xD;
 	  var numColumns = programTable.getNumRows();&#xD;
 	  var numRows = program.getNumChannels();&#xD;
 	  channelAnalysisTable = new ProgramSchedule(numRows,numColumns);&#xD;
+	  &#xD;
+	  /* Create a Warp instruction parser object to get the instruction parameters, which have push and pull&#xD;
+	   * instructions for each channel/timeSlot combination. */&#xD;
+	  var dsl = new WarpDSL();&#xD;
+	  &#xD;
+	  /* Loop through each entry of the programTable rows and columns to retrieve the instruction name string. */&#xD;
+	  for (int i = 0; i &lt; programTable.getNumRows(); i++) {&#xD;
+		  for (int j = 0; j &lt; programTable.getNumColumns(); j++) {&#xD;
+			  /* Retrieve individual programTable entry to parse its instructionParameters with the WarpDSL. */&#xD;
+			  String instruction = programTable.get(i, j);&#xD;
+			  /* Create an ArrayList of the instruction parameters of each entry to be looped through. */&#xD;
+			  var instructionParametersArray = dsl.getInstructionParameters(instruction);&#xD;
+			  /* Loop through these instruction parameters, looking for any that have a 'pull' instruction */&#xD;
+			  for (int k = 0; k &lt; instructionParametersArray.size(); k++) {&#xD;
+				  /* Set InstructionParameters currInstr to the current InstructionParameters object in the array. */&#xD;
+				  InstructionParameters currInstr = instructionParametersArray.get(k);&#xD;
+				  /* Initialize nextInstr to be null. This variable will be used to look for an additional&#xD;
+				   * 'pull' instruction after a 'push' instruction has been found. */&#xD;
+				  InstructionParameters nextInstr = null;&#xD;
+				  /* If we are not at the end of the array, nextInstr can be set to the next InstructionParameter&#xD;
+				   * ahead of the current InstructionParameter in the array. */&#xD;
+				  if(k &lt; instructionParametersArray.size() - 1) {&#xD;
+					  nextInstr = instructionParametersArray.get(k+1);&#xD;
+				  }&#xD;
+				  /* Get the name of currInstr, and if it is 'push', then we have a flow instruction we must grab&#xD;
+				   * for the channel analysis table, so setTableEntry() using i (index of channelAnalysisTable's column&#xD;
+				   * and programTable's row), currIsntr, and nextInstr(which will be needed in case of a 'pull'&#xD;
+				   * instruction following the 'push' instruction.&#xD;
+				   */&#xD;
+				  String name = currInstr.getName();&#xD;
+				  if (name.equals(&quot;push&quot;)) {&#xD;
+					  setTableEntry(i, currInstr, nextInstr);&#xD;
+				  }&#xD;
+			  }&#xD;
+		  }&#xD;
+	  }&#xD;
 </body>
               </ownedBehavior>
               <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_pGCAAGdHEe24LcnSyvVffw" name="getChannelAnalysisTable" specification="_pF9ukGdHEe24LcnSyvVffw">
-                <ownedParameter xmi:id="_pGCAAWdHEe24LcnSyvVffw" type="_yPiFQF3-Ee2F0PVRnb5fbg" direction="return"/>
+                <ownedParameter xmi:id="_pGCAAWdHEe24LcnSyvVffw" type="_yPiFQF3-Ee2F0PVRnb5fbg" direction="return">
+                  <name xsi:nil="true"/>
+                </ownedParameter>
                 <language>java</language>
                 <body>return channelAnalysisTable;&#xD;
 </body>
               </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_kwMBkHVzEe20U5njgs2rLQ" name="setTableEntry" specification="_kwKzcHVzEe20U5njgs2rLQ">
+                <ownedParameter xmi:id="_kwMBkXVzEe20U5njgs2rLQ" name="timeSlot">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_kwMBknVzEe20U5njgs2rLQ" name="currInstr" type="_ytOG0F3-Ee2F0PVRnb5fbg"/>
+                <ownedParameter xmi:id="_kwMBk3VzEe20U5njgs2rLQ" name="nextInstr" type="_ytOG0F3-Ee2F0PVRnb5fbg"/>
+                <language>java</language>
+                <body>/* Get the source, sink, and flow of currInstr and format them into a string output for the table entry. */&#xD;
+	  String pushSrc = currInstr.getSrc();&#xD;
+	  String pushSnk = currInstr.getSnk();&#xD;
+	  String pushFlow = currInstr.getFlow();&#xD;
+	  String output = String.format(&quot;[%s]::%s:(%s:%s)&quot;, pushSrc, pushFlow, pushSrc, pushSnk);&#xD;
+	  /* If nextInstr is a 'pull' instruction, it needs to be appended to output with a comma. */&#xD;
+	  if (nextInstr != null &amp;&amp; nextInstr.getName().equals(&quot;pull&quot;)) {&#xD;
+		  String pullSrc = nextInstr.getSrc();&#xD;
+		  String pullSnk = nextInstr.getSnk();&#xD;
+		  String pullFlow = nextInstr.getFlow();&#xD;
+		  output += String.format(&quot;, %s:(%s:%s)&quot;, pullFlow, pullSrc, pullSnk);&#xD;
+	  }&#xD;
+	  /* Get the channel of the currInstr, and get the channel analysis table entry of that channel&#xD;
+	   * and the current timeSlot. If the entry is not null, i.e. there is a flow instruction already&#xD;
+	   * at the channel/timeSlot position, then a channel conflict exists, in which case we must&#xD;
+	   * separate the existing table entry string and the newly created one with a semicolon, and mark&#xD;
+	   * the conflictExists flag as true.&#xD;
+	   */&#xD;
+	  int channel = Integer.parseInt(currInstr.getChannel());&#xD;
+	  String currentTableEntry = channelAnalysisTable.get(channel, timeSlot);&#xD;
+	  if(currentTableEntry != null) {&#xD;
+		  String tableString = currentTableEntry;&#xD;
+		  tableString += String.format(&quot;; %s&quot;, output);&#xD;
+		  output = tableString;&#xD;
+		  conflictExists = true;&#xD;
+	  }&#xD;
+	  /* Set the channelAnalysisTable entry at (channel, timeSlot) to the created output string. */&#xD;
+	  channelAnalysisTable.set(channel, timeSlot, output);&#xD;
+  </body>
+              </ownedBehavior>
               <ownedOperation xmi:id="_yLGRMF3-Ee2F0PVRnb5fbg" name="isChannelConflict" method="_y2qWtl3-Ee2F0PVRnb5fbg">
-                <ownedComment xmi:id="_pGCnEmdHEe24LcnSyvVffw">
+                <ownedComment xmi:id="_kwMBl3VzEe20U5njgs2rLQ">
                   <body>Determines whether or not there is a channel conflict.&#xD;
+   * Used in the setTableEntry helper method.&#xD;
    * &#xD;
    * @author sgoddard&#xD;
    * @return boolean based on if there is a channel conflict or not</body>
@@ -855,7 +935,7 @@ Can be used to detect channel conflicts.&#xD;
                 <eAnnotations xmi:id="_ysB0Al3-Ee2F0PVRnb5fbg" source="http://www.eclipse.org/uml2/2.0.0/UML">
                   <details xmi:id="_ysB0A13-Ee2F0PVRnb5fbg" key="create"/>
                 </eAnnotations>
-                <ownedComment xmi:id="_pGCnEGdHEe24LcnSyvVffw">
+                <ownedComment xmi:id="_kwMBlXVzEe20U5njgs2rLQ">
                   <body>Constructor that takes in a WarpInterface and converts it to a a program, calls the other &#xD;
    * class constructor with the Program object parameter then sets the program and it's schedule.&#xD;
    * &#xD;
@@ -869,8 +949,8 @@ Can be used to detect channel conflicts.&#xD;
                 <eAnnotations xmi:id="_ysCbEl3-Ee2F0PVRnb5fbg" source="http://www.eclipse.org/uml2/2.0.0/UML">
                   <details xmi:id="_ysCbE13-Ee2F0PVRnb5fbg" key="create"/>
                 </eAnnotations>
-                <ownedComment xmi:id="_pGCnEWdHEe24LcnSyvVffw">
-                  <body>Constructor to set the program and it's schedule. Builds channel analysis table.&#xD;
+                <ownedComment xmi:id="_kwMBlnVzEe20U5njgs2rLQ">
+                  <body>Constructor to set the program and its schedule. Builds channel analysis table.&#xD;
    * &#xD;
    * @author sgoddard&#xD;
    * @param program The program to analyze</body>
@@ -879,30 +959,55 @@ Can be used to detect channel conflicts.&#xD;
                 <ownedParameter xmi:id="_ysCbFF3-Ee2F0PVRnb5fbg" type="_yLB_wF3-Ee2F0PVRnb5fbg" direction="return"/>
               </ownedOperation>
               <ownedOperation xmi:id="_6hlGoGXjEe2WcJ2UPddx8Q" name="buildChannelAnalysisTable" method="_6iTfYGXjEe2WcJ2UPddx8Q">
-                <ownedComment xmi:id="_pGCnE2dHEe24LcnSyvVffw">
-                  <body>This method parses the programSchedule object, programTable, to create a channel analysis table.&#xD;
-   * The Visualization() method within ChannelVisualization will then use this analysis table to&#xD;
-   * create the desired visualization (similar to how ProgramVisualization uses the &quot;sourceCode&quot;&#xD;
-   * variable to create the *dsl file visualization.&#xD;
-   * Should be private.&#xD;
+                <ownedComment xmi:id="_kwMBmHVzEe20U5njgs2rLQ">
+                  <body>Called by constructor. buildChannelAnalysisTable() parses the program schedule (programTable) and WarpDSL&#xD;
+   * to create a channel analysis table. The Visualization() method within ChannelVisualization will then use &#xD;
+   * this analysis table to create the desired visualization.&#xD;
    * &#xD;
-   * @author eborchard</body>
+   * This method should be private.&#xD;
+   * &#xD;
+   * @author eborchard, lldeng</body>
                 </ownedComment>
               </ownedOperation>
               <ownedOperation xmi:id="_pF9ukGdHEe24LcnSyvVffw" name="getChannelAnalysisTable" method="_pGCAAGdHEe24LcnSyvVffw">
-                <ownedComment xmi:id="_pGCnFGdHEe24LcnSyvVffw">
-                  <body>Method that retrieves the channel analysis table created in the buildChannelAnalysisTable() method.&#xD;
+                <ownedComment xmi:id="_kwMBmnVzEe20U5njgs2rLQ">
+                  <body>Method that retrieves the channel analysis table created from the buildChannelAnalysisTable() method.&#xD;
    * &#xD;
    * @author eborchard&#xD;
    * @return ProgramSchedule The completed channel analysis table.</body>
                 </ownedComment>
                 <ownedParameter xmi:id="_pF-8sGdHEe24LcnSyvVffw" type="_yPiFQF3-Ee2F0PVRnb5fbg" direction="return"/>
               </ownedOperation>
+              <ownedOperation xmi:id="_kwKzcHVzEe20U5njgs2rLQ" name="setTableEntry" method="_kwMBkHVzEe20U5njgs2rLQ">
+                <ownedComment xmi:id="_kwMBmXVzEe20U5njgs2rLQ">
+                  <body>setTableEntry() creates the string that will be placed at the row(channel) and column(timeSlot)&#xD;
+   * of the channel analysis table associated with the pulled InstructionParameter. It gets the source,&#xD;
+   * sink, and flow strings of the current InstructionParameter, and formats them together appropriately.&#xD;
+   * If the next instructionParameter is 'pull' instruction, it appends the existing output string with&#xD;
+   * the flow from the 'pull' instruction. If a channel conflict occurs, where multiple coordinators have&#xD;
+   * instructions in the same channel and timeSlot, the method adds a semicolon between the different&#xD;
+   * coordinators' instructions in the channel analysis table entry and sets the conflictExists flag to true.&#xD;
+   * &#xD;
+   * This method should be private.&#xD;
+   * &#xD;
+   * @author eborchard, lldeng&#xD;
+   * @param timeSlot The timeSlot of the instruction, which is also the column number of the channel analysis table.&#xD;
+   * @param currInstr The current InstructionParameter, from looping through the InstructionParametersArray.&#xD;
+   * @param nextInstr The InstructionParameter after the current one, which may be a 'pull' instruction.</body>
+                </ownedComment>
+                <ownedParameter xmi:id="_kwKzcXVzEe20U5njgs2rLQ" name="timeSlot">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+                </ownedParameter>
+                <ownedParameter xmi:id="_kwKzcnVzEe20U5njgs2rLQ" name="currInstr" type="_ytOG0F3-Ee2F0PVRnb5fbg"/>
+                <ownedParameter xmi:id="_kwKzc3VzEe20U5njgs2rLQ" name="nextInstr" type="_ytOG0F3-Ee2F0PVRnb5fbg"/>
+              </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_yLJUgF3-Ee2F0PVRnb5fbg" name="ChannelVisualization">
-              <ownedComment xmi:id="_pGCnFWdHEe24LcnSyvVffw">
-                <body>ChannelVisualization creates the visualizations for the channel analysis of the WARP program.&#xD;
-&lt;p>&#xD;
+              <ownedComment xmi:id="_kwMBm3VzEe20U5njgs2rLQ">
+                <body>&lt;h1>Implementation of Channel Visualization.&lt;/h1>&#xD;
+&lt;p>The ChannelVisualization class allows a Warp Interface to be visualized when the -ca flag is&#xD;
+requested at runtime. A Description object of the visualization is created from the retrieved channel&#xD;
+analysis table. A Description object of the header for file output can also be created.&lt;/p>&#xD;
 &#xD;
 CS2820 Fall 2022 Project: Implement this class to create the file visualization that is requested&#xD;
 in Warp.&#xD;
@@ -938,41 +1043,40 @@ in Warp.&#xD;
                   <name xsi:nil="true"/>
                 </ownedParameter>
                 <language>java</language>
-                <body>Description content = new Description();&#xD;
- ProgramSchedule sourceCode = ca.getChannelAnalysisTable();&#xD;
+                <body>Description visualization = new Description();&#xD;
+ ProgramSchedule caTable = ca.getChannelAnalysisTable();&#xD;
 &#xD;
- /* create schedule output header of column time slots in order (zero-indexed), with \t as separator */&#xD;
+ /* The first row in the visualization starts with the axis labels... */&#xD;
  String columnString = &quot;Channel/Time Slot &quot;;&#xD;
- /* loop through the time slots adding the number and tab */&#xD;
- for (Integer columnNumber = 0; columnNumber &lt; sourceCode.getNumColumns(); columnNumber++) {&#xD;
+ /* ...which is followed by the time slot numbers (zero-indexed) as the column headers. */&#xD;
+ for (Integer columnNumber = 0; columnNumber &lt; caTable.getNumColumns(); columnNumber++) {&#xD;
  	columnString += columnNumber.toString() + &quot;\t&quot;;&#xD;
  }&#xD;
- /* add \n at the end */&#xD;
+ /* Start a new line for the body of the visualization table. */&#xD;
  columnString += &quot;\n&quot;;&#xD;
- content.add(columnString);&#xD;
+ visualization.add(columnString);&#xD;
  &#xD;
- /* loop through each index of the program schedule table */&#xD;
- for (Integer rowIndex = 0; rowIndex &lt; sourceCode.getNumRows(); rowIndex++) {&#xD;
- 	/* create new row string staring with the channel number */&#xD;
+ /* Loop through the rows and columns of the caTable to retrieve each individual table entry. */&#xD;
+ for (Integer rowIndex = 0; rowIndex &lt; caTable.getNumRows(); rowIndex++) {&#xD;
  	String rowString = rowIndex.toString();&#xD;
- 	for (Integer columnIndex = 0; columnIndex &lt; sourceCode.getNumColumns(); columnIndex++) {&#xD;
-     	var entry = sourceCode.get(rowIndex, columnIndex);&#xD;
-     	/* if entry is null, append a tab and hyphen */&#xD;
+ 	for (Integer columnIndex = 0; columnIndex &lt; caTable.getNumColumns(); columnIndex++) {&#xD;
+     	var entry = caTable.get(rowIndex, columnIndex);&#xD;
+     	/* If the caTable entry is null, that channel/time slot is not being used. Append a tab and hyphen. */&#xD;
  		if (entry == null) {&#xD;
  			rowString += &quot;\t-&quot;;&#xD;
- 		/* else append a tab and the contents of the entry */&#xD;
+ 		/* Else the channel/time slot is being used. Append a tab and the contents of the caTable entry. */&#xD;
  		} else {        &#xD;
  			rowString += &quot;\t&quot; + entry;&#xD;
  		}&#xD;
- 		/* append new line character when last column index is reached */&#xD;
- 		if (columnIndex == sourceCode.getNumColumns() - 1) {&#xD;
+ 		/* Append a new line character when the last time slot is reached. */&#xD;
+ 		if (columnIndex == caTable.getNumColumns() - 1) {&#xD;
  			rowString += &quot;\n&quot;;&#xD;
  		}&#xD;
  	}&#xD;
- 	/* add each row to content */&#xD;
- 	content.add(rowString);&#xD;
+ 	/* Add each newly created row string to the Description, visualization. */&#xD;
+ 	visualization.add(rowString);&#xD;
    }&#xD;
- return content;&#xD;
+ return visualization;&#xD;
   </body>
               </ownedBehavior>
               <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_6iUGcGXjEe2WcJ2UPddx8Q" name="createHeader" specification="_6hpYEmXjEe2WcJ2UPddx8Q">
@@ -1006,7 +1110,7 @@ in Warp.&#xD;
                 <eAnnotations xmi:id="_ysDpMV3-Ee2F0PVRnb5fbg" source="http://www.eclipse.org/uml2/2.0.0/UML">
                   <details xmi:id="_ysDpMl3-Ee2F0PVRnb5fbg" key="create"/>
                 </eAnnotations>
-                <ownedComment xmi:id="_pGCnFmdHEe24LcnSyvVffw">
+                <ownedComment xmi:id="_kwMBnHVzEe20U5njgs2rLQ">
                   <body>Constructor converts WarpInterface to ChannelAnalysis for visualization.&#xD;
    * &#xD;
    * @author sgoddard&#xD;

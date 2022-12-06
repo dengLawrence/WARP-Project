@@ -192,6 +192,13 @@ See *Project Plan Files*:
 - Method Design File (*MethodIdeas.md*)
 <br>
 
+**Design Decisions and Program Output:** <br>
+The major design decision for this project was how to implement ChannelAnalysis.java. We decided to have a method called "buildChannelAnalysisTable" that is called from the class constructor. This method sets up the rows and columns of the channel analysis table based on the programSchedule and Program of the input file. It then loops through each entry of the programTable keeping track of the current and previous instructions. This was necessary for entries that contained both a 'push' and 'pull' instruction since they are within the same InstructionParameters array. Once a 'push' instruction is encountered, the helper method, "setTableEntry," is called. This method parses the current instruction to produce the string output requested in the program specification. If the next instruction is 'pull' we need to append the desired string output to that created from the 'push' instruction. If the channel that we are trying to put a new entry into is not null, then a channel conflict has a occurred and we append the two entries separated by a semicolon. In this case, the conflictExists boolean variable is set to true. Warp.java runs a method called verifyNoChannelConflicts(WarpInterface warp) that calls isChannelConflict(). Our implementation now outputs the correct message about channel conflicts existing when Warp is run. <br><br>
+We decided to have just one helper method for the buildChannelAnalysisTable method. It made more sense for our implementation to have this method get to the point of finding a 'push' instruction and then calling just one helper method to parse the current and next instructions, and determine if a channel conflict exists. The class would only get more complicated to read with further helper methods. <br><br>
+*Note on program output:* Our program produces the "BugExists" output files found on ICON. Channels and Time Slots are allocated differently in the output than if this bug was fixed which leads channel conflicts (see TestBugPriority-1Faults.ch). This is a bug within the underlying Program.java logic and not due to the code written in ChannelAnalysis.java or ChannelVisualization.java. <br>
+Also note: The .ch output file for TestBug found on ICON contains a small error where two semicolons are used within the same Channel/Time Slot (2/1). The second semicolon in this string should be a comma because the instruction it is parsing is a 'push' instruction conflicting with a 'push-pull' instruction. Our output corrects this error. 
+
+
 **Record/Timeline:**
 - 10/26/2022 : First team meeting in lab.
 - 10/31/2022 : Team meeting to discuss sequence diagram and task designation for Sprint 1 delivery.
@@ -217,6 +224,9 @@ See *Project Plan Files*:
 <br>
 *Start of Sprint 3*<br>
 - 11/18/2022 : Added rudimentary implementation of buildChannelAnalysisTable. Does not handle channel conflicts and will need to be refactored. -Ethan
-- 11/28/2022 : Team meeting and Completed rudimentary implementation of buildChannelAnalysisTable (w/ conflicts). Needs clean-up. -Ethan, David, Alex, Lawrence
+- 11/28/2022 : Team meeting and completed rudimentary implementation of buildChannelAnalysisTable (w/ conflicts). Needs clean-up. -Ethan, David, Alex, Lawrence
 - 12/4/2022 : Updated documentation in ChannelAnalysis.java. -Lawrence
 - 12/5/2022 : Updated documentation in ChannelVisualization.java. -Ethan
+- 12/6/2022 : Team meeting to discuss final project tasks and began ChannelAnalysis tests. -Ethan, Lawrence, David
+- 12/6/2022 : Created JUnit tests for ExampleX.txt and TestBug.txt. -David
+- 12/7/2022 : Polished comments further, added "Design Decisions and Program Output" to the README, and updated class diagrams. -Ethan

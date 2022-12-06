@@ -74,7 +74,7 @@ class ChannelAnalysisTest {
 		//System.out.println(actual.get(3, 5));
 		//System.out.println(expected.get(3, 5));
 	}
-	// Tests if ExampleX has  conflicts. It should be false.
+	// Tests if ExampleX has channel conflicts. It should be false.
 	// @author dlin4
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
@@ -86,7 +86,7 @@ class ChannelAnalysisTest {
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
-	// Tests if TestBug has conflicts. It should be true.
+	// Tests if TestBug has channel conflicts. It should be true.
 	// @author dlin4
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)

@@ -79,7 +79,7 @@ public class ChannelVisualization extends VisualizationObject {
         	/* If the caTable entry is null, that channel/time slot is not being used. Append a tab and hyphen. */
     		if (entry == null) {
     			rowString += "\t-";
-    		/* Else the channel/time slot is being used. Append a tab and the contents of the entry. */
+    		/* Else the channel/time slot is being used. Append a tab and the contents of the caTable entry. */
     		} else {        
     			rowString += "\t" + entry;
     		}
