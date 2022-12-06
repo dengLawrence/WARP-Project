@@ -15,25 +15,25 @@ public class ChannelAnalysis {
 
   /**
    * Reference to the program, set in constructor.
-   * Will be set to private once ChannelAnalysis is fully implemented.
+   * Should be private, but set to public for ChannelVisualization testing purposes.
    */
   protected Program program;
 
   /**
    * Reference to ProgramSchedule within the Program class, set in constructor.
-   * Will be set to private once ChannelAnalysis is fully implemented.
+   * Should be private, but set to public for ChannelVisualization testing purposes.
    */
   protected ProgramSchedule programTable;
 
   /**
    * Channel conflict exists flag
-   * Will be set to private once ChannelAnalysis is fully implemented.
+   * Should be private, but set to public for ChannelVisualization testing purposes.
    */
   protected Boolean conflictExists;
   
   /**
    * Reference to the channel analysis ProgramSchedule, built in constructor.
-   * Will be set to private once ChannelAnalysis is fully implemented.
+   * Should be private, but set to public for ChannelVisualization testing purposes.
    */
   protected ProgramSchedule channelAnalysisTable;
 
@@ -42,7 +42,7 @@ public class ChannelAnalysis {
    * class constructor with the Program object parameter then sets the program and it's schedule.
    * 
    * @author sgoddard
-   * @param warp WarpInterface to analyze
+   * @param warp The WarpSystem from which a channel analysis table will be created.
    */
   ChannelAnalysis(WarpInterface warp) {
     this(warp.toProgram());
@@ -52,7 +52,7 @@ public class ChannelAnalysis {
    * Constructor to set the program and its schedule. Builds channel analysis table.
    * 
    * @author sgoddard
-   * @param program The program to analyze
+   * @param program The Program from which a channel analysis table will be created.
    */
   ChannelAnalysis(Program program) {
     this.program = program;
@@ -67,7 +67,7 @@ public class ChannelAnalysis {
    * Used in the setTableEntry helper method.
    * 
    * @author sgoddard
-   * @return boolean based on if there is a channel conflict or not
+   * @return boolean value stating whether a channel conflict exists.
    */
   public Boolean isChannelConflict() {
     return conflictExists;
