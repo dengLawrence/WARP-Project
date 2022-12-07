@@ -24,11 +24,10 @@ class ChannelAnalysisTest {
 	//@author lldeng
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void buildChannelAnalysisTableTestEmpty() {
-		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "Empty.txt", 16);
-		ProgramSchedule expected = new ProgramSchedule(16, 5);
-		expected.set(1, 0, "[A]::F0:(A:B)");
-		expected.set(2, 1, "[A]::F0:(A:B)");
+	void buildChannelAnalysisTableTestBasic() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
+		ProgramSchedule expected = new ProgramSchedule(16, 2);
+		expected.set(1, 0, "[A]::F0:(A:A), F0:(A:A)");
 		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
 		assertEquals(expected, actual);
 		//System.out.println(actual);
@@ -153,7 +152,7 @@ class ChannelAnalysisTest {
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void setTableEntryTest() {
-		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "Empty.txt", 16);
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
 		var dsl = new WarpDSL();
 		String instruction = "if has(F0) push(F0: A -> B, #1)";
 		var instructionParametersArray = dsl.getInstructionParameters(instruction);

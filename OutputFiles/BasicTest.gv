@@ -1,0 +1,8 @@
+// Course CS2820 Authentication Tag: KgkeKPgls07xVR8IkDjQWuJiZBAgOq7iL7Vpfrw02hUx5N6oZwQOp7AyHCQ0YBIrj8pZywz+lu5yL+MSNwy/5oPNf3ZLPIrbziWP4SlnoyQ=
+strict digraph BasicTest {
+    A  -> A; 
+labelloc  =  "t" 
+label = <Graph BasicTest <br/>
+Flow F0: A -&#62; A<br/>
+>
+} 

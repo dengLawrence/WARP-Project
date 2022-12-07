@@ -1,5 +1,5 @@
-// Course CS2820 Authentication Tag: mdQ5NmEbwYj4FxdqKIx3p13D98AJRb6ZhLwJTs50JP0x5N6oZwQOp7AyHCQ0YBIrKqszGtTbz86VX1Romr8kGsXEHmo5kAeNd9qtiF95o9M=
+// Course CS2820 Authentication Tag: Ypj/VEnsaKm9v4pdxGIzKJutEsnddXaUI53ASkoMWWEx5N6oZwQOp7AyHCQ0YBIrORllq4SwZKkibQ//rzjgDco0WvV3nYPFbO1exDNr7hc=
 ConflictTest {
-F0 (1, 12, 8, 0) : A -> B 
-F1 (2, 12, 8, 0) : C -> D
+F0 (1, 10, 8, 0) : A -> B 
+F1 (2, 10, 8, 0) : C -> D
 }

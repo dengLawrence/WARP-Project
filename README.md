@@ -231,3 +231,5 @@ Also note: The .ch output file for TestBug found on ICON contains a small error 
 - 12/6/2022 : Created JUnit tests for ExampleX.txt and TestBug.txt. -David
 - 12/7/2022 : Polished comments further, added "Design Decisions and Program Output" to the README, and updated class diagrams. -Ethan
 - 12/7/2022 : Cleaned up formatting and comments for ChannelAnalysis and added on to its tests. -Lawrence
+- 12/7/2022 : Added a basic channel conflict test and began setTableEntry tests. -Ethan
+- 12/7/2022 : Team meeting for ChannelAnalysis test ideas. -Ethan, Lawrence, David

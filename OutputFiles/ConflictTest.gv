@@ -1,4 +1,4 @@
-// Course CS2820 Authentication Tag: mdQ5NmEbwYj4FxdqKIx3p6wRRuObOKQjC75pNmpUQ84x5N6oZwQOp7AyHCQ0YBIrKqszGtTbz86VX1Romr8kGhpf+B8UI8nV4s0I5Oe2d18=
+// Course CS2820 Authentication Tag: Ypj/VEnsaKm9v4pdxGIzKL1OiirLKmZhsQzQfLoa6ecx5N6oZwQOp7AyHCQ0YBIrORllq4SwZKkibQ//rzjgDRpf+B8UI8nV4s0I5Oe2d18=
 strict digraph ConflictTest {
     A  -> B; 
     C  -> D; 
