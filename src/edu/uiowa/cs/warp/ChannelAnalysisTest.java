@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Timeout;
 import java.util.concurrent.TimeUnit;
 
 import edu.uiowa.cs.warp.SystemAttributes.ScheduleChoices;
+import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
 
 class ChannelAnalysisTest {
 
@@ -127,5 +128,39 @@ class ChannelAnalysisTest {
 		assertEquals(expected, actual);
 		//System.out.println(actual);
 		//System.out.println(expected);
+	}
+	
+	// Tests the input file "ConflictTest.txt" that replicates the known conditions to create a channel conflict.
+	// Conflicts occur when there is no overlap of nodes between flows. This can also be seen in TestBug.txt.
+	// While the bug does not need to be fixed for this project, its replicability in the channel analysis output
+	// should be tested.
+	// @author eborchard
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void channelConflictReplicationTest() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "ConflictTest.txt", 16);
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		ProgramSchedule expected = new ProgramSchedule(16, 10);
+		expected.set(1,  0, "[A]::F0:(A:B); [C]::F1:(C:D)");
+		expected.set(2, 1, "[A]::F0:(A:B); [C]::F1:(C:D)");
+			
+		assertEquals(expected, actual);
+		//System.out.println(actual);
+		//System.out.println(expected);
+	}
+	
+	// @author eborchard
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void setTableEntryTest() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "Empty.txt", 16);
+		var dsl = new WarpDSL();
+		String instruction = "if has(F0) push(F0: A -> B, #1)";
+		var instructionParametersArray = dsl.getInstructionParameters(instruction);
+		InstructionParameters currInstr = instructionParametersArray.get(0);
+		InstructionParameters nextInstr = null;
+		channelAnalysis.setTableEntry(1, currInstr, nextInstr);
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		//System.out.println(actual);
 	}
 }

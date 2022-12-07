@@ -1,0 +1,10 @@
+// Course CS2820 Authentication Tag: mdQ5NmEbwYj4FxdqKIx3p6wRRuObOKQjC75pNmpUQ84x5N6oZwQOp7AyHCQ0YBIrKqszGtTbz86VX1Romr8kGhpf+B8UI8nV4s0I5Oe2d18=
+strict digraph ConflictTest {
+    A  -> B; 
+    C  -> D; 
+labelloc  =  "t" 
+label = <Graph ConflictTest <br/>
+Flow F0: A -&#62; B<br/>
+Flow F1: C -&#62; D<br/>
+>
+} 
