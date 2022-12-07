@@ -3,11 +3,13 @@ title Warp Sequence Diagram
 User->Warp: calls caRequested
 Warp->Visualization Factory: visualize()
 Visualization Factory->Visualization Implementation: createProgramVisualization()
-Visualization Implementation->Visualization Implementation: createVisualization()
-Visualization Implementation->Channel Visualization: createVisualization()
+Visualization Implementation->Visualization Implementation: createVisualization() constructor
+Visualization Implementation->Channel Visualization: createVisualization() constructor
 Channel Visualization->Warp System: calls Channel Visualization constructor
 Warp System->Channel Analysis: toChannelAnalysis()
+Channel Analysis->Channel Analysis: constructor
 Channel Analysis->Channel Analysis: buildChannelAnalysisTable()
+Channel Analysis->Channel Analysis: setTableEntry()
 Channel Analysis-->Channel Visualization: returns Channel Analysis object
 Channel Visualization-->Visualization Implementation: returns Channel Visualization object
 Visualization Implementation->Channel Visualization: createVisualization()
@@ -18,4 +20,6 @@ Channel Visualization-->Visualization Implementation: returns Description object
 Visualization Implementation-->Visualization Factory: returns Visualization Implementation object
 Visualization Factory-->Warp: returns Visualization object
 Warp->Visualization Implementation: calls toFile()
-Visualization Implementation->Output: writes toFile()
+Visualization Implementation->FileManager: writes toFile()
+FileManager->Files: calls writeFile()
+Files->Output: Files.writeString()

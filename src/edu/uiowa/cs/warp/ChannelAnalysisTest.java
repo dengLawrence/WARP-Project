@@ -135,6 +135,7 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
+	
 	// Tests the input file "ConflictTest.txt" that replicates the known conditions to create a channel conflict.
 	// Conflicts occur when there is no overlap of nodes between flows. This can also be seen in TestBug.txt.
 	// While the bug does not need to be fixed for this project, its replicability in the channel analysis output

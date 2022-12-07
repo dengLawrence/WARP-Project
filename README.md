@@ -235,4 +235,5 @@ Also note: The .ch output file for TestBug found on ICON contains a small error 
 - 12/7/2022 : Cleaned up formatting and comments for ChannelAnalysis and added on to its tests. -Lawrence
 - 12/7/2022 : Added a basic channel conflict test and began setTableEntry tests. -Ethan
 - 12/7/2022 : Team meeting for ChannelAnalysis test ideas. -Ethan, Lawrence, David
-- 12/8/2022 : Added tests for setTableEntry. -Ethan
+- 12/7/2022 : Added tests for setTableEntry. -Ethan
+- 12/7/2022 : Finalized the Warp Sequence Diagram. Updated and formatted ChannelVisualiation Tests.

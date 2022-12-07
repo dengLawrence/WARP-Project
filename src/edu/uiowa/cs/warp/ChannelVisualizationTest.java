@@ -54,6 +54,9 @@ class ChannelVisualizationTest {
 		ChannelVisualization channelVis = new ChannelVisualization(warp);
 		return channelVis;
 	}
+	
+	
+//------------------------------------------------Start of Header Tests--------------------------------------------------------------------------//
 	//Tests that the header prints out additional information (other parameters) when numFaults is set to 0
 	//@author lldeng
 	@Test
@@ -109,10 +112,13 @@ class ChannelVisualizationTest {
 		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
-	
+//------------------------------------------------End of Header Tests--------------------------------------------------------------------------//
+
+//-----------------------------------------------Start of Channel Visualization Table tests----------------------------------------------------//
+	// Not possible anymore due to Channel Analysis being implemented.
 	//Tests that an empty visualization table is correctly initialized for ExampleX.txt
 	//@author dlin4
-	@Test
+	/*@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationTestEmptyTableExampleX() {
 		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 16);
@@ -124,10 +130,10 @@ class ChannelVisualizationTest {
 			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
 		}
 		
-		//System.out.print(actual);
-		//System.out.print(expected);
+		System.out.print(actual);
+		System.out.print(expected);
 		assertTrue(expected.equals(actual));
-	}
+	}*/
 	
 	//Tests that an empty visualization table is correctly initialized for TestBug.txt
 	//@author lldeng
@@ -186,6 +192,28 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}
 	
+	//Tests that an empty table has the correct row index when using the .get() method
+	//@author dlin4
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void visualizationTestTableExampleXGetRowIndex() {
+		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 16);
+		Description actual = channelVis.visualization();
+
+		Description expected = new Description();
+		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
+		for(int i = 0; i < 2; i++) {
+			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
+		}
+		expected.add("2	-	[B]::F0:(B:C), F0:(A:B)	-	-	-	-	-	-	-	-\n");
+		for(int i = 2; i < 16 ; i++) {
+			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
+		}
+		//System.out.print(actual.get(3));
+		//System.out.print(expected.get(3));
+		assertTrue(expected.get(3).equals(actual.get(3)));
+	}
+	
 	//Tests that a table with no rows or columns is made using the modded ChannelAnalysis class(Test file is irrelevant)
 	//@author lldeng
 	@Test
@@ -240,67 +268,36 @@ class ChannelVisualizationTest {
 		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
-	//Tests that an empty table has the correct row index when using the .get() method
+	
+	//Checks that the Description object returned by visualization() matches with the lines of ExampleXPriority-1Faults.ch
+	//from the ICON Project BugExistsOutputFiles
 	//@author dlin4
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void visualizationTestTableExampleXGetRowIndex() {
-		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 16);
-		Description actual = channelVis.visualization();
-
-		Description expected = new Description();
-		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
-		for(int i = 0; i < 5; i++) {
-			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
-		}
-		//System.out.print(actual.get(3));
-		//System.out.print(expected.get(3));
-		assertTrue(expected.get(3).equals(actual.get(3)));
-	}
-	
-	/* Currently not in use. Will be uncommented when ChannelAnalysis is fully implemented.
-	//CHECKS THE TABSSSS!!!!!!!
-	//DO NOT TOUCH UNTIL CODE IS FULLY IMPLEMENTED!!!
-	//Checks that the Description object returned by visualization() matches with the lines of ExampleXPriority-1Faults.ch
-	//from the ICON Project BugExistsOutputFiles
-	@Test
 	void visualizationExampleXOutput() {
 		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 16);
 		Description actual = channelVis.visualization();
-		
+			
 		Description expected = new Description();
-		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9\n");
-		expected.add("0	-	-	-	-	-	-	-	-	-	-	\n");
-		expected.add("1	[A]::F0:(A:B)	-	-	[C]::F1:(C:B)	-	-	-	-	-	-	\n");
-		expected.add("2	-	-	-	-	-	-	-	-	-	-	\n");
-		expected.add("3	-	[B]::F0:(B:C), F0:(A:B)	-	-	-	[A]::F0:(A:B)	-	-	-	-	\n");
-		expected.add("4	-	-	[B]::F0:(B:C)	-	-	-	-	-	-	-	\n");
-		expected.add("5	-	-	-	-	-	-	[B]::F0:(B:C), F0:(A:B)	-	-	-	\n");
-		expected.add("6	-	-	-	-	-	-	-	[B]::F0:(B:C)	-	-	\n");
-		expected.add("7	-	-	-	-	[B]::F1:(B:A), F1:(C:B)	-	-	-	-	-	\n");
-		expected.add("8	-	-	-	-	-	-	-	-	[B]::F1:(B:A)	-	\n");
-		for(int i = 9; i <= 15; i++) {
-			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	\n", i));
-		}
+		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
+		expected.add("0	-	-	-	-	-	-	-	-	-	-\n");
+		expected.add("1	[A]::F0:(A:B)	-	-	[C]::F1:(C:B)	-	-	-	-	-	-\n");
+		expected.add("2	-	[B]::F0:(B:C), F0:(A:B)	-	-	-	-	-	-	-	-\n");
+		expected.add("3	-	-	[B]::F0:(B:C)	-	-	[A]::F0:(A:B)	-	-	-	-\n");
+		expected.add("4	-	-	-	-	-	-	[B]::F0:(B:C), F0:(A:B)	-	-	-\n");
+		expected.add("5	-	-	-	-	-	-	-	[B]::F0:(B:C)	-	-\n");
+		expected.add("6	-	-	-	-	[B]::F1:(B:A), F1:(C:B)	-	-	-	-	-\n");
+		expected.add("7	-	-	-	-	-	-	-	-	[B]::F1:(B:A)	-\n");
+		for(int i = 8; i <= 15; i++) {
+			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
+			}
 		//System.out.print(actual);
 		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
-	} */
-
-	/*@Test
-	void setAndGetTest() {
-		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 15);
-		Description actual =channelVis.visualization();
-		
-		Description expected = new Description();
-		
-		//System.out.print(actual);
-		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
-	}*/
+		} 
 }
 
-//Tests ends here//
+//-----------------------------------------------End of Channel Visualization Table tests-----------------------------------------------------------------//
 
 
 //This class extends the ChannelAnalysis class to override the current implementation in order to test that
