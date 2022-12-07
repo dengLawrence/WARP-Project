@@ -183,6 +183,7 @@ See *Project Plan Files*:
 - Generate JavaDoc when finalized with comments.
 - Uncomment / add tests to ChannelVisualizationTest now that ChannelAnalysis is implemented.
 	- FIX ChannelVisualizationTest
+- Organize test classes
 - **JUnit tests for ChannelAnalysis.** Ideas: Some tests where it checks against the exact output of the files found on ICON (ExampleX, TestBug). Some tests where we create our own ProgramSchedule and add things like channel conflicts. Make sure to test each method, so buildChannelAnalysisTable() and setTableEntry() will have their own tests.
 
 **Other Project Artifacts:** <br>

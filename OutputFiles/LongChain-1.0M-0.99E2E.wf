@@ -1,0 +1,6 @@
+// Course CS2820 Authentication Tag: nxxg87Ulnyc1FcWeYOixzXOONMW/xRybZuxzFoD2fmgP/LgmF6iJRtWdlqcCk4a2+/xUNA0EkKA+T6PvVI0A+XKy6wfioyY94P12bxx1UwI=
+WARP_LongChain{
+// M = 1.0 and End-to-End reliability = 0.99
+// Flow F0 has a minimum communication cost of 25 and a worst-case communication cost of 50
+ F0 (0,150,150,0) : A -2-> B -2-> C -2-> D -2-> E -2-> F -2-> G -2-> H -2-> I -2-> K -2-> L -2-> M -2-> N -2-> O -2-> P -2-> Q -2-> R -2-> S -2-> T -2-> U -2-> V -2-> W -2-> X -2-> Y -2-> Z -2-> a
+}

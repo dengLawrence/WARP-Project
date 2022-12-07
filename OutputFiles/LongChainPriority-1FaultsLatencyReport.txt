@@ -1,0 +1,4 @@
+// Course CS2820 Authentication Tag: nxxg87Ulnyc1FcWeYOixzc8SO3SIjbjwPrWpA5ISwAgP/LgmF6iJRtWdlqcCk4a2+/xUNA0EkKA+T6PvVI0A+XzHvD1++sTclAfhWZTUlyI=
+Latency Report
+Maximum latency for F0:0 is 26
+******************************

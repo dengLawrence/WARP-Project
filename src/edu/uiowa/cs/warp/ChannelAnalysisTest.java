@@ -159,7 +159,7 @@ class ChannelAnalysisTest {
 	// @author eborchard
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void setTableEntryTest_Push() {
+	void setTableEntryTestPush() {
 		// Test file is irrelevant. BasicTest.txt is used for simplicity.
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
 		
@@ -186,7 +186,7 @@ class ChannelAnalysisTest {
 	// @author eborchard
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void setTableEntryTest_PushPull() {
+	void setTableEntryTestPushPull() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
 		
 		var dsl = new WarpDSL();
@@ -212,7 +212,7 @@ class ChannelAnalysisTest {
 	// @author eborchard
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void setTableEntryTest_PushPushConflict() {
+	void setTableEntryTestPushPushConflict() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
 		
 		var dsl = new WarpDSL();
@@ -247,7 +247,7 @@ class ChannelAnalysisTest {
 	// @author eborchard
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void setTableEntryTest_PushPullPushConflict() {
+	void setTableEntryTestPushPullPushConflict() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
 		
 		var dsl = new WarpDSL();
@@ -281,7 +281,7 @@ class ChannelAnalysisTest {
 	// @author eborchard
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void setTableEntryTest_PushPushPullConflict() {
+	void setTableEntryTestPushPushPullConflict() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
 		
 		var dsl = new WarpDSL();
@@ -315,7 +315,7 @@ class ChannelAnalysisTest {
 	// @author eborchard
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void setTableEntryTest_PushPullPushPullConflict() {
+	void setTableEntryTestPushPullPushPullConflict() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
 		
 		var dsl = new WarpDSL();
