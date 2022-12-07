@@ -182,6 +182,7 @@ See *Project Plan Files*:
 - Update the UML class diagrams when finalized on implementation.
 - Generate JavaDoc when finalized with comments.
 - Uncomment / add tests to ChannelVisualizationTest now that ChannelAnalysis is implemented.
+	- FIX ChannelVisualizationTest
 - **JUnit tests for ChannelAnalysis.** Ideas: Some tests where it checks against the exact output of the files found on ICON (ExampleX, TestBug). Some tests where we create our own ProgramSchedule and add things like channel conflicts. Make sure to test each method, so buildChannelAnalysisTable() and setTableEntry() will have their own tests.
 
 **Other Project Artifacts:** <br>
@@ -233,3 +234,4 @@ Also note: The .ch output file for TestBug found on ICON contains a small error 
 - 12/7/2022 : Cleaned up formatting and comments for ChannelAnalysis and added on to its tests. -Lawrence
 - 12/7/2022 : Added a basic channel conflict test and began setTableEntry tests. -Ethan
 - 12/7/2022 : Team meeting for ChannelAnalysis test ideas. -Ethan, Lawrence, David
+- 12/8/2022 : Added tests for setTableEntry. -Ethan

@@ -11,8 +11,8 @@ import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
 
 class ChannelAnalysisTest {
 
-	//Helper method that creates a ChannelAnalysis object for testing from an inputFile and specified numFaults and numChannels.
-	//@author lldeng
+	// Helper method that creates a ChannelAnalysis object for testing from an inputFile and specified numFaults and numChannels.
+	// @author lldeng
 	private ChannelAnalysis createChannelAnalysis(Integer numFaults, String inputFile, Integer numChannels) {
 		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
 		ScheduleChoices choice = ScheduleChoices.PRIORITY;
@@ -21,10 +21,16 @@ class ChannelAnalysisTest {
 		return channelAnalysis;
 	}
 	
-	//@author lldeng
+	
+	// Tests that the channel analysis table for BasicTest.txt is properly created and set.
+	// Since an empty channel analysis table cannot be created from an input file, BasicTest.txt
+	// represents the simplest case where only one entry is set in the channel analysis table.
+	//
+	// NOTE: BasicTest.txt will be used for later tests where the input file is not relevant to the test.
+	// @author eborchard
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void buildChannelAnalysisTableTestBasic() {
+	void buildChannelAnalysisTable_BasicTest() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
 		ProgramSchedule expected = new ProgramSchedule(16, 2);
 		expected.set(1, 0, "[A]::F0:(A:A), F0:(A:A)");
@@ -34,12 +40,12 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
-	//Tests that the channel analysis table for TestBug.txt is properly created and set.
-	//NOTE: Although our program includes the bug from Program.java, our output for the table
-	//differs from the TestBugPriority-1Faults.ch file from ICON, since we corrected another
-	//error present in that file, where the comma for coordinator [D]'s two flows in cell (2,1)
-	//was replaced by a semicolon.
-	//@author lldeng
+	// Tests that the channel analysis table for TestBug.txt is properly created and set.
+	// NOTE: Although our program includes the bug from Program.java, our output for the table
+	// differs from the TestBugPriority-1Faults.ch file from ICON, since we corrected another
+	// error present in that file, where the comma for coordinator [D]'s two flows in cell (2,1)
+	// was replaced by a semicolon.
+	// @author lldeng
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void buildChannelAnalysisTableTestTestBug() {
@@ -148,18 +154,193 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
+	// First test of the helper method setTableEntry.
+	// Tests setting a null entry in a channel analysis table to a push instruction.
 	// @author eborchard
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void setTableEntryTest() {
+	void setTableEntryTest_Push() {
+		// Test file is irrelevant. BasicTest.txt is used for simplicity.
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
+		
 		var dsl = new WarpDSL();
-		String instruction = "if has(F0) push(F0: A -> B, #1)";
+		// currInstr is set to an arbitrary push instruction and nextInstr is set to null.
+		String instruction = "if has(F0) push(F0: A -> B, #2)";
 		var instructionParametersArray = dsl.getInstructionParameters(instruction);
 		InstructionParameters currInstr = instructionParametersArray.get(0);
 		InstructionParameters nextInstr = null;
+		// setTableEntry requires a time slot number, current instruction and next instruction. 
 		channelAnalysis.setTableEntry(1, currInstr, nextInstr);
+		
 		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		ProgramSchedule expected = new ProgramSchedule(16, 2);
+		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)"); //this table entry comes from BasicTest.txt
+		expected.set(2, 1, "[A]::F0:(A:B)"); //this is the table entry that is being set
+			
+		assertEquals(expected, actual);
 		//System.out.println(actual);
+		//System.out.println(expected);
+	}
+	
+	// Tests setting a null entry in a channel analysis table to a push-pull instruction.
+	// @author eborchard
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void setTableEntryTest_PushPull() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
+		
+		var dsl = new WarpDSL();
+		// currInstr is set to an arbitrary push instruction & nextInstr is set to the associated pull instruction.
+		String instruction = "if has(F0) push(F0: B -> C, #2) else pull(F0: A -> B, #2)";
+		var instructionParametersArray = dsl.getInstructionParameters(instruction);
+		InstructionParameters currInstr = instructionParametersArray.get(0);
+		InstructionParameters nextInstr = instructionParametersArray.get(1);
+		channelAnalysis.setTableEntry(1, currInstr, nextInstr);
+		
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		ProgramSchedule expected = new ProgramSchedule(16, 2);
+		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)");
+		expected.set(2, 1, "[B]::F0:(B:C), F0:(A:B)");
+			
+		assertEquals(expected, actual);
+		//System.out.println(actual);
+		//System.out.println(expected);
+	}
+	
+	// Tests setting a null entry in a channel analysis table to a push instruction and then
+	// causing a channel conflict with another push instruction.
+	// @author eborchard
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void setTableEntryTest_PushPushConflict() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
+		
+		var dsl = new WarpDSL();
+		// currInstr1 is set to an arbitrary push instruction and nextInstr1 is set to null.
+		String instruction1 = "if has(F0) push(F0: A -> B, #2)";
+		var instructionParametersArray1 = dsl.getInstructionParameters(instruction1);
+		InstructionParameters currInstr1 = instructionParametersArray1.get(0);
+		InstructionParameters nextInstr1 = null;
+		// setTableEntry requires a time slot number, current instruction and next instruction. 
+		channelAnalysis.setTableEntry(1, currInstr1, nextInstr1);
+		
+		// currInstr2 is set to an arbitrary push instruction and nextInstr2 is set to null.
+		// currInstr2 is set to the same time slot/channel as currInstr1 so we expect a channel conflict.
+		String instruction2 = "if has(F1) push(F1: B -> C, #2)";
+		var instructionParametersArray2 = dsl.getInstructionParameters(instruction2);
+		InstructionParameters currInstr2 = instructionParametersArray2.get(0);
+		InstructionParameters nextInstr2 = null;
+		channelAnalysis.setTableEntry(1, currInstr2, nextInstr2);
+		
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		ProgramSchedule expected = new ProgramSchedule(16, 2);
+		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)");
+		expected.set(2, 1, "[A]::F0:(A:B); [B]::F1:(B:C)");
+			
+		assertEquals(expected, actual);
+		//System.out.println(actual);
+		//System.out.println(expected);
+	}
+	
+	// Tests setting a null entry in a channel analysis table to a push-pull instruction and then
+	// causing a channel conflict with another push instruction.
+	// @author eborchard
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void setTableEntryTest_PushPullPushConflict() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
+		
+		var dsl = new WarpDSL();
+		// currInstr1 is set to an arbitrary push instruction & nextInstr1 is set to the associated pull instruction.
+		String instruction1 = "if has(F0) push(F0: B -> C, #2) else pull(F0: A -> B, #2)";
+		var instructionParametersArray1 = dsl.getInstructionParameters(instruction1);
+		InstructionParameters currInstr1 = instructionParametersArray1.get(0);
+		InstructionParameters nextInstr1 = instructionParametersArray1.get(1);
+		channelAnalysis.setTableEntry(1, currInstr1, nextInstr1);
+		
+		// currInstr2 is set to an arbitrary push instruction and nextInstr2 is set to null.
+		// currInstr2 is set to the same time slot/channel as currInstr1 so we expect a channel conflict.
+		String instruction2 = "if has(F1) push(F1: C -> D, #2)";
+		var instructionParametersArray2 = dsl.getInstructionParameters(instruction2);
+		InstructionParameters currInstr2 = instructionParametersArray2.get(0);
+		InstructionParameters nextInstr2 = null;
+		channelAnalysis.setTableEntry(1, currInstr2, nextInstr2);
+		
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		ProgramSchedule expected = new ProgramSchedule(16, 2);
+		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)");
+		expected.set(2, 1, "[B]::F0:(B:C), F0:(A:B); [C]::F1:(C:D)");
+			
+		assertEquals(expected, actual);
+		//System.out.println(actual);
+		//System.out.println(expected);
+	}
+	
+	// Tests setting a null entry in a channel analysis table to a push instruction and then
+	// causing a channel conflict with a push-pull instruction.
+	// @author eborchard
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void setTableEntryTest_PushPushPullConflict() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
+		
+		var dsl = new WarpDSL();
+		// currInstr1 is set to an arbitrary push instruction & nextInstr1 is set to null.
+		String instruction1 = "if has(F0) push(F0: A -> B, #2)";
+		var instructionParametersArray1 = dsl.getInstructionParameters(instruction1);
+		InstructionParameters currInstr1 = instructionParametersArray1.get(0);
+		InstructionParameters nextInstr1 = null;
+		channelAnalysis.setTableEntry(1, currInstr1, nextInstr1);
+		
+		// currInstr2 is set to an arbitrary push instruction and nextInstr2 is set to the associated pull instruction.
+		// currInstr2 is set to the same time slot/channel as currInstr1 so we expect a channel conflict.
+		String instruction2 = "if has(F1) push(F1: D -> E, #2) else pull(F1: C -> D, #2)";
+		var instructionParametersArray2 = dsl.getInstructionParameters(instruction2);
+		InstructionParameters currInstr2 = instructionParametersArray2.get(0);
+		InstructionParameters nextInstr2 = instructionParametersArray2.get(1);
+		channelAnalysis.setTableEntry(1, currInstr2, nextInstr2);
+		
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		ProgramSchedule expected = new ProgramSchedule(16, 2);
+		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)");
+		expected.set(2, 1, "[A]::F0:(A:B); [D]::F1:(D:E), F1:(C:D)");
+			
+		assertEquals(expected, actual);
+		//System.out.println(actual);
+		//System.out.println(expected);
+	}
+	
+	// Tests setting a null entry in a channel analysis table to a push-pull instruction and then
+	// causing a channel conflict with another push-pull instruction.
+	// @author eborchard
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void setTableEntryTest_PushPullPushPullConflict() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
+		
+		var dsl = new WarpDSL();
+		// currInstr1 is set to an arbitrary push instruction & nextInstr1 is set to the associated pull instruction.
+		String instruction1 = "if has(F0) push(F0: B -> C, #2) else pull(F0: A -> B, #2)";
+		var instructionParametersArray1 = dsl.getInstructionParameters(instruction1);
+		InstructionParameters currInstr1 = instructionParametersArray1.get(0);
+		InstructionParameters nextInstr1 = instructionParametersArray1.get(1);
+		channelAnalysis.setTableEntry(1, currInstr1, nextInstr1);
+		
+		// currInstr2 is set to an arbitrary push instruction nextInstr2 is set to the associated pull instruction.
+		// currInstr2 is set to the same time slot/channel as currInstr1 so we expect a channel conflict.
+		String instruction2 = "if has(F1) push(F1: D -> E, #2) else pull(F1: C -> D, #2)";
+		var instructionParametersArray2 = dsl.getInstructionParameters(instruction2);
+		InstructionParameters currInstr2 = instructionParametersArray2.get(0);
+		InstructionParameters nextInstr2 = instructionParametersArray2.get(1);
+		channelAnalysis.setTableEntry(1, currInstr2, nextInstr2);
+		
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		ProgramSchedule expected = new ProgramSchedule(16, 2);
+		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)");
+		expected.set(2, 1, "[B]::F0:(B:C), F0:(A:B); [D]::F1:(D:E), F1:(C:D)");
+			
+		assertEquals(expected, actual);
+		//System.out.println(actual);
+		//System.out.println(expected);
 	}
 }
