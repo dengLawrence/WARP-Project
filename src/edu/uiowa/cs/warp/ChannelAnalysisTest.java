@@ -11,8 +11,10 @@ import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
 
 class ChannelAnalysisTest {
 
-	// Helper method that creates a ChannelAnalysis object for testing from an inputFile and specified numFaults and numChannels.
-	// @author lldeng
+	/* Helper method that creates a ChannelAnalysis object for testing from an inputFile and specified numFaults and numChannels.
+	 * 
+	 * @author lldeng
+	 */
 	private ChannelAnalysis createChannelAnalysis(Integer numFaults, String inputFile, Integer numChannels) {
 		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
 		ScheduleChoices choice = ScheduleChoices.PRIORITY;
@@ -20,14 +22,24 @@ class ChannelAnalysisTest {
 		ChannelAnalysis channelAnalysis = new ChannelAnalysis(warp);
 		return channelAnalysis;
 	}
+
+//---------------------------------------Start of getChannelAnalysisTable() Tests-------------------------------------------------------------------//
+
 	
 	
-	// Tests that the channel analysis table for BasicTest.txt is properly created and set.
-	// Since an empty channel analysis table cannot be created from an input file, BasicTest.txt
-	// represents the simplest case where only one entry is set in the channel analysis table.
-	//
-	// NOTE: BasicTest.txt will be used for later tests where the input file is not relevant to the test.
-	// @author eborchard
+//-------------------------------------------Start of isChannelConflict() Tests---------------------------------------------------------------------//
+
+
+	
+//---------------------------------------Start of buildChannelAnalysisTable() Tests-----------------------------------------------------------------//
+	
+	/* Tests that the channel analysis table for BasicTest.txt is properly created and set.
+	 * Since an empty channel analysis table cannot be created from an input file, BasicTest.txt
+	 * represents the simplest case where only one entry is set in the channel analysis table.
+	 *
+	 * NOTE: BasicTest.txt will be used for later tests where the input file is not relevant to the test.
+	 * @author eborchard
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void buildChannelAnalysisTable_BasicTest() {
@@ -40,12 +52,14 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
-	// Tests that the channel analysis table for TestBug.txt is properly created and set.
-	// NOTE: Although our program includes the bug from Program.java, our output for the table
-	// differs from the TestBugPriority-1Faults.ch file from ICON, since we corrected another
-	// error present in that file, where the comma for coordinator [D]'s two flows in cell (2,1)
-	// was replaced by a semicolon.
-	// @author lldeng
+	/* Tests that the channel analysis table for TestBug.txt is properly created and set.
+	 * NOTE: Although our program includes the bug from Program.java, our output for the table
+	 * differs from the TestBugPriority-1Faults.ch file from ICON, since we corrected another
+	 * error present in that file, where the comma for coordinator [D]'s two flows in cell (2,1)
+	 * was replaced by a semicolon.
+	 * 
+	 * @author lldeng
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void buildChannelAnalysisTableTestTestBug() {
@@ -63,8 +77,10 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
-	// Tests if the channel analysis table for ExampleX is properly created and set.
-	// @author dlin4
+	/* Tests if the channel analysis table for ExampleX is properly created and set.
+	 * 
+	 * @author dlin4
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void buildChannelAnalysisTableTestExampleX() {
@@ -86,8 +102,10 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
-	// Tests if the .get() function of ChannelAnalysis is functioning properly in ExampleX.
-	// @author dlin4
+	/* Tests if the .get() function of ChannelAnalysis is functioning properly in ExampleX.
+	 * 
+	 * @author dlin4
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void getChannelAnalysisTableTestExampleX() {
@@ -109,8 +127,10 @@ class ChannelAnalysisTest {
 		//System.out.println(expected.get(3, 5));
 	}
 	
-	// Tests if ExampleX has channel conflicts. It should be false.
-	// @author dlin4
+	/* Tests if ExampleX has channel conflicts. It should be false.
+	 * 
+	 * @author dlin4
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void isChannelConflictTestExampleX() {
@@ -122,8 +142,10 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
-	// Tests if TestBug has channel conflicts. It should be true.
-	// @author dlin4
+	/* Tests if TestBug has channel conflicts. It should be true.
+	 * 
+	 * @author dlin4
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void isChannelConflictTestTestBug() {
@@ -136,11 +158,13 @@ class ChannelAnalysisTest {
 	}
 	
 	
-	// Tests the input file "ConflictTest.txt" that replicates the known conditions to create a channel conflict.
-	// Conflicts occur when there is no overlap of nodes between flows. This can also be seen in TestBug.txt.
-	// While the bug does not need to be fixed for this project, its replicability in the channel analysis output
-	// should be tested.
-	// @author eborchard
+	/* Tests the input file "ConflictTest.txt" that replicates the known conditions to create a channel conflict.
+	 * Conflicts occur when there is no overlap of nodes between flows. This can also be seen in TestBug.txt.
+	 * While the bug does not need to be fixed for this project, its replicability in the channel analysis output
+	 * should be tested.
+	 * 
+	 * @author eborchard
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void channelConflictReplicationTest() {
@@ -155,9 +179,12 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
-	// First test of the helper method setTableEntry.
-	// Tests setting a null entry in a channel analysis table to a push instruction.
-	// @author eborchard
+//---------------------------------------Start of setTableEntry() Tests-----------------------------------------------------------------//
+
+	/* Tests setting a null entry in a channel analysis table to a push instruction.
+	 * 
+	 * @author eborchard
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void setTableEntryTestPush() {
@@ -183,8 +210,10 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
-	// Tests setting a null entry in a channel analysis table to a push-pull instruction.
-	// @author eborchard
+	/* Tests setting a null entry in a channel analysis table to a push-pull instruction.
+	 * 
+	 * @author eborchard
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void setTableEntryTestPushPull() {
@@ -208,9 +237,11 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
-	// Tests setting a null entry in a channel analysis table to a push instruction and then
-	// causing a channel conflict with another push instruction.
-	// @author eborchard
+	/* Tests setting a null entry in a channel analysis table to a push instruction and then
+	 * causing a channel conflict with another push instruction.
+	 * 
+	 * @author eborchard
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void setTableEntryTestPushPushConflict() {
@@ -243,9 +274,11 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
-	// Tests setting a null entry in a channel analysis table to a push-pull instruction and then
-	// causing a channel conflict with another push instruction.
-	// @author eborchard
+	/* Tests setting a null entry in a channel analysis table to a push-pull instruction and then
+	 * causing a channel conflict with another push instruction.
+	 * 
+	 * @author eborchard
+	 */ 
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void setTableEntryTestPushPullPushConflict() {
@@ -277,9 +310,11 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
-	// Tests setting a null entry in a channel analysis table to a push instruction and then
-	// causing a channel conflict with a push-pull instruction.
-	// @author eborchard
+	/* Tests setting a null entry in a channel analysis table to a push instruction and then
+	 * causing a channel conflict with a push-pull instruction.
+	 * 
+	 * @author eborchard
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void setTableEntryTestPushPushPullConflict() {
@@ -311,9 +346,11 @@ class ChannelAnalysisTest {
 		//System.out.println(expected);
 	}
 	
-	// Tests setting a null entry in a channel analysis table to a push-pull instruction and then
-	// causing a channel conflict with another push-pull instruction.
-	// @author eborchard
+	/* Tests setting a null entry in a channel analysis table to a push-pull instruction and then
+	 * causing a channel conflict with another push-pull instruction.
+	 * 
+	 * @author eborchard 
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void setTableEntryTestPushPullPushPullConflict() {

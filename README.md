@@ -170,10 +170,12 @@ See *Project Plan Files*:
 **Tasks to Be Done:**<br>
 
 *Sprint3*: <br>
-- Design test cases for ChannelAnalysis: Lawrence, David, Alex
+- Design test cases for ChannelAnalysis: Ethan, Lawrence, David, Alex
 - ChannelAnalysis Methods Implementation: Ethan, Lawrence
-- ChannelAnalysis JavaDoc: Ethan
+- ChannelAnalysis JavaDoc: Ethan, Lawrence
 - ChannelAnalysis JUnit Tests: Lawrence, David, Alex
+- UML Sequence Diagram Updates: Lawrence, David
+- UML Class Diagram Updates: Ethan
 - Sprint 3 README.md updates: Everyone
 <br><br>
 
@@ -237,3 +239,4 @@ Also note: The .ch output file for TestBug found on ICON contains a small error 
 - 12/7/2022 : Team meeting for ChannelAnalysis test ideas. -Ethan, Lawrence, David
 - 12/7/2022 : Added tests for setTableEntry. -Ethan
 - 12/7/2022 : Finalized the Warp Sequence Diagram. Updated and formatted ChannelVisualiation Tests.
+- 12/7/2022 : Organized and fixed comments for test classes. -Ethan

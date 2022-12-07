@@ -10,11 +10,10 @@ import edu.uiowa.cs.warp.SystemAttributes.ScheduleChoices;
 
 class ChannelVisualizationTest {
 
-	
-	//NOTE: Until ChannelAnalysis.java is fully implemented, filled tables with flow instructions cannot be tested.
-
-	//Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
-	//@author lldeng
+	/* Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
+	 * 
+	 * @author lldeng
+	 */
 	private ChannelVisualization createChannelVisualization(Integer numFaults, String inputFile, Integer numChannels) {
 		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
 		ScheduleChoices choice = ScheduleChoices.PRIORITY;
@@ -23,9 +22,11 @@ class ChannelVisualizationTest {
 		return channelVis;
 	}
 	
-	//Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
-	//MODIFIED ChannelAnalysis class (see classes below) to test 0x0 table.
-	//@author lldeng
+	/* Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
+	 * MODIFIED ChannelAnalysis class (see classes below) to test 0x0 table.
+	 * 
+	 * @author lldeng
+	 */
 	private ChannelVisualization createChannelVisualizationModNone(Integer numFaults, String inputFile, Integer numChannels) {
 		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
 		ScheduleChoices choice = ScheduleChoices.PRIORITY;
@@ -34,9 +35,11 @@ class ChannelVisualizationTest {
 		return channelVis;
 	}
 	
-	//Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
-	//MODIFIED ChannelAnalysis class (see classes below) to test table with certain cells filled.
-	//@author lldeng
+	/* Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
+	 * MODIFIED ChannelAnalysis class (see classes below) to test table with certain cells filled.
+	 * 
+	 * @author lldeng
+	 */
 	private ChannelVisualization createChannelVisualizationModFilled(Integer numFaults, String inputFile, Integer numChannels) {
 		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
 		ScheduleChoices choice = ScheduleChoices.PRIORITY;
@@ -44,9 +47,11 @@ class ChannelVisualizationTest {
 		ChannelVisualization channelVis = new ChannelVisualization(warp);
 		return channelVis;
 	}
-	//Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
-	//MODIFIED ChannelAnalysis class (see classes below) to test table with cells fully filled.
-	//@author lldeng, dlin4
+	/* Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
+	 * MODIFIED ChannelAnalysis class (see classes below) to test table with cells fully filled.
+	 * 
+	 * @author lldeng, dlin4
+	 */ 
 	private ChannelVisualization createChannelVisualizationModFullyFilled(Integer numFaults, String inputFile, Integer numChannels) {
 		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
 		ScheduleChoices choice = ScheduleChoices.PRIORITY;
@@ -56,9 +61,12 @@ class ChannelVisualizationTest {
 	}
 	
 	
-//------------------------------------------------Start of Header Tests--------------------------------------------------------------------------//
-	//Tests that the header prints out additional information (other parameters) when numFaults is set to 0
-	//@author lldeng
+//-------------------------------------------Start of createHeader() Tests---------------------------------------------------------------------//
+	
+	/* Tests that the header prints out additional information (other parameters) when numFaults is set to 0.
+	 * 
+	 * @author lldeng
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void createHeaderTestNumFaultsEqualsZero() {
@@ -77,8 +85,10 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}
 
-	//Tests that the header created by createHeader() matches the expected header of ExampleX.txt with numFaults 1
-	//@author dlin4
+	/*Tests that the header created by createHeader() matches the expected header of ExampleX.txt with numFaults = 1.
+	 * 
+	 * @author dlin4
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void createHeaderTestExampleX() {
@@ -95,8 +105,10 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}
 	
-	//Tests that the header created by createHeader() matches the expected header of Example.txt with numFaults 2
-	//@author lldeng
+	/* Tests that the header created by createHeader() matches the expected header of Example.txt with numFaults = 2.
+	 * 
+	 * @author lldeng
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void createHeaderTestExample() {
@@ -112,11 +124,10 @@ class ChannelVisualizationTest {
 		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
-//------------------------------------------------End of Header Tests--------------------------------------------------------------------------//
 
-//-----------------------------------------------Start of Channel Visualization Table tests----------------------------------------------------//
+//-------------------------------------------Start of visualization() Tests------------------------------------------------------------------//
 	// Not possible anymore due to Channel Analysis being implemented.
-	//Tests that an empty visualization table is correctly initialized for ExampleX.txt
+	//Tests that an empty visualization table is correctly initialized for ExampleX.txt.
 	//@author dlin4
 	/*@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
@@ -135,8 +146,10 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}*/
 	
-	//Tests that an empty visualization table is correctly initialized for TestBug.txt
-	//@author lldeng
+	/* Tests that an empty visualization table is correctly initialized for TestBug.txt.
+	 * 
+	 * @author lldeng
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationTestEmptyTableTestBug() {
@@ -154,8 +167,10 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}
 	
-	//Tests that an empty table with only one row is correctly initialized for TestBug.txt with numChannels = 1
-	//@author lldeng
+	/* Tests that an empty table with only one row is correctly initialized for TestBug.txt with numChannels = 1.
+	 * 
+	 * @author lldeng
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationTestOneChannelTestBug() {
@@ -173,8 +188,10 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}
 	
-	//Tests that an empty table with 25 rows is correctly initialized for ExampleX.txt with numChannels = 25
-	//@author lldeng
+	/* Tests that an empty table with 25 rows is correctly initialized for ExampleX.txt with numChannels = 25.
+	 * 
+	 * @author lldeng
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationTestTwentyFiveChannelsExampleX() {
@@ -192,8 +209,10 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}
 	
-	//Tests that an empty table has the correct row index when using the .get() method
-	//@author dlin4
+	/* Tests that an empty table has the correct row index when using the .get() method.
+	 * 
+	 * @author dlin4
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationTestTableExampleXGetRowIndex() {
@@ -214,8 +233,10 @@ class ChannelVisualizationTest {
 		assertTrue(expected.get(3).equals(actual.get(3)));
 	}
 	
-	//Tests that a table with no rows or columns is made using the modded ChannelAnalysis class(Test file is irrelevant)
-	//@author lldeng
+	/* Tests that a table with no rows or columns is made using the modded ChannelAnalysis class(Test file is irrelevant).
+	 * 
+	 * @author lldeng
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationTestNoTable() {
@@ -230,8 +251,10 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}
 	
-	//Tests that a table with actual input string values is created using the modded ChannelAnalysis class
-	//@author lldeng
+	/* Tests that a table with actual input string values is created using the modded ChannelAnalysis class.
+	 * 
+	 * @author lldeng
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationTestPartiallyFilledTable() {
@@ -251,8 +274,10 @@ class ChannelVisualizationTest {
 		//System.out.print(expected);
 		assertTrue(expected.equals(actual));
 	}
-	//Tests that a full table with actual input string values is created using the modded ChannelAnalysis class
-	//@author dlin4
+	/* Tests that a full table with actual input string values is created using the modded ChannelAnalysis class.
+	 * 
+	 * @author dlin4
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationTestFullFilledTable() {
@@ -269,9 +294,11 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}
 	
-	//Checks that the Description object returned by visualization() matches with the lines of ExampleXPriority-1Faults.ch
-	//from the ICON Project BugExistsOutputFiles
-	//@author dlin4
+	/* Checks that the Description object returned by visualization() matches with the lines of ExampleXPriority-1Faults.ch.
+	 * from the ICON Project BugExistsOutputFiles.
+	 * 
+	 * @author dlin4
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationExampleXOutput() {
@@ -297,13 +324,15 @@ class ChannelVisualizationTest {
 		} 
 }
 
-//-----------------------------------------------End of Channel Visualization Table tests-----------------------------------------------------------------//
+//-------------------------------------------End of visualization() Tests------------------------------------------------------------------//
 
 
-//This class extends the ChannelAnalysis class to override the current implementation in order to test that
-//ChannelVisualization correctly creates a visualization with no rows or columns when the ChannelAnalysis
-//table has no rows or columns.
-//@author lldeng
+/* This class extends the ChannelAnalysis class to override the current implementation in order to test that
+ * ChannelVisualization correctly creates a visualization with no rows or columns when the ChannelAnalysis
+ * table has no rows or columns.
+ * 
+ * @author lldeng
+ */
 class ChannelAnalysisModNone extends ChannelAnalysis {
 	
 	ChannelAnalysisModNone(WarpInterface warp) {
@@ -322,9 +351,11 @@ class ChannelAnalysisModNone extends ChannelAnalysis {
 	}
 }
 
-//This class extends the WarpSystem class to create a WarpSystem object using the modified ChannelAnalysis
-//class that creates a table with no rows or columns (see class directly above)
-//@author lldeng
+/* This class extends the WarpSystem class to create a WarpSystem object using the modified ChannelAnalysis
+ * class that creates a table with no rows or columns (see class directly above).
+ * 
+ * @author lldeng
+ */
 class WarpSystemModNone extends WarpSystem {
 
 	public WarpSystemModNone(WorkLoad workLoad, Integer numChannels, ScheduleChoices choice) {
@@ -339,10 +370,12 @@ class WarpSystemModNone extends WarpSystem {
 	}
 }
 
-//This class extends the ChannelAnalysis class to override the current implementation in order to test that
-//ChannelVisualization correctly creates a visualization with actual string values when the ChannelAnalysis
-//table has those string values set in certain Channel/Timeslot cells.
-//@author lldeng
+/* This class extends the ChannelAnalysis class to override the current implementation in order to test that
+ * ChannelVisualization correctly creates a visualization with actual string values when the ChannelAnalysis
+ * table has those string values set in certain Channel/Timeslot cells.
+ * 
+ * @author lldeng
+ */
 class ChannelAnalysisModFilled extends ChannelAnalysis {
 	
 	ChannelAnalysisModFilled(WarpInterface warp) {
@@ -366,9 +399,11 @@ class ChannelAnalysisModFilled extends ChannelAnalysis {
 	}
 }
 
-//This class extends the WarpSystem class to create a WarpSystem object using the modified ChannelAnalysis
-//class that creates a table with input strings at certain table positions (see class directly above)
-//@author lldeng
+/* This class extends the WarpSystem class to create a WarpSystem object using the modified ChannelAnalysis
+ * class that creates a table with input strings at certain table positions (see class directly above).
+ * 
+ * @author lldeng
+ */
 class WarpSystemModFilled extends WarpSystem {
 
 	public WarpSystemModFilled(WorkLoad workLoad, Integer numChannels, ScheduleChoices choice) {
@@ -381,10 +416,12 @@ class WarpSystemModFilled extends WarpSystem {
 		return ca;
 	}
 }	
-//This class extends the ChannelAnalysis class to override the current implementation in order to test that
-//ChannelVisualization correctly creates a visualization with actual string values when the ChannelAnalysis
-//table has those string values set in all Channel/Timeslot cells.
-//@author lldeng, dlin4
+/* This class extends the ChannelAnalysis class to override the current implementation in order to test that
+ * ChannelVisualization correctly creates a visualization with actual string values when the ChannelAnalysis
+ * table has those string values set in all Channel/Timeslot cells.
+ * 
+ * @author lldeng, dlin4
+ */
 class ChannelAnalysisModFullyFilled extends ChannelAnalysis {
 		
 		ChannelAnalysisModFullyFilled(WarpInterface warp) {
@@ -407,9 +444,11 @@ class ChannelAnalysisModFullyFilled extends ChannelAnalysis {
 			}
 		}
 	}
-//This class extends the WarpSystem class to create a WarpSystem object using the modified ChannelAnalysis
-//class that creates a table with input strings at all table positions (see class directly above)
-//@author lldeng, dlin4
+/* This class extends the WarpSystem class to create a WarpSystem object using the modified ChannelAnalysis
+ * class that creates a table with input strings at all table positions (see class directly above).
+ * 
+ * @author lldeng, dlin4
+ */
 class WarpSystemModFullyFilled extends WarpSystem {
 
 		public WarpSystemModFullyFilled(WorkLoad workLoad, Integer numChannels, ScheduleChoices choice) {
