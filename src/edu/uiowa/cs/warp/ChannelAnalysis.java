@@ -39,7 +39,7 @@ public class ChannelAnalysis {
 
   /**
    * Constructor that takes in a WarpInterface and converts it to a a program, calls the other 
-   * class constructor with the Program object parameter then sets the program and it's schedule.
+   * class constructor with the Program object parameter then sets the program and its schedule.
    * 
    * @author sgoddard
    * @param warp The WarpSystem from which a channel analysis table will be created.
@@ -78,7 +78,7 @@ public class ChannelAnalysis {
    * to create a channel analysis table. The Visualization() method within ChannelVisualization will then use 
    * this analysis table to create the desired visualization.
    * 
-   * This method should be private.
+   * Should be private, but set to public for testing purposes.
    * 
    * @author eborchard, lldeng
    */
@@ -138,7 +138,7 @@ public class ChannelAnalysis {
    * instructions in the same channel and timeSlot, the method adds a semicolon between the different
    * coordinators' instructions in the channel analysis table entry and sets the conflictExists flag to true.
    * 
-   * This method should be private.
+   * Should be private, but set to public for testing purposes.
    * 
    * @author eborchard, lldeng
    * @param timeSlot The timeSlot of the instruction, which is also the column number of the channel analysis table.

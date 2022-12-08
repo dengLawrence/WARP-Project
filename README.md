@@ -179,15 +179,6 @@ See *Project Plan Files*:
 - Sprint 3 README.md updates: Everyone
 <br><br>
 
-- Add more to the README including knowledge of the bug output (& incorrect ";" in TestBug), explanations of design decisions, more specific on task designation, etc.
-- Update the sequence diagram to include VisualizationObject and the calls to fileVisualization() & displayVisualization(). 
-- Update the UML class diagrams when finalized on implementation.
-- Generate JavaDoc when finalized with comments.
-- Uncomment / add tests to ChannelVisualizationTest now that ChannelAnalysis is implemented.
-	- FIX ChannelVisualizationTest
-- Organize test classes
-- **JUnit tests for ChannelAnalysis.** Ideas: Some tests where it checks against the exact output of the files found on ICON (ExampleX, TestBug). Some tests where we create our own ProgramSchedule and add things like channel conflicts. Make sure to test each method, so buildChannelAnalysisTable() and setTableEntry() will have their own tests.
-
 **Other Project Artifacts:** <br>
 See *Project Plan Files*:
 - UML Sequence Diagram (*WSD.txt* and *WSD.png*)
@@ -228,7 +219,7 @@ Also note: The .ch output file for TestBug found on ICON contains a small error 
 <br>
 *Start of Sprint 3*<br>
 - 11/18/2022 : Added rudimentary implementation of buildChannelAnalysisTable. Does not handle channel conflicts and will need to be refactored. -Ethan
-- 11/28/2022 : Team meeting and completed rudimentary implementation of buildChannelAnalysisTable (w/ conflicts). Needs clean-up. -Ethan, David, Alex, Lawrence
+- 11/28/2022 : Team meeting & completed basic implementation of buildChannelAnalysisTable (w/ conflicts). Needs clean-up. -Ethan, David, Alex, Lawrence
 - 12/4/2022 : Updated documentation in ChannelAnalysis.java. -Lawrence
 - 12/5/2022 : Updated documentation in ChannelVisualization.java. -Ethan
 - 12/6/2022 : Team meeting to discuss final project tasks and began ChannelAnalysis tests. -Ethan, Lawrence, David
