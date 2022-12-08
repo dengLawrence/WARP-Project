@@ -82,7 +82,7 @@ class ChannelVisualizationTest {
 		
 	    //System.out.print(actual);
 	    //System.out.print(expected);
-		assertTrue(expected.equals(actual));
+		assertEquals(expected, actual);
 	}
 
 	/*Tests that the header created by createHeader() matches the expected header of ExampleX.txt with numFaults = 1.
@@ -102,7 +102,7 @@ class ChannelVisualizationTest {
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
+		assertEquals(expected, actual);
 	}
 	
 	/* Tests that the header created by createHeader() matches the expected header of Example.txt with numFaults = 2.
@@ -122,14 +122,14 @@ class ChannelVisualizationTest {
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
+		assertEquals(expected, actual);
 	}
 
 //-------------------------------------------Start of visualization() Tests------------------------------------------------------------------//
 	// Not possible anymore due to Channel Analysis being implemented.
-	//Tests that an empty visualization table is correctly initialized for ExampleX.txt.
+	//Tests that a visualization table is correctly created for ExampleX.txt.
 	//@author dlin4
-	/*@Test
+	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationTestEmptyTableExampleX() {
 		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 16);
@@ -137,29 +137,16 @@ class ChannelVisualizationTest {
 		
 		Description expected = new Description();
 		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
-		for(int i = 0; i < 16; i++) {
+		expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", 0));
+		expected.add(String.format("%s	[A]::F0:(A:B)	-	-	[C]::F1:(C:B)	-	-	-	-	-	-\n", 1));
+		expected.add(String.format("%s	-	[B]::F0:(B:C), F0:(A:B)	-	-	-	-	-	-	-	-\n", 2));
+		expected.add(String.format("%s	-	-	[B]::F0:(B:C)	-	-	[A]::F0:(A:B)	-	-	-	-\n", 3));
+		expected.add(String.format("%s	-	-	-	-	-	-	[B]::F0:(B:C), F0:(A:B)	-	-	-\n", 4));
+		expected.add(String.format("%s	-	-	-	-	-	-	-	[B]::F0:(B:C)	-	-\n", 5));
+		expected.add(String.format("%s	-	-	-	-	[B]::F1:(B:A), F1:(C:B)	-	-	-	-	-\n", 6));
+		expected.add(String.format("%s	-	-	-	-	-	-	-	-	[B]::F1:(B:A)	-\n", 7));
+		for(int i = 8; i < 16; i++) {
 			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
-		}
-		
-		System.out.print(actual);
-		System.out.print(expected);
-		assertTrue(expected.equals(actual));
-	}*/
-	
-	/* Tests that an empty visualization table is correctly initialized for TestBug.txt.
-	 * 
-	 * @author lldeng
-	 */
-	@Test
-	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void visualizationTestEmptyTableTestBug() {
-		ChannelVisualization channelVis = createChannelVisualization(1, "TestBug.txt", 16);
-		Description actual = channelVis.visualization();
-		
-		Description expected = new Description();
-		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	10	11	\n");
-		for(int i = 0; i < 16; i++) {
-			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	-	-\n", i));
 		}
 		
 		//System.out.print(actual);
@@ -167,7 +154,31 @@ class ChannelVisualizationTest {
 		assertTrue(expected.equals(actual));
 	}
 	
-	/* Tests that an empty table with only one row is correctly initialized for TestBug.txt with numChannels = 1.
+	/* Tests that a visualization table is correctly created for TestBug.txt.
+	 * 
+	 * @author lldeng
+	 */
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void visualizationTestNormalTestBug() {
+		ChannelVisualization channelVis = createChannelVisualization(1, "TestBug.txt", 16);
+		Description actual = channelVis.visualization();
+		
+		Description expected = new Description();
+		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	10	11	\n");
+		expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	-	-\n", 0));
+		expected.add(String.format("%s	[A]::F0:(A:B); [C]::F1:(C:D)	-	[E]::F1:(E:F), F1:(D:E)	-	-	-	-	-	-	-	-	-\n", 1));
+		expected.add(String.format("%s	-	[A]::F0:(A:B); [D]::F1:(D:E), F1:(C:D)	-	[E]::F1:(E:F)	-	-	-	-	-	-	-	-\n", 2));
+		for(int i = 3; i < 16; i++) {
+			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	-	-\n", i));
+		}
+		
+		//System.out.print(actual);
+		//System.out.print(expected);
+		assertEquals(expected, actual);
+	}
+	
+	/* Tests that a table with only one row is correctly created for TestBug.txt with numChannels = 1.
 	 * 
 	 * @author lldeng
 	 */
@@ -179,16 +190,14 @@ class ChannelVisualizationTest {
 		
 		Description expected = new Description();
 		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	10	11	\n");
-		for(int i = 0; i < 1; i++) {
-			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-	-	-\n", i));
-		}
+		expected.add(String.format("%s	[A]::F0:(A:B); [C]::F1:(C:D)	-	[A]::F0:(A:B); [D]::F1:(D:E), F1:(C:D)	-	[E]::F1:(E:F), F1:(D:E)	-	[E]::F1:(E:F)	-	-	-	-	-\n", 0));
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
+		assertEquals(expected, actual);
 	}
 	
-	/* Tests that an empty table with 25 rows is correctly initialized for ExampleX.txt with numChannels = 25.
+	/* Tests that a table with 25 rows is correctly created for ExampleX.txt with numChannels = 25.
 	 * 
 	 * @author lldeng
 	 */
@@ -200,13 +209,21 @@ class ChannelVisualizationTest {
 		
 		Description expected = new Description();
 		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
-		for(int i = 0; i < 25; i++) {
+		expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", 0));
+		expected.add(String.format("%s	[A]::F0:(A:B)	-	-	[C]::F1:(C:B)	-	-	-	-	-	-\n", 1));
+		expected.add(String.format("%s	-	[B]::F0:(B:C), F0:(A:B)	-	-	-	-	-	-	-	-\n", 2));
+		expected.add(String.format("%s	-	-	[B]::F0:(B:C)	-	-	[A]::F0:(A:B)	-	-	-	-\n", 3));
+		expected.add(String.format("%s	-	-	-	-	-	-	[B]::F0:(B:C), F0:(A:B)	-	-	-\n", 4));
+		expected.add(String.format("%s	-	-	-	-	-	-	-	[B]::F0:(B:C)	-	-\n", 5));
+		expected.add(String.format("%s	-	-	-	-	[B]::F1:(B:A), F1:(C:B)	-	-	-	-	-\n", 6));
+		expected.add(String.format("%s	-	-	-	-	-	-	-	-	[B]::F1:(B:A)	-\n", 7));
+		for(int i = 8; i < 25; i++) {
 			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
 		}
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
+		assertEquals(expected, actual);
 	}
 	
 	/* Tests that an empty table has the correct row index when using the .get() method.
@@ -230,7 +247,7 @@ class ChannelVisualizationTest {
 		}
 		//System.out.print(actual.get(3));
 		//System.out.print(expected.get(3));
-		assertTrue(expected.get(3).equals(actual.get(3)));
+		assertEquals(expected.get(3), actual.get(3));
 	}
 	
 	/* Tests that a table with no rows or columns is made using the modded ChannelAnalysis class(Test file is irrelevant).
@@ -248,7 +265,7 @@ class ChannelVisualizationTest {
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
+		assertEquals(expected, actual);
 	}
 	
 	/* Tests that a table with actual input string values is created using the modded ChannelAnalysis class.
@@ -272,7 +289,7 @@ class ChannelVisualizationTest {
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
+		assertEquals(expected, actual);
 	}
 	/* Tests that a full table with actual input string values is created using the modded ChannelAnalysis class.
 	 * 
@@ -291,7 +308,7 @@ class ChannelVisualizationTest {
 		}
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
+		assertEquals(expected, actual);
 	}
 	
 	/* Checks that the Description object returned by visualization() matches with the lines of ExampleXPriority-1Faults.ch.
@@ -320,7 +337,7 @@ class ChannelVisualizationTest {
 			}
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
+		assertEquals(expected, actual);
 		} 
 }
 

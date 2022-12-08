@@ -25,11 +25,83 @@ class ChannelAnalysisTest {
 
 //---------------------------------------Start of getChannelAnalysisTable() Tests-------------------------------------------------------------------//
 
+	/* Tests that the object returned by getChannelAnalysisTable() is indeed the
+	 * same object stored in the channelAnalysisTable variable of the ChannelAnalysis object by
+	 * running getChannelAnalysisTable() after a table has been created for TextBug.txt.
+	 * 
+	 * @author lldeng
+	 */
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void getChannelAnalysisTableTestTestBug() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "TestBug.txt", 16);
+		ProgramSchedule expected = channelAnalysis.channelAnalysisTable;
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		assertSame(expected, actual);
+		//System.out.println(actual);
+		//System.out.println(expected);
+	}
 	
+	/* Tests that the object returned by getChannelAnalysisTable() is indeed the
+	 * same object stored in the channelAnalysisTable variable of the ChannelAnalysis object by
+	 * running getChannelAnalysisTable() after the channelAnalysisTable variable has been set
+	 * to an empty 16x5 table.
+	 * 
+	 * @author lldeng
+	 */
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void getChannelAnalysisTableTestResetTable() {
+		//We take TestBug.txt as input, but we manually set the channelAnalysisTable
+		//of the ChannelAnalysis object to a new empty 16x5 ProgramSchedule.
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "TestBug.txt", 16);
+		channelAnalysis.channelAnalysisTable = new ProgramSchedule(16, 5);
+		ProgramSchedule expected = channelAnalysis.channelAnalysisTable;
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		assertSame(expected, actual);
+		//System.out.println(actual);
+		//System.out.println(expected);
+	}
 	
 //-------------------------------------------Start of isChannelConflict() Tests---------------------------------------------------------------------//
 
-
+	/* Tests that the boolean value returned by isChannelConflict() matches the
+	 * boolean value stored in the conflictExists variable of the ChannelAnalysis object by
+	 * running isChannelConflict() after buildChannelAnalysisTable() has been run for 
+	 * TestBug.txt.
+	 * 
+	 * @author lldeng
+	 */
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void isChannelConflictTestTestBug() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "TestBug.txt", 16);
+		boolean expected = channelAnalysis.conflictExists;
+		boolean actual = channelAnalysis.isChannelConflict();
+		assertEquals(expected, actual);
+		//System.out.println(actual);
+		//System.out.println(expected);
+	}
+	
+	/* Tests that the boolean value returned by isChannelConflict() matches the
+	 * boolean value stored in the conflictExists variable of the ChannelAnalysis object.
+	 * 
+	 * @author lldeng
+	 */
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void isChannelConflictTestSetToFalse() {
+		//We take TestBug.txt as input, which will set conflictExists to false via the logic
+		//of setTableEntry() within buildChannelAnalysisTable(), but we manually set conflictExists
+		//to false
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "TestBug.txt", 16);
+		channelAnalysis.conflictExists = false;
+		boolean expected = channelAnalysis.conflictExists;
+		boolean actual = channelAnalysis.isChannelConflict();
+		assertEquals(expected, actual);
+		//System.out.println(actual);
+		//System.out.println(expected);
+	}
 	
 //---------------------------------------Start of buildChannelAnalysisTable() Tests-----------------------------------------------------------------//
 	
@@ -133,7 +205,7 @@ class ChannelAnalysisTest {
 	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void isChannelConflictTestExampleX() {
+	void buildChannelAnalysisTableTestExampleXConflict() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "ExampleX.txt", 16);
 		Boolean actual = channelAnalysis.isChannelConflict();
 		Boolean expected = false;
@@ -148,7 +220,7 @@ class ChannelAnalysisTest {
 	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void isChannelConflictTestTestBug() {
+	void buildChannelAnalysisTableTestTestBugConflict() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "TestBug.txt", 16);
 		Boolean actual = channelAnalysis.isChannelConflict();
 		Boolean expected = true;
