@@ -126,7 +126,6 @@ class ChannelVisualizationTest {
 	}
 
 //-------------------------------------------Start of visualization() Tests------------------------------------------------------------------//
-	// Not possible anymore due to Channel Analysis being implemented.
 	//Tests that a visualization table is correctly created for ExampleX.txt.
 	//@author dlin4
 	@Test
@@ -310,35 +309,6 @@ class ChannelVisualizationTest {
 		//System.out.print(expected);
 		assertEquals(expected, actual);
 	}
-	
-	/* Checks that the Description object returned by visualization() matches with the lines of ExampleXPriority-1Faults.ch.
-	 * from the ICON Project BugExistsOutputFiles.
-	 * 
-	 * @author dlin4
-	 */
-	@Test
-	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void visualizationExampleXOutput() {
-		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 16);
-		Description actual = channelVis.visualization();
-			
-		Description expected = new Description();
-		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
-		expected.add("0	-	-	-	-	-	-	-	-	-	-\n");
-		expected.add("1	[A]::F0:(A:B)	-	-	[C]::F1:(C:B)	-	-	-	-	-	-\n");
-		expected.add("2	-	[B]::F0:(B:C), F0:(A:B)	-	-	-	-	-	-	-	-\n");
-		expected.add("3	-	-	[B]::F0:(B:C)	-	-	[A]::F0:(A:B)	-	-	-	-\n");
-		expected.add("4	-	-	-	-	-	-	[B]::F0:(B:C), F0:(A:B)	-	-	-\n");
-		expected.add("5	-	-	-	-	-	-	-	[B]::F0:(B:C)	-	-\n");
-		expected.add("6	-	-	-	-	[B]::F1:(B:A), F1:(C:B)	-	-	-	-	-\n");
-		expected.add("7	-	-	-	-	-	-	-	-	[B]::F1:(B:A)	-\n");
-		for(int i = 8; i <= 15; i++) {
-			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
-			}
-		//System.out.print(actual);
-		//System.out.print(expected);
-		assertEquals(expected, actual);
-		} 
 }
 
 //-------------------------------------------End of visualization() Tests------------------------------------------------------------------//
