@@ -114,7 +114,7 @@ class ChannelAnalysisTest {
 	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void buildChannelAnalysisTable_BasicTest() {
+	void buildChannelAnalysisTableBasicTest() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "BasicTest.txt", 16);
 		ProgramSchedule expected = new ProgramSchedule(16, 2);
 		expected.set(1, 0, "[A]::F0:(A:A), F0:(A:A)");
@@ -122,6 +122,21 @@ class ChannelAnalysisTest {
 		assertEquals(expected, actual);
 		//System.out.println(actual);
 		//System.out.println(expected);
+	}
+	
+	/* Tests if the ChannelAnalysis implementation can run StressTest4.txt without error.
+	 * Matching the output with an expected is beyond the scope of a reasonable test,
+	 * this is simply a torture test for the code.
+	 * 
+	 * @author eborchard
+	 */
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void buildChannelAnalysisTableStressTest4() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(2, "StressTest4.txt", 16);
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		assertNotNull(actual);
+		//System.out.println(actual);
 	}
 	
 	/* Tests that the channel analysis table for TestBug.txt is properly created and set.
@@ -134,7 +149,7 @@ class ChannelAnalysisTest {
 	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void buildChannelAnalysisTableTestTestBug() {
+	void buildChannelAnalysisTableTestBug() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "TestBug.txt", 16);
 		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
 		ProgramSchedule expected = new ProgramSchedule(16, 12);
@@ -220,7 +235,7 @@ class ChannelAnalysisTest {
 	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void buildChannelAnalysisTableTestTestBugConflict() {
+	void buildChannelAnalysisTableTestBugConflict() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "TestBug.txt", 16);
 		Boolean actual = channelAnalysis.isChannelConflict();
 		Boolean expected = true;
@@ -231,9 +246,9 @@ class ChannelAnalysisTest {
 	
 	
 	/* Tests the input file "ConflictTest.txt" that replicates the known conditions to create a channel conflict.
-	 * Conflicts occur when there is no overlap of nodes between flows. This can also be seen in TestBug.txt.
-	 * While the bug does not need to be fixed for this project, its replicability in the channel analysis output
-	 * should be tested.
+	 * Conflicts occur when there is no overlap of nodes from flows that are allocated to the same channel/timeslot.
+	 * This can also be seen in TestBug.txt. While the bug does not need to be fixed for this project, its
+	 * replicability in the channel analysis output should be tested.
 	 * 
 	 * @author eborchard
 	 */
@@ -245,6 +260,26 @@ class ChannelAnalysisTest {
 		ProgramSchedule expected = new ProgramSchedule(16, 10);
 		expected.set(1,  0, "[A]::F0:(A:B); [C]::F1:(C:D)");
 		expected.set(2, 1, "[A]::F0:(A:B); [C]::F1:(C:D)");
+			
+		assertEquals(expected, actual);
+		//System.out.println(actual);
+		//System.out.println(expected);
+	}
+	
+	/* Tests the input file "MultipleConflictsTest.txt" that replicates the case where channel conflicts
+	 * occur, this time with four flows. Confirms that the conflicting outputs are all appended to each
+	 * other with a semicolon. 
+	 * 
+	 * @author eborchard
+	 */
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void multipleConflictsTest() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "MultipleConflictsTest.txt", 16);
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		ProgramSchedule expected = new ProgramSchedule(16, 10);
+		expected.set(1,  0, "[A]::F0:(A:B); [C]::F1:(C:D); [E]::F2:(E:F); [G]::F3:(G:H)");
+		expected.set(2, 1, "[A]::F0:(A:B); [C]::F1:(C:D); [E]::F2:(E:F); [G]::F3:(G:H)");
 			
 		assertEquals(expected, actual);
 		//System.out.println(actual);

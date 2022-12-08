@@ -232,3 +232,4 @@ Also note: The .ch output file for TestBug found on ICON contains a small error 
 - 12/7/2022 : Finalized the Warp Sequence Diagram. Updated and formatted ChannelVisualiation Tests. -David
 - 12/7/2022 : Organized and fixed comments for test classes. -Ethan
 - 12/7/2022 : Cleaned up and added tests for both test classes. -Lawrence
+- 12/8/2022 : Added StressTest4 & multiple channel conflicts tests for buildChannelAnalysisTable. -Ethan
