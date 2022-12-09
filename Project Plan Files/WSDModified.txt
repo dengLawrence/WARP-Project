@@ -1,0 +1,68 @@
+title Warp Sequence Diagram
+
+User->Warp: calls caRequested
+activate Warp
+Warp->VisualizationFactory: visualize()
+activate VisualizationFactory
+VisualizationFactory->VisualizationImplementation: createProgramVisualization()
+activate VisualizationImplementation
+VisualizationImplementation->VisualizationImplementation: VisualizationImplementation constructor
+VisualizationImplementation->ChannelVisualization: createVisualization()
+activate ChannelVisualization
+ChannelVisualization->WarpSystem: ChannelVisualization constructor
+activate WarpSystem
+WarpSystem->ChannelAnalysis: toChannelAnalysis()
+activate ChannelAnalysis
+ChannelAnalysis->ChannelAnalysis: constructor
+activate ChannelAnalysis
+ChannelAnalysis->ChannelAnalysis: buildChannelAnalysisTable()
+activate ChannelAnalysis
+ChannelAnalysis->ChannelAnalysis: setTableEntry()
+space
+deactivate ChannelAnalysis
+space
+deactivate ChannelAnalysis
+ChannelAnalysis-->WarpSystem: returns ChannelAnalysis object
+deactivate ChannelAnalysis
+WarpSystem-->ChannelVisualization: returns ChannelAnalysis object
+deactivate WarpSystem
+ChannelVisualization-->VisualizationImplementation: returns ChannelVisualization object
+deactivate ChannelVisualization
+VisualizationImplementation->ChannelVisualization: createVisualization()
+activate ChannelVisualization
+ChannelVisualization->ChannelAnalysis: visualization()
+activate ChannelAnalysis
+ChannelAnalysis->ChannelAnalysis: getChannelAnalysisTable()
+ChannelAnalysis-->ChannelVisualization: returns ProgramSchedule object
+deactivate ChannelAnalysis
+ChannelVisualization-->VisualizationImplementation: returns Description object
+deactivate ChannelVisualization
+VisualizationImplementation->ChannelVisualization: createVisualization()
+activate ChannelVisualization
+ChannelVisualization->ChannelVisualization: fileVisualization()
+activate ChannelVisualization
+ChannelVisualization->ChannelVisualization: createHeader()
+ChannelVisualization->ChannelAnalysis: visualization()
+activate ChannelAnalysis
+ChannelAnalysis->ChannelAnalysis: getChannelAnalysisTable()
+ChannelAnalysis-->ChannelVisualization: returns ProgramSchedule object
+deactivate ChannelAnalysis
+space
+deactivate ChannelVisualization
+ChannelVisualization-->VisualizationImplementation: returns Description object
+deactivate ChannelVisualization
+VisualizationImplementation-->VisualizationFactory: returns VisualizationImplementation object
+deactivate VisualizationImplementation
+VisualizationFactory->Warp: returns Visualization object
+deactivate VisualizationFactory
+Warp->VisualizationImplementation: visualization()
+deactivate Warp
+activate VisualizationImplementation
+VisualizationImplementation->FileManager: toFile()
+deactivate VisualizationImplementation
+activate FileManager
+FileManager->Files: writeFile()
+deactivate FileManager
+activate Files
+Files->Output: writeString()
+deactivate Files
