@@ -130,7 +130,7 @@ public class ChannelAnalysis {
    }
 
   /**
-   * setTableEntry() creates the string that will be placed at the row(channel) and column(timeSlot)
+   * setTableEntry() creates the string that will be placed at the row (channel) and column (timeSlot)
    * of the channel analysis table associated with the pulled InstructionParameter. It gets the source,
    * sink, and flow strings of the current InstructionParameter, and formats them together appropriately.
    * If the next instructionParameter is 'pull' instruction, it appends the existing output string with

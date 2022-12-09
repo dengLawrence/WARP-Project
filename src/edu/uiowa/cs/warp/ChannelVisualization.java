@@ -6,8 +6,7 @@ package edu.uiowa.cs.warp;
  * requested at runtime. A Description object of the visualization is created from the retrieved channel
  * analysis table. A Description object of the header for file output can also be created.</p>
  * 
- * CS2820 Fall 2022 Project: Implement this class to create the file visualization that is requested
- * in Warp.
+ * CS2820 Fall 2022 Project: Implement this class to create the file visualization that is requested in Warp.
  * 
  * @author sgoddard
  * @version 1.4
@@ -48,7 +47,7 @@ public class ChannelVisualization extends VisualizationObject {
   }
   
   /**
-   * Creates a Description object of the channel allocation visualization. This method is called by
+   * Creates a Description object of the channel analysis visualization. This method is called by
    * VisualizationObject.java to retrieve this Description for display and file visualization.
    * This method parses the channel analysis table created in the constructor. Row and column labels are
    * created and the entries of the channel analysis table are added.

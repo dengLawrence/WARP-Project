@@ -93,9 +93,8 @@ Main refactoring of the implementation of findNextAvailableChannel() in the Prog
 
 The ultimate aim of this project is to complete the ChannelAnalysis and ChannelVisualization classes so that they 
 create *.ch files and evaluate the channel allocation of WARP flows, as requested in the Warp main program when the
-runtime configuration option -ca is used. To do this, method(s) must be implemented within the ChannelAnalysis class
-to correctly analyze and return the state of each channel, and method(s) must be implemented within the ChannelVisualization
-class to correctly visualize and display the information found in ChannelAnalysis.
+runtime configuration option -ca is used. To do this, methods must be implemented within the ChannelAnalysis class
+to correctly analyze and return the state of each channel, and methods must be implemented within the ChannelVisualization class to correctly visualize and display the information found in ChannelAnalysis.
 <br>
 
 **Project Schedule:**<br>
@@ -131,7 +130,7 @@ Sprint 3 (Due Dec. 9th): ChannelAnalysis implementation, documentation, and test
 <br>
 
 **Other Project Artifacts:** <br>
-See *Project Plan Files*:
+See *Project Plan Files* Folder:
 - UML Sequence Diagram (*WSD.txt* and *WSD.png*)
 - UML Class Diagram for ChannelVisualization (*ChannelVisualization.umlcd*)
 - Method Design File (*MethodIdeas.md*)
@@ -158,7 +157,7 @@ See *Project Plan Files*:
 <br>
 
 **Other Project Artifacts:** <br>
-See *Project Plan Files*:
+See *Project Plan Files* Folder:
 - UML Sequence Diagram (*WSD.txt* and *WSD.png*)
 - UML Class Diagram for ChannelVisualization (*ChannelVisualization.umlcd*)
 - UML Class Diagram for ChannelAnalysis (*ChannelAnalysis.umlcd*)
@@ -180,7 +179,7 @@ See *Project Plan Files*:
 <br><br>
 
 **Other Project Artifacts:** <br>
-See *Project Plan Files*:
+See *Project Plan Files* Folder:
 - UML Sequence Diagram (*WSD.txt* and *WSD.png*)
 - UML Class Diagram for ChannelVisualization (*ChannelVisualization.umlcd*)
 - UML Class Diagram for ChannelAnalysis (*ChannelAnalysis.umlcd*)
@@ -188,8 +187,8 @@ See *Project Plan Files*:
 <br>
 
 **Design Decisions and Program Output:** <br>
-The major design decision for this project was how to implement ChannelAnalysis.java. We decided to have a method called "buildChannelAnalysisTable" that is called from the class constructor. This method sets up the rows and columns of the channel analysis table based on the programSchedule and Program of the input file. It then loops through each entry of the programTable keeping track of the current and previous instructions. This was necessary for entries that contained both a 'push' and 'pull' instruction since they are within the same InstructionParameters array. Once a 'push' instruction is encountered, the helper method, "setTableEntry," is called. This method parses the current instruction to produce the string output requested in the program specification. If the next instruction is 'pull' we need to append the desired string output to that created from the 'push' instruction. If the channel that we are trying to put a new entry into is not null, then a channel conflict has a occurred and we append the two entries separated by a semicolon. In this case, the conflictExists boolean variable is set to true. Warp.java runs a method called verifyNoChannelConflicts(WarpInterface warp) that calls isChannelConflict(). Our implementation now outputs the correct message about channel conflicts existing when Warp is run. <br><br>
-We decided to have just one helper method for the buildChannelAnalysisTable method. It made more sense for our implementation to have this method get to the point of finding a 'push' instruction and then calling just one helper method to parse the current and next instructions, and determine if a channel conflict exists. The class would only get more complicated to read with further helper methods. <br><br>
+The major design decision for this project was how to implement ChannelAnalysis.java. We decided to have a method called "buildChannelAnalysisTable" that is called from the class constructor. This method sets up the rows and columns of the channel analysis table based on the programSchedule and Program object of the input file. It then loops through each entry of the programTable keeping track of the current and previous instructions. This was necessary for entries that contained both a 'push' and 'pull' instruction since they are within the same InstructionParameters array. Once a 'push' instruction is encountered, the helper method, "setTableEntry," is called. This method parses the current instruction to produce the string output requested in the program specification. If the next instruction is 'pull' we need to append the desired string output to that created from the 'push' instruction. If the channel & time slot that we are trying to put a new entry into is not null, then a channel conflict has a occurred and we append the two entries separated by a semicolon. In this case, the conflictExists boolean variable is set to true. Warp.java runs a method called verifyNoChannelConflicts that calls isChannelConflict(). Our implementation now outputs the correct message about channel conflicts existing when Warp is run. <br><br>
+Given this, we decided to have just one helper method for the buildChannelAnalysisTable method. It made more sense for our implementation to have this method get to the point of finding a 'push' instruction and then calling just one helper method to parse the current and next instructions, and determine if a channel conflict exists. The class would only get more complicated to read with further helper methods. <br><br>
 *Note on program output:* Our program produces the "BugExists" output files found on ICON. Channels and Time Slots are allocated differently in the output than if this bug was fixed which leads to channel conflicts (see TestBugPriority-1Faults.ch). This is a bug within the underlying Program.java logic and not due to the code written in ChannelAnalysis.java or ChannelVisualization.java. <br>
 Also note: The .ch output file for TestBug found on ICON contains a small error where two semicolons are used within the same Channel/Time Slot (2/1). The second semicolon in this string should be a comma because the instruction it is parsing is a 'push' instruction conflicting with a 'push-pull' instruction. Our output corrects this error. 
 
@@ -236,3 +235,4 @@ Also note: The .ch output file for TestBug found on ICON contains a small error 
 - 12/8/2022 : Added StressTest4 & multiple channel conflicts tests for buildChannelAnalysisTable. -Ethan
 - 12/8/2022 : Cleaned up documentation and tests in both test classes. -Lawrence
 - 12/9/2022 : Modified Sequence Diagram. -Lawrence
+- 12/9/2022 : Final comments clean-up, updates to class diagrams and generation of JavaDoc. -Ethan

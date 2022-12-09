@@ -34,7 +34,7 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_VU27kGdHEe24LcnSyvVffw" sourceAnchor="329.0,0.0" targetAnchor="513.0,58.0" target="_Y4pLY2dHEe24LcnSyvVffw" source="_VU4wwGdHEe24LcnSyvVffw">
     <modelElement href="ChannelAnalysis.uml#_SeDtlGdHEe24LcnSyvVffw"/>
     <visualProperties xmi:id="_Y4pyc2dHEe24LcnSyvVffw" position="625.0,436.0"/>
-    <bendpoints xmi:id="_hu2XgHVzEe20U5njgs2rLQ" sourceY="-819" targetX="836"/>
+    <bendpoints xmi:id="_hzOpwHf7Ee2JlaRyah7LmA" sourceY="-819" targetX="836"/>
     <stereotypes xmi:id="_VU3ioGdHEe24LcnSyvVffw" name="Reference">
       <modelElement href="ChannelAnalysis.uml#_SeEUoGdHEe24LcnSyvVffw"/>
     </stereotypes>
@@ -60,8 +60,8 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_VU4JsGdHEe24LcnSyvVffw" sourceAnchor="342.0,0.0" targetAnchor="257.0,0.0" target="_Y4pLY2dHEe24LcnSyvVffw" source="_VU4wwGdHEe24LcnSyvVffw">
     <modelElement href="ChannelAnalysis.uml#_SeEUoWdHEe24LcnSyvVffw"/>
     <visualProperties xmi:id="_Y4pydGdHEe24LcnSyvVffw" position="625.0,436.0"/>
-    <bendpoints xmi:id="_hu2-kHVzEe20U5njgs2rLQ" sourceY="-988" targetX="1105" targetY="-111"/>
-    <bendpoints xmi:id="_hu2-kXVzEe20U5njgs2rLQ" sourceX="-1105" sourceY="-988" targetY="-111"/>
+    <bendpoints xmi:id="_hzOpwXf7Ee2JlaRyah7LmA" sourceY="-988" targetX="1105" targetY="-111"/>
+    <bendpoints xmi:id="_hzPQ0Hf7Ee2JlaRyah7LmA" sourceX="-1105" sourceY="-988" targetY="-111"/>
     <stereotypes xmi:id="_VU4JsWdHEe24LcnSyvVffw" name="Reference">
       <modelElement href="ChannelAnalysis.uml#_SeE7sGdHEe24LcnSyvVffw"/>
     </stereotypes>
@@ -84,7 +84,7 @@
       <cardinality xmi:id="_VU4JuGdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Y38n0GdHEe24LcnSyvVffw" sourceAnchor="0.0,93.0" targetAnchor="684.0,104.0" target="_VU4wwGdHEe24LcnSyvVffw" source="_Y4EjoGdHEe24LcnSyvVffw">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Y38n0GdHEe24LcnSyvVffw" sourceAnchor="0.0,81.0" targetAnchor="684.0,104.0" target="_VU4wwGdHEe24LcnSyvVffw" source="_Y4EjoGdHEe24LcnSyvVffw">
     <modelElement href="ChannelAnalysis.uml#_SeFiwWdHEe24LcnSyvVffw"/>
     <visualProperties xmi:id="_Y4pycGdHEe24LcnSyvVffw" position="625.0,436.0"/>
     <stereotypes xmi:id="_Y3-dBGdHEe24LcnSyvVffw" name="Reference">
@@ -132,7 +132,7 @@
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Y4G_4GdHEe24LcnSyvVffw" sourceAnchor="715.0,300.0" targetAnchor="342.0,208.0" target="_VU4wwGdHEe24LcnSyvVffw" source="_Y4Qw6WdHEe24LcnSyvVffw">
     <modelElement href="ChannelAnalysis.uml#_SecvIWdHEe24LcnSyvVffw"/>
     <visualProperties xmi:id="_Y4pycWdHEe24LcnSyvVffw" position="625.0,436.0"/>
-    <bendpoints xmi:id="_hu1wcHVzEe20U5njgs2rLQ" sourceX="748" targetY="1066"/>
+    <bendpoints xmi:id="_hzNboHf7Ee2JlaRyah7LmA" sourceX="748" targetY="1066"/>
     <stereotypes xmi:id="_Y4I1EGdHEe24LcnSyvVffw" name="Reference">
       <modelElement href="ChannelAnalysis.uml#_SecvI2dHEe24LcnSyvVffw"/>
     </stereotypes>
@@ -395,18 +395,18 @@
   <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_PNYncHVzEe20U5njgs2rLQ" targetItem="_Y4liMWdHEe24LcnSyvVffw" sourceItem="_PNFsgHVzEe20U5njgs2rLQ"/>
   <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_PN8oIXVzEe20U5njgs2rLQ" sourceItem="_PN8oIHVzEe20U5njgs2rLQ"/>
   <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_PO0x4XVzEe20U5njgs2rLQ" targetItem="_Y4Qw6WdHEe24LcnSyvVffw" sourceItem="_PO0x4HVzEe20U5njgs2rLQ"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_QbjDsHVzEe20U5njgs2rLQ" targetItem="_QbjDsXVzEe20U5njgs2rLQ" sourceItem="_Qbh1kHVzEe20U5njgs2rLQ"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Qb8FQHVzEe20U5njgs2rLQ" targetItem="_VU4wwGdHEe24LcnSyvVffw" sourceItem="_Qbk44HVzEe20U5njgs2rLQ"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_QdOesHVzEe20U5njgs2rLQ" targetItem="_VU4w12dHEe24LcnSyvVffw" sourceItem="_QdN3oHVzEe20U5njgs2rLQ"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_QefC8XVzEe20U5njgs2rLQ" targetItem="_VU4w3GdHEe24LcnSyvVffw" sourceItem="_QefC8HVzEe20U5njgs2rLQ"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_QftyAHVzEe20U5njgs2rLQ" targetItem="_VU4w32dHEe24LcnSyvVffw" sourceItem="_QftK8HVzEe20U5njgs2rLQ"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Qg8hEHVzEe20U5njgs2rLQ" targetItem="_VU4w5GdHEe24LcnSyvVffw" sourceItem="_Qg76AHVzEe20U5njgs2rLQ"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_QiL3MHVzEe20U5njgs2rLQ" targetItem="_VU4w7WdHEe24LcnSyvVffw" sourceItem="_QiLQIHVzEe20U5njgs2rLQ"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_QjdpkXVzEe20U5njgs2rLQ" targetItem="_Y4EjoGdHEe24LcnSyvVffw" sourceItem="_QjdpkHVzEe20U5njgs2rLQ"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Qk2JoHVzEe20U5njgs2rLQ" targetItem="_Y4Ejw2dHEe24LcnSyvVffw" sourceItem="_Qks_sHVzEe20U5njgs2rLQ"/>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Y4EjoGdHEe24LcnSyvVffw" comments="_QjdpkHVzEe20U5njgs2rLQ" targetConnectionVisual="_QjdpkXVzEe20U5njgs2rLQ" name="ChannelVisualization" associationsOut="_Y38n0GdHEe24LcnSyvVffw _Y3-dAGdHEe24LcnSyvVffw">
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cXuDUHf7Ee2JlaRyah7LmA" targetItem="_VU4wwGdHEe24LcnSyvVffw" sourceItem="_cXs1MHf7Ee2JlaRyah7LmA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cYuI4Hf7Ee2JlaRyah7LmA" targetItem="_VU4w12dHEe24LcnSyvVffw" sourceItem="_cYs6wHf7Ee2JlaRyah7LmA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cZkdcHf7Ee2JlaRyah7LmA" targetItem="_VU4w3GdHEe24LcnSyvVffw" sourceItem="_cZj2YHf7Ee2JlaRyah7LmA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cafDcHf7Ee2JlaRyah7LmA" targetItem="_VU4w32dHEe24LcnSyvVffw" sourceItem="_caecYHf7Ee2JlaRyah7LmA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cbYbUHf7Ee2JlaRyah7LmA" targetItem="_VU4w5GdHEe24LcnSyvVffw" sourceItem="_cbX0QHf7Ee2JlaRyah7LmA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cceAcHf7Ee2JlaRyah7LmA" targetItem="_VU4w7WdHEe24LcnSyvVffw" sourceItem="_cccyUHf7Ee2JlaRyah7LmA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cdkzsHf7Ee2JlaRyah7LmA" targetItem="_QbjDsXVzEe20U5njgs2rLQ" sourceItem="_cdZ0kHf7Ee2JlaRyah7LmA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_ceQwMHf7Ee2JlaRyah7LmA" targetItem="_Y4EjoGdHEe24LcnSyvVffw" sourceItem="_ceQJIHf7Ee2JlaRyah7LmA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cfF2oHf7Ee2JlaRyah7LmA" targetItem="_Y4Ejw2dHEe24LcnSyvVffw" sourceItem="_ce960Hf7Ee2JlaRyah7LmA"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Y4EjoGdHEe24LcnSyvVffw" comments="_ceQJIHf7Ee2JlaRyah7LmA" targetConnectionVisual="_ceQwMHf7Ee2JlaRyah7LmA" name="ChannelVisualization" associationsOut="_Y38n0GdHEe24LcnSyvVffw _Y3-dAGdHEe24LcnSyvVffw">
     <modelElement href="ChannelAnalysis.uml#_SGOcYGdHEe24LcnSyvVffw"/>
-    <visualProperties xmi:id="_Y4EjoWdHEe24LcnSyvVffw" position="2196.0,1029.0" size="-1.0,-1.0"/>
+    <visualProperties xmi:id="_Y4EjoWdHEe24LcnSyvVffw" position="2196.0,1041.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_Y4EjomdHEe24LcnSyvVffw" label="+"/>
     <attributes xmi:id="_Y4Ejo2dHEe24LcnSyvVffw" defaultValue="&quot;.ch&quot;" name="SOURCE_SUFFIX" staticAttribute="true">
       <modelElement href="ChannelAnalysis.uml#_Sa4dwGdHEe24LcnSyvVffw"/>
@@ -431,6 +431,9 @@
       <stereotypes xmi:id="_KqZkcHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqaLgHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_Kqo1AHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2YMYHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2YzcHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2qgQHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4EjrWdHEe24LcnSyvVffw" label="-"/>
       <cardinality xmi:id="_Y4EjrmdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4Ejr2dHEe24LcnSyvVffw" name="WarpInterface">
@@ -442,6 +445,9 @@
       <stereotypes xmi:id="_KqYWUHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqY9YHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqpcEHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2WXMHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2W-QHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2rHUHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4EjsmdHEe24LcnSyvVffw" label="-"/>
       <cardinality xmi:id="_Y4Ejs2dHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4EjtGdHEe24LcnSyvVffw" name="ChannelAnalysis">
@@ -482,7 +488,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_Y4Ejw2dHEe24LcnSyvVffw" comments="_Qks_sHVzEe20U5njgs2rLQ" targetConnectionVisual="_Qk2JoHVzEe20U5njgs2rLQ" name="ChannelVisualization">
+    <operations xmi:id="_Y4Ejw2dHEe24LcnSyvVffw" comments="_ce960Hf7Ee2JlaRyah7LmA" targetConnectionVisual="_cfF2oHf7Ee2JlaRyah7LmA" name="ChannelVisualization">
       <modelElement href="ChannelAnalysis.uml#_SX3mAGdHEe24LcnSyvVffw"/>
       <visualProperties xmi:id="_cr9E82dHEe24LcnSyvVffw"/>
       <keywords xmi:id="_Y4EjxGdHEe24LcnSyvVffw" keyword="create"/>
@@ -512,6 +518,9 @@
       <stereotypes xmi:id="_KqcAsHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqcnwHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqqDIHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2bPsHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2b2wHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2ruYHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4Qw7mdHEe24LcnSyvVffw" label="-"/>
       <cardinality xmi:id="_Y4Qw72dHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4Qw8GdHEe24LcnSyvVffw" name="Program">
@@ -524,6 +533,9 @@
       <stereotypes xmi:id="_Kqd14HVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_Kqec8HVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqqqMHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2dE4Hf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2dr8Hf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2sVcHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4Qw82dHEe24LcnSyvVffw" label="-"/>
       <cardinality xmi:id="_Y4Qw9GdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4Qw9WdHEe24LcnSyvVffw" name="WorkLoad">
@@ -536,6 +548,9 @@
       <stereotypes xmi:id="_KqfEAHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqfrEHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqrRQHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2eTAHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2fhIHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2sVcXf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4Qw-GdHEe24LcnSyvVffw" label="-"/>
       <cardinality xmi:id="_Y4Qw-WdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4Qw-mdHEe24LcnSyvVffw" name="ReliabilityAnalysis">
@@ -548,6 +563,9 @@
       <stereotypes xmi:id="_KqgSIHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_Kqg5MHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_Kqr4UHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2gvQHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2hWUHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2s8gHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4Qw_WdHEe24LcnSyvVffw" label="-"/>
       <cardinality xmi:id="_Y4Qw_mdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4Qw_2dHEe24LcnSyvVffw" name="LatencyAnalysis">
@@ -559,6 +577,9 @@
       <stereotypes xmi:id="_KqaykHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqbZoHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqsfYHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2ZagHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2aBkHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2tjkHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4QxAmdHEe24LcnSyvVffw" label="-"/>
       <cardinality xmi:id="_Y4QxA2dHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4QxBGdHEe24LcnSyvVffw" name="ChannelAnalysis">
@@ -973,6 +994,9 @@
       <stereotypes xmi:id="_KqhgQHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqiHUHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqttgHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2ikcHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2jykHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2uxsHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4k6DmdHEe24LcnSyvVffw" label="~"/>
       <cardinality xmi:id="_Y4k6D2dHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4k6EGdHEe24LcnSyvVffw" name="WorkLoad">
@@ -984,6 +1008,9 @@
       <stereotypes xmi:id="_KqiuYHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqjVcHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KquUkHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2kZoHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2lAsHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2vYwHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4k6E2dHEe24LcnSyvVffw" label="~"/>
       <cardinality xmi:id="_Y4k6FGdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4k6FWdHEe24LcnSyvVffw" name="ProgramSchedule">
@@ -996,6 +1023,9 @@
       <stereotypes xmi:id="_KqkjkHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqkjkXVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_Kqu7oHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2lnwHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2m14Hf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2v_0Hf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4k6GGdHEe24LcnSyvVffw" label="~"/>
       <cardinality xmi:id="_Y4k6GWdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4k6GmdHEe24LcnSyvVffw" name="ScheduleChoices">
@@ -1068,6 +1098,9 @@
       <stereotypes xmi:id="_Kqm_0HVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_Kqnm4HVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqvisHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2orEHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2pSIHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2xN8Hf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4k6NmdHEe24LcnSyvVffw" label="~"/>
       <cardinality xmi:id="_Y4k6N2dHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4k6OGdHEe24LcnSyvVffw" name="Channels">
@@ -1116,6 +1149,9 @@
       <stereotypes xmi:id="_KqlxsHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqmYwHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_Kqww0HVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2nc8Hf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2oEAHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2ycEHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_Y4k6SmdHEe24LcnSyvVffw" label="-"/>
       <cardinality xmi:id="_Y4k6S2dHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_Y4k6TGdHEe24LcnSyvVffw" name="Description">
@@ -2007,34 +2043,7 @@
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_PO0x4HVzEe20U5njgs2rLQ" sourceConnectionVisual="_PO0x4XVzEe20U5njgs2rLQ" text="@author sgoddard&#xD;&#xA;@version 1.4" item="_Y4Qw6WdHEe24LcnSyvVffw">
     <modelElement href="ChannelAnalysis.uml#_PB0QpnVzEe20U5njgs2rLQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Qbh1kHVzEe20U5njgs2rLQ" sourceConnectionVisual="_QbjDsHVzEe20U5njgs2rLQ" text="setTableEntry() creates the string that will be placed at the row(channel) and column(timeSlot)&#xD;&#xA;   * of the channel analysis table associated with the pulled InstructionParameter. It gets the source,&#xD;&#xA;   * sink, and flow strings of the current InstructionParameter, and formats them together appropriately.&#xD;&#xA;   * If the next instructionParameter is 'pull' instruction, it appends the existing output string with&#xD;&#xA;   * the flow from the 'pull' instruction. If a channel conflict occurs, where multiple coordinators have&#xD;&#xA;   * instructions in the same channel and timeSlot, the method adds a semicolon between the different&#xD;&#xA;   * coordinators' instructions in the channel analysis table entry and sets the conflictExists flag to true.&#xD;&#xA;   * &#xD;&#xA;   * This method should be private.&#xD;&#xA;   * &#xD;&#xA;   * @author eborchard, lldeng&#xD;&#xA;   * @param timeSlot The timeSlot of the instruction, which is also the column number of the channel analysis table.&#xD;&#xA;   * @param currInstr The current InstructionParameter, from looping through the InstructionParametersArray.&#xD;&#xA;   * @param nextInstr The InstructionParameter after the current one, which may be a 'pull' instruction." item="_QbjDsXVzEe20U5njgs2rLQ">
-    <modelElement href="ChannelAnalysis.uml#_QaiXEnVzEe20U5njgs2rLQ"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Qbk44HVzEe20U5njgs2rLQ" sourceConnectionVisual="_Qb8FQHVzEe20U5njgs2rLQ" text="&lt;h1>Implementation of the ChannelAnalysis class.&lt;/h1>&#xD;&#xA;&lt;p>Used to analyze either Program or WarpInterface by converting to program.&#xD;&#xA;Evaluates the channel allocation of WARP flows including detection of channel conflicts.&lt;/p>&#xD;&#xA;&#xD;&#xA;@author sgoddard&#xD;&#xA;@version 1.4&#xD;&#xA; *" item="_VU4wwGdHEe24LcnSyvVffw">
-    <modelElement href="ChannelAnalysis.uml#_QahwAHVzEe20U5njgs2rLQ"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_QdN3oHVzEe20U5njgs2rLQ" sourceConnectionVisual="_QdOesHVzEe20U5njgs2rLQ" text="Determines whether or not there is a channel conflict.&#xD;&#xA;   * Used in the setTableEntry helper method.&#xD;&#xA;   * &#xD;&#xA;   * @author sgoddard&#xD;&#xA;   * @return boolean based on if there is a channel conflict or not" item="_VU4w12dHEe24LcnSyvVffw">
-    <modelElement href="ChannelAnalysis.uml#_QaiXEHVzEe20U5njgs2rLQ"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_QefC8HVzEe20U5njgs2rLQ" sourceConnectionVisual="_QefC8XVzEe20U5njgs2rLQ" text="Called by constructor. buildChannelAnalysisTable() parses the program schedule (programTable) and WarpDSL&#xD;&#xA;   * to create a channel analysis table. The Visualization() method within ChannelVisualization will then use &#xD;&#xA;   * this analysis table to create the desired visualization.&#xD;&#xA;   * &#xD;&#xA;   * This method should be private.&#xD;&#xA;   * &#xD;&#xA;   * @author eborchard, lldeng" item="_VU4w3GdHEe24LcnSyvVffw">
-    <modelElement href="ChannelAnalysis.uml#_QaiXEXVzEe20U5njgs2rLQ"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_QftK8HVzEe20U5njgs2rLQ" sourceConnectionVisual="_QftyAHVzEe20U5njgs2rLQ" text="Method that retrieves the channel analysis table created from the buildChannelAnalysisTable() method.&#xD;&#xA;   * &#xD;&#xA;   * @author eborchard&#xD;&#xA;   * @return ProgramSchedule The completed channel analysis table." item="_VU4w32dHEe24LcnSyvVffw">
-    <modelElement href="ChannelAnalysis.uml#_QaiXE3VzEe20U5njgs2rLQ"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Qg76AHVzEe20U5njgs2rLQ" sourceConnectionVisual="_Qg8hEHVzEe20U5njgs2rLQ" text="Constructor that takes in a WarpInterface and converts it to a a program, calls the other &#xD;&#xA;   * class constructor with the Program object parameter then sets the program and it's schedule.&#xD;&#xA;   * &#xD;&#xA;   * @author sgoddard&#xD;&#xA;   * @param warp WarpInterface to analyze" item="_VU4w5GdHEe24LcnSyvVffw">
-    <modelElement href="ChannelAnalysis.uml#_QahwAXVzEe20U5njgs2rLQ"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_QiLQIHVzEe20U5njgs2rLQ" sourceConnectionVisual="_QiL3MHVzEe20U5njgs2rLQ" text="Constructor to set the program and its schedule. Builds channel analysis table.&#xD;&#xA;   * &#xD;&#xA;   * @author sgoddard&#xD;&#xA;   * @param program The program to analyze" item="_VU4w7WdHEe24LcnSyvVffw">
-    <modelElement href="ChannelAnalysis.uml#_QahwAnVzEe20U5njgs2rLQ"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_QjdpkHVzEe20U5njgs2rLQ" sourceConnectionVisual="_QjdpkXVzEe20U5njgs2rLQ" text="&lt;h1>Implementation of Channel Visualization.&lt;/h1>&#xD;&#xA;&lt;p>The ChannelVisualization class allows a Warp Interface to be visualized when the -ca flag is&#xD;&#xA;requested at runtime. A Description object of the visualization is created from the retrieved channel&#xD;&#xA;analysis table. A Description object of the header for file output can also be created.&lt;/p>&#xD;&#xA;&#xD;&#xA;CS2820 Fall 2022 Project: Implement this class to create the file visualization that is requested&#xD;&#xA;in Warp.&#xD;&#xA;&#xD;&#xA;@author sgoddard&#xD;&#xA;@version 1.4&#xD;&#xA; *" item="_Y4EjoGdHEe24LcnSyvVffw">
-    <modelElement href="ChannelAnalysis.uml#_QaiXHnVzEe20U5njgs2rLQ"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Qks_sHVzEe20U5njgs2rLQ" sourceConnectionVisual="_Qk2JoHVzEe20U5njgs2rLQ" text="Constructor converts WarpInterface to ChannelAnalysis for visualization.&#xD;&#xA;   * &#xD;&#xA;   * @author sgoddard&#xD;&#xA;   * @param warp WarpInterface to convert to ChannelAnalysis for visualization" item="_Y4Ejw2dHEe24LcnSyvVffw">
-    <modelElement href="ChannelAnalysis.uml#_QaiXH3VzEe20U5njgs2rLQ"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_VU4wwGdHEe24LcnSyvVffw" comments="_Qbk44HVzEe20U5njgs2rLQ" targetConnectionVisual="_Qb8FQHVzEe20U5njgs2rLQ" name="ChannelAnalysis" associationsIn="_Y38n0GdHEe24LcnSyvVffw _Y4G_4GdHEe24LcnSyvVffw" associationsOut="_VU1tcGdHEe24LcnSyvVffw _VU27kGdHEe24LcnSyvVffw _VU4JsGdHEe24LcnSyvVffw">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_VU4wwGdHEe24LcnSyvVffw" comments="_cXs1MHf7Ee2JlaRyah7LmA" targetConnectionVisual="_cXuDUHf7Ee2JlaRyah7LmA" name="ChannelAnalysis" associationsIn="_Y38n0GdHEe24LcnSyvVffw _Y4G_4GdHEe24LcnSyvVffw" associationsOut="_VU1tcGdHEe24LcnSyvVffw _VU27kGdHEe24LcnSyvVffw _VU4JsGdHEe24LcnSyvVffw">
     <modelElement href="ChannelAnalysis.uml#_SGFScGdHEe24LcnSyvVffw"/>
     <visualProperties xmi:id="_VU4wwWdHEe24LcnSyvVffw" position="1313.0,1018.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_VU4wwmdHEe24LcnSyvVffw" label="+"/>
@@ -2043,6 +2052,9 @@
       <stereotypes xmi:id="_KqSPsHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqUr8HVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqxX4HVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2N0UHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2Q3oHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2zDIHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_VU4wxWdHEe24LcnSyvVffw" label="#"/>
       <cardinality xmi:id="_VU4wxmdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_VU4wx2dHEe24LcnSyvVffw" name="Program">
@@ -2054,6 +2066,9 @@
       <stereotypes xmi:id="_KqVTAHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqV6EHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_Kqx-8HVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2SFwHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2TT4Hf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2zqMHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_VU4wymdHEe24LcnSyvVffw" label="#"/>
       <cardinality xmi:id="_VU4wy2dHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_VU4wzGdHEe24LcnSyvVffw" name="ProgramSchedule">
@@ -2077,13 +2092,16 @@
       <stereotypes xmi:id="_KqWhIHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqXIMHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_KqymAHVzEe20U5njgs2rLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2UiAHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a2VwIHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_a20RQHf7Ee2JlaRyah7LmA" name="LegacyStyledElement"/>
       <visibility xmi:id="_VU4w1GdHEe24LcnSyvVffw" label="#"/>
       <cardinality xmi:id="_VU4w1WdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
       <type xmi:id="_VU4w1mdHEe24LcnSyvVffw" name="ProgramSchedule">
         <modelElement href="ChannelAnalysis.uml#_SJGxQGdHEe24LcnSyvVffw"/>
       </type>
     </attributes>
-    <operations xmi:id="_VU4w12dHEe24LcnSyvVffw" comments="_QdN3oHVzEe20U5njgs2rLQ" targetConnectionVisual="_QdOesHVzEe20U5njgs2rLQ" name="isChannelConflict">
+    <operations xmi:id="_VU4w12dHEe24LcnSyvVffw" comments="_cYs6wHf7Ee2JlaRyah7LmA" targetConnectionVisual="_cYuI4Hf7Ee2JlaRyah7LmA" name="isChannelConflict">
       <modelElement href="ChannelAnalysis.uml#_SGHusGdHEe24LcnSyvVffw"/>
       <visibility xmi:id="_VU4w2GdHEe24LcnSyvVffw" label="+"/>
       <cardinality xmi:id="_VU4w2WdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
@@ -2094,12 +2112,12 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_VU4w3GdHEe24LcnSyvVffw" comments="_QefC8HVzEe20U5njgs2rLQ" targetConnectionVisual="_QefC8XVzEe20U5njgs2rLQ" name="buildChannelAnalysisTable">
+    <operations xmi:id="_VU4w3GdHEe24LcnSyvVffw" comments="_cZj2YHf7Ee2JlaRyah7LmA" targetConnectionVisual="_cZkdcHf7Ee2JlaRyah7LmA" name="buildChannelAnalysisTable">
       <modelElement href="ChannelAnalysis.uml#_SGIVwWdHEe24LcnSyvVffw"/>
       <visibility xmi:id="_VU4w3WdHEe24LcnSyvVffw" label="+"/>
       <cardinality xmi:id="_VU4w3mdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
     </operations>
-    <operations xmi:id="_VU4w32dHEe24LcnSyvVffw" comments="_QftK8HVzEe20U5njgs2rLQ" targetConnectionVisual="_QftyAHVzEe20U5njgs2rLQ" name="getChannelAnalysisTable">
+    <operations xmi:id="_VU4w32dHEe24LcnSyvVffw" comments="_caecYHf7Ee2JlaRyah7LmA" targetConnectionVisual="_cafDcHf7Ee2JlaRyah7LmA" name="getChannelAnalysisTable">
       <modelElement href="ChannelAnalysis.uml#_SGI80GdHEe24LcnSyvVffw"/>
       <visibility xmi:id="_VU4w4GdHEe24LcnSyvVffw" label="+"/>
       <cardinality xmi:id="_VU4w4WdHEe24LcnSyvVffw" label="1" max="1" min="1"/>
@@ -2110,7 +2128,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_VU4w5GdHEe24LcnSyvVffw" comments="_Qg76AHVzEe20U5njgs2rLQ" targetConnectionVisual="_Qg8hEHVzEe20U5njgs2rLQ" name="ChannelAnalysis">
+    <operations xmi:id="_VU4w5GdHEe24LcnSyvVffw" comments="_cbX0QHf7Ee2JlaRyah7LmA" targetConnectionVisual="_cbYbUHf7Ee2JlaRyah7LmA" name="ChannelAnalysis">
       <modelElement href="ChannelAnalysis.uml#_SX1JxGdHEe24LcnSyvVffw"/>
       <visualProperties xmi:id="_csAIRGdHEe24LcnSyvVffw"/>
       <keywords xmi:id="_VU4w5WdHEe24LcnSyvVffw" keyword="create"/>
@@ -2130,7 +2148,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_VU4w7WdHEe24LcnSyvVffw" comments="_QiLQIHVzEe20U5njgs2rLQ" targetConnectionVisual="_QiL3MHVzEe20U5njgs2rLQ" name="ChannelAnalysis">
+    <operations xmi:id="_VU4w7WdHEe24LcnSyvVffw" comments="_cccyUHf7Ee2JlaRyah7LmA" targetConnectionVisual="_cceAcHf7Ee2JlaRyah7LmA" name="ChannelAnalysis">
       <modelElement href="ChannelAnalysis.uml#_SX1w0GdHEe24LcnSyvVffw"/>
       <visualProperties xmi:id="_csAIRWdHEe24LcnSyvVffw"/>
       <keywords xmi:id="_VU4w7mdHEe24LcnSyvVffw" keyword="create"/>
@@ -2150,7 +2168,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_QbjDsXVzEe20U5njgs2rLQ" comments="_Qbh1kHVzEe20U5njgs2rLQ" targetConnectionVisual="_QbjDsHVzEe20U5njgs2rLQ" name="setTableEntry">
+    <operations xmi:id="_QbjDsXVzEe20U5njgs2rLQ" comments="_cdZ0kHf7Ee2JlaRyah7LmA" targetConnectionVisual="_cdkzsHf7Ee2JlaRyah7LmA" name="setTableEntry">
       <modelElement href="ChannelAnalysis.uml#_QZ9vUHVzEe20U5njgs2rLQ"/>
       <visibility xmi:id="_QbjDsnVzEe20U5njgs2rLQ" label="+"/>
       <cardinality xmi:id="_QbjDs3VzEe20U5njgs2rLQ" label="1" max="1" min="1"/>
@@ -2176,5 +2194,32 @@
         </type>
       </parameters>
     </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cXs1MHf7Ee2JlaRyah7LmA" sourceConnectionVisual="_cXuDUHf7Ee2JlaRyah7LmA" text="&lt;h1>Implementation of the ChannelAnalysis class.&lt;/h1>&#xD;&#xA;&lt;p>Used to analyze either Program or WarpInterface by converting to program.&#xD;&#xA;Evaluates the channel allocation of WARP flows including detection of channel conflicts.&lt;/p>&#xD;&#xA;&#xD;&#xA;@author sgoddard&#xD;&#xA;@version 1.4&#xD;&#xA; *" item="_VU4wwGdHEe24LcnSyvVffw">
+    <modelElement href="ChannelAnalysis.uml#_cW91YHf7Ee2JlaRyah7LmA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cYs6wHf7Ee2JlaRyah7LmA" sourceConnectionVisual="_cYuI4Hf7Ee2JlaRyah7LmA" text="Determines whether or not there is a channel conflict.&#xD;&#xA;   * Used in the setTableEntry helper method.&#xD;&#xA;   * &#xD;&#xA;   * @author sgoddard&#xD;&#xA;   * @return boolean value stating whether a channel conflict exists." item="_VU4w12dHEe24LcnSyvVffw">
+    <modelElement href="ChannelAnalysis.uml#_cW91Y3f7Ee2JlaRyah7LmA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cZj2YHf7Ee2JlaRyah7LmA" sourceConnectionVisual="_cZkdcHf7Ee2JlaRyah7LmA" text="Called by constructor. buildChannelAnalysisTable() parses the program schedule (programTable) and WarpDSL&#xD;&#xA;   * to create a channel analysis table. The Visualization() method within ChannelVisualization will then use &#xD;&#xA;   * this analysis table to create the desired visualization.&#xD;&#xA;   * &#xD;&#xA;   * Should be private, but set to public for testing purposes.&#xD;&#xA;   * &#xD;&#xA;   * @author eborchard, lldeng" item="_VU4w3GdHEe24LcnSyvVffw">
+    <modelElement href="ChannelAnalysis.uml#_cW91ZHf7Ee2JlaRyah7LmA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_caecYHf7Ee2JlaRyah7LmA" sourceConnectionVisual="_cafDcHf7Ee2JlaRyah7LmA" text="Method that retrieves the channel analysis table created from the buildChannelAnalysisTable() method.&#xD;&#xA;   * &#xD;&#xA;   * @author eborchard&#xD;&#xA;   * @return ProgramSchedule The completed channel analysis table." item="_VU4w32dHEe24LcnSyvVffw">
+    <modelElement href="ChannelAnalysis.uml#_cW91Znf7Ee2JlaRyah7LmA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cbX0QHf7Ee2JlaRyah7LmA" sourceConnectionVisual="_cbYbUHf7Ee2JlaRyah7LmA" text="Constructor that takes in a WarpInterface and converts it to a a program, calls the other &#xD;&#xA;   * class constructor with the Program object parameter then sets the program and its schedule.&#xD;&#xA;   * &#xD;&#xA;   * @author sgoddard&#xD;&#xA;   * @param warp The WarpSystem from which a channel analysis table will be created." item="_VU4w5GdHEe24LcnSyvVffw">
+    <modelElement href="ChannelAnalysis.uml#_cW91YXf7Ee2JlaRyah7LmA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cccyUHf7Ee2JlaRyah7LmA" sourceConnectionVisual="_cceAcHf7Ee2JlaRyah7LmA" text="Constructor to set the program and its schedule. Builds channel analysis table.&#xD;&#xA;   * &#xD;&#xA;   * @author sgoddard&#xD;&#xA;   * @param program The Program from which a channel analysis table will be created." item="_VU4w7WdHEe24LcnSyvVffw">
+    <modelElement href="ChannelAnalysis.uml#_cW91Ynf7Ee2JlaRyah7LmA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cdZ0kHf7Ee2JlaRyah7LmA" sourceConnectionVisual="_cdkzsHf7Ee2JlaRyah7LmA" text="setTableEntry() creates the string that will be placed at the row(channel) and column(timeSlot)&#xD;&#xA;   * of the channel analysis table associated with the pulled InstructionParameter. It gets the source,&#xD;&#xA;   * sink, and flow strings of the current InstructionParameter, and formats them together appropriately.&#xD;&#xA;   * If the next instructionParameter is 'pull' instruction, it appends the existing output string with&#xD;&#xA;   * the flow from the 'pull' instruction. If a channel conflict occurs, where multiple coordinators have&#xD;&#xA;   * instructions in the same channel and timeSlot, the method adds a semicolon between the different&#xD;&#xA;   * coordinators' instructions in the channel analysis table entry and sets the conflictExists flag to true.&#xD;&#xA;   * &#xD;&#xA;   * Should be private, but set to public for testing purposes.&#xD;&#xA;   * &#xD;&#xA;   * @author eborchard, lldeng&#xD;&#xA;   * @param timeSlot The timeSlot of the instruction, which is also the column number of the channel analysis table.&#xD;&#xA;   * @param currInstr The current InstructionParameter, from looping through the InstructionParametersArray.&#xD;&#xA;   * @param nextInstr The InstructionParameter after the current one, which may be a 'pull' instruction." item="_QbjDsXVzEe20U5njgs2rLQ">
+    <modelElement href="ChannelAnalysis.uml#_cW91ZXf7Ee2JlaRyah7LmA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ceQJIHf7Ee2JlaRyah7LmA" sourceConnectionVisual="_ceQwMHf7Ee2JlaRyah7LmA" text="&lt;h1>Implementation of Channel Visualization.&lt;/h1>&#xD;&#xA;&lt;p>The ChannelVisualization class allows a Warp Interface to be visualized when the -ca flag is&#xD;&#xA;requested at runtime. A Description object of the visualization is created from the retrieved channel&#xD;&#xA;analysis table. A Description object of the header for file output can also be created.&lt;/p>&#xD;&#xA;&#xD;&#xA;CS2820 Fall 2022 Project: Implement this class to create the file visualization that is requested in Warp.&#xD;&#xA;&#xD;&#xA;@author sgoddard&#xD;&#xA;@version 1.4&#xD;&#xA; *" item="_Y4EjoGdHEe24LcnSyvVffw">
+    <modelElement href="ChannelAnalysis.uml#_cXARonf7Ee2JlaRyah7LmA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ce960Hf7Ee2JlaRyah7LmA" sourceConnectionVisual="_cfF2oHf7Ee2JlaRyah7LmA" text="Constructor converts WarpInterface to ChannelAnalysis for visualization.&#xD;&#xA;   * &#xD;&#xA;   * @author sgoddard&#xD;&#xA;   * @param warp WarpInterface to convert to ChannelAnalysis for visualization" item="_Y4Ejw2dHEe24LcnSyvVffw">
+    <modelElement href="ChannelAnalysis.uml#_cXARo3f7Ee2JlaRyah7LmA"/>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
