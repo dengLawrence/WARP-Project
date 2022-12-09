@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 import edu.uiowa.cs.warp.SystemAttributes.ScheduleChoices;
 
 class ChannelVisualizationTest {
+	
+//-------------------------------------------Helper Methods---------------------------------------------------------------------//
 
 	/* Helper method that creates a ChannelVisualization object to be tested according to an input file and other WarpSystem parameters.
 	 * 
@@ -27,10 +29,10 @@ class ChannelVisualizationTest {
 	 * 
 	 * @author lldeng
 	 */
-	private ChannelVisualization createChannelVisualizationModNone(Integer numFaults, String inputFile, Integer numChannels) {
+	private ChannelVisualization createChannelVisualizationModZeroByZero(Integer numFaults, String inputFile, Integer numChannels) {
 		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
 		ScheduleChoices choice = ScheduleChoices.PRIORITY;
-		WarpInterface warp = new WarpSystemModNone(workload, numChannels, choice);
+		WarpInterface warp = new WarpSystemModZeroByZero(workload, numChannels, choice);
 		ChannelVisualization channelVis = new ChannelVisualization(warp);
 		return channelVis;
 	}
@@ -40,10 +42,10 @@ class ChannelVisualizationTest {
 	 * 
 	 * @author lldeng
 	 */
-	private ChannelVisualization createChannelVisualizationModFilled(Integer numFaults, String inputFile, Integer numChannels) {
+	private ChannelVisualization createChannelVisualizationModEmpty(Integer numFaults, String inputFile, Integer numChannels) {
 		WorkLoad workload = new WorkLoad(numFaults, .9, .99, inputFile);
 		ScheduleChoices choice = ScheduleChoices.PRIORITY;
-		WarpInterface warp = new WarpSystemModFilled(workload, numChannels, choice);
+		WarpInterface warp = new WarpSystemModEmpty(workload, numChannels, choice);
 		ChannelVisualization channelVis = new ChannelVisualization(warp);
 		return channelVis;
 	}
@@ -82,7 +84,7 @@ class ChannelVisualizationTest {
 		
 	    //System.out.print(actual);
 	    //System.out.print(expected);
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "createHeader not correctly showing other parameters when numFaults = 0");
 	}
 
 	/*Tests that the header created by createHeader() matches the expected header of ExampleX.txt with numFaults = 1.
@@ -102,7 +104,7 @@ class ChannelVisualizationTest {
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "createHeader() makes an incorrect header for ExampleX.txt with numFaults = 1");
 	}
 	
 	/* Tests that the header created by createHeader() matches the expected header of Example.txt with numFaults = 2.
@@ -122,15 +124,17 @@ class ChannelVisualizationTest {
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "createHeader() makes an incorrect header for Example.txt with numFaults = 2");
 	}
 
 //-------------------------------------------Start of visualization() Tests------------------------------------------------------------------//
-	//Tests that a visualization table is correctly created for ExampleX.txt.
-	//@author dlin4
+	/*Tests that a visualization table is correctly created for ExampleX.txt.
+	 * 
+	 * @author dlin4
+	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void visualizationTestEmptyTableExampleX() {
+	void visualizationTestTableExampleX() {
 		ChannelVisualization channelVis = createChannelVisualization(1, "ExampleX.txt", 16);
 		Description actual = channelVis.visualization();
 		
@@ -150,7 +154,7 @@ class ChannelVisualizationTest {
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertTrue(expected.equals(actual));
+		assertEquals(expected, actual, "visualization() table is incorrect for ExampleX.txt");
 	}
 	
 	/* Tests that a visualization table is correctly created for TestBug.txt.
@@ -174,7 +178,7 @@ class ChannelVisualizationTest {
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "visualization() table is incorrect for TestBug.txt");
 	}
 	
 	/* Tests that a table with only one row is correctly created for TestBug.txt with numChannels = 1.
@@ -193,7 +197,7 @@ class ChannelVisualizationTest {
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "visualization() table is incorrect for TestBug.txt when numChannels = 1");
 	}
 	
 	/* Tests that a table with 25 rows is correctly created for ExampleX.txt with numChannels = 25.
@@ -222,10 +226,10 @@ class ChannelVisualizationTest {
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "visualization() table is incorrect for ExampleX.txt when numChannels = 25");
 	}
 	
-	/* Tests that an empty table has the correct row index when using the .get() method.
+	/* Tests that a table has the correct row index when using the .get() method.
 	 * 
 	 * @author dlin4
 	 */
@@ -246,7 +250,7 @@ class ChannelVisualizationTest {
 		}
 		//System.out.print(actual.get(3));
 		//System.out.print(expected.get(3));
-		assertEquals(expected.get(3), actual.get(3));
+		assertEquals(expected.get(3), actual.get(3), "Row 3 of visualization() table is incorrect/does not line up");
 	}
 	
 	/* Tests that a table with no rows or columns is made using the modded ChannelAnalysis class(Test file is irrelevant).
@@ -256,7 +260,7 @@ class ChannelVisualizationTest {
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationTestNoTable() {
-		ChannelVisualization channelVis = createChannelVisualizationModNone(1, "ExampleX.txt", 16);
+		ChannelVisualization channelVis = createChannelVisualizationModZeroByZero(1, "ExampleX.txt", 16);
 		Description actual = channelVis.visualization();
 		
 		Description expected = new Description();
@@ -264,31 +268,29 @@ class ChannelVisualizationTest {
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "0x0 visualization() table not created correctly");
 	}
 	
-	/* Tests that a table with actual input string values is created using the modded ChannelAnalysis class.
+	/* Tests that an empty table is correctly created using the modded ChannelAnalysis class (Test file affects only number
+	 * of rows and columns).
 	 * 
 	 * @author lldeng
 	 */
 	@Test
 	@Timeout(value = 1, unit = TimeUnit.SECONDS)
 	void visualizationTestPartiallyFilledTable() {
-		ChannelVisualization channelVis = createChannelVisualizationModFilled(1, "ExampleX.txt", 16);
+		ChannelVisualization channelVis = createChannelVisualizationModEmpty(1, "ExampleX.txt", 16);
 		Description actual = channelVis.visualization();
 		
 		Description expected = new Description();
 		expected.add("Channel/Time Slot 0	1	2	3	4	5	6	7	8	9	\n");
-		for(int i = 0; i < 8; i++) {
-			expected.add(String.format("%s	test	test	test	test	test	test	test	test	test	test\n", i));
-		}
-		for(int i = 8; i < 16; i++) {
+		for(int i = 0; i < 16; i++) {
 			expected.add(String.format("%s	-	-	-	-	-	-	-	-	-	-\n", i));
 		}
 		
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Empty visualization() table not correctly created");
 	}
 	/* Tests that a full table with actual input string values is created using the modded ChannelAnalysis class.
 	 * 
@@ -307,12 +309,13 @@ class ChannelVisualizationTest {
 		}
 		//System.out.print(actual);
 		//System.out.print(expected);
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Filled visualization() table with \"test\" in all cells is not correctly created");
 	}
 }
 
 //-------------------------------------------End of visualization() Tests------------------------------------------------------------------//
 
+//-------------------------------------------Class Overrides of ChannelAnalysis for Testing Purposes---------------------------------------//
 
 /* This class extends the ChannelAnalysis class to override the current implementation in order to test that
  * ChannelVisualization correctly creates a visualization with no rows or columns when the ChannelAnalysis
@@ -320,18 +323,18 @@ class ChannelVisualizationTest {
  * 
  * @author lldeng
  */
-class ChannelAnalysisModNone extends ChannelAnalysis {
+class ChannelAnalysisModZeroByZero extends ChannelAnalysis {
 	
-	ChannelAnalysisModNone(WarpInterface warp) {
+	ChannelAnalysisModZeroByZero(WarpInterface warp) {
 		this(warp.toProgram());
 	}
 
-	ChannelAnalysisModNone(Program program) {
+	ChannelAnalysisModZeroByZero(Program program) {
 		super(program);
-		buildEmptyChannelAnalysisTable();
+		buildZeroByZeroChannelAnalysisTable();
 	}
 	
-	private void buildEmptyChannelAnalysisTable() {
+	private void buildZeroByZeroChannelAnalysisTable() {
 		var numColumns = 0;
 		var numRows = 0;
 		channelAnalysisTable = new ProgramSchedule(numRows,numColumns);
@@ -343,16 +346,16 @@ class ChannelAnalysisModNone extends ChannelAnalysis {
  * 
  * @author lldeng
  */
-class WarpSystemModNone extends WarpSystem {
+class WarpSystemModZeroByZero extends WarpSystem {
 
-	public WarpSystemModNone(WorkLoad workLoad, Integer numChannels, ScheduleChoices choice) {
+	public WarpSystemModZeroByZero(WorkLoad workLoad, Integer numChannels, ScheduleChoices choice) {
 		super(workLoad, numChannels, choice);
 		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
 	public ChannelAnalysis toChannelAnalysis() {
-		ChannelAnalysis ca = new ChannelAnalysisModNone(this);
+		ChannelAnalysis ca = new ChannelAnalysisModZeroByZero(this);
 		return ca;
 	}
 }
@@ -363,26 +366,21 @@ class WarpSystemModNone extends WarpSystem {
  * 
  * @author lldeng
  */
-class ChannelAnalysisModFilled extends ChannelAnalysis {
+class ChannelAnalysisModEmpty extends ChannelAnalysis {
 	
-	ChannelAnalysisModFilled(WarpInterface warp) {
+	ChannelAnalysisModEmpty(WarpInterface warp) {
 		this(warp.toProgram());
 	}
 
-	ChannelAnalysisModFilled(Program program) {
+	ChannelAnalysisModEmpty(Program program) {
 		super(program);
-		buildFilledChannelAnalysisTable();
+		buildEmptyChannelAnalysisTable();
 	}
 	
-	private void buildFilledChannelAnalysisTable() {
+	private void buildEmptyChannelAnalysisTable() {
 		var numColumns = programTable.getNumRows();
 		var numRows = program.getNumChannels();
 		channelAnalysisTable = new ProgramSchedule(numRows,numColumns);
-		for(int i = 0; i < numRows/2; i++) {
-			for(int j = 0; j < numColumns; j++) {
-				channelAnalysisTable.set(i, j, "test");
-			}
-		}
 	}
 }
 
@@ -391,15 +389,15 @@ class ChannelAnalysisModFilled extends ChannelAnalysis {
  * 
  * @author lldeng
  */
-class WarpSystemModFilled extends WarpSystem {
+class WarpSystemModEmpty extends WarpSystem {
 
-	public WarpSystemModFilled(WorkLoad workLoad, Integer numChannels, ScheduleChoices choice) {
+	public WarpSystemModEmpty(WorkLoad workLoad, Integer numChannels, ScheduleChoices choice) {
 		super(workLoad, numChannels, choice);
 		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public ChannelAnalysis toChannelAnalysis() {
-		ChannelAnalysis ca = new ChannelAnalysisModFilled(this);
+		ChannelAnalysis ca = new ChannelAnalysisModEmpty(this);
 		return ca;
 	}
 }	

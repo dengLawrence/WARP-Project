@@ -195,14 +195,15 @@ Also note: The .ch output file for TestBug found on ICON contains a small error 
 
 
 **Record/Timeline:**
+- *Sprint 1*
 - 10/26/2022 : First team meeting in lab.
 - 10/31/2022 : Team meeting to discuss sequence diagram and task designation for Sprint 1 delivery.
 - 11/2/2022 : Lab meeting - Began discussing methods needed to meet project requirements and completed sketch of sequence diagram.
 - 11/4/2022 : Warp Sequence Diagram is uploaded. -David
 - 11/6/2022 : ChannelVisualization UML class diagram and test classes for ChannelVisualization & ChannelAnalysis classes created. -Ethan
 - 11/7/2022 : ChannelVisualization placeholder methods were created and the method design file (*MethodIdeas.md*) was created. -Ethan and Lawrence
-<br>
-*Start of Sprint 2*<br>
+- 
+- *Sprint 2*
 - 11/9/2022 : Lab meeting - delegated roles for Sprint 2.
 - 11/12/2022 : Started ChannelVisualizationTest.java -Lawrence
 - 11/13/2022 : Implemented most of ChannelVisualiztion.java and created a dummy method within ChannelAnalysis.java. -Ethan
@@ -216,8 +217,8 @@ Also note: The .ch output file for TestBug found on ICON contains a small error 
 - 11/18/2022 : Created ChannelAnalysis UML class diagram and updated MethodIdeas.md. -Ethan
 - 11/18/2022 : Added additional JUnit tests. -Lawrence
 - 11/18/2022 : Added 2 JUnit tests and timeouts. - David
-<br>
-*Start of Sprint 3*<br>
+- 
+- *Sprint 3*
 - 11/18/2022 : Added rudimentary implementation of buildChannelAnalysisTable. Does not handle channel conflicts and will need to be refactored. -Ethan
 - 11/28/2022 : Team meeting & completed basic implementation of buildChannelAnalysisTable (w/ conflicts). Needs clean-up. -Ethan, David, Alex, Lawrence
 - 12/4/2022 : Updated documentation in ChannelAnalysis.java. -Lawrence
@@ -233,3 +234,4 @@ Also note: The .ch output file for TestBug found on ICON contains a small error 
 - 12/7/2022 : Organized and fixed comments for test classes. -Ethan
 - 12/7/2022 : Cleaned up and added tests for both test classes. -Lawrence
 - 12/8/2022 : Added StressTest4 & multiple channel conflicts tests for buildChannelAnalysisTable. -Ethan
+- 12/8/2022 : Cleaned up documentation and tests in both test classes. -Lawrence

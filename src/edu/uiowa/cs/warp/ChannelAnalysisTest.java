@@ -37,7 +37,7 @@ class ChannelAnalysisTest {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "TestBug.txt", 16);
 		ProgramSchedule expected = channelAnalysis.channelAnalysisTable;
 		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
-		assertSame(expected, actual);
+		assertSame(expected, actual, "getChannelAnalysisTable is not returning the correct object after creating a ChannelAnalysis object.");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -58,10 +58,36 @@ class ChannelAnalysisTest {
 		channelAnalysis.channelAnalysisTable = new ProgramSchedule(16, 5);
 		ProgramSchedule expected = channelAnalysis.channelAnalysisTable;
 		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
-		assertSame(expected, actual);
+		assertSame(expected, actual, "getChannelAnalysisTable is not returning the correct object after modification.");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
+
+	/* Tests if the .get() function of ChannelAnalysis is functioning properly in ExampleX.
+	 * 
+	 * @author dlin4
+	 */
+	@Test
+	@Timeout(value = 1, unit = TimeUnit.SECONDS)
+	void getChannelAnalysisTableTestExampleX() {
+		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "ExampleX.txt", 16);
+		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
+		ProgramSchedule expected = new ProgramSchedule(16, 10);
+		expected.set(1,  0, "[A]::F0:(A:B)");
+		expected.set(1, 3, "[C]::F1:(C:B)");
+		expected.set(2, 1, "[B]::F0:(B:C), F0:(A:B)");
+		expected.set(3, 2, "[B]::F0:(B:C)");
+		expected.set(3, 5, "[A]::F0:(A:B)");
+		expected.set(4, 6, "[B]::F0:(B:C), F0:(A:B)");
+		expected.set(5, 7, "[B]::F0:(B:C)");
+		expected.set(6, 4, "[B]::F1:(B:A), F1:(C:B)");
+		expected.set(7, 8, "[B]::F1:(B:A)");
+			
+		assertEquals(expected.get(3, 5), actual.get(3, 5), "getChannelAnalysiTable returns incorrect cell value");
+		//System.out.println(actual.get(3, 5));
+		//System.out.println(expected.get(3, 5));
+	}
+	
 	
 //-------------------------------------------Start of isChannelConflict() Tests---------------------------------------------------------------------//
 
@@ -78,7 +104,7 @@ class ChannelAnalysisTest {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "TestBug.txt", 16);
 		boolean expected = channelAnalysis.conflictExists;
 		boolean actual = channelAnalysis.isChannelConflict();
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "isChannelConflict is not returning the correct boolean value after creating a ChannelAnalysis object.");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -98,7 +124,7 @@ class ChannelAnalysisTest {
 		channelAnalysis.conflictExists = false;
 		boolean expected = channelAnalysis.conflictExists;
 		boolean actual = channelAnalysis.isChannelConflict();
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "isChannelConflict is not returning the correct boolean value after modification.");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -119,7 +145,7 @@ class ChannelAnalysisTest {
 		ProgramSchedule expected = new ProgramSchedule(16, 2);
 		expected.set(1, 0, "[A]::F0:(A:A), F0:(A:A)");
 		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "BasicTest.txt table does not match");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -135,7 +161,7 @@ class ChannelAnalysisTest {
 	void buildChannelAnalysisTableStressTest4() {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(2, "StressTest4.txt", 16);
 		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
-		assertNotNull(actual);
+		assertNotNull(actual, "ChannelAnalysis failed to build a table for StressTest4.txt");
 		//System.out.println(actual);
 	}
 	
@@ -159,7 +185,7 @@ class ChannelAnalysisTest {
 		expected.set(2, 1, "[A]::F0:(A:B); [D]::F1:(D:E), F1:(C:D)");
 		expected.set(2, 3, "[E]::F1:(E:F)");
 		
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Incorrect table built for TestBug.txt");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -184,34 +210,9 @@ class ChannelAnalysisTest {
 		expected.set(6, 4, "[B]::F1:(B:A), F1:(C:B)");
 		expected.set(7, 8, "[B]::F1:(B:A)");
 		
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Incorrect table built for ExampleX.txt");
 		//System.out.println(actual);
 		//System.out.println(expected);
-	}
-	
-	/* Tests if the .get() function of ChannelAnalysis is functioning properly in ExampleX.
-	 * 
-	 * @author dlin4
-	 */
-	@Test
-	@Timeout(value = 1, unit = TimeUnit.SECONDS)
-	void getChannelAnalysisTableTestExampleX() {
-		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "ExampleX.txt", 16);
-		ProgramSchedule actual = channelAnalysis.getChannelAnalysisTable();
-		ProgramSchedule expected = new ProgramSchedule(16, 10);
-		expected.set(1,  0, "[A]::F0:(A:B)");
-		expected.set(1, 3, "[C]::F1:(C:B)");
-		expected.set(2, 1, "[B]::F0:(B:C), F0:(A:B)");
-		expected.set(3, 2, "[B]::F0:(B:C)");
-		expected.set(3, 5, "[A]::F0:(A:B)");
-		expected.set(4, 6, "[B]::F0:(B:C), F0:(A:B)");
-		expected.set(5, 7, "[B]::F0:(B:C)");
-		expected.set(6, 4, "[B]::F1:(B:A), F1:(C:B)");
-		expected.set(7, 8, "[B]::F1:(B:A)");
-			
-		assertEquals(expected.get(3, 5), actual.get(3, 5));
-		//System.out.println(actual.get(3, 5));
-		//System.out.println(expected.get(3, 5));
 	}
 	
 	/* Tests if ExampleX has channel conflicts. It should be false.
@@ -224,7 +225,7 @@ class ChannelAnalysisTest {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "ExampleX.txt", 16);
 		Boolean actual = channelAnalysis.isChannelConflict();
 		Boolean expected = false;
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Detects conflict in ExampleX.txt, which should have none");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -239,7 +240,7 @@ class ChannelAnalysisTest {
 		ChannelAnalysis channelAnalysis = createChannelAnalysis(1, "TestBug.txt", 16);
 		Boolean actual = channelAnalysis.isChannelConflict();
 		Boolean expected = true;
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Does not detect any conflicts in TestBug.txt, which does have conflcits");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -261,7 +262,7 @@ class ChannelAnalysisTest {
 		expected.set(1,  0, "[A]::F0:(A:B); [C]::F1:(C:D)");
 		expected.set(2, 1, "[A]::F0:(A:B); [C]::F1:(C:D)");
 			
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Table is incorrect in a case replicating the conditions for a channel conflict");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -281,7 +282,7 @@ class ChannelAnalysisTest {
 		expected.set(1,  0, "[A]::F0:(A:B); [C]::F1:(C:D); [E]::F2:(E:F); [G]::F3:(G:H)");
 		expected.set(2, 1, "[A]::F0:(A:B); [C]::F1:(C:D); [E]::F2:(E:F); [G]::F3:(G:H)");
 			
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "Table is incorrect i a case with multiple conflicts in a channel/timeSlot positon");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -312,7 +313,7 @@ class ChannelAnalysisTest {
 		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)"); //this table entry comes from BasicTest.txt
 		expected.set(2, 1, "[A]::F0:(A:B)"); //this is the table entry that is being set
 			
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "setTableEntry not correctly setting a push instruction");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -339,7 +340,7 @@ class ChannelAnalysisTest {
 		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)");
 		expected.set(2, 1, "[B]::F0:(B:C), F0:(A:B)");
 			
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "setTableEntry not correctly setting a push-pull instruction");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -376,7 +377,7 @@ class ChannelAnalysisTest {
 		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)");
 		expected.set(2, 1, "[A]::F0:(A:B); [B]::F1:(B:C)");
 			
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "setTableEntry not correctly setting a push/push instruction conflict");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -412,7 +413,7 @@ class ChannelAnalysisTest {
 		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)");
 		expected.set(2, 1, "[B]::F0:(B:C), F0:(A:B); [C]::F1:(C:D)");
 			
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "setTableEntry not correctly setting a push-pull/push instruction conflict");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -448,7 +449,7 @@ class ChannelAnalysisTest {
 		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)");
 		expected.set(2, 1, "[A]::F0:(A:B); [D]::F1:(D:E), F1:(C:D)");
 			
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "setTableEntry not correctly setting a push/push-pull instruction conflict");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
@@ -484,7 +485,7 @@ class ChannelAnalysisTest {
 		expected.set(1,  0, "[A]::F0:(A:A), F0:(A:A)");
 		expected.set(2, 1, "[B]::F0:(B:C), F0:(A:B); [D]::F1:(D:E), F1:(C:D)");
 			
-		assertEquals(expected, actual);
+		assertEquals(expected, actual, "setTableEntry not correctly setting a push-pull/push-pull instruction conflict");
 		//System.out.println(actual);
 		//System.out.println(expected);
 	}
