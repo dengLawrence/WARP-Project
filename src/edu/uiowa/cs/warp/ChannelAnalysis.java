@@ -63,8 +63,8 @@ public class ChannelAnalysis {
   
   
   /**
-   * Determines whether or not there is a channel conflict.
-   * Used in the setTableEntry helper method.
+   * Method that gets the conflictExists flag stating whether a conflict exists
+   * in the built channelAnalysisTable.
    * 
    * @author sgoddard
    * @return boolean value stating whether a channel conflict exists.

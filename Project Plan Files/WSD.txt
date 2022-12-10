@@ -1,25 +1,68 @@
 title Warp Sequence Diagram
 
 User->Warp: calls caRequested
-Warp->Visualization Factory: visualize()
-Visualization Factory->Visualization Implementation: createProgramVisualization()
-Visualization Implementation->Visualization Implementation: createVisualization() constructor
-Visualization Implementation->Channel Visualization: createVisualization() constructor
-Channel Visualization->Warp System: calls Channel Visualization constructor
-Warp System->Channel Analysis: toChannelAnalysis()
-Channel Analysis->Channel Analysis: constructor
-Channel Analysis->Channel Analysis: buildChannelAnalysisTable()
-Channel Analysis->Channel Analysis: setTableEntry()
-Channel Analysis-->Channel Visualization: returns Channel Analysis object
-Channel Visualization-->Visualization Implementation: returns Channel Visualization object
-Visualization Implementation->Channel Visualization: createVisualization()
-Channel Visualization->Channel Analysis: Visualization()
-Channel Analysis->Channel Analysis: getChannelAnalysisTable()
-Channel Analysis-->Channel Visualization: returns Program Schedule object
-Channel Visualization-->Visualization Implementation: returns Description object
-Visualization Implementation-->Visualization Factory: returns Visualization Implementation object
-Visualization Factory-->Warp: returns Visualization object
-Warp->Visualization Implementation: calls toFile()
-Visualization Implementation->FileManager: writes toFile()
-FileManager->Files: calls writeFile()
-Files->Output: Files.writeString()
+activate Warp
+Warp->VisualizationFactory: visualize()
+activate VisualizationFactory
+VisualizationFactory->VisualizationImplementation: createProgramVisualization()
+activate VisualizationImplementation
+VisualizationImplementation->VisualizationImplementation: VisualizationImplementation constructor
+VisualizationImplementation->ChannelVisualization: createVisualization()
+activate ChannelVisualization
+ChannelVisualization->WarpSystem: ChannelVisualization constructor
+activate WarpSystem
+WarpSystem->ChannelAnalysis: toChannelAnalysis()
+activate ChannelAnalysis
+ChannelAnalysis->ChannelAnalysis: constructor
+activate ChannelAnalysis
+ChannelAnalysis->ChannelAnalysis: buildChannelAnalysisTable()
+activate ChannelAnalysis
+ChannelAnalysis->ChannelAnalysis: setTableEntry()
+space
+deactivate ChannelAnalysis
+space
+deactivate ChannelAnalysis
+ChannelAnalysis-->WarpSystem: returns ChannelAnalysis object
+deactivate ChannelAnalysis
+WarpSystem-->ChannelVisualization: returns ChannelAnalysis object
+deactivate WarpSystem
+ChannelVisualization-->VisualizationImplementation: returns ChannelVisualization object
+deactivate ChannelVisualization
+VisualizationImplementation->ChannelVisualization: createVisualization()
+activate ChannelVisualization
+ChannelVisualization->ChannelAnalysis: visualization()
+activate ChannelAnalysis
+ChannelAnalysis->ChannelAnalysis: getChannelAnalysisTable()
+ChannelAnalysis-->ChannelVisualization: returns ProgramSchedule object
+deactivate ChannelAnalysis
+ChannelVisualization-->VisualizationImplementation: returns Description object
+deactivate ChannelVisualization
+VisualizationImplementation->ChannelVisualization: createVisualization()
+activate ChannelVisualization
+ChannelVisualization->ChannelVisualization: fileVisualization()
+activate ChannelVisualization
+ChannelVisualization->ChannelVisualization: createHeader()
+ChannelVisualization->ChannelAnalysis: visualization()
+activate ChannelAnalysis
+ChannelAnalysis->ChannelAnalysis: getChannelAnalysisTable()
+ChannelAnalysis-->ChannelVisualization: returns ProgramSchedule object
+deactivate ChannelAnalysis
+space
+deactivate ChannelVisualization
+ChannelVisualization-->VisualizationImplementation: returns Description object
+deactivate ChannelVisualization
+VisualizationImplementation-->VisualizationFactory: returns VisualizationImplementation object
+deactivate VisualizationImplementation
+VisualizationFactory->Warp: returns Visualization object
+deactivate VisualizationFactory
+Warp->VisualizationImplementation: visualization()
+deactivate Warp
+activate VisualizationImplementation
+VisualizationImplementation->FileManager: toFile()
+deactivate VisualizationImplementation
+activate FileManager
+FileManager->Files: writeFile()
+deactivate FileManager
+activate Files
+Files->Output: writeString()
+deactivate Files
